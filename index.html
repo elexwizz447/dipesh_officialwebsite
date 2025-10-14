@@ -708,6 +708,10 @@ Global diurnal inference traffic was modeled across 10 geographic regions with d
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
         <span class="text-sm"><strong>Batching and MFU Modeling:</strong> A time-varying batch size function (b<sub>k</sub>(t)), proportional to the request arrival rate, was introduced and integrated with a saturating exponential Multi-Factor Utilization (MFU) function (MFU<sub>k</sub>(b)) to dynamically compute GPU-seconds/request, accounting for efficiency gains from batching.</span>
       </div>
+      <div class="flex items-start">
+        <div class="w-4 h-4 border border-accent-cyan mr-3 mt-1 flex-shrink-0"></div>
+        <span class="text-sm"><strong>GPU Fleet and Power Modeling:</strong> The aggregated per-task compute determined the total GPU-seconds (S<sub>total</sub>(t)), from which the required GPU count (N<sub>gpu</sub>(t)) was derived based on utilization targets; site-level power and energy were then estimated by modeling GPU power draw (P<sub>gpu</sub>(U)), incorporating host (β) and I/O (γ) overheads, and applying Power Usage Effectiveness (PUE) scaling.</span>
+      </div>
     </div>
     <!-- Fixed XDSM Diagram Upper Part -->
     <div class="mt-4">
@@ -4351,6 +4355,7 @@ Global diurnal inference traffic was modeled across 10 geographic regions with d
 </body>
 </html>
 ```
+
 
 
 
