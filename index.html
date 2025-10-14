@@ -694,19 +694,19 @@ Global diurnal inference traffic was modeled across 10 geographic regions with d
 
   <!-- HOW Section -->
   <div class="project-card hologram">
-    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Modular Python-Based 3-DOF Simulation Framework</h3>
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Mathematical Modeling and Parametric Computation Chain </h3>
     <div class="space-y-3">
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Implemented aircraft dynamics with adaptive RK45 solver, event-driven logic for liftoff, screen height, and alpha-floor protections, ensuring CS-25 compliance in takeoff scenarios.</span>
+        <span class="text-sm"><strong>Task Decomposition and Tiering:</strong> The total inference request stream was divided into 13 subtasks and assigned to a frequency-based tier to represent their relative proportion within the overall request mix.</span>
       </div>
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Developed physics-based subsystem models: aerodynamics (CL/CD interpolation, ground effect, pitching moments), propulsion (turboprop efficiency, OEI asymmetry), landing gear (spring-damper ground dynamics), and pilot-controlled stability modes.</span>
+        <span class="text-sm"><strong>Computation Mapping:</strong> FLOPs-per-request (F<sub>k</sub>) from literature were used, in conjunction with A100 GPU peak throughput, to estimate the baseline GPU-seconds per request (s<sub>k</sub>).</span>
       </div>
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Designed XDSM-based modular architecture for FAST-OAD integration, allowing future extensions to amphibious takeoff/landing and water-drop firefighting scenarios.</span>
+        <span class="text-sm"><strong>Batching and MFU Modeling:</strong> A time-varying batch size function (b<sub>k</sub>(t)), proportional to the request arrival rate, was introduced and integrated with a saturating exponential Multi-Factor Utilization (MFU) function (MFU<sub>k</sub>(b)) to dynamically compute GPU-seconds/request, accounting for efficiency gains from batching.</span>
       </div>
     </div>
     <!-- Fixed XDSM Diagram Upper Part -->
@@ -4351,6 +4351,7 @@ Global diurnal inference traffic was modeled across 10 geographic regions with d
 </body>
 </html>
 ```
+
 
 
 
