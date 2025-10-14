@@ -683,8 +683,9 @@
     <div class="hud-corner tr"></div>
     <div class="hud-corner bl"></div>
     <div class="hud-corner br"></div>
-    <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan"> WHAT: AI infernece studied globally shows Diuranl Usage Pattern</h3>
-    <p class="text-sm mb-4">With reference to AI inference patterns on the diurnal usage variation~\cite{ref1}, a mathematical model was developed to represent a single region's inference activity. This model, expressed through the superposition of multiple Gaussian distributions and a constant baseline term, established a canonical regional inference pattern. The parameters were chosen to fit the mathematical model as closely as possible to the target curve from~\cite{ref1}, thereby accurately capturing the behavioral patterns of users.The parameters choosen are listed in the table below. </p>
+    <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan"> WHAT: Foundational Framework for AI Data Center Power Consumption Modeling</h3>
+    <p class="text-sm mb-4"> This research establishes a quantitative, end-to-end framework for modeling AI data center power consumption driven by real-world inference workloads. The objective is to create a traceable and tunable model that links global user request dynamics to GPU-level energy behavior, enabling reproducible benchmarking and sustainable AI infrastructure planning.
+Global diurnal inference traffic was modeled across 10 geographic regions with distinct activity magnitudes and local-time peaks, then aligned to UTC to form an aggregated global demand curve. The aggregate inference load was decomposed into 13 representative AI subtasks (e.g., image generation, video classification, NLP tasks) organized by tiered frequency to reflect workload diversity. The framework provides a mathematically closed mapping from request-level load to site-wide power and energy, accounting for batching, utilization, and PUE effects. </p>
     <img src="./graphics/fig2.png" alt="Diurnal AI inference pattern" class="project-image w-full h-48 object-contain mt-2 rounded cursor-pointer" onclick="openModal('./graphics/fig2.png', 'Duirnal AI Inference Pattern')">
     <p class="text-xs text-center mt-1">Diurnal AI inference Patterns .</p>
     <img src="./graphics/fig1.png" alt="Diurnal usage mathematical modeling plotted" class="project-image w-full h-32 object-contain mt-2 rounded cursor-pointer" onclick="openModal('./graphics/fig1.png', 'Diurnal usage Mathe,mathematical modeling plotted')">
@@ -693,20 +694,70 @@
 
   <!-- HOW Section -->
   <div class="project-card hologram">
-    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Modular Python-Based 3-DOF Simulation Framework</h3>
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Mathematical Modeling and Parametric Computation Chain</h3>
     <div class="space-y-3">
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Implemented aircraft dynamics with adaptive RK45 solver, event-driven logic for liftoff, screen height, and alpha-floor protections, ensuring CS-25 compliance in takeoff scenarios.</span>
+        <span class="text-sm">Global Demand Modeling: Diurnal AI inference request profiles from 10 distinct geographic regions were converted to UTC and aggregated to create a global, time-overlapping request profile reflecting real temporal demand dynamics.</span>
       </div>
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Developed physics-based subsystem models: aerodynamics (CL/CD interpolation, ground effect, pitching moments), propulsion (turboprop efficiency, OEI asymmetry), landing gear (spring-damper ground dynamics), and pilot-controlled stability modes.</span>
+        <span class="text-sm">Task Decomposition and Tiering: The total inference request stream was divided into 13 subtasks and assigned to a frequency-based tier to represent their relative proportion within the overall request mix.</span>
       </div>
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Designed XDSM-based modular architecture for FAST-OAD integration, allowing future extensions to amphibious takeoff/landing and water-drop firefighting scenarios.</span>
+        <span class="text-sm">Computation Mapping: FLOPs-per-request (F 
+k
+​
+ ) from literature were used, in conjunction with A100 GPU peak throughput, to estimate the baseline GPU-seconds per request (s 
+k
+​
+ ).</span>
       </div>
+
+
+
+
+
+
+
+
+<div class="space-y-3">
+      <div class="flex items-center">
+        <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
+        <span class="text-sm">Batching and MFU Modeling: A time-varying batch size function (b 
+k
+​
+ (t)), proportional to the request arrival rate, was introduced and integrated with a saturating exponential Multi-Factor Utilization (MFU) function (MFU 
+k
+​
+ (b)) to dynamically compute GPU-seconds/request, accounting for efficiency gains from batching.</span>
+      </div>
+
+
+
+
+  <div class="space-y-3">
+      <div class="flex items-center">
+        <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
+        <span class="text-sm">.GPU Fleet and Power Modeling: The aggregated per-task compute determined the total GPU-seconds (S 
+total
+​
+ (t)), from which the required GPU count (N 
+gpu
+​
+ (t)) was derived based on utilization targets; site-level power and energy were then estimated by modeling GPU power draw (P 
+gpu
+​
+ (U)), incorporating host (β) and I/O (γ) overheads, and applying Power Usage Effectiveness (PUE) scaling.</span>
+      </div>
+
+
+
+
+
+
+      
     </div>
     <!-- Fixed XDSM Diagram Upper Part -->
     <div class="mt-4">
@@ -752,19 +803,25 @@
 
   <!-- RESULTS Section -->
   <div class="project-card">
-    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Performance Validation and Sensitivity Analysis</h3>
+    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Closed-Form Energy Modeling and Efficiency Insights</h3>
     <div class="space-y-4">
       <div class="bg-green-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Validated Takeoff Dynamics</div>
-        <div class="text-xs">Compared AEO and OEI (engine-out at 10s) simulations with ATR flight manuals and operational data, ensuring transient behaviors matched empirical observations.</div>
+        <div class="text-sm font-bold">Model Performance and Validation</div>
+        <div class="text-xs">Achieved a dimensionally consistent, closed-form relationship from global inference traffic → GPU utilization → total data center energy.
+
+Validated stability of model outputs across diurnal demand variations and batch saturation conditions</div>
       </div>
       <div class="bg-blue-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Trajectory and Compliance</div>
-        <div class="text-xs">Generated ground run and climb trajectories, verifying compliance with CS-25 screen height and degraded OEI climb requirements.</div>
+        <div class="text-sm font-bold">Parametric and Efficiency Insights</div>
+        <div class="text-xs">Identified strong sensitivity of total energy consumption to batch window size and MFU saturation rate, with higher batching yielding nonlinear efficiency gains.
+
+Revealed that asynchronous regional peaks can smooth global GPU utilization, reducing idle-to-peak transitions and improving average efficiency..</div>
       </div>
       <div class="bg-purple-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Sensitivity Studies</div>
-        <div class="text-xs">Quantified effects of MTOW, ISA deviation, and pilot inputs on takeoff field length and climb gradients, providing scalable insights for amphibious firefighting retrofit viability.</div>
+        <div class="text-sm font-bold">Framework Contributions</div>
+        <div class="text-xs">Provides a reproducible and auditable baseline model for forecasting AI workload energy intensity.
+
+Enables scenario-based simulations for scaling, optimization, and carbon impact studies of large-scale AI infrastructure.</div>
       </div>
     </div>
     <div class="relative overflow-hidden mt-4 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
@@ -4350,6 +4407,7 @@
 </body>
 </html>
 ```
+
 
 
 
