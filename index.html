@@ -757,19 +757,19 @@ Global diurnal inference traffic was modeled across 10 geographic regions with d
 
   <!-- RESULTS Section -->
   <div class="project-card">
-    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Performance Validation and Sensitivity Analysis</h3>
+    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Closed-Form Energy Modeling and Efficiency Insights</h3>
     <div class="space-y-4">
       <div class="bg-green-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Validated Takeoff Dynamics</div>
-        <div class="text-xs">Compared AEO and OEI (engine-out at 10s) simulations with ATR flight manuals and operational data, ensuring transient behaviors matched empirical observations.</div>
+        <div class="text-sm font-bold">Model Performance and Validation</div>
+        <div class="text-xs">Achieved a dimensionally consistent, closed-form relationship from global inference traffic → GPU utilization → total data center energy. Validated stability of model outputs across diurnal demand variations and batch saturation conditions.</div>
       </div>
       <div class="bg-blue-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Trajectory and Compliance</div>
-        <div class="text-xs">Generated ground run and climb trajectories, verifying compliance with CS-25 screen height and degraded OEI climb requirements.</div>
+        <div class="text-sm font-bold">Parametric and Efficiency Insights</div>
+        <div class="text-xs">Identified strong sensitivity of total energy consumption to batch window size and MFU saturation rate, with higher batching yielding nonlinear efficiency gains. Revealed that asynchronous regional peaks can smooth global GPU utilization, reducing idle-to-peak transitions and improving average efficiency.</div>
       </div>
       <div class="bg-purple-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Sensitivity Studies</div>
-        <div class="text-xs">Quantified effects of MTOW, ISA deviation, and pilot inputs on takeoff field length and climb gradients, providing scalable insights for amphibious firefighting retrofit viability.</div>
+        <div class="text-sm font-bold">Framework Contributions</div>
+        <div class="text-xs">Provides a reproducible and auditable baseline model for forecasting AI workload energy intensity. Enables scenario-based simulations for scaling, optimization, and carbon impact studies of large-scale AI infrastructure.</div>
       </div>
     </div>
     <div class="relative overflow-hidden mt-4 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
@@ -4355,6 +4355,7 @@ Global diurnal inference traffic was modeled across 10 geographic regions with d
 </body>
 </html>
 ```
+
 
 
 
