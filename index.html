@@ -716,56 +716,71 @@
 
 
 
-  
-<!-- ====== EDUCATION / ACADEMICS SECTION (Insert after Hero or Before Aerospace) ====== -->
+
+
+
+
+
+
+  <!-- ====== EDUCATION / ACADEMICS SECTION (Insert after Hero or Before Aerospace) ====== -->
 <section id="education" class="section interests-bg">
   <div class="max-w-7xl mx-auto">
-    <h2 class="orbitron text-4xl font-bold text-center mb-12">
+    <h2 class="orbitron text-4xl font-bold text-center mb-12" style="color: #183B6C;">
       <span class="status-indicator status-active"></span>ACADEMICS
     </h2>
 
     <!-- Degrees Sub-Section -->
-    <h3 class="orbitron text-2xl font-bold text-center mb-8 text-accent-cyan">Degrees Received</h3>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-      <!-- Degree 1: Nepal Engineering College (or Your Primary College) -->
-      <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <div class="flex items-center justify-between mb-4">
-          <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College Logo" class="w-16 h-16 object-cover rounded"> <!-- Circular logo on left -->
-          <p class="text-sm muted">2016 - 2020</p> <!-- Dates on right -->
+    <h3 class="orbitron text-2xl font-bold text-center mb-8" style="color: #183B6C;">Degrees Received</h3>
+    <div class="grid grid-cols-1 gap-8 mb-16"> <!-- Stacked for 2 degrees -->
+      <!-- Degree 1: Nepal Engineering College -->
+      <div class="degree-card-container" style="background: #97B9D6; border-radius: 8px; padding: 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 2;"> <!-- Left circular logo -->
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #E0E0E0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
         </div>
-        <h4 class="orbitron text-xl font-bold mb-4 text-accent-cyan">B.Tech. in Computer Engineering</h4> <!-- Degree bold -->
-        <ul class="space-y-2 mb-4 text-sm">
-          <li><span class="text-warning-amber">⚡</span> Studied core software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.</li>
-          <li><span class="text-warning-amber">⚡</span> Completed advanced courses in Deep Learning, Data Science, Cloud Computing and Full Stack Development.</li>
-          <li><span class="text-warning-amber">⚡</span> Received the Merit cum Means Scholarship given to top 10% of students in college and an award from the respected director for consistently best performance in academics.</li>
-        </ul>
-        <a href="https://nec.edu.np/" target="_blank" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Visit Website</a>
+        <div style="padding: 20px 20px 20px 120px; background: #97B9D6; color: #fff;"> <!-- Blue header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-weight: 600; font-size: 1.1rem;">Nepal Engineering College</div>
+            <div style="font-size: 0.95rem; opacity: 0.9;">2016 - 2020</div>
+          </div>
+          <h4 style="font-weight: 700; font-size: 1.2rem; margin: 0;">B.Tech. in Computer Engineering</h4>
+        </div>
+        <div style="padding: 20px; background: #fff; border-top: 1px solid #e0e0e0;"> <!-- White details section -->
+          <ul style="margin: 0; padding-left: 0; list-style: none;">
+            <li style="margin-bottom: 8px; font-size: 0.95rem; color: #334155;"><span style="color: #f59e0b; margin-right: 8px;">⚡</span> Studied core software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.</li>
+            <li style="margin-bottom: 8px; font-size: 0.95rem; color: #334155;"><span style="color: #f59e0b; margin-right: 8px;">⚡</span> Completed advanced courses in Deep Learning, Data Science, Cloud Computing and Full Stack Development.</li>
+            <li style="margin-bottom: 8px; font-size: 0.95rem; color: #334155;"><span style="color: #f59e0b; margin-right: 8px;">⚡</span> Received the Merit cum Means Scholarship given to top 10% of students in college and an award from the respected director for consistently best performance in academics.</li>
+          </ul>
+          <a href="https://nec.edu.np/" target="_blank" style="position: absolute; bottom: 20px; right: 20px; background: #A8C8D8; color: #183B6C; padding: 8px 16px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Visit Website</a>
+        </div>
       </div>
 
-      <!-- Degree 2: Paschimanchal Campus (or Your Second College) -->
-      <div class="project-card hologram">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <div class="flex items-center justify-between mb-4">
-          <img src="./assets/education/paschimanchal_logo.png" alt="Paschimanchal Campus Logo" class="w-16 h-16 object-cover rounded"> <!-- Circular logo on left -->
-          <p class="text-sm muted">2022 – Present</p> <!-- Dates on right -->
+  <div class="degree-card-container" style="background: #97B9D6; border-radius: 8px; padding: 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 2;"> <!-- Left circular logo -->
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #E0E0E0; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+          </div>
         </div>
-        <h4 class="orbitron text-xl font-bold mb-4 text-accent-cyan">B.E. in Electrical Engineering</h4> <!-- Degree bold -->
-        <ul class="space-y-2 mb-4 text-sm">
-          <li><span class="text-warning-amber">⚡</span> Focused on power systems, control systems, and automation with coursework in Power Electronics, Control Systems, Electrical Machines, and Renewable Energy.</li>
-          <li><span class="text-warning-amber">⚡</span> Served as Research Assistant, guiding undergrad projects and supervising lab sessions on circuit design.</li>
-          <li><span class="text-warning-amber">⚡</span> Co-authored papers on renewable energy systems and received recognition for academic excellence.</li>
-        </ul>
-        <a href="https://paschimanchal.tu.edu.np/" target="_blank" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Visit Website</a>
+        <div style="padding: 20px 20px 20px 120px; background: #97B9D6; color: #fff;"> <!-- Blue header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="font-weight: 600; font-size: 1.1rem;">Nepal Engineering College</div>
+            <div style="font-size: 0.95rem; opacity: 0.9;">2016 - 2020</div>
+          </div>
+          <h4 style="font-weight: 700; font-size: 1.2rem; margin: 0;">B.Tech. in Computer Engineering</h4>
+        </div>
+        <div style="padding: 20px; background: #fff; border-top: 1px solid #e0e0e0;"> <!-- White details section -->
+          <ul style="margin: 0; padding-left: 0; list-style: none;">
+            <li style="margin-bottom: 8px; font-size: 0.95rem; color: #334155;"><span style="color: #f59e0b; margin-right: 8px;">⚡</span> Studied core software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.</li>
+            <li style="margin-bottom: 8px; font-size: 0.95rem; color: #334155;"><span style="color: #f59e0b; margin-right: 8px;">⚡</span> Completed advanced courses in Deep Learning, Data Science, Cloud Computing and Full Stack Development.</li>
+            <li style="margin-bottom: 8px; font-size: 0.95rem; color: #334155;"><span style="color: #f59e0b; margin-right: 8px;">⚡</span> Received the Merit cum Means Scholarship given to top 10% of students in college and an award from the respected director for consistently best performance in academics.</li>
+          </ul>
+          <a href="https://nec.edu.np/" target="_blank" style="position: absolute; bottom: 20px; right: 20px; background: #A8C8D8; color: #183B6C; padding: 8px 16px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Visit Website</a>
+        </div>
       </div>
-    </div>
 
+
+      
     <!-- Certifications Sub-Section (2x3 Grid) -->
     <h3 class="orbitron text-2xl font-bold text-center mb-8 text-accent-cyan">Certifications</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -5061,6 +5076,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
