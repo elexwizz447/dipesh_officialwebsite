@@ -3747,7 +3747,7 @@ normalization</p>
         <!-- Vertical Photo Layout: Two Bigger Carousels (Each with 2 Self-Scrolling Images) -->
         <div class="space-y-6"> <!-- Vertical separation -->
           <!-- First Carousel (Top Photo - Bigger Dimensions) -->
-          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 500px;"> <!-- Increased height for bigger photos -->
+          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 400px;"> <!-- Increased height for bigger photos -->
             <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="volunteer-carousel-1" style="transform: translateX(0%);">
               <div class="carousel-item flex-shrink-0 w-full text-center">
                 <img src="./graphics/volunteer_photo1a.jpg" alt="Workshop Session 1A" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo1a.jpg', 'Volunteer Photo 1A')">
@@ -3763,7 +3763,7 @@ normalization</p>
           </div>
           
           <!-- Second Carousel (Bottom Photo - Bigger Dimensions) -->
-          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 300px;"> <!-- Increased height -->
+          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 400px;"> <!-- Increased height -->
             <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="volunteer-carousel-2" style="transform: translateX(0%);">
               <div class="carousel-item flex-shrink-0 w-full text-center">
                 <img src="./graphics/volunteer_photo2a.jpg" alt="Workshop Session 2A" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo2a.jpg', 'Volunteer Photo 2A')">
@@ -3803,8 +3803,8 @@ normalization</p>
   }
   .project-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 400px;
+    object-fit: contain;
   }
   .modal {
     display: none;
@@ -4861,6 +4861,7 @@ autoSlide('volunteer-carousel-2');
 </body>
 </html>
 ```
+
 
 
 
