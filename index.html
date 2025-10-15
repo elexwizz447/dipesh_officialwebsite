@@ -3730,182 +3730,361 @@ normalization</p>
     
     <!-- Single Full-Width Card for Volunteering (with Vertical Photo Layout) -->
   
-  <div class="grid grid-cols-1 gap-8 mb-16">
-*/
+  <di
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+    :root {
+      --primary-blue: #00d4ff;
+      --accent-cyan: #00ffff;
+      --bg-dark: #0a0e27;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .project-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px;
+      background: rgba(10, 14, 39, 0.8);
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .hologram {
+      border: 2px solid var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+
+    .hud-corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--primary-blue);
+    }
+    .hud-corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+    .hud-corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+    .hud-corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+    .hud-corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+    .text-accent-cyan {
+      color: var(--accent-cyan);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+
+    /* Carousel Styles - Auto Height */
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--accent-cyan);
+    }
+
+    .carousel-container {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .carousel-item p {
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      color: #aaa;
+    }
+
+    /* Carousel Navigation Buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--primary-blue);
+      color: black;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      opacity: 0.75;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      opacity: 1;
+    }
+
+    .carousel-btn.left {
+      left: 10px;
+    }
+
+    .carousel-btn.right {
+      right: 10px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      text-align: center;
+    }
+
+    .modal-content {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 8px;
+    }
+
+    .modal-caption {
+      color: white;
+      font-size: 1rem;
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 4px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: block;
+      margin-top: 1.5rem;
+      background: var(--primary-blue);
+      color: black;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .cta-button:hover {
+      background: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<section>
+  <div>
+    <div>
       <div class="project-card hologram">
         <div class="hud-corner tl"></div>
         <div class="hud-corner tr"></div>
         <div class="hud-corner bl"></div>
         <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">Bridging the Divide: STEM & Robotics Education for Often Overlooked Community School Students</h3>
-        <p class="text-sm mb-4">
+        
+        <h3 class="orbitron text-accent-cyan">Bridging the Divide: STEM & Robotics Education for Often Overlooked Community School Students</h3>
+        
+        <p>
           I led a series of Robotics and 3D Printing workshops for students across various community schools in the Pokhara Valley. My goal was simple: to make sure that less-privileged children—the kids who often get overlooked—had the same chance to discover, learn, and fall in love with cutting-edge technology. I wanted to help bridge that tech divide by doing things at my level.
           <br><br>
           To make a lasting impact, collaborations with pioneering national-level organizations and governmental bodies were crucial, so we partnered with <strong>Pokhara Metropolitan Ward No. 5</strong>, <strong>Engineers Without Borders Nepal (EWBN)</strong>, and <strong>Karyashala</strong>. It ensured the students received high-quality, impactful STEM education. This initiative powerfully demonstrates my leadership in community engagement and my ability to partner with established entities to turn personal conviction into real, tangible opportunity for young people.
         </p>
         
-        <!-- Vertical Photo Layout: Two Bigger Carousels (Each with 2 Self-Scrolling Images) -->
-        <div class="space-y-6"> <!-- Vertical separation -->
-          <!-- First Carousel (Top Photo - Bigger Dimensions) -->
-          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 300px;"> <!-- Increased height for bigger photos -->
-            <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="volunteer-carousel-1" style="transform: translateX(0%);">
-              <div class="carousel-item flex-shrink-0 w-full text-center">
-                <img src="./graphics/volunteer_photo1a.jpg" alt="Workshop Session 1A" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo1a.jpg', 'Volunteer Photo 1A')">
-                <p class="text-xs mt-1">Students building first robot prototype.</p>
+        <!-- Vertical Photo Layout: Two Carousels with Auto Height -->
+        <div class="space-y-6">
+          <!-- First Carousel -->
+          <div class="carousel-wrapper">
+            <div class="carousel-container" id="volunteer-carousel-1">
+              <div class="carousel-item">
+                <img src="./graphics/volunteer_photo1a.jpg" alt="Workshop Session 1A" onclick="openModal('./graphics/volunteer_photo1a.jpg', 'Volunteer Photo 1A')">
+                <p>Students building first robot prototype.</p>
               </div>
-              <div class="carousel-item flex-shrink-0 w-full text-center">
-                <img src="./graphics/volunteer_photo1b.jpg" alt="Workshop Session 1B" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo1b.jpg', 'Volunteer Photo 1B')">
-                <p class="text-xs mt-1">Group discussion on 3D printing designs.</p>
+              <div class="carousel-item">
+                <img src="./graphics/volunteer_photo1b.jpg" alt="Workshop Session 1B" onclick="openModal('./graphics/volunteer_photo1b.jpg', 'Volunteer Photo 1B')">
+                <p>Group discussion on 3D printing designs.</p>
               </div>
             </div>
-            <button onclick="slideCarousel('volunteer-carousel-1', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
-            <button onclick="slideCarousel('volunteer-carousel-1', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+            <button class="carousel-btn left" onclick="slideCarousel('volunteer-carousel-1', -1)">‹</button>
+            <button class="carousel-btn right" onclick="slideCarousel('volunteer-carousel-1', 1)">›</button>
           </div>
           
-          <!-- Second Carousel (Bottom Photo - Bigger Dimensions) -->
-          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 300px;"> <!-- Increased height -->
-            <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="volunteer-carousel-2" style="transform: translateX(0%);">
-              <div class="carousel-item flex-shrink-0 w-full text-center">
-                <img src="./graphics/volunteer_photo2a.jpg" alt="Workshop Session 2A" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo2a.jpg', 'Volunteer Photo 2A')">
-                <p class="text-xs mt-1">3D printed robot parts assembly.</p>
+          <!-- Second Carousel -->
+          <div class="carousel-wrapper">
+            <div class="carousel-container" id="volunteer-carousel-2">
+              <div class="carousel-item">
+                <img src="./graphics/volunteer_photo2a.jpg" alt="Workshop Session 2A" onclick="openModal('./graphics/volunteer_photo2a.jpg', 'Volunteer Photo 2A')">
+                <p>3D printed robot parts assembly.</p>
               </div>
-              <div class="carousel-item flex-shrink-0 w-full text-center">
-                <img src="./graphics/volunteer_photo2b.jpg" alt="Workshop Session 2B" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo2b.jpg', 'Volunteer Photo 2B')">
-                <p class="text-xs mt-1">Students presenting their final projects.</p>
+              <div class="carousel-item">
+                <img src="./graphics/volunteer_photo2b.jpg" alt="Workshop Session 2B" onclick="openModal('./graphics/volunteer_photo2b.jpg', 'Volunteer Photo 2B')">
+                <p>Students presenting their final projects.</p>
               </div>
             </div>
-            <button onclick="slideCarousel('volunteer-carousel-2', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
-            <button onclick="slideCarousel('volunteer-carousel-2', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+            <button class="carousel-btn left" onclick="slideCarousel('volunteer-carousel-2', -1)">‹</button>
+            <button class="carousel-btn right" onclick="slideCarousel('volunteer-carousel-2', 1)">›</button>
           </div>
         </div>
         
-        <a href="mailto:dipesh.poudel@student.isae-supaero.fr?subject=Volunteer Workshop Details" class="block mt-6 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Request Workshop Details</a>
+        <a href="mailto:dipesh.poudel@student.isae-supaero.fr?subject=Volunteer Workshop Details" class="cta-button orbitron">Request Workshop Details</a>
       </div>
     </div>
   </div>
 </section>
 
-
-
-
- 
-
-<style>
-  .carousel-container {
-    display: flex;
-    width: 100%;
-    height: 200px;
-  }
-  .carousel-item {
-    min-width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-  }
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-  }
-  .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90%;
-  }
-  .modal-caption {
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    margin-top: 10px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-  }
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-  }
-</style>
+<!-- Modal Container -->
+<div id="imageModal" class="modal" onclick="closeModal()"></div>
 
 <script>
+  // Carousel slide function
   function slideCarousel(id, direction) {
     const carousel = document.getElementById(id);
-    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
     const numItems = carousel.children.length;
-    currentTransform += direction * 100;
-    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
-    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
-    carousel.style.transition = 'transform 0.5s ease-in-out';
-    carousel.style.transform = `translateX(${currentTransform}%)`;
+    
+    let newTransform = currentTransform + (direction * 100);
+    
+    // Loop around
+    if (newTransform < -100 * (numItems - 1)) newTransform = 0;
+    if (newTransform > 0) newTransform = -100 * (numItems - 1);
+    
+    carousel.style.transform = `translateX(${newTransform}%)`;
   }
 
+  // Auto-slide function
   function autoSlide(id) {
-    let index = 0;
     const carousel = document.getElementById(id);
     const numItems = carousel.children.length;
-    if (numItems <= 1) return; // Skip auto-slide for single-item carousels
+    
+    if (numItems <= 1) return; // Skip if only one image
+    
+    let index = 0;
     setInterval(() => {
       index = (index + 1) % numItems;
-      carousel.style.transition = 'transform 0.5s ease-in-out';
       carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 5000);
+    }, 5000); // Change every 5 seconds
   }
 
+  // Modal functions
   function openModal(src, caption) {
-    const modal = document.createElement('div');
-    modal.className = 'modal';
+    const modal = document.getElementById('imageModal');
+    
     let description = '';
     switch (caption) {
-   case 'Volunteer Photo 1A':
-  description = 'Students building their first robot prototype during the workshop.';
-  break;
-case 'Volunteer Photo 1B':
-  description = 'Group discussion on 3D printing designs and material choices.';
-  break;
-case 'Volunteer Photo 2A':
-  description = 'Assembly of 3D printed robot parts with guidance.';
-  break;
-case 'Volunteer Photo 2B':
-  description = 'Students proudly presenting their final robotics projects.';
-  break;
+      case 'Volunteer Photo 1A':
+        description = 'Students building their first robot prototype during the workshop.';
+        break;
+      case 'Volunteer Photo 1B':
+        description = 'Group discussion on 3D printing designs and material choices.';
+        break;
+      case 'Volunteer Photo 2A':
+        description = 'Assembly of 3D printed robot parts with guidance.';
+        break;
+      case 'Volunteer Photo 2B':
+        description = 'Students proudly presenting their final robotics projects.';
+        break;
     }
+    
     modal.innerHTML = `
-      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img src="${src}" alt="${caption}" class="modal-content">
-      <div class="modal-caption">${caption}<br>${description}</div>
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-content-wrapper">
+        <img src="${src}" alt="${caption}" class="modal-content">
+        <div class="modal-caption">${caption}<br>${description}</div>
+      </div>
     `;
-    document.body.appendChild(modal);
-    modal.style.display = 'block';
+    
+    modal.style.display = 'flex';
   }
 
-  // Initialize auto-slide for project carousels
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+
+  // Initialize auto-slide on page load
   document.addEventListener('DOMContentLoaded', () => {
-   autoSlide('volunteer-carousel-1');
-autoSlide('volunteer-carousel-2');
+    autoSlide('volunteer-carousel-1');
+    autoSlide('volunteer-carousel-2');
+  });
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
   });
 </script>
-
-
-
-
-
-
-
 
 
 
@@ -4861,6 +5040,7 @@ autoSlide('volunteer-carousel-2');
 </body>
 </html>
 ```
+
 
 
 
