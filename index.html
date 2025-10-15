@@ -474,18 +474,6 @@
   <a href="#awards" class="nav-item orbitron">AWARDS/GRANTS</a>
 
 
-
-
-
-
-
-
-
-
-
-
-        
-        <a href="game.html" class="nav-item orbitron">PLAY MY GAME</a>
                
         <a href="#contact" class="nav-item orbitron">CONTACT</a>
       </div>
@@ -4861,10 +4849,287 @@ normalization</p>
     animate();
   });
 </script>
-    -->
+
+  
+  
+  <!-- ====== EDUCATION / ACADEMICS SECTION (drop into your index.html) ====== -->
+<section id="education" class="section interests-bg" style="padding:48px 0;">
+  <div class="container" style="max-width:1100px;margin:0 auto;padding:0 16px;">
+    <h2 class="orbitron" style="font-size:2rem;font-weight:700;text-align:center;margin-bottom:28px;">
+      <span class="status-indicator" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#2dd4bf;margin-right:10px;vertical-align:middle;"></span>
+      ACADEMICS
+    </h2>
+
+    <!-- layout: left = degrees, right = certifications & competitive sites -->
+    <div class="edu-grid" style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <!-- Degrees list will be injected here -->
+        <div id="degrees-container"></div>
+      </div>
+
+      <!-- Certifications and Competitive Sites -->
+      <div id="side-info" style="display:flex;flex-direction:column;gap:18px;margin-top:8px;">
+        <div id="certs-container"></div>
+
+        <div id="competitive-container" style="padding:16px;border-radius:10px;border:1px solid rgba(34,197,94,0.08);background:linear-gradient(180deg, rgba(34,197,94,0.03), transparent);">
+          <h3 style="font-size:1rem;font-weight:700;margin:0 0 8px 0;">Competitive Profiles</h3>
+          <div id="competitive-sites" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+      <a href="mailto:dipesh.poudel@student.isae-supaero.fr?subject=Education%20Details"
+         style="display:inline-block;background:#06b6d4;color:#000;padding:10px 18px;border-radius:8px;font-weight:700;text-decoration:none;">
+        Request Education Details
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Responsive two-column look: on wide screens show degrees left and side-info right */
+  @media (min-width: 900px) {
+    .edu-grid { flex-direction: row; align-items:flex-start; justify-content:space-between; }
+    .edu-grid > div:first-child { flex: 0 0 62%; }      /* degrees column */
+    #side-info { flex: 0 0 36%; }                        /* certs + sites column */
+  }
+
+  /* Degree card */
+  .degree-card {
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid rgba(13, 110, 253, 0.06);
+    background: linear-gradient(180deg, rgba(2,6,23,0.01), transparent);
+  }
+  .degree-logo {
+    width:84px;
+    height:84px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    background: #f6f9fc;
+    overflow:hidden;
+  }
+  .degree-logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+
+  .degree-body { flex:1; }
+  .degree-title { font-weight:700; font-size:1.05rem; margin:0; color:#0f172a; }
+  .degree-meta { font-size:0.88rem; color:#475569; margin:6px 0 8px 0; }
+  .degree-desc { font-size:0.92rem; color:#334155; margin:0; line-height:1.45; }
+
+  /* Certification card */
+  .cert-card {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(125, 211, 252, 0.08);
+    background:#fff;
+  }
+  .cert-logo { width:56px; height:56px; display:flex;align-items:center;justify-content:center;border-radius:8px;background:#f8fafc;overflow:hidden; }
+  .cert-logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+  .cert-body { flex:1; }
+  .cert-title { font-weight:700; margin:0; font-size:0.98rem; color:#0f172a; }
+  .cert-issuer { font-size:0.85rem; color:#64748b; margin-top:6px; }
+
+  /* small badges for competitive sites */
+  .comp-site {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 10px;
+    border-radius:999px;
+    border:1px solid rgba(148,163,184,0.12);
+    background:#fff;
+    font-size:0.85rem;
+    color:#0f172a;
+    text-decoration:none;
+  }
+  .comp-site img { width:20px; height:20px; object-fit:contain; display:block; }
+
+  /* small utility */
+  .muted { color:#6b7280; font-size:0.86rem; }
+</style>
+
+<script>
+/*
+  Data-driven: edit these arrays to change content & images.
+  Replace logo_path values with your local images (e.g. ./images/ku_logo.png) or remote URLs.
+*/
+
+const educationData = [
+  {
+    school: "Nepal Engineering College (or Your University)",
+    degree: "B.E. in Electrical Engineering",
+    duration: "2022 – Present",
+    logo_path: "./images/nec_logo.png",          // <-- replace with your logo file path
+    location: "Pokhara, Nepal",
+    description: "Currently in 7th semester focusing on power systems, control systems and automation. Coursework includes Power Electronics, Control Systems, Electrical Machines and Renewable Energy."
+  },
+  {
+    school: "Paschimanchal Campus",
+    degree: "Research Assistant / Teaching (part-time)",
+    duration: "2024 – Present",
+    logo_path: "./images/paschimanchal_logo.png",
+    location: "Pokhara, Nepal",
+    description: "Guided undergraduate lab sessions on circuit design and supervised student projects in power electronics and microgrid control."
+  }
+];
+
+const certificationsData = [
+  {
+    title: "PLC & SCADA Basics",
+    issuer: "Siemens / Local Training",
+    year: "2025",
+    logo_path: "./images/siemens_badge.png",
+    link: "#"
+  },
+  {
+    title: "3D Printing & Robotics Workshop Trainer",
+    issuer: "Engineers Without Borders Nepal (EWBN)",
+    year: "2025",
+    logo_path: "./images/ewbn_badge.png",
+    link: "#"
+  }
+];
+
+const competitiveSites = [
+  { name: "GitHub", url: "https://github.com/yourusername", icon: "./images/github-icon.png" },
+  { name: "LeetCode", url: "https://leetcode.com/yourusername", icon: "./images/leetcode-icon.png" },
+  { name: "HackerRank", url: "https://www.hackerrank.com/yourusername", icon: "./images/hackerrank-icon.png" }
+];
+
+/* ---------------- Render functions ---------------- */
+
+function createDegreeCard(d) {
+  const card = document.createElement('div');
+  card.className = 'degree-card';
+
+  const logoWrap = document.createElement('div');
+  logoWrap.className = 'degree-logo';
+  const logoImg = document.createElement('img');
+  logoImg.src = d.logo_path;
+  logoImg.alt = d.school + ' logo';
+  logoWrap.appendChild(logoImg);
+
+  const body = document.createElement('div');
+  body.className = 'degree-body';
+
+  const title = document.createElement('h4');
+  title.className = 'degree-title';
+  title.textContent = d.degree + ' — ' + d.school;
+
+  const meta = document.createElement('div');
+  meta.className = 'degree-meta';
+  meta.innerHTML = `<span class="muted">${d.duration}</span> • ${d.location}`;
+
+  const desc = document.createElement('p');
+  desc.className = 'degree-desc';
+  desc.textContent = d.description;
+
+  body.appendChild(title);
+  body.appendChild(meta);
+  body.appendChild(desc);
+
+  card.appendChild(logoWrap);
+  card.appendChild(body);
+
+  return card;
+}
+
+function createCertCard(c) {
+  const card = document.createElement('div');
+  card.className = 'cert-card';
+
+  const logo = document.createElement('div');
+  logo.className = 'cert-logo';
+  const img = document.createElement('img');
+  img.src = c.logo_path;
+  img.alt = c.title + ' logo';
+  logo.appendChild(img);
+
+  const body = document.createElement('div');
+  body.className = 'cert-body';
+
+  const title = document.createElement('div');
+  title.className = 'cert-title';
+  title.textContent = c.title;
+
+  const issuer = document.createElement('div');
+  issuer.className = 'cert-issuer';
+  issuer.textContent = `${c.issuer} • ${c.year}`;
+
+  body.appendChild(title);
+  body.appendChild(issuer);
+
+  card.appendChild(logo);
+  card.appendChild(body);
+
+  // optional link wrapper
+  if (c.link) {
+    const a = document.createElement('a');
+    a.href = c.link;
+    a.target = '_blank';
+    a.style.textDecoration = 'none';
+    a.appendChild(card);
+    return a;
+  }
+  return card;
+}
+
+/* mount the content */
+(function mountEducation() {
+  const degContainer = document.getElementById('degrees-container');
+  educationData.forEach(d => {
+    degContainer.appendChild(createDegreeCard(d));
+  });
+
+  const certContainer = document.getElementById('certs-container');
+  const certHeading = document.createElement('h3');
+  certHeading.style.margin = '0 0 8px 0';
+  certHeading.style.fontSize = '1rem';
+  certHeading.style.fontWeight = '700';
+  certHeading.textContent = 'Certifications';
+  certContainer.appendChild(certHeading);
+
+  certificationsData.forEach(c => {
+    certContainer.appendChild(createCertCard(c));
+  });
+
+  const compWrap = document.getElementById('competitive-sites');
+  competitiveSites.forEach(s => {
+    const a = document.createElement('a');
+    a.className = 'comp-site';
+    a.href = s.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.innerHTML = `<img src="${s.icon}" alt="${s.name}"/> <span>${s.name}</span>`;
+    compWrap.appendChild(a);
+  });
+})();
+</script>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  -->
 </body>
 </html>
 ```
+
 
 
 
