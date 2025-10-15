@@ -464,6 +464,10 @@
 
 <a href="#internship" class="nav-item orbitron">INTERNSHIP</a>
   <a href="#teaching" class="nav-item orbitron">TEACHING/MENTORING</a>
+<!--
+        
+<a href="#volunteer" class="nav-item orbitron">VOLUNTEER WORKSHOPS</a> -->
+        
   <a href="#service" class="nav-item orbitron">SERVICE/LEADERSHIP</a>
   <a href="#awards" class="nav-item orbitron">AWARDS/GRANTS</a>
 
@@ -700,6 +704,12 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     // No carousels to auto-slide in this section
+
+
+
+
+
+    
   });
 </script>
  
@@ -3701,12 +3711,213 @@ normalization</p>
         <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">Research Assistant, Dept of Electrical Engineering, Paschimanchal Campus</h3>
         <p class="text-sm mb-4">[Brief description: e.g., Guided undergrad projects on power electronics, supervised lab sessions on circuit design, and co-authored papers on renewable energy systems.].</p>
         <!-- Add images if needed -->
-      </div>
-      <!-- Robotics Workshop -->
+
+
+
+  
+
+
+
+
+<!-- COMMUNITY SCHOOL ROBOTICS 3D PRINTING WORKSHOP VOLUNTEERING SECTION -->
+<section id="volunteer" class="section interests-bg"> <!-- Add ID for nav link, e.g., #volunteer -->
+  <div class="max-w-7xl mx-auto">
+    <h2 class="orbitron text-4xl font-bold text-center mb-12">
+      <span class="status-indicator status-active"></span>COMMUNITY SCHOOL ROBOTICS & 3D PRINTING WORKSHOP VOLUNTEERING
+    </h2>
+    
+    <!-- Single Full-Width Card for Volunteering (with Vertical Photo Layout) -->
+    <div class="grid grid-cols-1 gap-8 mb-16">
       <div class="project-card">
-        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">Robotics Workshop</h3>
-        <p class="text-sm mb-4">[Brief description: e.g., Led hands-on workshop for 50+ students, teaching ROS and Arduino-based robot building.].</p>
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">Bridging the Divide: STEM & Robotics Education for Often Overlooked Community School Students</h3>
+        <p class="text-sm mb-4">
+          I led a series of Robotics and 3D Printing workshops for students across various community schools in the Pokhara Valley. My goal was simple: to make sure that less-privileged children—the kids who often get overlooked—had the same chance to discover, learn, and fall in love with cutting-edge technology. I wanted to help bridge that tech divide by doing things at my level.
+          <br><br>
+          To make a lasting impact, collaborations with pioneering national-level organizations and governmental bodies were crucial, so we partnered with <strong>Pokhara Metropolitan Ward No. 5</strong>, <strong>Engineers Without Borders Nepal (EWBN)</strong>, and <strong>Karyashala</strong>. It ensured the students received high-quality, impactful STEM education. This initiative powerfully demonstrates my leadership in community engagement and my ability to partner with established entities to turn personal conviction into real, tangible opportunity for young people.
+        </p>
+        
+        <!-- Vertical Photo Layout: Two Bigger Carousels (Each with 2 Self-Scrolling Images) -->
+        <div class="space-y-6"> <!-- Vertical separation -->
+          <!-- First Carousel (Top Photo - Bigger Dimensions) -->
+          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 300px;"> <!-- Increased height for bigger photos -->
+            <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="volunteer-carousel-1" style="transform: translateX(0%);">
+              <div class="carousel-item flex-shrink-0 w-full text-center">
+                <img src="./graphics/volunteer_photo1a.jpg" alt="Workshop Session 1A" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo1a.jpg', 'Volunteer Photo 1A')">
+                <p class="text-xs mt-1">Students building first robot prototype.</p>
+              </div>
+              <div class="carousel-item flex-shrink-0 w-full text-center">
+                <img src="./graphics/volunteer_photo1b.jpg" alt="Workshop Session 1B" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo1b.jpg', 'Volunteer Photo 1B')">
+                <p class="text-xs mt-1">Group discussion on 3D printing designs.</p>
+              </div>
+            </div>
+            <button onclick="slideCarousel('volunteer-carousel-1', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+            <button onclick="slideCarousel('volunteer-carousel-1', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+          </div>
+          
+          <!-- Second Carousel (Bottom Photo - Bigger Dimensions) -->
+          <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 300px;"> <!-- Increased height -->
+            <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="volunteer-carousel-2" style="transform: translateX(0%);">
+              <div class="carousel-item flex-shrink-0 w-full text-center">
+                <img src="./graphics/volunteer_photo2a.jpg" alt="Workshop Session 2A" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo2a.jpg', 'Volunteer Photo 2A')">
+                <p class="text-xs mt-1">3D printed robot parts assembly.</p>
+              </div>
+              <div class="carousel-item flex-shrink-0 w-full text-center">
+                <img src="./graphics/volunteer_photo2b.jpg" alt="Workshop Session 2B" class="w-full h-auto max-h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/volunteer_photo2b.jpg', 'Volunteer Photo 2B')">
+                <p class="text-xs mt-1">Students presenting their final projects.</p>
+              </div>
+            </div>
+            <button onclick="slideCarousel('volunteer-carousel-2', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+            <button onclick="slideCarousel('volunteer-carousel-2', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+          </div>
+        </div>
+        
+        <a href="mailto:dipesh.poudel@student.isae-supaero.fr?subject=Volunteer Workshop Details" class="block mt-6 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Request Workshop Details</a>
       </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ 
+
+<style>
+  .carousel-container {
+    display: flex;
+    width: 100%;
+    height: 200px;
+  }
+  .carousel-item {
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+  }
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .modal-caption {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function slideCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const numItems = carousel.children.length;
+    currentTransform += direction * 100;
+    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
+    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTransform}%)`;
+  }
+
+  function autoSlide(id) {
+    let index = 0;
+    const carousel = document.getElementById(id);
+    const numItems = carousel.children.length;
+    if (numItems <= 1) return; // Skip auto-slide for single-item carousels
+    setInterval(() => {
+      index = (index + 1) % numItems;
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 5000);
+  }
+
+  function openModal(src, caption) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    let description = '';
+    switch (caption) {
+   case 'Volunteer Photo 1A':
+  description = 'Students building their first robot prototype during the workshop.';
+  break;
+case 'Volunteer Photo 1B':
+  description = 'Group discussion on 3D printing designs and material choices.';
+  break;
+case 'Volunteer Photo 2A':
+  description = 'Assembly of 3D printed robot parts with guidance.';
+  break;
+case 'Volunteer Photo 2B':
+  description = 'Students proudly presenting their final robotics projects.';
+  break;
+    }
+    modal.innerHTML = `
+      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+      <img src="${src}" alt="${caption}" class="modal-content">
+      <div class="modal-caption">${caption}<br>${description}</div>
+    `;
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+  }
+
+  // Initialize auto-slide for project carousels
+  document.addEventListener('DOMContentLoaded', () => {
+   autoSlide('volunteer-carousel-1');
+autoSlide('volunteer-carousel-2');
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
       <!-- Arduino Proteus Workshop -->
       <div class="project-card">
         <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">Arduino Proteus Workshop</h3>
@@ -4646,6 +4857,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
