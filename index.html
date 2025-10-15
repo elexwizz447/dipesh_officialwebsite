@@ -724,153 +724,159 @@
       <span class="status-indicator status-active"></span>ACADEMICS
     </h2>
 
-    <!-- Degrees Grid (Main Content - 3-col on LG for Balance) -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-      <!-- Degree 1 -->
+    <!-- Degrees Sub-Section -->
+    <h3 class="orbitron text-2xl font-bold text-center mb-8 text-accent-cyan">Degrees Received</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <!-- Degree 1: Nepal Engineering College (or Your Primary College) -->
       <div class="project-card">
         <div class="hud-corner tl"></div>
         <div class="hud-corner tr"></div>
         <div class="hud-corner bl"></div>
         <div class="hud-corner br"></div>
-        <div class="flex items-center mb-4"> <!-- For logo + title -->
-          <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College Logo" class="w-12 h-12 object-cover mr-3 rounded"> <!-- Square logo -->
-          <h3 class="orbitron text-xl font-bold text-accent-cyan flex-1">B.E. in Electrical Engineering</h3>
+        <div class="flex items-center justify-between mb-4">
+          <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College Logo" class="w-16 h-16 object-cover rounded"> <!-- Circular logo on left -->
+          <p class="text-sm muted">2016 - 2020</p> <!-- Dates on right -->
         </div>
-        <p class="text-sm mb-4">Currently in 7th semester focusing on power systems, control systems and automation. Coursework includes Power Electronics, Control Systems, Electrical Machines and Renewable Energy.</p>
-        <p class="text-xs muted mb-2">2022 – Present • Pokhara, Nepal</p>
-        <!-- Optional image -->
-        <!-- <img src="./assets/education/degree1.jpg" alt="Degree Certificate" class="project-image w-full h-32 object-contain rounded cursor-pointer" onclick="openModal('./assets/education/degree1.jpg', 'Degree Photo 1')"> -->
+        <h4 class="orbitron text-xl font-bold mb-4 text-accent-cyan">B.Tech. in Computer Engineering</h4> <!-- Degree bold -->
+        <ul class="space-y-2 mb-4 text-sm">
+          <li><span class="text-warning-amber">⚡</span> Studied core software engineering subjects like DS, Algorithms, DBMS, OS, CA, AI etc.</li>
+          <li><span class="text-warning-amber">⚡</span> Completed advanced courses in Deep Learning, Data Science, Cloud Computing and Full Stack Development.</li>
+          <li><span class="text-warning-amber">⚡</span> Received the Merit cum Means Scholarship given to top 10% of students in college and an award from the respected director for consistently best performance in academics.</li>
+        </ul>
+        <a href="https://nec.edu.np/" target="_blank" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Visit Website</a>
       </div>
 
-      <!-- Degree 2 -->
+      <!-- Degree 2: Paschimanchal Campus (or Your Second College) -->
       <div class="project-card hologram">
         <div class="hud-corner tl"></div>
         <div class="hud-corner tr"></div>
         <div class="hud-corner bl"></div>
         <div class="hud-corner br"></div>
-        <div class="flex items-center mb-4">
-          <img src="./assets/education/paschimanchal_logo.png" alt="Paschimanchal Campus Logo" class="w-12 h-12 object-cover mr-3 rounded">
-          <h3 class="orbitron text-xl font-bold text-accent-cyan flex-1">Research Assistant / Teaching (Part-Time)</h3>
+        <div class="flex items-center justify-between mb-4">
+          <img src="./assets/education/paschimanchal_logo.png" alt="Paschimanchal Campus Logo" class="w-16 h-16 object-cover rounded"> <!-- Circular logo on left -->
+          <p class="text-sm muted">2022 – Present</p> <!-- Dates on right -->
         </div>
-        <p class="text-sm mb-4">Guided undergraduate lab sessions on circuit design and supervised student projects in power electronics and microgrid control.</p>
-        <p class="text-xs muted mb-2">2024 – Present • Pokhara, Nepal</p>
-        <!-- Optional image -->
-      </div>
-
-      <!-- Add more degrees as cards if needed -->
-      <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <div class="flex items-center mb-4">
-          <img src="./assets/education/other_logo.png" alt="Other Institution Logo" class="w-12 h-12 object-cover mr-3 rounded">
-          <h3 class="orbitron text-xl font-bold text-accent-cyan flex-1">[Additional Degree/Role]</h3>
-        </div>
-        <p class="text-sm mb-4">[Description].</p>
-        <p class="text-xs muted mb-2">[Duration] • [Location]</p>
+        <h4 class="orbitron text-xl font-bold mb-4 text-accent-cyan">B.E. in Electrical Engineering</h4> <!-- Degree bold -->
+        <ul class="space-y-2 mb-4 text-sm">
+          <li><span class="text-warning-amber">⚡</span> Focused on power systems, control systems, and automation with coursework in Power Electronics, Control Systems, Electrical Machines, and Renewable Energy.</li>
+          <li><span class="text-warning-amber">⚡</span> Served as Research Assistant, guiding undergrad projects and supervising lab sessions on circuit design.</li>
+          <li><span class="text-warning-amber">⚡</span> Co-authored papers on renewable energy systems and received recognition for academic excellence.</li>
+        </ul>
+        <a href="https://paschimanchal.tu.edu.np/" target="_blank" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Visit Website</a>
       </div>
     </div>
 
-    <!-- Certifications Sub-Section (Below Degrees - 1-col Grid) -->
+    <!-- Certifications Sub-Section (2x3 Grid) -->
     <h3 class="orbitron text-2xl font-bold text-center mb-8 text-accent-cyan">Certifications</h3>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-      <!-- Cert 1 -->
-      <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <div class="flex items-center mb-4">
-          <img src="./assets/education/siemens_badge.png" alt="Siemens Badge" class="w-12 h-12 object-cover mr-3 rounded">
-          <h4 class="orbitron text-lg font-bold text-warning-amber flex-1">PLC & SCADA Basics</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Cert 1: Machine Learning -->
+      <div class="cert-card">
+        <div class="cert-top" style="background: #dc2626; padding: 20px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;"> <!-- Top colored block -->
+          <img src="./assets/education/stanford_logo.png" alt="Stanford Logo" class="w-12 h-12 object-contain"> <!-- Logo in colored block -->
         </div>
-        <p class="text-sm mb-4">Siemens / Local Training • 2025</p>
-        <!-- Optional image -->
+        <div class="cert-bottom" style="padding: 16px; background: #f8fafc; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;"> <!-- Bottom white box -->
+          <h4 class="orbitron text-lg font-bold mb-1">Machine Learning</h4>
+          <p class="text-sm muted">- Andrew Ng</p>
+        </div>
       </div>
 
-      <!-- Cert 2 -->
-      <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <div class="flex items-center mb-4">
-          <img src="./assets/education/ewbn_badge.png" alt="EWBN Badge" class="w-12 h-12 object-cover mr-3 rounded">
-          <h4 class="orbitron text-lg font-bold text-warning-amber flex-1">3D Printing & Robotics Workshop Trainer</h4>
+      <!-- Cert 2: Deep Learning -->
+      <div class="cert-card">
+        <div class="cert-top" style="background: #374151; padding: 20px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/education/deep_learning_logo.png" alt="Deep Learning Logo" class="w-12 h-12 object-contain">
         </div>
-        <p class="text-sm mb-4">Engineers Without Borders Nepal (EWBN) • 2025</p>
-        <!-- Optional image -->
+        <div class="cert-bottom" style="padding: 16px; background: #f8fafc; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
+          <h4 class="orbitron text-lg font-bold mb-1">Deep Learning</h4>
+          <p class="text-sm muted">- Andrew Ng</p>
+        </div>
       </div>
 
-      <!-- Add more certs -->
-    </div>
+      <!-- Cert 3: ML on GCP -->
+      <div class="cert-card">
+        <div class="cert-top" style="background: #10b981; padding: 20px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/education/google_logo.png" alt="Google Logo" class="w-12 h-12 object-contain">
+        </div>
+        <div class="cert-bottom" style="padding: 16px; background: #f8fafc; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
+          <h4 class="orbitron text-lg font-bold mb-1">ML on GCP</h4>
+          <p class="text-sm muted">- GCP Training</p>
+        </div>
+      </div>
 
-    <!-- Competitive Profiles Sub-Section (Badges Below Certs) -->
-    <h3 class="orbitron text-2xl font-bold text-center mb-8 text-accent-cyan">Competitive Profiles</h3>
-    <div class="flex justify-center space-x-4 mb-16 flex-wrap">
-      <a href="https://github.com/yourusername" target="_blank" class="comp-site" style="display:inline-flex;align-items:center,gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(148,163,184,0.12);background:#fff;font-size:0.85rem;color:#0f172a;text-decoration:none;">
-        <img src="./assets/education/github-icon.png" alt="GitHub" style="width:20px;height:20px;object-fit:contain;">
-        <span>GitHub</span>
-      </a>
-      <a href="https://leetcode.com/yourusername" target="_blank" class="comp-site" style="..."> <!-- Same style -->
-        <img src="./assets/education/leetcode-icon.png" alt="LeetCode" style="...">
-        <span>LeetCode</span>
-      </a>
-      <a href="https://www.hackerrank.com/yourusername" target="_blank" class="comp-site" style="...">
-        <img src="./assets/education/hackerrank-icon.png" alt="HackerRank" style="...">
-        <span>HackerRank</span>
-      </a>
+      <!-- Cert 4: Data Science -->
+      <div class="cert-card">
+        <div class="cert-top" style="background: #ef4444; padding: 20px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/education/ibm_logo.png" alt="IBM Logo" class="w-12 h-12 object-contain">
+        </div>
+        <div class="cert-bottom" style="padding: 16px; background: #f8fafc; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
+          <h4 class="orbitron text-lg font-bold mb-1">Data Science</h4>
+          <p class="text-sm muted">- IBM</p>
+        </div>
+      </div>
+
+      <!-- Cert 5: Big Data -->
+      <div class="cert-card">
+        <div class="cert-top" style="background: #3b82f6; padding: 20px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/education/microsoft_logo.png" alt="Microsoft Logo" class="w-12 h-12 object-contain">
+        </div>
+        <div class="cert-bottom" style="padding: 16px; background: #f8fafc; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
+          <h4 class="orbitron text-lg font-bold mb-1">Big Data</h4>
+          <p class="text-sm muted">- Microsoft</p>
+        </div>
+      </div>
+
+      <!-- Cert 6: Advanced Data Science -->
+      <div class="cert-card">
+        <div class="cert-top" style="background: #f97316; padding: 20px; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+          <img src="./assets/education/ibm_logo.png" alt="IBM Logo" class="w-12 h-12 object-contain">
+        </div>
+        <div class="cert-bottom" style="padding: 16px; background: #f8fafc; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
+          <h4 class="orbitron text-lg font-bold mb-1">Advanced Data Science</h4>
+          <p class="text-sm muted">- IBM</p>
+        </div>
+      </div>
     </div>
 
     <!-- CTA Button -->
-    <div class="text-align:center">
-      <a href="mailto:dipesh.poudel@student.isae-supaero.fr?subject=Education%20Details" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron max-w-max mx-auto">
+    <div class="text-center">
+      <a href="mailto:dipesh.poudel@student.isae-supaero.fr?subject=Education%20Details" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full max-w-max mx-auto orbitron">
         Request Education Details
       </a>
     </div>
   </div>
 </section>
 
-<!-- Local Styles for Education Section (Add inside <style> in <head> or as inline <style> after section) -->
+<!-- Local Styles for Education Section (Add as <style> after the section or in <head>) -->
 <style>
-  .comp-site {
-    display: inline-flex;
+  .cert-card {
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f8fafc;
+    transition: box-shadow 0.3s ease;
+  }
+  .cert-card:hover {
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+  }
+  .cert-top {
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.12);
-    background: #fff;
-    font-size: 0.85rem;
-    color: #0f172a;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    justify-content: center;
   }
-  .comp-site:hover {
-    background: var(--primary-blue);
-    color: #fff;
-    border-color: var(--primary-blue);
+  .cert-bottom {
+    padding: 16px;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 0 0 8px 8px;
   }
-  .comp-site img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-  }
-  .muted {
-    color: #6b7280;
-    font-size: 0.86rem;
+  .degree-card .flex.items-center.justify-between .w-16 {
+    width: 64px;
+    height: 64px;
   }
   @media (max-width: 768px) {
-    .flex.items-center .w-12 {
-      width: 10px; /* Scale logo on mobile */
-      height: 10px;
-    }
+    .grid-cols-3 { grid-template-columns: 1fr; } /* Stack certs on mobile */
   }
 </style>
-
-<!-- No Local Script Needed - Uses Global openModal/slideCarousel if images added -->
-
 
 
 
@@ -5055,6 +5061,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
