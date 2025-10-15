@@ -709,50 +709,68 @@
 
 
 
+
+
+
+
+  <title>Education Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+ 
+
   <section id="education" class="section">
     <div class="max-w-7xl">
-      <h2 class="section-title orbitron">Academics</h2>
+      <h2 class="orbitron section-title">
+        <span class="status-indicator status-active"></span>ACADEMICS
+      </h2>
 
       <!-- Degrees Section -->
-      <h3 class="subsection-title orbitron">Degrees</h3>
+      <h3 class="subsection-title orbitron">Degrees Received</h3>
       <div class="degrees-container">
         
         <!-- Bachelor's Degree -->
-        <div class="degree-card">
+        <div class="project-card">
+          <div class="hud-corner tl"></div>
+          <div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div>
+          <div class="hud-corner br"></div>
+          
           <div class="degree-header">
-            <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College Logo" class="degree-logo">
-            <div class="degree-info">
-              <h4 class="degree-title orbitron">B.Tech. in Computer Engineering</h4>
-              <p class="degree-period orbitron">2022 - Present</p>
-            </div>
+            <img src="./assets/education/nec_logo.png" alt="Nepal Engineering College" class="degree-logo">
+            <p class="degree-period muted">2022 - Present</p>
           </div>
-          <div class="degree-details">
-            <span class="scholarship-badge orbitron">🏆 IOE Merit Based Scholarship</span>
-            <p class="institution-name">Nepal Engineering College, Pashchimanchal Campus</p>
-            <a href="https://nec.edu.np/" target="_blank" class="visit-btn orbitron">Visit Website</a>
+          
+          <h4 class="degree-title orbitron">Bachelor of Technology in Computer Engineering</h4>
+          
+          <div class="degree-content">
+            <p class="scholarship-text orbitron">IOE Merit-Based Scholarship Recipient</p>
+            <p class="institution-text orbitron">Nepal Engineering College<br>Pashchimanchal Campus</p>
           </div>
         </div>
 
         <!-- Higher Secondary -->
-        <div class="degree-card">
+        <div class="project-card">
+          <div class="hud-corner tl"></div>
+          <div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div>
+          <div class="hud-corner br"></div>
+          
           <div class="degree-header">
-            <img src="./assets/education/nec_logo.png" alt="SOS School Logo" class="degree-logo">
-            <div class="degree-info">
-              <h4 class="degree-title orbitron">Higher Secondary Education</h4>
-              <p class="degree-period orbitron">2020 - 2022</p>
-            </div>
+            <img src="./assets/education/nec_logo.png" alt="SOS Hermann Gmeiner School" class="degree-logo">
+            <p class="degree-period muted">2020 - 2022</p>
           </div>
-          <div class="degree-details">
-            <span class="scholarship-badge orbitron">🏆 Academic Excellence Scholarship</span>
-            <p class="institution-name">SOS Hermann Gmeiner Higher Secondary School</p>
-            <a href="https://nec.edu.np/" target="_blank" class="visit-btn orbitron">Visit Website</a>
+          
+          <h4 class="degree-title orbitron">Higher Secondary Education (Science)</h4>
+          
+          <div class="degree-content">
+            <p class="scholarship-text orbitron">Academic Excellence Scholarship Recipient</p>
+            <p class="institution-text orbitron">SOS Hermann Gmeiner Higher Secondary School</p>
           </div>
         </div>
 
       </div>
 
       <!-- Certifications Section -->
-      <h3 class="subsection-title orbitron">Certifications</h3>
+      <h3 class="subsection-title orbitron">Professional Certifications</h3>
       <div class="certifications-grid">
         
         <div class="cert-card">
@@ -770,18 +788,18 @@
             <img src="./assets/education/deep_learning_logo.png" alt="Deep Learning" class="cert-logo">
           </div>
           <div class="cert-bottom">
-            <h4 class="cert-title orbitron">Deep Learning</h4>
+            <h4 class="cert-title orbitron">Deep Learning Specialization</h4>
             <p class="cert-provider">Andrew Ng</p>
           </div>
         </div>
 
         <div class="cert-card">
           <div class="cert-top" style="background: #10b981;">
-            <img src="./assets/education/google_logo.png" alt="Google" class="cert-logo">
+            <img src="./assets/education/google_logo.png" alt="Google Cloud" class="cert-logo">
           </div>
           <div class="cert-bottom">
-            <h4 class="cert-title orbitron">ML on GCP</h4>
-            <p class="cert-provider">GCP Training</p>
+            <h4 class="cert-title orbitron">Machine Learning on GCP</h4>
+            <p class="cert-provider">Google Cloud Training</p>
           </div>
         </div>
 
@@ -790,7 +808,7 @@
             <img src="./assets/education/ibm_logo.png" alt="IBM" class="cert-logo">
           </div>
           <div class="cert-bottom">
-            <h4 class="cert-title orbitron">Data Science</h4>
+            <h4 class="cert-title orbitron">Data Science Professional</h4>
             <p class="cert-provider">IBM</p>
           </div>
         </div>
@@ -800,7 +818,7 @@
             <img src="./assets/education/microsoft_logo.png" alt="Microsoft" class="cert-logo">
           </div>
           <div class="cert-bottom">
-            <h4 class="cert-title orbitron">Big Data</h4>
+            <h4 class="cert-title orbitron">Big Data Analytics</h4>
             <p class="cert-provider">Microsoft</p>
           </div>
         </div>
@@ -825,11 +843,10 @@
       </div>
 
     </div>
-  </section>
+</section>
 
-
-
-
+  
+  
   
   <style>
     :root {
@@ -858,7 +875,7 @@
 
     .section {
       padding: 80px 20px;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      background: transparent;
     }
 
     .max-w-7xl {
@@ -867,142 +884,136 @@
     }
 
     .section-title {
-      font-size: 3rem;
-      font-weight: 900;
+      font-size: 2.5rem;
+      font-weight: 700;
       text-align: center;
       margin-bottom: 60px;
-      color: var(--accent-cyan);
+      color: #e2e8f0;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    .status-active {
+      background: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
     .subsection-title {
-      font-size: 2rem;
+      font-size: 1.875rem;
       font-weight: 700;
       text-align: center;
       margin-bottom: 40px;
-      color: var(--primary-blue);
+      color: var(--accent-cyan);
       letter-spacing: 1px;
     }
 
-    /* Degree Cards */
+    /* Degree Cards - Side by Side */
     .degrees-container {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 30px;
       margin-bottom: 80px;
     }
 
-    .degree-card {
-      background: var(--card-bg);
-      border: 2px solid var(--primary-blue);
-      border-radius: 12px;
+    .project-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 8px;
       padding: 30px;
       position: relative;
-      overflow: hidden;
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
-    .degree-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+    .project-card:hover {
       border-color: var(--accent-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
     }
 
-    .degree-card::before {
-      content: '';
+    /* HUD Corners */
+    .hud-corner {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-blue), var(--accent-cyan));
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--accent-cyan);
     }
+    .hud-corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+    .hud-corner.tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+    .hud-corner.bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+    .hud-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
 
     .degree-header {
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
       margin-bottom: 20px;
     }
 
     .degree-logo {
-      width: 80px;
-      height: 80px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
-      border: 3px solid var(--accent-cyan);
-      padding: 5px;
-      background: white;
-      flex-shrink: 0;
+      object-fit: cover;
+      border: 2px solid var(--accent-cyan);
     }
 
-    .degree-info {
-      flex: 1;
+    .degree-period {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      font-weight: 500;
     }
 
     .degree-title {
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .degree-content {
+      margin-top: 12px;
+    }
+
+    .scholarship-text {
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--accent-cyan);
       margin-bottom: 8px;
     }
 
-    .degree-period {
+    .institution-text {
       font-size: 1rem;
-      color: #94a3b8;
-      font-weight: 600;
-    }
-
-    .degree-details {
-      margin-top: 20px;
-    }
-
-    .scholarship-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .institution-name {
-      font-size: 1.25rem;
       font-weight: 600;
       color: #cbd5e1;
-      margin-bottom: 15px;
+      line-height: 1.5;
     }
 
-    .visit-btn {
-      display: inline-block;
-      background: var(--primary-blue);
-      color: white;
-      padding: 12px 30px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .visit-btn:hover {
-      background: var(--accent-cyan);
-      transform: translateX(5px);
-    }
-
-    /* Certifications Grid */
+    /* Certifications Grid - 3 columns, 2 rows */
     .certifications-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       margin-bottom: 60px;
     }
 
     .cert-card {
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
       background: white;
       transition: all 0.3s ease;
@@ -1011,7 +1022,7 @@
 
     .cert-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
     .cert-top {
@@ -1023,28 +1034,27 @@
     }
 
     .cert-logo {
-      width: 70px;
-      height: 70px;
+      width: 64px;
+      height: 64px;
       object-fit: contain;
     }
 
     .cert-bottom {
       padding: 20px;
       background: #f8fafc;
-      border-top: 3px solid rgba(0, 0, 0, 0.1);
+      border-top: 1px solid #e2e8f0;
     }
 
     .cert-title {
       font-size: 1.125rem;
       font-weight: 700;
       color: #1e293b;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .cert-provider {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       color: #64748b;
-      font-weight: 500;
     }
 
     /* CTA Button */
@@ -1055,22 +1065,32 @@
 
     .cta-btn {
       display: inline-block;
-      background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-      color: white;
-      padding: 18px 40px;
-      border-radius: 8px;
+      background: var(--primary-blue);
+      color: #000;
+      padding: 14px 32px;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1.125rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+      font-size: 1rem;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
     }
 
     .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5);
+      background: var(--accent-cyan);
+    }
+
+    .muted {
+      color: #94a3b8;
+    }
+
+    @media (max-width: 1024px) {
+      .degrees-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
@@ -1082,15 +1102,6 @@
         font-size: 1.5rem;
       }
 
-      .degree-header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .degree-title {
-        font-size: 1.5rem;
-      }
-
       .certifications-grid {
         grid-template-columns: 1fr;
       }
@@ -1098,6 +1109,11 @@
   </style>
 
 
+
+
+
+
+  
 
 
 
@@ -5267,6 +5283,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
