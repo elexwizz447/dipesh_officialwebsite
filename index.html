@@ -4313,32 +4313,33 @@ normalization</p>
 <style>
   /* Optimize spacing in project-card for grid boxes */
   .project-card {
-    padding: 1rem; /* Further reduced padding */
+    padding: 1rem;
     display: flex;
     flex-direction: column;
   }
 
   /* Tighten heading spacing */
   .project-card h3 {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
     line-height: 1.2;
   }
 
-  /* Minimize list spacing */
+  /* Minimize list spacing - AGGRESSIVE */
   .project-card ul {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem !important;
     margin-top: 0;
+    padding-left: 1rem;
   }
 
   .project-card ul li {
-    margin-bottom: 0.15rem;
-    line-height: 1.3;
+    margin-bottom: 0 !important;
+    line-height: 1.25;
   }
 
-  /* Reduce gap between images */
+  /* Reduce gap between images - MINIMAL */
   .project-card .flex {
-    gap: 0.4rem;
-    margin-top: auto; /* Push images to bottom if needed */
+    gap: 0.3rem;
+    margin-top: 0.25rem !important;
   }
 
   /* Optimize image aspect ratio and sizing */
@@ -4346,12 +4347,21 @@ normalization</p>
     aspect-ratio: 4/3;
     object-fit: cover;
     border-radius: 0.25rem;
+    display: block;
   }
 
-  /* Minimize caption spacing */
-  .text-xs.text-center {
-    margin-top: 0.1rem !important;
-    line-height: 1.2;
+  /* Minimize caption spacing - ZERO GAP */
+  .project-card .text-xs.text-center {
+    margin-top: 0 !important;
+    padding-top: 0.1rem;
+    line-height: 1.1;
+  }
+
+  /* Remove extra spacing from flex containers with images */
+  .project-card .flex-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   /* Ensure grid boxes have consistent height */
@@ -4364,8 +4374,6 @@ normalization</p>
     gap: 1rem;
   }
 </style>
-
-
 
 
 
@@ -5556,6 +5564,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
