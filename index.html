@@ -4117,199 +4117,235 @@ normalization</p>
 
 
 
-
 <!-- ====================== INTERNSHIP EXPERIENCE SECTION ====================== -->
-<section id="internship" class="py-16 bg-gradient-to-b from-[#03060a] to-[#0a1a2a] text-gray-200 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4">
-
-    <!-- HEADER -->
-    <h2 class="orbitron text-4xl md:text-5xl font-bold text-center mb-12 text-accent-cyan tracking-wide relative">
-      <span class="inline-block animate-pulse-glow mr-2">⚙️</span>INTERNSHIP EXPERIENCE
-      <div class="w-24 h-[3px] bg-[var(--accent-cyan)] mx-auto mt-2 rounded-full opacity-80"></div>
+<section id="internship" class="section aerospace-bg">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="orbitron text-4xl font-bold text-center mb-12">
+      <span class="status-indicator status-active"></span>INTERNSHIP EXPERIENCE
     </h2>
 
-    <!-- INTRO BOX -->
-    <div class="relative bg-[#0f1e33]/70 backdrop-blur-md border border-[var(--accent-cyan)]/40 rounded-2xl p-6 mb-14 shadow-[0_0_20px_rgba(0,255,255,0.15)] hover:shadow-[0_0_25px_rgba(0,255,255,0.35)] transition-all duration-300">
-      <h3 class="orbitron text-2xl text-accent-cyan font-semibold mb-3">Manipal Teaching Hospital, Pokhara</h3>
-      <p class="text-gray-300"><strong>Role:</strong> Electrical Engineering Intern</p>
-      <p class="text-gray-300"><strong>Duration:</strong> April 20, 2025 – July 21, 2025</p>
-      <hr class="border-gray-700 my-3">
-      <p class="text-gray-400 leading-relaxed">
-        Completed a 3-month internship under the Engineering Department, focusing on hospital power systems,
-        automation, and design supervision.
-      </p>
+    <!-- MAIN HOSPITAL BOX -->
+    <div class="project-card hologram mb-12">
+      <div class="hud-corner tl"></div>
+      <div class="hud-corner tr"></div>
+      <div class="hud-corner bl"></div>
+      <div class="hud-corner br"></div>
+      
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <!-- LEFT: LOGO + TITLE + TEXT -->
+        <div class="flex-1">
+          <!-- LOGO PLACEHOLDER (add your logo src) -->
+          <div class="flex items-center mb-4">
+            <img src="./assets/internship/manipal-logo.png" alt="Manipal Teaching Hospital Logo" class="w-16 h-16 mr-4 object-contain"> <!-- Replace with actual logo path -->
+            <h3 class="orbitron text-2xl font-bold text-accent-cyan">Manipal Teaching Hospital, Pokhara</h3>
+          </div>
+          
+          <!-- TEXT BELOW -->
+          <p class="text-sm mb-2"><strong>Role:</strong> Electrical Engineering Intern</p>
+          <p class="text-sm mb-2"><strong>Duration:</strong> April 20, 2025 – July 21, 2025</p>
+          <hr class="border-[var(--accent-cyan)]/30 my-3">
+          <p class="text-sm leading-relaxed">
+            Completed a 3-month internship under the Engineering Department, focusing on hospital power systems,
+            automation, and design supervision. Assisted in power distribution audits, fault analysis, and system upgrades for hospital reliability. Gained hands-on experience with SCADA systems and load balancing.
+          </p>
+        </div>
+        
+        <!-- RIGHT: 16:9 IMAGE SPACE -->
+        <div class="flex-1 w-full aspect-[16/9] bg-[var(--secondary-blue)]/20 rounded-lg overflow-hidden cursor-pointer" onclick="openModal('./graphics/manipal-hospital.jpg', 'Manipal Teaching Hospital Overview')">
+          <img src="./graphics/manipal-hospital.jpg" alt="Manipal Teaching Hospital Overview" class="w-full h-full object-cover"> <!-- Replace with actual image path -->
+          <p class="text-xs text-center mt-1">Manipal Teaching Hospital Overview</p> <!-- Caption below photo -->
+        </div>
+      </div>
+
+      <!-- REQUEST BUTTON -->
+      <a href="mailto:deepak.poudel@student.isae-supaero.fr?subject=Manipal Internship Details" class="block mt-6 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Request Details</a>
     </div>
 
-    <!-- GRID SECTION -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- BOX TEMPLATE (repeat 6x) -->
+    <!-- GRID OF 6 BOXES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- BOX 1 -->
-      <div class="internship-card">
-        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">⚡ POWER SYSTEM ARCHITECHTURE</h3>
-        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+      <div class="project-card">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">⚡ POWER SYSTEM ARCHITECTURE</h3>
+        <ul class="text-sm mb-4 list-disc pl-4">
           <li>Studied hospital power architecture.</li>
           <li>Understood ATS, AVR, and grid backup mechanisms.</li>
         </ul>
-        <div class="internship-img-row">
-          <img src="./graphics/manipal9.jpg" alt="Power diagram">
-          <img src="./graphics/manipal12.jpg" alt="panel wiring">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+            <img src="./graphics/manipal9.jpg" alt="Power diagram" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal9.jpg', 'Power diagram')">
+            <p class="text-xs text-center mt-1">Power diagram</p>
+          </div>
+          <div class="flex-1">
+            <img src="./graphics/manipal12.jpg" alt="Panel wiring" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal12.jpg', 'Panel wiring')">
+            <p class="text-xs text-center mt-1">Panel wiring</p>
+          </div>
         </div>
       </div>
 
       <!-- BOX 2 -->
-      <div class="internship-card">
-        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">🧠 AUTOMATION & CONTROL</h3>
-        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+      <div class="project-card">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">🧠 AUTOMATION & CONTROL</h3>
+        <ul class="text-sm mb-4 list-disc pl-4">
           <li>Worked with PLC, SCADA, and HMI systems.</li>
           <li>Understood PLC logic for ATS switching.</li>
         </ul>
-        <div class="internship-img-row">
-          <img src="./graphics/manipal6.jpg" alt="PLC Panel">
-          <img src="./graphics/manipal8.jpg" alt="SCADA System">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+            <img src="./graphics/manipal6.jpg" alt="PLC Panel" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal6.jpg', 'PLC Panel')">
+            <p class="text-xs text-center mt-1">PLC Panel</p>
+          </div>
+          <div class="flex-1">
+            <img src="./graphics/manipal8.jpg" alt="SCADA System" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal8.jpg', 'SCADA System')">
+            <p class="text-xs text-center mt-1">SCADA System</p>
+          </div>
         </div>
       </div>
 
       <!-- BOX 3 -->
-      <div class="internship-card">
-        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">🏗️ DESIGN & DRAFTING</h3>
-        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+      <div class="project-card">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">🏗️ DESIGN & DRAFTING</h3>
+        <ul class="text-sm mb-4 list-disc pl-4">
           <li>Created AutoCAD layouts for panels and circuits.</li>
           <li>Designed sub-circuits and electrical drawings.</li>
         </ul>
-        <div class="internship-img-row">
-          <img src="./graphics/manipal16.png" alt="Autocad Design">
-          <img src="./graphics/manipal15.png" alt="Panel Design Autocad">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+            <img src="./graphics/manipal16.png" alt="Autocad Design" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal16.png', 'Autocad Design')">
+            <p class="text-xs text-center mt-1">Autocad Design</p>
+          </div>
+          <div class="flex-1">
+            <img src="./graphics/manipal15.png" alt="Panel Design Autocad" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal15.png', 'Panel Design Autocad')">
+            <p class="text-xs text-center mt-1">Panel Design Autocad</p>
+          </div>
         </div>
       </div>
 
       <!-- BOX 4 -->
-      <div class="internship-card">
-        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">💡 ONCOLOGY PANEL & LIGHTING</h3>
-        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+      <div class="project-card">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">💡 ONCOLOGY PANEL & LIGHTING</h3>
+        <ul class="text-sm mb-4 list-disc pl-4">
           <li>Supervised Oncology Department circuits.</li>
           <li>Ensured safety, grounding, and load balance.</li>
         </ul>
-        <div class="internship-img-row">
-          <img src="./graphics/manipal18.png" alt="Oncology wiring design">
-          <img src="./graphics/manipal19.jpg" alt="Physical Panel">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+            <img src="./graphics/manipal18.png" alt="Oncology wiring design" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal18.png', 'Oncology wiring design')">
+            <p class="text-xs text-center mt-1">Oncology wiring design</p>
+          </div>
+          <div class="flex-1">
+            <img src="./graphics/manipal19.jpg" alt="Physical Panel" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal19.jpg', 'Physical Panel')">
+            <p class="text-xs text-center mt-1">Physical Panel</p>
+          </div>
         </div>
       </div>
 
       <!-- BOX 5 -->
-      <div class="internship-card">
-        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">🧰 MAINTENANCE & FIELD WORK</h3>
-        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+      <div class="project-card">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">🧰 MAINTENANCE & FIELD WORK</h3>
+        <ul class="text-sm mb-4 list-disc pl-4">
           <li>Assisted in ETP, incinerator, and pump maintenance.</li>
           <li>Conducted field inspections and diagnostics.</li>
         </ul>
-        <div class="internship-img-row">
-          <img src="./graphics/manipal20.jpg" alt="Compressor Star delta starting check">
-          <img src="./graphics/manipal13.jpg" alt="transformer tap changing test">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+            <img src="./graphics/manipal20.jpg" alt="Compressor Star delta starting check" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal20.jpg', 'Compressor Star delta starting check')">
+            <p class="text-xs text-center mt-1">Compressor Star delta starting check</p>
+          </div>
+          <div class="flex-1">
+            <img src="./graphics/manipal13.jpg" alt="transformer tap changing test" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal13.jpg', 'transformer tap changing test')">
+            <p class="text-xs text-center mt-1">transformer tap changing test</p>
+          </div>
         </div>
       </div>
 
       <!-- BOX 6 -->
-      <div class="internship-card">
-        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">📊 DATA & REPORTING</h3>
-        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+      <div class="project-card">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">📊 DATA & REPORTING</h3>
+        <ul class="text-sm mb-4 list-disc pl-4">
           <li>Performed load profiling and energy analytics.</li>
           <li>Prepared performance reports and upgrade suggestions.</li>
         </ul>
-        <div class="internship-img-row">
-          <img src="./graphics/manipal22.png" alt="load clustering analysis">
-          <img src="./graphics/manipal26.png" alt="Oncology Proposed Design Sample">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+            <img src="./graphics/manipal22.png" alt="load clustering analysis" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal22.png', 'load clustering analysis')">
+            <p class="text-xs text-center mt-1">load clustering analysis</p>
+          </div>
+          <div class="flex-1">
+            <img src="./graphics/manipal26.png" alt="Oncology Proposed Design Sample" class="project-image w-full h-auto rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal26.png', 'Oncology Proposed Design Sample')">
+            <p class="text-xs text-center mt-1">Oncology Proposed Design Sample</p>
+          </div>
         </div>
       </div>
-
     </div>
 
     <!-- BUTTONS -->
     <div class="flex flex-wrap justify-center gap-6 mt-14">
-      <a href="./files/internship_report.pdf" target="_blank" class="btn-holo">Download Report PDF</a>
-      <a href="https://linkedin.com/in/dipeshpoudel" target="_blank" class="btn-holo">LinkedIn</a>
-      <a href="./files/internship_certificate.pdf" target="_blank" class="btn-holo">View Certificate</a>
+      <a href="./files/internship_report.pdf" target="_blank" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">Download Report PDF</a>
+      <a href="https://linkedin.com/in/dipeshpoudel" target="_blank" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">LinkedIn</a>
+      <a href="./files/internship_certificate.pdf" target="_blank" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">View Certificate</a>
     </div>
-
   </div>
 </section>
 
 <!-- ====================== STYLES ====================== -->
 <style>
-  :root {
-    --accent-cyan: #00ffff;
-    --primary-blue: #3b82f6;
-  }
-
-  /* glowing section pulse */
-  @keyframes pulse-glow {
-    0%, 100% { text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff; opacity: 1; }
-    50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; opacity: 0.8; }
-  }
-  .animate-pulse-glow { animation: pulse-glow 2s infinite ease-in-out; }
-
-  /* internship cards */
+  /* Reuse existing website styles; no additional dark bg-gradient needed as section uses aerospace-bg */
+  
+  /* Keep custom styles if necessary, but align with website */
   .internship-card {
-    background: rgba(15, 25, 45, 0.75);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
-    transition: all 0.35s ease;
-    min-height: 330px;
-  }
-  .internship-card:hover {
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
-    transform: translateY(-4px);
-    border-color: rgba(0, 255, 255, 0.6);
-  }
-
-  .internship-img-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.6rem;
-  }
-  .internship-img-row img {
-    width: 50%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 255, 255, 0.25);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  .internship-img-row img:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-    border-color: rgba(0, 255, 255, 0.7);
-  }
-
-  /* buttons */
-  .btn-holo {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 600;
-    color: #000;
-    background: var(--primary-blue);
-    padding: 0.6rem 1.8rem;
-    border-radius: 10px;
-    letter-spacing: 0.5px;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+    background: rgba(0, 0, 0, 0.8); /* Match project-card bg */
+    border: 1px solid var(--primary-blue);
+    border-radius: 15px;
+    padding: 2rem;
     transition: all 0.3s ease;
-  }
-  .btn-holo:hover {
-    background: var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-    transform: translateY(-2px);
+    position: relative;
+    overflow: hidden;
   }
 
-  @media (max-width: 768px) {
-    .internship-card { min-height: auto; }
-    .internship-img-row img { height: 130px; }
+  .internship-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+  }
+
+  /* Shake animation for hover effect (from existing) */
+  .shake-on-hover {
+    transition: transform 0.5s ease-in-out;
+  }
+  .shake-on-hover:hover {
+    animation: shake 5s infinite;
+  }
+  @keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(2px, 2px) rotate(0.5deg); }
+    50% { transform: translate(-2px, -2px) rotate(-0.5deg); }
+    75% { transform: translate(2px, -2px) rotate(0.5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
   }
 </style>
-
-
-
-
 
 
 
@@ -5510,6 +5546,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
