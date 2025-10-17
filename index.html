@@ -4117,265 +4117,194 @@ normalization</p>
 
 
 
-<!-- INTERNSHIP EXPERIENCE SECTION -->
-<section id="internship" class="section interests-bg">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="orbitron text-4xl font-bold text-center mb-12">
-      <span class="status-indicator status-active"></span>INTERNSHIP EXPERIENCE
+<!-- ====================== INTERNSHIP EXPERIENCE SECTION ====================== -->
+<section id="internship" class="py-16 bg-gradient-to-b from-[#03060a] to-[#0a1a2a] text-gray-200 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- HEADER -->
+    <h2 class="orbitron text-4xl md:text-5xl font-bold text-center mb-12 text-accent-cyan tracking-wide relative">
+      <span class="inline-block animate-pulse-glow mr-2">⚙️</span>INTERNSHIP EXPERIENCE
+      <div class="w-24 h-[3px] bg-[var(--accent-cyan)] mx-auto mt-2 rounded-full opacity-80"></div>
     </h2>
 
-    <!-- 3x2 GRID LAYOUT -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+    <!-- INTRO BOX -->
+    <div class="relative bg-[#0f1e33]/70 backdrop-blur-md border border-[var(--accent-cyan)]/40 rounded-2xl p-6 mb-14 shadow-[0_0_20px_rgba(0,255,255,0.15)] hover:shadow-[0_0_25px_rgba(0,255,255,0.35)] transition-all duration-300">
+      <h3 class="orbitron text-2xl text-accent-cyan font-semibold mb-3">Manipal Teaching Hospital, Pokhara</h3>
+      <p class="text-gray-300"><strong>Role:</strong> Electrical Engineering Intern</p>
+      <p class="text-gray-300"><strong>Duration:</strong> April 20, 2025 – July 21, 2025</p>
+      <hr class="border-gray-700 my-3">
+      <p class="text-gray-400 leading-relaxed">
+        Completed a 3-month internship under the Engineering Department, focusing on hospital power systems,
+        automation, and design supervision.
+      </p>
+    </div>
 
-      <!-- BOX 1: Power Architecture & ATS Systems -->
-      <div class="project-card hologram small-card">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+    <!-- GRID SECTION -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-        <h3 class="orbitron text-lg font-bold mb-2 text-accent-cyan">
-          Power Architecture & ATS Systems
-        </h3>
-        <p class="text-sm mb-3">
-          Studied hospital power design, grid-backup coordination, bus coupling, and automatic transfer systems ensuring uninterrupted supply.
-        </p>
-
-        <!-- Image Carousel -->
-        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)] carousel-box">
-          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel-1">
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/power_architecture1.jpg" alt="ATS Setup" onclick="openModal('./graphics/power_architecture1.jpg', 'ATS Setup')" />
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/power_architecture2.jpg" alt="Power Layout" onclick="openModal('./graphics/power_architecture2.jpg', 'Power Layout')" />
-            </div>
-          </div>
-          <button onclick="slideCarousel('carousel-1', -1)" class="carousel-btn left">‹</button>
-          <button onclick="slideCarousel('carousel-1', 1)" class="carousel-btn right">›</button>
+      <!-- BOX TEMPLATE (repeat 6x) -->
+      <!-- BOX 1 -->
+      <div class="internship-card">
+        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">⚡ POWER SYSTEMS</h3>
+        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+          <li>Studied hospital power architecture.</li>
+          <li>Understood ATS, AVR, and grid backup mechanisms.</li>
+        </ul>
+        <div class="internship-img-row">
+          <img src="./graphics/power1.jpg" alt="Power Architecture">
+          <img src="./graphics/power2.jpg" alt="ATS System">
         </div>
       </div>
 
-      <!-- BOX 2: PLC, SCADA & HMI Systems -->
-      <div class="project-card hologram small-card">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-
-        <h3 class="orbitron text-lg font-bold mb-2 text-accent-cyan">
-          PLC, SCADA & HMI Systems
-        </h3>
-        <p class="text-sm mb-3">
-          Observed automation and centralized control using PLC, SCADA, and HMI systems to enhance reliability and real-time monitoring.
-        </p>
-
-        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)] carousel-box">
-          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel-2">
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/plc_scada1.jpg" alt="PLC Control Room" onclick="openModal('./graphics/plc_scada1.jpg', 'PLC Control Room')" />
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/plc_scada2.jpg" alt="SCADA Interface" onclick="openModal('./graphics/plc_scada2.jpg', 'SCADA Interface')" />
-            </div>
-          </div>
-          <button onclick="slideCarousel('carousel-2', -1)" class="carousel-btn left">‹</button>
-          <button onclick="slideCarousel('carousel-2', 1)" class="carousel-btn right">›</button>
+      <!-- BOX 2 -->
+      <div class="internship-card">
+        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">🧠 AUTOMATION & CONTROL</h3>
+        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+          <li>Worked with PLC, SCADA, and HMI systems.</li>
+          <li>Understood PLC logic for ATS switching.</li>
+        </ul>
+        <div class="internship-img-row">
+          <img src="./graphics/automation1.jpg" alt="PLC Panel">
+          <img src="./graphics/automation2.jpg" alt="SCADA System">
         </div>
       </div>
 
-      <!-- BOX 3: AutoCAD Design Layouts -->
-      <div class="project-card hologram small-card">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-
-        <h3 class="orbitron text-lg font-bold mb-2 text-accent-cyan">
-          AutoCAD Design & Layouts
-        </h3>
-        <p class="text-sm mb-3">
-          Created detailed electrical panel and lighting circuit layouts using AutoCAD for hospital infrastructure planning.
-        </p>
-
-        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)] carousel-box">
-          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel-3">
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/autocad1.jpg" alt="Panel Layout" onclick="openModal('./graphics/autocad1.jpg', 'Panel Layout')" />
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/autocad2.jpg" alt="Circuit Design" onclick="openModal('./graphics/autocad2.jpg', 'Circuit Design')" />
-            </div>
-          </div>
-          <button onclick="slideCarousel('carousel-3', -1)" class="carousel-btn left">‹</button>
-          <button onclick="slideCarousel('carousel-3', 1)" class="carousel-btn right">›</button>
+      <!-- BOX 3 -->
+      <div class="internship-card">
+        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">🏗️ DESIGN & DRAFTING</h3>
+        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+          <li>Created AutoCAD layouts for panels and circuits.</li>
+          <li>Designed sub-circuits and electrical drawings.</li>
+        </ul>
+        <div class="internship-img-row">
+          <img src="./graphics/autocad1.jpg" alt="AutoCAD Layout">
+          <img src="./graphics/autocad2.jpg" alt="Electrical Design">
         </div>
       </div>
 
-      <!-- BOX 4: Oncology Panel & Lighting Design -->
-      <div class="project-card hologram small-card">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-
-        <h3 class="orbitron text-lg font-bold mb-2 text-accent-cyan">
-          Oncology Panel & Lighting Design
-        </h3>
-        <p class="text-sm mb-3">
-          Assisted in electrical layout and supervision for oncology unit panel design and critical lighting systems installation.
-        </p>
-
-        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)] carousel-box">
-          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel-4">
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/oncology1.jpg" alt="Oncology Panel Setup" onclick="openModal('./graphics/oncology1.jpg', 'Oncology Panel Setup')" />
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/oncology2.jpg" alt="Lighting Design" onclick="openModal('./graphics/oncology2.jpg', 'Lighting Design')" />
-            </div>
-          </div>
-          <button onclick="slideCarousel('carousel-4', -1)" class="carousel-btn left">‹</button>
-          <button onclick="slideCarousel('carousel-4', 1)" class="carousel-btn right">›</button>
+      <!-- BOX 4 -->
+      <div class="internship-card">
+        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">💡 ONCOLOGY PANEL & LIGHTING</h3>
+        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+          <li>Supervised Oncology Department circuits.</li>
+          <li>Ensured safety, grounding, and load balance.</li>
+        </ul>
+        <div class="internship-img-row">
+          <img src="./graphics/oncology1.jpg" alt="Oncology Panel">
+          <img src="./graphics/oncology2.jpg" alt="Lighting System">
         </div>
       </div>
 
-      <!-- BOX 5: Load Profiling & Analysis -->
-      <div class="project-card hologram small-card">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-
-        <h3 class="orbitron text-lg font-bold mb-2 text-accent-cyan">
-          Load Profiling & Analysis
-        </h3>
-        <p class="text-sm mb-3">
-          Conducted load profiling and energy cost estimation using Python and K-Means clustering to optimize hospital power consumption.
-        </p>
-
-        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)] carousel-box">
-          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel-5">
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/load_analysis1.jpg" alt="Load Analysis Graph" onclick="openModal('./graphics/load_analysis1.jpg', 'Load Analysis Graph')" />
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/load_analysis2.jpg" alt="Energy Profiling Dashboard" onclick="openModal('./graphics/load_analysis2.jpg', 'Energy Profiling Dashboard')" />
-            </div>
-          </div>
-          <button onclick="slideCarousel('carousel-5', -1)" class="carousel-btn left">‹</button>
-          <button onclick="slideCarousel('carousel-5', 1)" class="carousel-btn right">›</button>
+      <!-- BOX 5 -->
+      <div class="internship-card">
+        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">🧰 MAINTENANCE & FIELD WORK</h3>
+        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+          <li>Assisted in ETP, incinerator, and pump maintenance.</li>
+          <li>Conducted field inspections and diagnostics.</li>
+        </ul>
+        <div class="internship-img-row">
+          <img src="./graphics/field1.jpg" alt="Field Inspection">
+          <img src="./graphics/field2.jpg" alt="Maintenance Work">
         </div>
       </div>
 
-      <!-- BOX 6: Auxiliary Systems Supervision -->
-      <div class="project-card hologram small-card">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-
-        <h3 class="orbitron text-lg font-bold mb-2 text-accent-cyan">
-          Auxiliary Systems Supervision
-        </h3>
-        <p class="text-sm mb-3">
-          Supervised maintenance and inspection of auxiliary systems like pump house, incinerator, and ETP ensuring operational reliability.
-        </p>
-
-        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)] carousel-box">
-          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="carousel-6">
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/auxiliary1.jpg" alt="Pump House" onclick="openModal('./graphics/auxiliary1.jpg', 'Pump House')" />
-            </div>
-            <div class="carousel-item flex-shrink-0 w-full">
-              <img src="./graphics/auxiliary2.jpg" alt="ETP System" onclick="openModal('./graphics/auxiliary2.jpg', 'ETP System')" />
-            </div>
-          </div>
-          <button onclick="slideCarousel('carousel-6', -1)" class="carousel-btn left">‹</button>
-          <button onclick="slideCarousel('carousel-6', 1)" class="carousel-btn right">›</button>
+      <!-- BOX 6 -->
+      <div class="internship-card">
+        <h3 class="orbitron text-xl font-semibold text-accent-cyan mb-2">📊 DATA & REPORTING</h3>
+        <ul class="text-sm text-gray-300 list-disc pl-4 mb-4">
+          <li>Performed load profiling and energy analytics.</li>
+          <li>Prepared performance reports and upgrade suggestions.</li>
+        </ul>
+        <div class="internship-img-row">
+          <img src="./graphics/data1.jpg" alt="Data Visualization">
+          <img src="./graphics/data2.jpg" alt="Load Graph">
         </div>
       </div>
 
     </div>
+
+    <!-- BUTTONS -->
+    <div class="flex flex-wrap justify-center gap-6 mt-14">
+      <a href="./files/internship_report.pdf" target="_blank" class="btn-holo">Download Report PDF</a>
+      <a href="https://linkedin.com/in/dipeshpoudel" target="_blank" class="btn-holo">LinkedIn</a>
+      <a href="./files/internship_certificate.pdf" target="_blank" class="btn-holo">View Certificate</a>
+    </div>
+
   </div>
 </section>
 
-<!-- CAROUSEL & MODAL STYLES -->
+<!-- ====================== STYLES ====================== -->
 <style>
-  .small-card {
-    padding: 1.2rem;
-    min-height: 480px;
+  :root {
+    --accent-cyan: #00ffff;
+    --primary-blue: #3b82f6;
   }
 
-  .carousel-box {
-    height: 220px;
-    position: relative;
+  /* glowing section pulse */
+  @keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff; opacity: 1; }
+    50% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; opacity: 0.8; }
+  }
+  .animate-pulse-glow { animation: pulse-glow 2s infinite ease-in-out; }
+
+  /* internship cards */
+  .internship-card {
+    background: rgba(15, 25, 45, 0.75);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+    transition: all 0.35s ease;
+    min-height: 330px;
+  }
+  .internship-card:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+    transform: translateY(-4px);
+    border-color: rgba(0, 255, 255, 0.6);
   }
 
-  .carousel-container {
+  .internship-img-row {
     display: flex;
-    width: 100%;
-    height: 220px;
+    justify-content: space-between;
+    gap: 0.6rem;
   }
-  .carousel-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    cursor: pointer;
+  .internship-img-row img {
+    width: 50%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .internship-img-row img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    border-color: rgba(0, 255, 255, 0.7);
   }
 
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  /* buttons */
+  .btn-holo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    color: #000;
     background: var(--primary-blue);
-    color: black;
-    padding: 4px 10px;
-    border-radius: 4px;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+    padding: 0.6rem 1.8rem;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
   }
-  .carousel-btn:hover { opacity: 1; }
-  .carousel-btn.left { left: 5px; }
-  .carousel-btn.right { right: 5px; }
+  .btn-holo:hover {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    transform: translateY(-2px);
+  }
 
-  /* MODAL */
-  .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0,0,0,0.9);
-    z-index: 1000;
-  }
-  .modal-content {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    max-width: 90%; max-height: 90%;
-  }
-  .modal-caption {
-    text-align: center;
-    color: white;
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  .close {
-    position: absolute; top: 10px; right: 20px;
-    color: white; font-size: 28px; cursor: pointer;
+  @media (max-width: 768px) {
+    .internship-card { min-height: auto; }
+    .internship-img-row img { height: 130px; }
   }
 </style>
-
-<script>
-  function slideCarousel(id, direction) {
-    const carousel = document.getElementById(id);
-    let current = parseInt(carousel.dataset.index || 0);
-    const items = carousel.children.length;
-    current = (current + direction + items) % items;
-    carousel.dataset.index = current;
-    carousel.style.transform = `translateX(-${current * 100}%)`;
-  }
-
-  function openModal(src, caption) {
-    const modal = document.createElement("div");
-    modal.className = "modal";
-    modal.innerHTML = `
-      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img src="${src}" class="modal-content" />
-      <div class="modal-caption">${caption}</div>
-    `;
-    document.body.appendChild(modal);
-    modal.style.display = "block";
-  }
-</script>
-
 
 
 
@@ -5580,6 +5509,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
