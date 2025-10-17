@@ -4282,7 +4282,9 @@ normalization</p>
         <div class="hud-corner br"></div>
         <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">📊 DATA & REPORTING</h3>
         <ul class="text-sm mb-2 list-disc pl-4">
-          <li>Performed a detailed python based load profiling and energy analytics.</li>
+
+  <li>Rviewed and Finalized Oncology Panel and Circiut Design. </li>
+  <li>Performed a detailed python based load profiling and energy analytics.</li>
           <li>Prepared and presented performance reports and upgrade suggestions.</li>
         </ul>
         <div class="flex flex-col md:flex-row gap-2">
@@ -4309,39 +4311,59 @@ normalization</p>
 
 <!-- ====================== STYLES ====================== -->
 <style>
-  /* Tighten spacing in project-card */
+  /* Optimize spacing in project-card for grid boxes */
   .project-card {
-    padding: 1.5rem; /* Reduced from 2rem */
+    padding: 1rem; /* Further reduced padding */
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Reduce margins */
+  /* Tighten heading spacing */
   .project-card h3 {
-    margin-bottom: 0.5rem; /* Reduced mb-4 to mb-2, but tightened further */
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
   }
 
+  /* Minimize list spacing */
   .project-card ul {
-    margin-bottom: 0.5rem; /* Reduced mb-4 to mb-2 */
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
+  .project-card ul li {
+    margin-bottom: 0.15rem;
+    line-height: 1.3;
+  }
+
+  /* Reduce gap between images */
   .project-card .flex {
-    gap: 0.5rem; /* Reduced gap-4 to gap-2 */
+    gap: 0.4rem;
+    margin-top: auto; /* Push images to bottom if needed */
   }
 
-  /* Set fixed aspect ratio for images */
+  /* Optimize image aspect ratio and sizing */
   .project-image {
-    aspect-ratio: 4/3; /* 4:3 ratio as requested */
-    object-fit: cover; /* Cover to fill without distortion */
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 0.25rem;
   }
 
-  /* Remove mt-1 from captions, use mt-0 */
+  /* Minimize caption spacing */
   .text-xs.text-center {
-    margin-top: 0 !important;
+    margin-top: 0.1rem !important;
+    line-height: 1.2;
+  }
+
+  /* Ensure grid boxes have consistent height */
+  .grid.grid-cols-1.md\:grid-cols-2 > .project-card {
+    height: 100%;
+  }
+
+  /* Tighten grid gap */
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    gap: 1rem;
   }
 </style>
-
-
-
-
 
 
 
@@ -5534,6 +5556,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
