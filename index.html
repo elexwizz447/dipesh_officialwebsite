@@ -4112,268 +4112,439 @@ normalization</p>
 
 
 
+  <style>
+    :root {
+      --accent-cyan: #00ffff;
+      --primary-blue: #3b82f6;
+      --secondary-blue: #1e3a5f;
+      --bg-dark: #03060a;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<!-- ====================== INTERNSHIP EXPERIENCE SECTION ====================== -->
-<section id="internship" class="section aerospace-bg">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="orbitron text-4xl font-bold text-center mb-12">
-      <span class="status-indicator status-active"></span>INTERNSHIP EXPERIENCE
-    </h2>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #03060a, #0a1a2a);
+      color: #e5e7eb;
+      min-height: 100vh;
+      padding: 2rem;
+    }
 
-    <!-- MAIN HOSPITAL BOX -->
-    <div class="project-card hologram mb-12">
-      <div class="hud-corner tl"></div>
-      <div class="hud-corner tr"></div>
-      <div class="hud-corner bl"></div>
-      <div class="hud-corner br"></div>
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid var(--accent-cyan);
+    }
+
+    .modal-caption {
+      text-align: center;
+      color: var(--accent-cyan);
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-modal:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Section styles */
+    .section {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--accent-cyan);
+      margin-bottom: 3rem;
+      letter-spacing: 2px;
+    }
+
+    /* Main hospital box */
+    .main-box {
+      background: rgba(15, 25, 45, 0.75);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+    }
+
+    .main-box h3 {
+      font-size: 1.8rem;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+    }
+
+    .main-box p {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+    }
+
+    .main-box hr {
+      border: none;
+      border-top: 1px solid rgba(0, 255, 255, 0.3);
+      margin: 1rem 0;
+    }
+
+    .request-btn {
+      display: block;
+      margin-top: 1.5rem;
+      background: var(--primary-blue);
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      transition: all 0.3s;
+    }
+
+    .request-btn:hover {
+      background: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    }
+
+    /* Grid boxes */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background: rgba(15, 25, 45, 0.75);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+      transform: translateY(-4px);
+      border-color: rgba(0, 255, 255, 0.6);
+    }
+
+    .project-card h3 {
+      font-size: 1.1rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .project-card ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin-bottom: 0.75rem;
+      flex-grow: 1;
+    }
+
+    .project-card ul li {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+      color: #d1d5db;
+    }
+
+    .img-container {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .img-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 255, 255, 0.25);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .img-wrapper img:hover {
+      transform: scale(1.03);
+      border-color: rgba(0, 255, 255, 0.7);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    }
+
+    .img-caption {
+      font-size: 0.7rem;
+      text-align: center;
+      color: #9ca3af;
+      margin-top: 0.25rem;
+      line-height: 1.2;
+    }
+
+    /* Buttons */
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      color: #000;
+      background: var(--primary-blue);
+      padding: 0.75rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
       
-      <div class="flex flex-col md:flex-row items-start gap-6">
-        <!-- LEFT: LOGO + TITLE + TEXT -->
-        <div class="flex-1">
-          <!-- LOGO PLACEHOLDER (add your logo src) -->
-          <div class="flex items-center mb-4">
-            <img src="./assets/internship/manipal-logo.png" alt="Manipal Teaching Hospital Logo" class="w-16 h-16 mr-4 object-contain"> <!-- Replace with actual logo path -->
-            <h3 class="orbitron text-2xl font-bold text-accent-cyan">Manipal Teaching Hospital, Pokhara</h3>
-          </div>
-          
-          <!-- TEXT BELOW -->
-          <p class="text-sm mb-2"><strong>Role:</strong> Electrical Engineering Intern</p>
-          <p class="text-sm mb-2"><strong>Duration:</strong> April 20, 2025 – July 21, 2025</p>
-          <hr class="border-[var(--accent-cyan)]/30 my-3">
-          <p class="text-sm leading-relaxed">
-            Completed a 3-month internship under the Engineering Department, focusing on hospital power systems,
-            automation, and design supervision. Assisted in power distribution audits, fault analysis, and system upgrades for hospital reliability. Gained hands-on experience with SCADA systems and load balancing.
-          </p>
-        </div>
-        
-        <!-- RIGHT: 16:9 IMAGE SPACE -->
-        <div class="flex-1 w-full aspect-[16/9] bg-[var(--secondary-blue)]/20 rounded-lg overflow-hidden cursor-pointer" onclick="openModal('./graphics/manipal-hospital.jpg', 'Manipal Teaching Hospital Overview')">
-          <img src="./graphics/manipal-hospital.jpg" alt="Manipal Teaching Hospital Overview" class="w-full h-full object-cover"> <!-- Replace with actual image path -->
-          <p class="text-xs text-center mt-1">Manipal Teaching Hospital Overview</p> <!-- Caption below photo -->
-        </div>
-      </div>
+      .img-wrapper img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
 
-      <!-- REQUEST BUTTON -->
-      <a href="mailto:deepak.poudel@student.isae-supaero.fr?subject=Manipal Internship Details" class="block mt-6 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Request Details</a>
+  <section class="section">
+    <h2 class="orbitron">⚙️ INTERNSHIP EXPERIENCE</h2>
+
+    <!-- Main Hospital Box -->
+    <div class="main-box">
+      <h3 class="orbitron">Manipal Teaching Hospital, Pokhara</h3>
+      <p><strong>Role:</strong> Electrical Engineering Intern</p>
+      <p><strong>Duration:</strong> April 20, 2025 – July 21, 2025</p>
+      <hr>
+      <p>Completed a 3-month internship under the Engineering Department, focusing on hospital power systems, automation, and design supervision. Assisted in power distribution audits, fault analysis, and system upgrades for hospital reliability. Gained hands-on experience with SCADA systems and load balancing.</p>
+      <a href="mailto:deepak.poudel@student.isae-supaero.fr?subject=Manipal Internship Details" class="request-btn">Request Details</a>
     </div>
 
-    <!-- GRID OF 6 BOXES: 3 rows x 2 columns -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- BOX 1 -->
+    <!-- Grid of 6 boxes -->
+    <div class="grid">
+      
+      <!-- Box 1 -->
       <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">⚡ POWER SYSTEM ARCHITECTURE</h3>
-        <ul class="text-sm mb-2 list-disc pl-4">
-          <li>Studied hospital power architecture including grid-backup coordination, bus coupling, Automatic Transfer Switch (ATS), and Automatic Voltage Regulator (AVR) systems..</li>
+        <h3 class="orbitron">⚡ POWER SYSTEM ARCHITECTURE</h3>
+        <ul>
+          <li>Studied hospital power architecture including grid-backup coordination, bus coupling, Automatic Transfer Switch (ATS), and Automatic Voltage Regulator (AVR) systems.</li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
-          <div class="flex-1">
-            <img src="./graphics/manipal9.jpg" alt="Power diagram" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal9.jpg', 'Power diagram')">
-            <p class="text-xs text-center mt-0">Power diagram</p>
+        <div class="img-container">
+          <div class="img-wrapper">
+            <img src="./graphics/manipal9.jpg" alt="Power diagram" onclick="openModal(this.src, 'Power diagram')">
+            <p class="img-caption">Power diagram</p>
           </div>
-          <div class="flex-1">
-            <img src="./graphics/manipal12.jpg" alt="Panel wiring" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal12.jpg', 'Panel wiring')">
-            <p class="text-xs text-center mt-0">Panel wiring</p>
+          <div class="img-wrapper">
+            <img src="./graphics/manipal12.jpg" alt="Panel wiring" onclick="openModal(this.src, 'Panel wiring')">
+            <p class="img-caption">Panel wiring</p>
           </div>
         </div>
       </div>
 
-      <!-- BOX 2 -->
+      <!-- Box 2 -->
       <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">🧠 PLC SCADA BASED AUTOMATION AND  CONTROL</h3>
-        <ul class="text-sm mb-2 list-disc pl-4">
-          <li>Observed the working principles of PLC, SCADA, <br>and HMI systems used for automation, monitoring, and centralized control.</li>
+        <h3 class="orbitron">🧠 PLC SCADA BASED AUTOMATION AND CONTROL</h3>
+        <ul>
+          <li>Observed the working principles of PLC, SCADA, and HMI systems used for automation, monitoring, and centralized control.</li>
           <li>Understood PLC logic for ATS switching.</li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
-          <div class="flex-1">
-            <img src="./graphics/manipal6.jpg" alt="PLC Panel" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal6.jpg', 'PLC Panel')">
-            <p class="text-xs text-center mt-0">PLC Panel</p>
+        <div class="img-container">
+          <div class="img-wrapper">
+            <img src="./graphics/manipal6.jpg" alt="PLC Panel" onclick="openModal(this.src, 'PLC Panel')">
+            <p class="img-caption">PLC Panel</p>
           </div>
-          <div class="flex-1">
-            <img src="./graphics/manipal8.jpg" alt="SCADA System" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal8.jpg', 'SCADA System')">
-            <p class="text-xs text-center mt-0">SCADA System</p>
+          <div class="img-wrapper">
+            <img src="./graphics/manipal8.jpg" alt="SCADA System" onclick="openModal(this.src, 'SCADA System')">
+            <p class="img-caption">SCADA System</p>
           </div>
         </div>
       </div>
 
-      <!-- BOX 3 -->
+      <!-- Box 3 -->
       <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">🏗️ AUTOCAD DESIGN REVIEW AND CORRECTIONS  </h3>
-        <ul class="text-sm mb-2 list-disc pl-4">
-          <li> Supervised Design vs Actual layouts for panels and  sub circircuits.</li>
-          <li>Designed corrected power and lighting-subcircuits .</li>
+        <h3 class="orbitron">🏗️ AUTOCAD DESIGN REVIEW AND CORRECTIONS</h3>
+        <ul>
+          <li>Supervised Design vs Actual layouts for panels and sub circuits.</li>
+          <li>Designed corrected power and lighting-subcircuits.</li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
-          <div class="flex-1">
-            <img src="./graphics/manipal16.png" alt="Autocad Design" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal16.png', 'Autocad Design')">
-            <p class="text-xs text-center mt-0">Autocad Design</p>
+        <div class="img-container">
+          <div class="img-wrapper">
+            <img src="./graphics/manipal16.png" alt="Autocad Design" onclick="openModal(this.src, 'Autocad Design')">
+            <p class="img-caption">Autocad Design</p>
           </div>
-          <div class="flex-1">
-            <img src="./graphics/manipal15.png" alt="Panel Design Autocad" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal15.png', 'Panel Design Autocad')">
-            <p class="text-xs text-center mt-0">Panel Design Autocad</p>
+          <div class="img-wrapper">
+            <img src="./graphics/manipal15.png" alt="Panel Design Autocad" onclick="openModal(this.src, 'Panel Design Autocad')">
+            <p class="img-caption">Panel Design Autocad</p>
           </div>
         </div>
       </div>
 
-      <!-- BOX 4 -->
+      <!-- Box 4 -->
       <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">PANEL AND SUB CIRCIUT DESIGN OF ONCOLOGY DEPARTMENT.</h3>
-        <ul class="text-sm mb-2 list-disc pl-4">
-          <li>Load Calulations,BOQ estimates,Load Balancing,UPS/City supply selection.</li>
-          <li>Panel and Sub ciriut design of ongoing cancer treatment facility under supervision of Head EE.</li>
+        <h3 class="orbitron">💡 PANEL AND SUB CIRCUIT DESIGN OF ONCOLOGY DEPARTMENT</h3>
+        <ul>
+          <li>Load Calculations, BOQ estimates, Load Balancing, UPS/City supply selection.</li>
+          <li>Panel and Sub circuit design of ongoing cancer treatment facility under supervision of Head EE.</li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
-          <div class="flex-1">
-            <img src="./graphics/manipal18.png" alt="Oncology wiring design" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal18.png', 'Oncology wiring design')">
-            <p class="text-xs text-center mt-0">Oncology wiring design</p>
+        <div class="img-container">
+          <div class="img-wrapper">
+            <img src="./graphics/manipal18.png" alt="Oncology wiring design" onclick="openModal(this.src, 'Oncology wiring design')">
+            <p class="img-caption">Oncology wiring design</p>
           </div>
-          <div class="flex-1">
-            <img src="./graphics/manipal19.jpg" alt="Physical Panel" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal19.jpg', 'Physical Panel')">
-            <p class="text-xs text-center mt-0">Physical Panel</p>
+          <div class="img-wrapper">
+            <img src="./graphics/manipal19.jpg" alt="Physical Panel" onclick="openModal(this.src, 'Physical Panel')">
+            <p class="img-caption">Physical Panel</p>
           </div>
         </div>
       </div>
 
-      <!-- BOX 5 -->
+      <!-- Box 5 -->
       <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">🧰 MAINTENANCE & FIELD WORK</h3>
-        <ul class="text-sm mb-2 list-disc pl-4">
- <li>Tap Changing Mechanism of Transformer review and adjustment.</li>
-  <li>Star Delta wiring adjustments and panel review on ETP,INcenrator Plants.</li>
+        <h3 class="orbitron">🧰 MAINTENANCE & FIELD WORK</h3>
+        <ul>
+          <li>Tap Changing Mechanism of Transformer review and adjustment.</li>
+          <li>Star Delta wiring adjustments and panel review on ETP, Incinerator Plants.</li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
-          <div class="flex-1">
-            <img src="./graphics/manipal20.jpg" alt="Compressor Star delta starting check" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal20.jpg', 'Compressor Star delta starting check')">
-            <p class="text-xs text-center mt-0">Compressor Star delta starting check</p>
+        <div class="img-container">
+          <div class="img-wrapper">
+            <img src="./graphics/manipal20.jpg" alt="Compressor Star delta starting check" onclick="openModal(this.src, 'Compressor Star delta starting check')">
+            <p class="img-caption">Compressor Star delta starting check</p>
           </div>
-          <div class="flex-1">
-            <img src="./graphics/manipal13.jpg" alt="transformer tap changing test" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal13.jpg', 'transformer tap changing test')">
-            <p class="text-xs text-center mt-0">transformer tap changing test</p>
+          <div class="img-wrapper">
+            <img src="./graphics/manipal13.jpg" alt="transformer tap changing test" onclick="openModal(this.src, 'transformer tap changing test')">
+            <p class="img-caption">transformer tap changing test</p>
           </div>
         </div>
       </div>
 
-      <!-- BOX 6 -->
+      <!-- Box 6 -->
       <div class="project-card">
-        <div class="hud-corner tl"></div>
-        <div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div>
-        <div class="hud-corner br"></div>
-        <h3 class="orbitron text-xl font-bold mb-2 text-accent-cyan">📊 DATA & REPORTING</h3>
-        <ul class="text-sm mb-2 list-disc pl-4">
-
-  <li>Rviewed and Finalized Oncology Panel and Circiut Design. </li>
-  <li>Performed a detailed python based load profiling and energy analytics.</li>
+        <h3 class="orbitron">📊 DATA & REPORTING</h3>
+        <ul>
+          <li>Reviewed and Finalized Oncology Panel and Circuit Design.</li>
+          <li>Performed a detailed python based load profiling and energy analytics.</li>
           <li>Prepared and presented performance reports and upgrade suggestions.</li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
-          <div class="flex-1">
-            <img src="./graphics/manipal22.png" alt="load clustering analysis" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal22.png', 'load clustering analysis')">
-            <p class="text-xs text-center mt-0">load clustering analysis</p>
+        <div class="img-container">
+          <div class="img-wrapper">
+            <img src="./graphics/manipal22.png" alt="load clustering analysis" onclick="openModal(this.src, 'load clustering analysis')">
+            <p class="img-caption">load clustering analysis</p>
           </div>
-          <div class="flex-1">
-            <img src="./graphics/manipal26.png" alt="Oncology Proposed Design Sample" class="project-image w-full aspect-[4/3] object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal26.png', 'Oncology Proposed Design Sample')">
-            <p class="text-xs text-center mt-0">Oncology Proposed Design Sample</p>
+          <div class="img-wrapper">
+            <img src="./graphics/manipal26.png" alt="Oncology Proposed Design Sample" onclick="openModal(this.src, 'Oncology Proposed Design Sample')">
+            <p class="img-caption">Oncology Proposed Design Sample</p>
           </div>
         </div>
       </div>
+
     </div>
 
-    <!-- BUTTONS -->
-    <div class="flex flex-wrap justify-center gap-6 mt-14">
-      <a href="./files/internship_report.pdf" target="_blank" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">Download Report PDF</a>
-      <a href="https://linkedin.com/in/dipeshpoudel" target="_blank" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">LinkedIn</a>
-      <a href="./files/internship_certificate.pdf" target="_blank" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">View Certificate</a>
+    <!-- Buttons -->
+    <div class="button-row">
+      <a href="./files/internship_report.pdf" target="_blank" class="btn">Download Report PDF</a>
+      <a href="https://linkedin.com/in/dipeshpoudel" target="_blank" class="btn">LinkedIn</a>
+      <a href="./files/internship_certificate.pdf" target="_blank" class="btn">View Certificate</a>
+    </div>
+
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="">
+      <p id="modalCaption" class="modal-caption"></p>
     </div>
   </div>
-</section>
 
-<!-- ====================== STYLES ====================== -->
-<style>
-  /* Optimize spacing in project-card for grid boxes */
-  .project-card {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
+  <script>
+    function openModal(src, caption) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaption');
+      
+      modal.classList.add('active');
+      modalImg.src = src;
+      modalCaption.textContent = caption;
+    }
 
-  /* Tighten heading spacing */
-  .project-card h3 {
-    margin-bottom: 0.25rem;
-    line-height: 1.2;
-  }
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
+    }
 
-  /* Minimize list spacing - AGGRESSIVE */
-  .project-card ul {
-    margin-bottom: 0.25rem !important;
-    margin-top: 0;
-    padding-left: 1rem;
-  }
-
-  .project-card ul li {
-    margin-bottom: 0 !important;
-    line-height: 1.25;
-  }
-
-  /* Reduce gap between images - MINIMAL */
-  .project-card .flex {
-    gap: 0.3rem;
-    margin-top: 0.25rem !important;
-  }
-
-  /* Optimize image aspect ratio and sizing */
-  .project-image {
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-radius: 0.25rem;
-    display: block;
-  }
-
-  /* Minimize caption spacing - ZERO GAP */
-  .project-card .text-xs.text-center {
-    margin-top: 0 !important;
-    padding-top: 0.1rem;
-    line-height: 1.1;
-  }
-
-  /* Remove extra spacing from flex containers with images */
-  .project-card .flex-1 {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  /* Ensure grid boxes have consistent height */
-  .grid.grid-cols-1.md\:grid-cols-2 > .project-card {
-    height: 100%;
-  }
-
-  /* Tighten grid gap */
-  .grid.grid-cols-1.md\:grid-cols-2 {
-    gap: 1rem;
-  }
-</style>
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 
 
 
@@ -5564,6 +5735,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
