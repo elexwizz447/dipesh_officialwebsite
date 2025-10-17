@@ -4367,9 +4367,6 @@ normalization</p>
 
 
 
-
-
-
 <!-- ====================== ELEX ENGINEERING INTERNSHIP SECTION ====================== -->
 <section id="elex-internship" class="section aerospace-bg">
   <div class="max-w-7xl mx-auto">
@@ -4558,12 +4555,11 @@ normalization</p>
 
   .elex-img-wrapper img {
     width: 100%;
-    height: 200px;
-    object-fit: contain;
+    aspect-ratio: 16/9;
+    object-fit: cover;
     display: block;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    background: rgba(0, 0, 0, 0.1);
   }
 
   .elex-img-wrapper .text-xs {
@@ -4579,12 +4575,10 @@ normalization</p>
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .elex-img-wrapper img {
-      height: 160px;
+      aspect-ratio: 16/9;
     }
   }
 </style>
-
-
 
 
 
@@ -5765,6 +5759,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
