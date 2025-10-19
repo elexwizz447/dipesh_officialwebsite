@@ -4810,6 +4810,11 @@ normalization</p>
 
 
 
+
+
+
+
+  
 <!-- MAIN DOMESTIC WORKSHOP BOX -->
 <div class="project-card hologram mb-12">
   <div class="hud-corner tl"></div>
@@ -4830,7 +4835,7 @@ normalization</p>
       <p class="text-sm mb-2"><strong>Role:</strong> Mentor/Organizer Committee</p>
       <p class="text-sm mb-2"><strong>Duration:</strong> 9-16 June 2024</p>
       <hr class="border-[var(--accent-cyan)]/30 my-3">
-      <ul class="text-sm leading-relaxed list-disc pl-4">
+      <ul class="text-sm leading-relaxed list-disc pl-4 mb-2">
         <li>Introduction to house wiring. Its fundamentals and wiring techniques.</li>
         <li>Connection of CB and main switches for power distribution.</li>
         <li>Tunneling, godown master switch, energy meter and door bell circuitry.</li>
@@ -4838,28 +4843,27 @@ normalization</p>
       </ul>
     </div>
     
-    <!-- RIGHT: 4:3 CAROUSEL WITH 4 IMAGES (AUTO-SLIDING) -->
-    <div class="flex-1 w-full aspect-[16/9] bg-[var(--secondary-blue)]/20 rounded-lg overflow-hidden relative">
-      <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="domestic-carousel" style="transform: translateX(0%); height: 100%;">
-        <div class="carousel-item flex-shrink-0 w-full h-full">
-          <img src="./graphics/domestic1.jpg" alt="Workshop Image 1" class="w-full h-full object-cover cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic1.jpg', 'Workshop Image 1')">
-          <p class="text-xs text-center mt-0.5">Workshop Image 1</p>
+    <!-- RIGHT: TWO IMAGES (ONE FIXED, ONE SLIDING CAROUSEL) -->
+    <div class="flex-1 w-full flex gap-0.5">
+      <!-- FIXED IMAGE -->
+      <div class="flex-1">
+        <div class="rounded-lg border border-[var(--accent-cyan)] overflow-hidden" style="height: 230px;">
+          <img src="./graphics/domestic1.jpg" alt="Workshop Image 1" class="w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic1.jpg', 'Workshop Image 1')">
         </div>
-        <div class="carousel-item flex-shrink-0 w-full h-full">
-          <img src="./graphics/domestic2.jpg" alt="Workshop Image 2" class="w-full h-full object-cover cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic2.jpg', 'Workshop Image 2')">
-          <p class="text-xs text-center mt-0.5">Workshop Image 2</p>
-        </div>
-        <div class="carousel-item flex-shrink-0 w-full h-full">
-          <img src="./graphics/domestic3.jpg" alt="Workshop Image 3" class="w-full h-full object-cover cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic3.jpg', 'Workshop Image 3')">
-          <p class="text-xs text-center mt-0.5">Workshop Image 3</p>
-        </div>
-        <div class="carousel-item flex-shrink-0 w-full h-full">
-          <img src="./graphics/domestic4.jpg" alt="Workshop Image 4" class="w-full h-full object-cover cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic4.jpg', 'Workshop Image 4')">
-          <p class="text-xs text-center mt-0.5">Workshop Image 4</p>
-        </div>
+        <p class="text-xs text-center mt-2">Workshop Image 1</p>
       </div>
-      <button onclick="slideCarousel('domestic-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
-      <button onclick="slideCarousel('domestic-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+      
+      <!-- SLIDING CAROUSEL -->
+      <div class="flex-1 relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 230px;">
+        <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="domestic-carousel" style="transform: translateX(0%); height: 100%;">
+          <img src="./graphics/domestic2.jpg" alt="Workshop Image 2" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic2.jpg', 'Workshop Image 2')">
+          <img src="./graphics/domestic3.jpg" alt="Workshop Image 3" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic3.jpg', 'Workshop Image 3')">
+          <img src="./graphics/domestic4.jpg" alt="Workshop Image 4" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/domestic4.jpg', 'Workshop Image 4')">
+        </div>
+        <button onclick="slideCarousel('domestic-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+        <button onclick="slideCarousel('domestic-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+        <p class="text-xs text-center mt-2" id="domestic-carousel-caption">Workshop Image 2</p>
+      </div>
     </div>
   </div>
 
@@ -4887,11 +4891,11 @@ normalization</p>
     gap: 0.5rem; /* Matches reference code */
   }
 
-  /* Carousel for 16:9 images (matching main box height) */
+  /* Carousel for 230px height images */
   .carousel-container {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 230px;
   }
 
   .carousel-item {
@@ -4903,14 +4907,12 @@ normalization</p>
     width: 100%;
     height: 230px;
     object-fit: contain;
+    border-radius: 8px;
   }
 
-
-
-  
   /* Caption spacing */
   .text-xs.text-center {
-    margin-top: 0.5rem !important; /* Matches reference code */
+    margin-top: 2px !important; /* Matches reference code */
   }
 
   /* Responsive adjustments */
@@ -4918,15 +4920,37 @@ normalization</p>
     .project-card {
       padding: 1rem;
     }
-    .carousel-item img {
+    .carousel-item img,
+    .flex-1 > div > img {
       height: 120px; /* Matches reference code for mobile */
+    }
+    .carousel-container {
+      height: 120px;
+    }
+    .flex-1 > div {
+      height: 120px;
     }
   }
 </style>
 
 <!-- ====================== SCRIPT ====================== -->
 <script>
-  // Auto-slide for carousel (reuse existing site function if available)
+  // Auto-slide for carousel (matches reference code)
+  function slideCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const numItems = carousel.children.length;
+    currentTransform += direction * 100;
+    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
+    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTransform}%)`;
+    // Update caption
+    const captions = ['Workshop Image 2', 'Workshop Image 3', 'Workshop Image 4'];
+    const captionIndex = Math.abs(currentTransform / 100);
+    document.getElementById('domestic-carousel-caption').textContent = captions[captionIndex];
+  }
+
   function autoSlide(id) {
     let index = 0;
     const carousel = document.getElementById(id);
@@ -4936,6 +4960,9 @@ normalization</p>
       index = (index + 1) % numItems;
       carousel.style.transition = 'transform 0.5s ease-in-out';
       carousel.style.transform = `translateX(-${index * 100}%)`;
+      // Update caption
+      const captions = ['Workshop Image 2', 'Workshop Image 3', 'Workshop Image 4'];
+      document.getElementById('domestic-carousel-caption').textContent = captions[index];
     }, 5000);
   }
 
@@ -4945,6 +4972,19 @@ normalization</p>
   });
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 
@@ -5879,6 +5919,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
