@@ -4812,8 +4812,6 @@ normalization</p>
 
 
 
-
-  
 <!-- MAIN DOMESTIC WORKSHOP BOX -->
 <div class="project-card hologram mb-12">
   <div class="hud-corner tl"></div>
@@ -4826,7 +4824,7 @@ normalization</p>
     <div class="flex-1">
       <!-- LOGO + TITLE -->
       <div class="flex items-center mb-4">
-        <img src="./graphics/club15.jpg" alt="Domestic Electrification Workshop Logo" class="w-16 h-16 mr-4 object-contain">
+        <img src="./graphics/club15.jpg" alt="Domestic Electrification Workshop Logo" class="w-12 h-12 mr-3 object-contain">
         <h3 class="orbitron text-2xl font-bold text-accent-cyan">DOMESTIC ELECTRIFICATION WORKSHOP</h3>
       </div>
       
@@ -4847,7 +4845,7 @@ normalization</p>
       <!-- FIXED IMAGE -->
       <div class="flex-1">
         <div class="rounded-lg border border-[var(--accent-cyan)] overflow-hidden" style="height: 230px; aspect-ratio: 4/3;">
-          <img src="./graphics/club10.jpg" alt="Workshop Banner" class="w-full h-full object-cover cursor-pointer shake-on-hover" onclick="openModal('./graphics/club10.jpg', 'Banner of Workshop')">
+          <img src="./graphics/club10.jpg" alt="Workshop Banner" class="w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club10.jpg', 'Banner of Workshop')">
         </div>
         <p class="text-xs text-center mt-2">Domestic Electrification Banner</p>
       </div>
@@ -4855,10 +4853,10 @@ normalization</p>
       <!-- SLIDING CAROUSEL -->
       <div class="flex-1 relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 230px; aspect-ratio: 4/3;">
         <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="domestic-carousel" style="transform: translateX(0%); height: 100%;">
-          <img src="./graphics/club8.jpg" alt="Wiring Physical Assembly" class="carousel-item flex-shrink-0 w-full h-full object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club8.jpg', 'Wiring Physical Assembly')">
-          <img src="./graphics/club3.jpg" alt="Testing Phase" class="carousel-item flex-shrink-0 w-full h-full object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club3.jpg', 'Testing Phase')">
-          <img src="./graphics/club4.jpg" alt="Training Hall Assembly" class="carousel-item flex-shrink-0 w-full h-full object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club4.jpg', 'Training Hall Assembly')">
-          <img src="./graphics/club9.jpg" alt="Physical Session" class="carousel-item flex-shrink-0 w-full h-full object-cover rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club9.jpg', 'Physical Session')">
+          <img src="./graphics/club8.jpg" alt="Wiring Physical Assembly" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club8.jpg', 'Wiring Physical Assembly')">
+          <img src="./graphics/club3.jpg" alt="Testing Phase" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club3.jpg', 'Testing Phase')">
+          <img src="./graphics/club4.jpg" alt="Training Hall Assembly" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club4.jpg', 'Training Hall Assembly')">
+          <img src="./graphics/club9.jpg" alt="Physical Session" class="carousel-item flex-shrink-0 w-full h-full object-contain rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/club9.jpg', 'Physical Session')">
         </div>
         <button onclick="slideCarousel('domestic-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
         <button onclick="slideCarousel('domestic-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
@@ -4905,7 +4903,7 @@ normalization</p>
   .carousel-item img {
     width: 100%;
     height: 230px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     aspect-ratio: 4/3;
   }
@@ -4914,7 +4912,7 @@ normalization</p>
   .flex-1 > div > img {
     width: 100%;
     height: 230px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     aspect-ratio: 4/3;
   }
@@ -4972,12 +4970,6 @@ normalization</p>
     autoSlide('domestic-carousel');
   });
 </script>
-
-
-
-
-
-
   
 
   
@@ -5913,6 +5905,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
