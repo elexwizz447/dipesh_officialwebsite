@@ -5009,7 +5009,7 @@ normalization</p>
     <div class="flex-1">
       <!-- LOGO + TITLE -->
       <div class="flex items-center mb-4">
-        <img src="./graphics/arduino-logo.jpg" alt="Arduino Workshop Logo" class="w-16 h-16 mr-4 object-contain">
+        <img src="./graphics/club15.jpg" alt="Club logo" class="w-16 h-16 mr-4 object-contain">
         <h3 class="orbitron text-2xl font-bold text-accent-cyan">ARDUINO, PROTEUS & PCB DESIGN WORKSHOP</h3>
       </div>
       
@@ -5020,9 +5020,7 @@ normalization</p>
       <ul class="text-sm leading-relaxed list-disc pl-4 mb-2">
         <li>Arduino IDE and Projects: Taught Arduino C/C++ programming and built physical circuits and performed testing/debugging.</li>
         <li>Proteus VSM Simulation: Taught circuit schematics and co-simulation, ran Arduino code on a virtual board to verify logic.</li>
-        <li>PCB Layout Fundamentals: Covered the PCB design workflow, including component placement, and manual/auto routing in Proteus ARES.</li>
-        <li>Implemented Design Rule Checks (DRC) and generated Gerber files for final PCB fabrication.</li>
-      </ul>
+       <li> Cross-Platform Testing: Mentored the process of comparing physical Arduino test results with Proteus simulation data to debug hardware errors, calibrate sensors, and finalize system logic before advanced design.</li>  
     </div>
     
     <!-- RIGHT: TWO IMAGES (ONE FIXED, ONE SLIDING CAROUSEL) -->
@@ -5030,24 +5028,24 @@ normalization</p>
       <!-- FIXED IMAGE -->
       <div class="flex-1 min-w-0">
         <div class="rounded-lg border border-[var(--accent-cyan)] overflow-hidden" style="height: 230px;">
-          <img src="./graphics/arduino-banner.jpg" alt="Workshop Banner" class="w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino-banner.jpg', 'Arduino Workshop Banner')">
+          <img src="./graphics/arduino5.jpg" alt="Simulation" class="w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino5.jpg', 'Simulation')">
         </div>
-        <p class="text-xs text-center mt-2">Arduino Workshop Banner</p>
+        <p class="text-xs text-center mt-2">Proteous-Ardunio Simulation</p>
       </div>
       
       <!-- SLIDING CAROUSEL -->
       <div class="flex-1 min-w-0">
         <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 230px;">
           <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="arduino-carousel" style="transform: translateX(0%); height: 100%; width: 100%;">
-            <img src="./graphics/arduino-circuit.jpg" alt="Arduino Circuit Assembly" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino-circuit.jpg', 'Arduino Circuit Assembly')">
-            <img src="./graphics/proteus-simulation.jpg" alt="Proteus Simulation" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/proteus-simulation.jpg', 'Proteus VSM Simulation')">
-            <img src="./graphics/pcb-design.jpg" alt="PCB Design Session" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/pcb-design.jpg', 'PCB Design Session')">
-            <img src="./graphics/arduino-training.jpg" alt="Training Session" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino-training.jpg', 'Training Session')">
+            <img src="./graphics/arduino3.jpg" alt="session banner" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino3.jpg', 'Session Banner')">
+            <img src="./graphics/arduino7.jpg" alt="Physical Arduino" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino7.jpg', 'Physical Board')">
+            <img src="./graphics/arduino6.jpg" alt="Training Session" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino6.jpg', 'Training Session')">
+           
           </div>
           <button onclick="slideCarousel('arduino-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10">‹</button>
           <button onclick="slideCarousel('arduino-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10">›</button>
         </div>
-        <p class="text-xs text-center mt-2" id="arduino-carousel-caption">Arduino Circuit Assembly</p>
+        <p class="text-xs text-center mt-2" id="arduino-carousel-caption">Training Banner</p>
       </div>
     </div>
   </div>
@@ -5134,7 +5132,7 @@ normalization</p>
     carousel.style.transform = `translateX(${currentTransform}%)`;
     
     // Update caption
-    const captions = ['Arduino Circuit Assembly', 'Proteus Simulation', 'PCB Design Session', 'Training Session'];
+    const captions = ['Trainees/Mentors', 'Arduino Physical Circiut', 'Training Session'];
     const captionIndex = Math.abs(currentTransform / 100);
     const captionEl = document.getElementById('arduino-carousel-caption');
     if (captionEl) {
@@ -5155,7 +5153,7 @@ normalization</p>
       carousel.style.transform = `translateX(-${index * 100}%)`;
       
       // Update caption
-      const captions = ['Arduino Circuit Assembly', 'Proteus Simulation', 'PCB Design Session', 'Training Session'];
+      const captions = ['Trainees/Mentors', 'Arduino Physical Circiut', 'Training Session'];
       const captionEl = document.getElementById('arduino-carousel-caption');
       if (captionEl) {
         captionEl.textContent = captions[index];
@@ -6118,6 +6116,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
