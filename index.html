@@ -4858,15 +4858,15 @@ normalization</p>
       <div class="flex-1 min-w-0">
         <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 230px;">
           <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="domestic-carousel" style="transform: translateX(0%); height: 100%; width: 100%;">
-            <img src="./graphics/club8.jpg" alt="Wiring Assembly Image" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club8.jpg', 'Wiring Physical Assembly')">
-            <img src="./graphics/club3.jpg" alt="Testing Phase" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club3.jpg', 'Testing Phase')">
+            <img src="./graphics/club17.jpg" alt="Basic Lighting Circiut" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club17.jpg', 'Basic Lighting')">
             <img src="./graphics/club4.jpg" alt="Students in Training Hall" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club4.jpg', 'Training Hall Assembly')">
-            <img src="./graphics/club9.jpg" alt="Physical Session" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club9.jpg', 'Physical Session')">
+            <img src="./graphics/club18.jpg" alt="Group photo after completion" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club18.jpg', 'Group photo after completion')">
+            
+            <img src="./graphics/club8.jpg" alt="Wiring Assembly" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/club8.jpg', 'Wiring Assembly')">
           </div>
           <button onclick="slideCarousel('domestic-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10">‹</button>
           <button onclick="slideCarousel('domestic-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10">›</button>
         </div>
-        <p class="text-xs text-center mt-2" id="domestic-carousel-caption">Wiring Assembly</p>
       </div>
     </div>
   </div>
@@ -4953,7 +4953,7 @@ normalization</p>
     carousel.style.transform = `translateX(${currentTransform}%)`;
     
     // Update caption
-    const captions = ['Wiring Assembly', 'Testing Phase', 'Training Hall', 'Physical Session'];
+    const captions = ['Basic Lighting Circiut', 'Training Hall', 'Circiut Testing', 'Wiring Assembly'];
     const captionIndex = Math.abs(currentTransform / 100);
     const captionEl = document.getElementById('domestic-carousel-caption');
     if (captionEl) {
@@ -5930,6 +5930,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
