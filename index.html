@@ -4996,6 +4996,193 @@ normalization</p>
 
 
 
+
+<!-- MAIN ARDUINO WORKSHOP BOX -->
+<div class="project-card hologram mb-12">
+  <div class="hud-corner tl"></div>
+  <div class="hud-corner tr"></div>
+  <div class="hud-corner bl"></div>
+  <div class="hud-corner br"></div>
+  
+  <div class="flex flex-col md:flex-row items-start gap-6">
+    <!-- LEFT: LOGO + TITLE + TEXT -->
+    <div class="flex-1">
+      <!-- LOGO + TITLE -->
+      <div class="flex items-center mb-4">
+        <img src="./graphics/arduino-logo.jpg" alt="Arduino Workshop Logo" class="w-16 h-16 mr-4 object-contain">
+        <h3 class="orbitron text-2xl font-bold text-accent-cyan">ARDUINO, PROTEUS & PCB DESIGN WORKSHOP</h3>
+      </div>
+      
+      <!-- TEXT BELOW -->
+      <p class="text-sm mb-2"><strong>Role:</strong> Mentor/Organizer</p>
+      <p class="text-sm mb-2"><strong>Duration:</strong> 2-8 February 2024</p>
+      <hr class="border-[var(--accent-cyan)]/30 my-3">
+      <ul class="text-sm leading-relaxed list-disc pl-4 mb-2">
+        <li>Arduino IDE and Projects: Taught Arduino C/C++ programming and built physical circuits and performed testing/debugging.</li>
+        <li>Proteus VSM Simulation: Taught circuit schematics and co-simulation, ran Arduino code on a virtual board to verify logic.</li>
+        <li>PCB Layout Fundamentals: Covered the PCB design workflow, including component placement, and manual/auto routing in Proteus ARES.</li>
+        <li>Implemented Design Rule Checks (DRC) and generated Gerber files for final PCB fabrication.</li>
+      </ul>
+    </div>
+    
+    <!-- RIGHT: TWO IMAGES (ONE FIXED, ONE SLIDING CAROUSEL) -->
+    <div class="flex-1 w-full flex gap-2">
+      <!-- FIXED IMAGE -->
+      <div class="flex-1 min-w-0">
+        <div class="rounded-lg border border-[var(--accent-cyan)] overflow-hidden" style="height: 230px;">
+          <img src="./graphics/arduino-banner.jpg" alt="Workshop Banner" class="w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino-banner.jpg', 'Arduino Workshop Banner')">
+        </div>
+        <p class="text-xs text-center mt-2">Arduino Workshop Banner</p>
+      </div>
+      
+      <!-- SLIDING CAROUSEL -->
+      <div class="flex-1 min-w-0">
+        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]" style="height: 230px;">
+          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="arduino-carousel" style="transform: translateX(0%); height: 100%; width: 100%;">
+            <img src="./graphics/arduino-circuit.jpg" alt="Arduino Circuit Assembly" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino-circuit.jpg', 'Arduino Circuit Assembly')">
+            <img src="./graphics/proteus-simulation.jpg" alt="Proteus Simulation" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/proteus-simulation.jpg', 'Proteus VSM Simulation')">
+            <img src="./graphics/pcb-design.jpg" alt="PCB Design Session" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/pcb-design.jpg', 'PCB Design Session')">
+            <img src="./graphics/arduino-training.jpg" alt="Training Session" class="carousel-item flex-shrink-0 w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/arduino-training.jpg', 'Training Session')">
+          </div>
+          <button onclick="slideCarousel('arduino-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10">‹</button>
+          <button onclick="slideCarousel('arduino-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10">›</button>
+        </div>
+        <p class="text-xs text-center mt-2" id="arduino-carousel-caption">Arduino Circuit Assembly</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REQUEST BUTTON -->
+  <a href="https://www.facebook.com/your-arduino-workshop-link" target="_blank" class="block mt-6 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Click for More Details</a>
+</div>
+
+<!-- ====================== STYLES ====================== -->
+<style>
+  /* Tighten spacing in project-card */
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  /* Reduce margins */
+  .project-card h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-card ul {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ensure flex containers don't overflow */
+  .flex-1 {
+    min-width: 0; /* Critical for proper flexbox sizing */
+  }
+
+  /* Carousel container - constrain to parent width */
+  .carousel-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  /* Ensure images fill their containers properly */
+  .carousel-item,
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Caption spacing */
+  .text-xs.text-center {
+    margin-top: 8px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .project-card {
+      padding: 1rem;
+    }
+    
+    .flex-1 > div {
+      height: 120px !important;
+    }
+    
+    .carousel-container {
+      height: 120px;
+    }
+  }
+</style>
+
+<!-- ====================== SCRIPT ====================== -->
+<script>
+  // Manual slide for carousel
+  function slideCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const numItems = carousel.children.length;
+    currentTransform += direction * 100;
+    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
+    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTransform}%)`;
+    
+    // Update caption
+    const captions = ['Arduino Circuit Assembly', 'Proteus Simulation', 'PCB Design Session', 'Training Session'];
+    const captionIndex = Math.abs(currentTransform / 100);
+    const captionEl = document.getElementById('arduino-carousel-caption');
+    if (captionEl) {
+      captionEl.textContent = captions[captionIndex] || captions[0];
+    }
+  }
+
+  // Auto-slide function
+  function autoSlide(id) {
+    let index = 0;
+    const carousel = document.getElementById(id);
+    const numItems = carousel.children.length;
+    if (numItems <= 1) return;
+    
+    setInterval(() => {
+      index = (index + 1) % numItems;
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      
+      // Update caption
+      const captions = ['Arduino Circuit Assembly', 'Proteus Simulation', 'PCB Design Session', 'Training Session'];
+      const captionEl = document.getElementById('arduino-carousel-caption');
+      if (captionEl) {
+        captionEl.textContent = captions[index];
+      }
+    }, 5000);
+  }
+
+  // Initialize auto-slide
+  document.addEventListener('DOMContentLoaded', () => {
+    autoSlide('arduino-carousel');
+  });
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
   
 
   
@@ -5931,6 +6118,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
