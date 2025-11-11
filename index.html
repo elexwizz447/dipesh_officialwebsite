@@ -1156,6 +1156,145 @@
   </p>
 </div>
 
+
+
+
+
+
+                <!-- ==== RESEARCH FRAMEWORK TOGGLE (GOLDEN HUD) ==== -->
+                <div class="project-card hologram mt-8" id="framework-wrapper">
+                  <div class="hud-corner tl"></div>
+                  <div class="hud-corner tr"></div>
+                  <div class="hud-corner bl"></div>
+                  <div class="hud-corner br"></div>
+
+                  <h3 class="orbitron text-xl font-bold mb-4 text-golden">RESEARCH FRAMEWORK</h3>
+
+                  <button id="framework-btn"
+                          class="nav-item orbitron bg-transparent border-2 border-golden text-golden px-6 py-2 rounded-lg 
+                                 hover:bg-golden hover:text-black transition-all duration-300 
+                                 shadow-lg hover:shadow-golden/50 font-medium">
+                    SHOW FRAMEWORK
+                  </button>
+
+                  <div class="flex justify-center mt-6">
+                    <img id="framework-preview"
+                         src="data:image/png;base64,[PASTE_YOUR_BASE64_HERE]"
+                         alt="Research Framework Preview"
+                         class="w-64 h-auto rounded-lg border border-golden/30 shadow-md cursor-pointer 
+                                hover:scale-105 transition-transform duration-300"
+                         onclick="toggleFramework()">
+                  </div>
+
+                  <div id="framework-full" class="hidden mt-8 overflow-x-auto bg-transparent p-4">
+                    <div class="max-w-full overflow-x-auto">
+                      <svg width="1400" height="2100" viewBox="0 0 1400 2100" xmlns="http://www.w3.org/2000/svg"
+                           class="w-full h-auto min-w-[1000px] drop-shadow-2xl">
+                        <rect x="0" y="0" width="1400" height="2100" fill="none"/>
+
+                        <defs>
+                          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+                            <feOffset dx="0" dy="3" result="offsetblur"/>
+                            <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
+                            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                          </filter>
+                          <filter id="headerShadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+                            <feOffset dx="0" dy="4" result="offsetblur"/>
+                            <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+                            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                          </filter>
+                          <linearGradient id="contextGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#E3F2FD"/><stop offset="50%" stop-color="#BBDEFB"/><stop offset="100%" stop-color="#90CAF9"/>
+                          </linearGradient>
+                          <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#1a237e"/><stop offset="50%" stop-color="#283593"/><stop offset="100%" stop-color="#1a237e"/>
+                          </linearGradient>
+                          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFD700"/>
+                          </marker>
+                        </defs>
+
+                        <!-- PASTE YOUR FULL SVG CONTENT BELOW -->
+                        <!-- START COPYING FROM HERE -->
+                        <rect x="50" y="30" width="1300" height="100" fill="url(#headerGrad)" rx="12" filter="url(#headerShadow)"/>
+                        <text x="700" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AI Data Center Power Consumption Dynamics:</text>
+                        <text x="700" y="100" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#BBDEFB" text-anchor="middle" font-style="italic">The Next Major Research Frontier for Electrical Engineering</text>
+                        <text x="700" y="165" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#1565C0" text-anchor="middle">This Research's Justification and Framework Overview.</text>
+                        <rect x="80" y="195" width="1240" height="200" fill="url(#contextGrad)" rx="12" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+                        <text font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#0D47A1" text-anchor="start">
+                          <tspan x="100" y="218">The rapid rise of AI is transforming global energy demand, with data centers driven by inference workloads becoming </tspan>
+                          <tspan dy="0" font-weight="700">massive power consumers</tspan>
+                          <tspan dy="0">. Globally, data center power demand is growing</tspan>
+                          <tspan x="100" dy="16">15% annually, far outpacing overall electricity growth, and AI-specific loads could consume up to </tspan>
+                          <tspan dy="0" font-weight="700">21% of global power by 2030</tspan>
+                          <tspan dy="0">. Goldman Sachs projects a </tspan>
+                          <tspan dy="0" font-weight="700">165% surge in total data center demand</tspan>
+                          <tspan x="100" dy="16">by 2030</tspan>
+                          <tspan dy="0">, with U.S. AI capacity alone potentially surpassing 50 GW enough to power tens of millions of homes. Despite this, public research on AI-driven power modeling remains minimal. As utilities</tspan>
+                          <tspan x="100" dy="16">still rely on </tspan>
+                          <tspan dy="0" font-weight="700">outdated steady-state models</tspan>
+                          <tspan dy="0">, the risk of grid instability grows. This research focuses on developing </tspan>
+                          <tspan dy="0" font-weight="700">dynamic frameworks that account for task-specific inference intensities, batching dynamics,</tspan>
+                          <tspan x="100" dy="16">and geography-driven </tspan>
+                          <tspan dy="0" font-weight="700">demand waves</tspan>
+                          <tspan dy="0"> to deliver precise upfront power forecasts to grid operators, mitigate risks like infrastructure overprovisioning and harmonic distortions, and enable optimized demand-</tspan>
+                          <tspan x="100" dy="16">side management for a sustainable, resilient energy future.</tspan>
+                          <tspan x="100" dy="22" font-weight="700">Global inference modeling section of research has been completed assuming global aggregate framework for task simplification. System level compute-power measurement and its modeling is ongoing work.</tspan>
+                        </text>
+                        <!-- ... CONTINUE PASTING ALL YOUR SVG CODE UNTIL THE LEGEND ... -->
+                        <!-- Legend (last part) -->
+                        <rect x="70" y="1910" width="1260" height="160" fill="#FFFFFF" rx="12" stroke="#FFD700" stroke-width="2" filter="url(#shadow)"/>
+                        <text x="700" y="1950" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#FFD700" text-anchor="middle">LEGEND</text>
+                        <!-- Add all legend items here -->
+                        <rect x="120" y="1985" width="30" height="30" fill="#FF6B6B" rx="4" stroke="#C0392B" stroke-width="2"/>
+                        <text x="165" y="2007" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="600">Faulty Assumptions and Conceptual Oversight</text>
+                        <rect x="650" y="1985" width="30" height="30" fill="#9B59B6" rx="4" stroke="#6C3483" stroke-width="2"/>
+                        <text x="695" y="2007" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="600">True System Behavior</text>
+                        <rect x="120" y="2030" width="30" height="30" fill="#27AE60" rx="4" stroke="#1E8449" stroke-width="2"/>
+                        <text x="165" y="2052" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#2C3E50" font-weight="600">Grid-Level Impacts</text>
+                        <!-- END OF SVG -->
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <script>
+                  function toggleFramework() {
+                    const full = document.getElementById('framework-full');
+                    const preview = document.getElementById('framework-preview');
+                    const btn = document.getElementById('framework-btn');
+                    if (full.classList.contains('hidden')) {
+                      full.classList.remove('hidden');
+                      preview.parentElement.classList.add('hidden');
+                      btn.textContent = 'HIDE FRAMEWORK';
+                      btn.classList.add('bg-golden', 'text-black');
+                      btn.classList.remove('text-golden');
+                    } else {
+                      full.classList.add('hidden');
+                      preview.parentElement.classList.remove('hidden');
+                      btn.textContent = 'SHOW FRAMEWORK';
+                      btn.classList.remove('bg-golden', 'text-black');
+                      btn.classList.add('text-golden');
+                    }
+                  }
+                  document.getElementById('framework-btn').onclick = toggleFramework;
+                </script>
+                <!-- END OF RESEARCH FRAMEWORK BLOCK -->
+
+    
+
+
+
+
+
+
+
+
+
+    
+
 <!-- Then the existing grid with projects continues below -->
     
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
@@ -6117,6 +6256,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
