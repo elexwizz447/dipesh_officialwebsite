@@ -1964,7 +1964,135 @@ normalization</p>
     
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ============================================= -->
+<!-- PROPOSED RESEARCH OVERVIEW (2-COLUMN SPAN)   -->
+<!-- ============================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+  <!-- BIG SVG PREVIEW (spans 2 columns) -->
+  <div class="lg:col-span-2 project-card hologram">
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">
+      PROPOSED RESEARCH OVERVIEW
+    </h3>
+
+    <!-- Large SVG Preview (click → full 1551×1417pt) -->
+    <div class="mb-4">
+      <img 
+        src="./graphics/flowchart.svg" 
+        alt="Proposed Research Overview" 
+        class="w-full h-96 object-contain rounded-lg border-2 border-[var(--accent-cyan)] cursor-pointer shadow-xl transition-transform hover:scale-[1.01]"
+        onclick="openModal('./graphics/flowchart.svg, 'Proposed Research Overview')">
+    </div>
+
+    <!-- Comment below image -->
+    <p class="text-xs text-center italic text-gray-400 mt-2 mb-6">
+      Mathematical Modeling and Parametric Computation Chain
+    </p>
+
+    <!-- WORK COMPLETED (small image) + DETAILED EXPLANATION (SVG) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- WORK COMPLETED -->
+      <div class="bg-success-green bg-opacity-10 p-4 rounded-lg border border-success-green">
+        <h4 class="text-sm font-bold text-success-green mb-2">WORK COMPLETED</h4>
+        <img 
+          src="./graphics/fig5.png" 
+          alt="Work Completed" 
+          class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer"
+          onclick="openModal('./graphics/fig5.png', 'Work Completed')">
+        <p class="text-xs text-center mt-2">Final Prototype Assembly</p>
+      </div>
+
+      <!-- DETAILED EXPLANATION -->
+      <div class="bg-purple-900 bg-opacity-10 p-4 rounded-lg border border-purple-600">
+        <h4 class="text-sm font-bold text-purple-400 mb-2">DETAILED EXPLANATION</h4>
+        <img 
+          src="./assets/hydroart/detailed_explanation.svg" 
+          alt="Detailed Explanation" 
+          class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer"
+          onclick="openModal('./graphics/fig5.png', 'Detailed Explanation')">
+        <p class="text-xs text-center mt-2">System Architecture & Flow</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORIGINAL "HOW" CARD (now in 3rd column) -->
+  <div class="project-card hologram">
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: OAD and Airframe Design Process</h3>
+    <div class="space-y-3 text-sm">
+      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span>Performed overall aircraft design hand calculations for weight, performance, and component sizing.</span></div>
+      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span>Conducted structural airframe sizing to meet load and hydrogen-safety requirements.</span></div>
+      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span>Built detailed CAD models (CATIA/Fusion 360) for aircraft assemblies.</span></div>
+    </div>
+    <div class="mt-4">
+      <img src="./assets/hydroart/Tail_Assembly v33.png" alt="Tail Assembly" class="w-full h-32 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./assets/hydroart/Tail_Assembly v33.png', 'Tail Assembly')">
+      <p class="text-xs text-center mt-2">Tail Assembly</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================= -->
+<!-- ORIGINAL 3 CARDS (WHAT / HOW / RESULTS)      -->
+<!-- ============================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+  <!-- WHAT (unchanged) -->
+  <div class="project-card">
+    <div class="hud-corner tl"></div><div class="hud-corner tr"></div><div class="hud-corner bl"></div><div class="hud-corner br"></div>
+    <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">WHAT: Aircraft Designer– Hydrogen-Powered ATR72 Subscale Demonstrator</h3>
+    <p class="text-sm mb-4">Contributed as an aircraft designer on the HydroART team, focusing on the 1/8th scale ATR72 hydrogen demonstrator.</p>
+    <p class="text-sm mb-4">Involved in airframe design and component integration, ensuring structural layout, aerodynamic fidelity, and compatibility with hydrogen-safety requirements.</p>
+    <p class="text-sm mb-4">Coordinated with subsystem teams (propulsion, hydrogen storage, avionics) to align overall aircraft configuration and system-level feasibility.</p>
+    <div class="mb-4">
+      <img src="./assets/hydroart/hydroart_airframe_assembly.png" alt="Airframe Assembly" class="project-image w-full h-48 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./assets/hydroart/hydroart_airframe_assembly.png', 'Airframe Assembly')">
+      <p class="text-xs text-center mt-2">Airframe Assembly</p>
+    </div>
+  </div>
+
+  <!-- HOW (duplicate for completeness - same as above) -->
+  <div class="project-card hologram">
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: OAD and Airframe Design Process</h3>
+    <div class="space-y-3">
+      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span class="text-sm">Performed overall aircraft design hand calculations for weight, performance, and component sizing.</span></div>
+      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span class="text-sm">Conducted structural airframe sizing to meet load and hydrogen-safety requirements.</span></div>
+      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span class="text-sm">Built detailed CAD models (CATIA/Fusion 360) for aircraft assemblies.</span></div>
+    </div>
+    <div class="mb-4">
+      <img src="./assets/hydroart/Tail_Assembly v33.png" alt="Tail Assembly" class="project-image w-full h-48 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./assets/hydroart/Tail_Assembly v33.png', 'Tail Assembly')">
+      <p class="text-xs text-center mt-2">Tail Assembly</p>
+    </div>
+  </div>
+
+  <!-- RESULTS (now clean: only SVG + comment) -->
+  <div class="project-card">
+    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Insights on Hydrogen aircraft design, safety, and regulations</h3>
+    <div class="mb-4">
+      <img src="./assets/hydroart/modeling_chain_full.svg" alt="Results Overview" class="project-image w-full h-48 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./assets/hydroart/modeling_chain_full.svg', 'Results Overview')">
+    </div>
+    <p class="text-xs text-center italic text-gray-400 mt-2">
+      RESULTS: Insights on Hydrogen aircraft design, safety, and regulations
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
 <!-- Project 2: Undergraduate Thesis - Tandem-Axial Flow Compressor Performance Modelling, Parametric Study and Optimization -->
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
   <div class="project-card">
@@ -4416,6 +4544,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
