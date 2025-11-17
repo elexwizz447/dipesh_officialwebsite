@@ -1974,23 +1974,18 @@ normalization</p>
 
 
 
-
-
-
-
 <!-- ============================================= -->
-<!-- PROPOSED RESEARCH OVERVIEW + DIAGONAL FLOW  -->
-<!-- FULLY CLOSED, NO CRASH, PERFECT LAYOUT      -->
+<!-- FINAL VERSION – EVERYTHING YOU ASKED FOR     -->
 <!-- ============================================= -->
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
 
-  <!-- LEFT: BIG SVG (2-column span) -->
+  <!-- LEFT: BIG SVG + TEXT BELOW (2-column span) -->
   <div class="lg:col-span-2 project-card hologram rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg">
     <h3 class="orbitron text-xl font-bold p-4 text-warning-amber bg-gradient-to-b from-transparent to-black/20">
       PROPOSED RESEARCH OVERVIEW
     </h3>
 
-    <!-- Large SVG Preview -->
+    <!-- Large Flowchart SVG -->
     <div class="mb-4 px-4">
       <img
         src="./graphics/flowchart.svg"
@@ -1999,51 +1994,66 @@ normalization</p>
         onclick="openModal('./graphics/flowchart.svg', 'Proposed Research Overview')">
     </div>
 
-    <!-- Comment -->
-    <p class="text-xs text-center italic text-gray-400 px-4 mb-6">
-      Mathematical Modeling and Parametric Computation Chain
-    </p>
+    <!-- TEXT BELOW THE IMAGE (as requested) -->
+    <div class="px-6 pb-6 text-sm space-y-3 text-gray-300">
+      <p class="flex items-start"><span class="text-accent-cyan mr-2">•</span> Developed an end-to-end workflow linking AI inference demand, compute workload, batching behavior, and data-center power.</p>
+      <p class="flex items-start"><span class="text-accent-cyan mr-2">•</span> Corrected legacy static assumptions by incorporating regional diurnal curves, task-level FLOP intensities, dynamic batching, MFU behavior, and utilization-driven facility loads.</p>
+      <p class="flex items-start"><span class="text-accent-cyan mr-2">•</span> Integrated all modeling stages into one coherent request-to-power analytical framework.</p>
+    </div>
 
-    <!-- Two Small Boxes Below -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 pb-4">
+    <!-- WORK COMPLETED + DETAILED EXPLANATION (side-by-side) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 pb-6">
+      
       <!-- WORK COMPLETED -->
-      <div class="bg-success-green bg-opacity-10 p-4 rounded-lg border border-success-green">
-        <h4 class="text-sm font-bold text-success-green mb-2">WORK COMPLETED</h4>
+      <div class="bg-success-green bg-opacity-10 p-5 rounded-lg border border-success-green">
+        <h4 class="text-sm font-bold text-success-green mb-3">WORK COMPLETED</h4>
         <img
           src="./graphics/fig5.png"
           alt="Work Completed"
-          class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer"
+          class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer mb-3"
           onclick="openModal('./graphics/fig5.png', 'Work Completed')">
-        <p class="text-xs text-center mt-2">Final Prototype Assembly</p>
+        <p class="text-xs text-center text-gray-300 mb-3">Final Prototype Assembly</p>
+        
+        <div class="text-xs space-y-2 text-gray-300">
+          <p class="flex items-start"><span class="text-success-green mr-2">•</span> Created a 24-hour canonical inference curve using baseline + Gaussian peaks with periodic normalization.</p>
+          <p class="flex items-start"><span class="text-success-green mr-2">•</span> Applied regional weights and time-zone shifts to construct the global demand profile R_global(t).</p>
+          <p class="flex items-start"><span class="text-success-green mr-2">•</span> Used a single global aggregate traffic waveform for tractability, reflecting clustered AI data centers serving large regions.</p>
+        </div>
       </div>
 
       <!-- DETAILED EXPLANATION -->
-      <div class="bg-purple-900 bg-opacity-10 p-4 rounded-lg border border-purple-600">
-        <h4 class="text-sm font-bold text-purple-400 mb-2">DETAILED EXPLANATION</h4>
+      <div class="bg-purple-900 bg-opacity-10 p-5 rounded-lg border border-purple-600">
+        <h4 class="text-sm font-bold text-purple-400 mb-3">DETAILED EXPLANATION</h4>
         <img
           src="./assets/hydroart/detailed_explanation.svg"
           alt="Detailed Explanation"
-          class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer"
+          class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer mb-3"
           onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Detailed Explanation')">
-        <p class="text-xs text-center mt-2">System Architecture & Flow</p>
+        <p class="text-xs text-center text-gray-300 mb-3">System Architecture & Flow</p>
+        
+        <div class="text-xs space-y-2 text-gray-300">
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Mapped regional request rates to per-task FLOPs, batch formation, and MFU-driven GPU-second requirements.</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Derived hardware utilization and associated dynamic GPU cluster power including thermal and facility overheads.</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Developing a fully time-resolved compute-to-power conversion model.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- RIGHT: HOW + BIG IMAGE 2 (Principal Diagonal) -->
+  <!-- RIGHT COLUMN: HOW (renamed) + FINAL DESIGN TABLE -->
   <div class="grid grid-cols-1 gap-6 auto-rows-min">
     
-    <!-- HOW CARD (Top) -->
-    <div class="project-card hologram rounded-xl p-4 border border-[var(--accent-cyan)]">
-      <h3 class="orbitron text-lg font-bold mb-3 text-warning-amber">HOW: OAD and Airframe Design Process</h3>
-      <div class="space-y-2 text-xs">
-        <div class="flex items-center"><div class="w-3 h-3 border border-accent-cyan mr-2"></div><span>Performed overall aircraft design hand calculations for weight, performance, and component sizing.</span></div>
-        <div class="flex items-center"><div class="w-3 h-3 border border-accent-cyan mr-2"></div><span>Conducted structural airframe sizing to meet load and hydrogen-safety requirements.</span></div>
-        <div class="flex items-center"><div class="w-3 h-3 border border-accent-cyan mr-2"></div><span>Built detailed CAD models (CATIA/Fusion 360) for aircraft assemblies.</span></div>
-      </div>
+    <!-- Renamed card -->
+    <div class="project-card hologram rounded-xl p-5 border border-[var(--accent-cyan)]">
+      <h3 class="orbitron text-lg font-bold mb-4 text-warning-amber">
+        Simplified Global Aggregate Inference Modeling Assumption
+      </h3>
+      <p class="text-sm leading-relaxed text-gray-300">
+        For simplification, this model uses a global aggregate traffic curve by assuming a summed worldwide inference load routed to a single AI data center—an approximation that remains acceptable because AI data centers are few, geographically clustered, and the curve serves only as input to the downstream power-intensity layer, with room for future refinement and tunability.
+      </p>
     </div>
 
-    <!-- BIG IMAGE 2: FINAL DESIGN TABLE (Bottom - Principal Diagonal) -->
+    <!-- FINAL DESIGN TABLE (Principal Diagonal #2) -->
     <div class="project-card bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
       <h3 class="orbitron text-lg font-bold p-3 text-success-green bg-gradient-to-b from-transparent to-black/10">
         FINAL DESIGN TABLE
@@ -2055,6 +2065,13 @@ normalization</p>
           class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform"
           onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table')">
       </div>
+      
+      <!-- TEXT BELOW THE TABLE IMAGE -->
+      <div class="px-4 pb-4 text-xs space-y-2 text-gray-300">
+        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Generated accurate time-varying inference-driven AI data-center power demand for planning and integration.</p>
+        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Improved hardware provisioning, grid-stability assessment, harmonic evaluation, and PQ risk modeling.</p>
+      </div>
+      
       <p class="text-xs text-center italic text-gray-300 px-3 pb-3">
         1400 × 2100 pt – Complete results
       </p>
@@ -2062,6 +2079,7 @@ normalization</p>
 
   </div>
 </div>
+
 
 
 
@@ -4620,6 +4638,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
