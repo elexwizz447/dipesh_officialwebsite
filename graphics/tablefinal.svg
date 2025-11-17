@@ -1,0 +1,270 @@
+<svg width="1400" height="2100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 2100">
+  <!-- Background -->
+  <rect x="0" y="0" width="1400" height="2100" fill="#FAFAFA"/>
+  <!-- Definitions -->
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="headerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="contextGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#BBDEFB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#90CAF9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a237e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#283593;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a237e;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2C3E50"/>
+    </marker>
+  </defs>
+  <!-- Header Section -->
+  <rect x="50" y="30" width="1300" height="100" fill="url(#headerGrad)" rx="12" filter="url(#headerShadow)"/>
+  <text x="700" y="70" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AI Data Center Power Consumption Dynamics:</text>
+  <text x="700" y="100" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600" fill="#BBDEFB" text-anchor="middle" font-style="italic" >The Next Major Research Frontier for Electrical Engineering</text>
+  <!-- Subtitle -->
+<text x="700" y="165" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" fill="#1565C0" text-anchor="middle" >This Research's Justification and Framework Overview.</text>
+    
+
+<!-- Context Box -->
+<rect x="80" y="195" width="1240" height="200" fill="url(#contextGrad)" rx="12" stroke="#1565C0" stroke-width="3" filter="url(#shadow)"/>
+
+<!-- JUSTIFIED PARAGRAPH USING PURE SVG (NO foreignObject) - ERROR-FREE: explicitly positioned inside the blue context box -->
+<text x="100" y="230" font-family="'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#0D47A1" text-anchor="start">
+  <tspan x="100" dy="0">This research focuses on developing dynamic power modeling that account for task-specific inference intensities, batching dynamics and geography-driven demand waves to </tspan>
+  <tspan x="100" dy="16">deliver precise upfront power forecasts to grid operators, mitigate infrastructure overprovisioning, active harmonic filterng, and accurate grid stability &amp; ramp assessment.</tspan>
+  <tspan x="100" dy="18" font-weight="700">Global inference modeling section of research has been completed assuming global aggregate framework for task simplification. System level compute-power measurement and its modeling is ongoing work.</tspan>
+</text>
+  
+
+
+
+  <!-- Column Headers -->
+  <rect x="80" y="445" width="360" height="45" rx="8" fill="#FF6B6B" stroke="#C0392B" stroke-width="2" filter="url(#shadow)"/>
+  <text x="260" y="475" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">FAULTY ASSUMPTIONS</text>
+  <rect x="520" y="445" width="360" height="45" rx="8" fill="#9B59B6" stroke="#6C3483" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="475" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">TRUE SYSTEM BEHAVIOR</text>
+  <rect x="960" y="445" width="360" height="45" rx="8" fill="#27AE60" stroke="#1E8449" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1140" y="475" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">GRID-LEVEL IMPACTS</text>
+  <!-- DOMAIN A: Fixed Hardware Efficiency -->
+  <rect x="50" y="520" width="1300" height="50" fill="#34495E" rx="8" filter="url(#shadow)"/>
+  <text x="700" y="552" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#ECF0F1" text-anchor="middle">(A) FIXED HARDWARE EFFICIENCY (No Diversity Factor)</text>
+  <!-- Domain A - Left Box -->
+  <rect x="80" y="595" width="360" height="310" fill="#FF6B6B" rx="10" filter="url(#shadow)"/>
+  <rect x="100" y="615" width="320" height="130" fill="#FFBABA" rx="6"/>
+  <text x="260" y="638" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="260" dy="0" font-weight="700" font-size="12">Task-Dependent Power</tspan>
+    <tspan x="260" dy="18">Different inference requests (token generation, video</tspan>
+    <tspan x="260" dy="16">generation, image classification) have separate</tspan>
+    <tspan x="260" dy="16">computational intensities, causing task-dependent</tspan>
+    <tspan x="260" dy="16">power consumption. Steady consumption models</tspan>
+    <tspan x="260" dy="16">fail to capture AI data center power behavior.</tspan>
+  </text>
+  <rect x="100" y="755" width="320" height="130" fill="#FFBABA" rx="6"/>
+  <text x="260" y="778" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="260" dy="0" font-weight="700" font-size="12">Ignored Batching Dynamics</tspan>
+    <tspan x="260" dy="18">Separate kernel calls for each request cause</tspan>
+    <tspan x="260" dy="16">excessive memory/processing overhead. In practice,</tspan>
+    <tspan x="260" dy="16">batching of similar tasks is performed for reduced</tspan>
+    <tspan x="260" dy="16">computational intensity. Prior studies ignored this</tspan>
+    <tspan x="260" dy="16">critical optimization.</tspan>
+  </text>
+  <!-- Domain A - Middle Box -->
+  <rect x="520" y="595" width="360" height="310" fill="#9B59B6" rx="10" filter="url(#shadow)"/>
+  <rect x="540" y="615" width="320" height="130" fill="#C8A2D0" rx="6"/>
+  <text x="700" y="638" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="700" dy="0" font-weight="700" font-size="12">Dynamic MFU and Transient Load Surges</tspan>
+    <tspan x="700" dy="18">Heterogeneous inference requests vary in FLOPs and</tspan>
+    <tspan x="700" dy="16">compute intensity, yielding dynamic MFU (GPU utilization)</tspan>
+    <tspan x="700" dy="16">and power draw. Request arrivals trigger transient MFU</tspan>
+    <tspan x="700" dy="16">surges—sudden intense bursts (sub-second load spikes)—</tspan>
+    <tspan x="700" dy="16">causing non-linear power/thermal ramps.</tspan>
+  </text>
+  <rect x="540" y="755" width="320" height="130" fill="#C8A2D0" rx="6"/>
+  <text x="700" y="778" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="700" dy="0" font-weight="700" font-size="12">Latency-Bound Dynamic Approach</tspan>
+    <tspan x="700" dy="18">While dense batches approach rated consumption, small/</tspan>
+    <tspan x="700" dy="16">irregular batches yield 20–40% GPU loading. This research</tspan>
+    <tspan x="700" dy="16">introduces a dynamic, latency-bound approach yielding</tspan>
+    <tspan x="700" dy="16">accurate GPU-seconds utilized, enabling computation</tspan>
+    <tspan x="700" dy="16">intensity-power modeling.</tspan>
+  </text>
+  <!-- Domain A - Right Box -->
+  <rect x="960" y="595" width="360" height="310" fill="#27AE60" rx="10" filter="url(#shadow)"/>
+  <rect x="980" y="615" width="320" height="130" fill="#82E0AA" rx="6"/>
+  <text x="1140" y="638" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="1140" dy="0" font-weight="700" font-size="12">Pulsating Load Patterns</tspan>
+    <tspan x="1140" dy="18">Frequent GPU on-off bursts cause micro-fluctuations</tspan>
+    <tspan x="1140" dy="16">in current draw, leading to harmonic distortions (>8%)</tspan>
+    <tspan x="1140" dy="16">and stress on UPS/converter components. This</tspan>
+    <tspan x="1140" dy="16">accelerates equipment degradation and requires</tspan>
+    <tspan x="1140" dy="16">frequent maintenance interventions.</tspan>
+  </text>
+  <rect x="980" y="755" width="320" height="130" fill="#82E0AA" rx="6"/>
+  <text x="1140" y="778" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="1140" dy="0" font-weight="700" font-size="12">Reactive Power Swings</tspan>
+    <tspan x="1140" dy="18">Nonlinear GPU cluster loads lead to dynamic power</tspan>
+    <tspan x="1140" dy="16">factor shifts, complicating voltage/frequency stabilization</tspan>
+    <tspan x="1140" dy="16">and causing instability at the data hall level. Grid</tspan>
+    <tspan x="1140" dy="16">synchronization becomes increasingly challenging.</tspan>
+  </text>
+  <!-- Arrows for Domain A -->
+  <path d="M450 750 L510 750" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M890 750 L950 750" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- DOMAIN B: Static Inference Flow -->
+  <rect x="50" y="940" width="1300" height="50" fill="#34495E" rx="8" filter="url(#shadow)"/>
+  <text x="700" y="972" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#ECF0F1" text-anchor="middle">(B) STATIC INFERENCE FLOW</text>
+  <!-- Domain B - Left Box -->
+  <rect x="80" y="1015" width="360" height="420" fill="#FF6B6B" rx="10" filter="url(#shadow)"/>
+  <rect x="100" y="1035" width="320" height="185" fill="#FFBABA" rx="6"/>
+  <text x="260" y="1058" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="260" dy="0" font-weight="700" font-size="12">Geography-Driven Demand</tspan>
+    <tspan x="260" dy="18">Inference requests from high-usage regions like China/</tspan>
+    <tspan x="260" dy="16">India peak during local daytime hours, far exceeding</tspan>
+    <tspan x="260" dy="16">volumes during African peaks. When routed to fixed,</tspan>
+    <tspan x="260" dy="16">centralized AI data center clusters, this creates time-zone-</tspan>
+    <tspan x="260" dy="16">based demand surges and dips rather than steady flow,</tspan>
+    <tspan x="260" dy="16">leading to inefficient resource utilization.</tspan>
+  </text>
+  <rect x="100" y="1230" width="320" height="185" fill="#FFBABA" rx="6"/>
+  <text x="260" y="1253" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="260" dy="0" font-weight="700" font-size="12">Uniform GPU Assumption</tspan>
+    <tspan x="260" dy="18">Assumes uniform, constant GPU utilization across</tspan>
+    <tspan x="260" dy="16">workloads, ignoring dynamic power consumption driven</tspan>
+    <tspan x="260" dy="16">by real-time global AI inference demand (fluctuating user</tspan>
+    <tspan x="260" dy="16">patterns, regional time zones, event spikes). Ignoring</tspan>
+    <tspan x="260" dy="16">these patterns results in flawed site selection, power</tspan>
+    <tspan x="260" dy="16">provisioning, and scaling.</tspan>
+  </text>
+  <!-- Domain B - Middle Box -->
+  <rect x="520" y="1015" width="360" height="420" fill="#9B59B6" rx="10" filter="url(#shadow)"/>
+  <rect x="540" y="1035" width="320" height="185" fill="#C8A2D0" rx="6"/>
+  <text x="700" y="1058" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="700" dy="0" font-weight="700" font-size="12">Regional Surge and Dip Routing</tspan>
+    <tspan x="700" dy="18">Considers routed regional surges/dips in varying magnitudes</tspan>
+    <tspan x="700" dy="16">to enable optimal site selection for new data centers,</tspan>
+    <tspan x="700" dy="16">accurate power provisioning, and intelligent scaling decisions.</tspan>
+    <tspan x="700" dy="16">Geography-aware load distribution minimizes waste and</tspan>
+    <tspan x="700" dy="16">maximizes utilization across the global infrastructure footprint.</tspan>
+    <tspan x="700" dy="16">Demand patterns follow sun-based cycles across continents.</tspan>
+  </text>
+  <rect x="540" y="1230" width="320" height="185" fill="#C8A2D0" rx="6"/>
+  <text x="700" y="1253" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="700" dy="0" font-weight="700" font-size="12">Dynamic Power Forecasting</tspan>
+    <tspan x="700" dy="18">Accurate dynamic power consumption forecasting provides</tspan>
+    <tspan x="700" dy="16">temporal data yielding parameters for modeling allowable</tspan>
+    <tspan x="700" dy="16">hardware allocation, MFU (Model FLOPs Utilization), latency</tspan>
+    <tspan x="700" dy="16">constraints, batching strategies, and power requirements—</tspan>
+    <tspan x="700" dy="16">enabling proactive infrastructure planning and resource</tspan>
+    <tspan x="700" dy="16">optimization at both local and global scales.</tspan>
+  </text>
+  <!-- Domain B - Right Box -->
+  <rect x="960" y="1015" width="360" height="420" fill="#27AE60" rx="10" filter="url(#shadow)"/>
+  <rect x="980" y="1035" width="320" height="185" fill="#82E0AA" rx="6"/>
+  <text x="1140" y="1058" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="1140" dy="0" font-weight="700" font-size="12">Predictive Dispatch</tspan>
+    <tspan x="1140" dy="18">Pre-schedule diesel/gas generators for forecasted peaks</tspan>
+    <tspan x="1140" dy="16">to cut idle time and fuel waste. Leverage advance load</tspan>
+    <tspan x="1140" dy="16">visibility for early voltage/frequency adjustments, reducing</tspan>
+    <tspan x="1140" dy="16">reactive grid responses and improving stability. Dynamic</tspan>
+    <tspan x="1140" dy="16">forecasting enables utilities to maintain tighter operational</tspan>
+    <tspan x="1140" dy="16">margins.</tspan>
+  </text>
+  <rect x="980" y="1230" width="320" height="185" fill="#82E0AA" rx="6"/>
+  <text x="1140" y="1253" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="1140" dy="0" font-weight="700" font-size="12">Surplus Utilization</tspan>
+    <tspan x="1140" dy="18">Divert low-demand excess power to batteries or ancillary</tspan>
+    <tspan x="1140" dy="16">grid functions. Use accurate demand curves for right-sizing</tspan>
+    <tspan x="1140" dy="16">substations and transformers, minimizing overprovisioning</tspan>
+    <tspan x="1140" dy="16">and waste during off-peaks. Better forecasting reduces</tspan>
+    <tspan x="1140" dy="16">capital expenditure on redundant infrastructure.</tspan>
+  </text>
+  <!-- Arrows for Domain B -->
+  <path d="M450 1225 L510 1225" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M890 1225 L950 1225" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- DOMAIN C: Dynamic PUE -->
+  <rect x="50" y="1470" width="1300" height="50" fill="#34495E" rx="8" filter="url(#shadow)"/>
+  <text x="700" y="1502" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#ECF0F1" text-anchor="middle">(C) DECOUPLED ANCILLARY OVERHEAD (Dynamic PUE)</text>
+  <!-- Domain C - Left Box -->
+  <rect x="80" y="1545" width="360" height="310" fill="#FF6B6B" rx="10" filter="url(#shadow)"/>
+  <rect x="100" y="1565" width="320" height="130" fill="#FFBABA" rx="6"/>
+  <text x="260" y="1588" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="260" dy="0" font-weight="700" font-size="12">Constant PUE Assumption</tspan>
+    <tspan x="260" dy="18">Cooling and auxiliary systems assumed as static loads.</tspan>
+    <tspan x="260" dy="16">Ignored time and temperature dependence on chip</tspan>
+    <tspan x="260" dy="16">cooling requirements. PUE (Power Usage Effectiveness)</tspan>
+    <tspan x="260" dy="16">treated as a fixed multiplier rather than a dynamic, time-</tspan>
+    <tspan x="260" dy="16">varying parameter.</tspan>
+  </text>
+  <rect x="100" y="1705" width="320" height="130" fill="#FFBABA" rx="6"/>
+  <text x="260" y="1728" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="260" dy="0" font-weight="700" font-size="12">Neglected Ancillary Variations</tspan>
+    <tspan x="260" dy="18">Thermal inertia and staffing routines cause daily power</tspan>
+    <tspan x="260" dy="16">draw shifts. Lighting, security, and maintenance patterns</tspan>
+    <tspan x="260" dy="16">follow human schedules, not IT load profiles—creating</tspan>
+    <tspan x="260" dy="16">temporal mismatches in overhead consumption.</tspan>
+  </text>
+  <!-- Domain C - Middle Box -->
+  <rect x="520" y="1545" width="360" height="310" fill="#9B59B6" rx="10" filter="url(#shadow)"/>
+  <rect x="540" y="1565" width="320" height="130" fill="#C8A2D0" rx="6"/>
+  <text x="700" y="1588" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="700" dy="0" font-weight="700" font-size="12">Dynamic Cooling Power</tspan>
+    <tspan x="700" dy="18">External temperature, load density, and diurnal heat cycles</tspan>
+    <tspan x="700" dy="16">drive cooling variations. Nighttime operations can achieve</tspan>
+    <tspan x="700" dy="16">15–25% energy cuts due to lower ambient temperatures and</tspan>
+    <tspan x="700" dy="16">reduced solar heat gain. Cooling load responds non-linearly</tspan>
+    <tspan x="700" dy="16">to IT load and environmental conditions.</tspan>
+  </text>
+  <rect x="540" y="1705" width="320" height="130" fill="#C8A2D0" rx="6"/>
+  <text x="700" y="1728" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="700" dy="0" font-weight="700" font-size="12">Auxiliary Load Cycles</tspan>
+    <tspan x="700" dy="18">Lighting, pumps, security systems, and staffing follow</tspan>
+    <tspan x="700" dy="16">human and maintenance patterns. These ancillary loads</tspan>
+    <tspan x="700" dy="16">vary throughout the day, creating a time-dependent</tspan>
+    <tspan x="700" dy="16">overhead profile distinct from IT equipment power draw.</tspan>
+  </text>
+  <!-- Domain C - Right Box -->
+  <rect x="960" y="1545" width="360" height="310" fill="#27AE60" rx="10" filter="url(#shadow)"/>
+  <rect x="980" y="1565" width="320" height="130" fill="#82E0AA" rx="6"/>
+  <text x="1140" y="1588" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="1140" dy="0" font-weight="700" font-size="12">Load Estimation Bias</tspan>
+    <tspan x="1140" dy="18">Ignoring thermal and operational cycles inflates power</tspan>
+    <tspan x="1140" dy="16">forecasts by 10–20%, misguiding generator sizing and</tspan>
+    <tspan x="1140" dy="16">grid alignment. Static PUE assumptions lead to</tspan>
+    <tspan x="1140" dy="16">overprovisioned electrical infrastructure and wasted</tspan>
+    <tspan x="1140" dy="16">capital expenditure on redundant capacity.</tspan>
+  </text>
+  <rect x="980" y="1705" width="320" height="130" fill="#82E0AA" rx="6"/>
+  <text x="1140" y="1728" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#2C3E50" text-anchor="middle">
+    <tspan x="1140" dy="0" font-weight="700" font-size="12">Dynamic PUE Achievement</tspan>
+    <tspan x="1140" dy="18">Power Usage Effectiveness becomes a time-varying</tspan>
+    <tspan x="1140" dy="16">metric reflecting actual thermal and operational conditions.</tspan>
+    <tspan x="1140" dy="16">Most sought-after parameter by data center builders for</tspan>
+    <tspan x="1140" dy="16">accurate capacity planning and energy efficiency</tspan>
+    <tspan x="1140" dy="16">optimization.</tspan>
+  </text>
+  <!-- Arrows for Domain C -->
+  <path d="M450 1700 L510 1700" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M890 1700 L950 1700" stroke="#2C3E50" stroke-width="3" marker-end="url(#arrow)"/>
+</svg>
