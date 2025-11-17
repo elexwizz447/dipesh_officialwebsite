@@ -2057,77 +2057,100 @@ normalization</p>
 
 
 
+<!-- ============================================= -->
+<!-- PERFECTLY BALANCED PRINCIPAL DIAGONAL GRID   -->
+<!-- ============================================= -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+  <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(280px,auto)]">
 
-<!-- ===================================================== -->
-<!-- PRINCIPAL DIAGONAL LAYOUT: 2 BIG IMAGES + 4 SMALL BOXES -->
-<!-- ===================================================== -->
-<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-16 auto-rows-min">
-  
-  <!-- TOP-LEFT: BIG IMAGE 1 (Principal Diagonal #1) -->
-  <div class="md:col-span-2 md:row-span-2 project-card hologram border-2 border-[var(--accent-cyan)] rounded-xl overflow-hidden">
-    <h3 class="orbitron text-lg font-bold p-4 text-warning-amber bg-gradient-to-b from-transparent to-black/20">
-      FLOWCHART OVERVIEW
-    </h3>
-    <img 
-      src="./graphics/flowchart.svg" 
-      alt="System Flowchart" 
-      class="w-full h-full min-h-96 object-contain p-4 bg-white/5 cursor-pointer transition-all hover:scale-[1.02] shadow-2xl"
-      onclick="openModal('./graphics/flowchart.svg', 'System Flowchart')">
-    <p class="text-xs text-center italic text-gray-300 px-4 pb-3">
-      Complete parametric computation chain
-    </p>
+    <!-- BIG IMAGE 1: TOP-LEFT (Principal Diagonal) -->
+    <div class="project-card hologram rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
+      <h3 class="orbitron text-lg font-bold p-3 text-warning-amber bg-gradient-to-b from-transparent to-black/10">
+        FLOWCHART OVERVIEW
+      </h3>
+      <div class="flex-1 p-3 bg-white/5 flex items-center justify-center">
+        <img 
+          src="./graphics/flowchart.svg" 
+          alt="System Flowchart" 
+          class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform"
+          onclick="openModal('./graphics/flowchart.svg', 'System Flowchart')">
+      </div>
+      <p class="text-xs text-center italic text-gray-300 px-3 pb-3">
+        Parametric computation chain
+      </p>
+    </div>
+
+    <!-- SMALL: INPUTS (Top-middle) -->
+    <div class="project-card bg-blue-900/10 rounded-xl p-4 flex flex-col justify-between border border-blue-600/30">
+      <div>
+        <h4 class="text-sm font-bold text-accent-cyan">INPUT PARAMETERS</h4>
+        <p class="text-xs mt-2 leading-relaxed">
+          Geometry, mission, hydrogen tank, safety margins.
+        </p>
+      </div>
+      <img src="./assets/hydroart/hydroart_airframe_assembly.png" alt="Inputs" 
+           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
+           onclick="openModal('./assets/hydroart/hydroart_airframe_assembly.png', 'Input Parameters')">
+    </div>
+
+    <!-- SMALL: MODELS (Top-right) -->
+    <div class="project-card bg-purple-900/10 rounded-xl p-4 flex flex-col justify-between border border-purple-600/30">
+      <div>
+        <h4 class="text-sm font-bold text-purple-400">INTERMEDIATE MODELS</h4>
+        <p class="text-xs mt-2 leading-relaxed">
+          Aero, weight, FEM, propulsion scaling.
+        </p>
+      </div>
+      <img src="./assets/hydroart/Tail_Assembly v33.png" alt="Models" 
+           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
+           onclick="openModal('./assets/hydroart/Tail_Assembly v33.png', 'Intermediate Models')">
+    </div>
+
+    <!-- SMALL: ITERATION (Bottom-left) -->
+    <div class="project-card bg-green-900/10 rounded-xl p-4 flex flex-col justify-between border border-success-green/30">
+      <div>
+        <h4 class="text-sm font-bold text-success-green">DESIGN ITERATION</h4>
+        <p class="text-xs mt-2 leading-relaxed">
+          Parametric loops, convergence, trade studies.
+        </p>
+      </div>
+      <img src="./assets/hydroart/Wing v22.png" alt="Iteration" 
+           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
+           onclick="openModal('./assets/hydroart/Wing v22.png', 'Design Iteration')">
+    </div>
+
+    <!-- BIG IMAGE 2: BOTTOM-RIGHT (Principal Diagonal) -->
+    <div class="project-card bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
+      <h3 class="orbitron text-lg font-bold p-3 text-success-green bg-gradient-to-b from-transparent to-black/10">
+        FINAL DESIGN TABLE
+      </h3>
+      <div class="flex-1 p-3 bg-white/5 flex items-center justify-center">
+        <img 
+          src="./graphics/tablefinal.svg" 
+          alt="Final Design Table" 
+          class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform"
+          onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table')">
+      </div>
+      <p class="text-xs text-center italic text-gray-300 px-3 pb-3">
+        1400 × 2100 pt – Complete results
+      </p>
+    </div>
+
+    <!-- SMALL: VALIDATION (Bottom-middle) -->
+    <div class="project-card bg-amber-900/10 rounded-xl p-4 flex flex-col justify-between border border-amber-600/30">
+      <div>
+        <h4 class="text-sm font-bold text-warning-amber">VALIDATION & OUTPUT</h4>
+        <p class="text-xs mt-2 leading-relaxed">
+          Safety, performance, regulatory compliance.
+        </p>
+      </div>
+      <img src="./assets/hydroart/Motor_Mount v1.png" alt="Output" 
+           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
+           onclick="openModal('./assets/hydroart/Motor_Mount v1.png', 'Validation Output')">
+    </div>
+
   </div>
-
-  <!-- TOP-RIGHT: SMALL TEXT + IMAGE (Top row filler) -->
-  <div class="project-card bg-blue-900/20 p-4 rounded-lg flex flex-col justify-between">
-    <h4 class="text-sm font-bold text-accent-cyan">INPUT PARAMETERS</h4>
-    <p class="text-xs mt-2">Aircraft geometry, mission profile, hydrogen tank specs, safety margins.</p>
-    <img src="./assets/hydroart/hydroart_airframe_assembly.png" alt="Inputs" class="w-full h-20 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer" 
-         onclick="openModal('./assets/hydroart/hydroart_airframe_assembly.png', 'Input Parameters')">
-  </div>
-
-  <!-- MIDDLE-RIGHT: SMALL TEXT + IMAGE -->
-  <div class="project-card bg-purple-900/20 p-4 rounded-lg flex flex-col justify-between">
-    <h4 class="text-sm font-bold text-purple-400">INTERMEDIATE MODELS</h4>
-    <p class="text-xs mt-2">Aerodynamics, weight breakdown, structural FEM, propulsion scaling.</p>
-    <img src="./assets/hydroart/Tail_Assembly v33.png" alt="Models" class="w-full h-20 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-         onclick="openModal('./assets/hydroart/Tail_Assembly v33.png', 'Intermediate Models')">
-  </div>
-
-  <!-- BOTTOM-LEFT: SMALL TEXT + IMAGE -->
-  <div class="project-card bg-green-900/20 p-4 rounded-lg flex flex-col justify-between md:col-start-1">
-    <h4 class="text-sm font-bold text-success-green">DESIGN ITERATION</h4>
-    <p class="text-xs mt-2">Parametric loops, convergence checks, trade studies.</p>
-    <img src="./assets/hydroart/Wing v22.png" alt="Iteration" class="w-full h-20 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-         onclick="openModal('./assets/hydroart/Wing v22.png', 'Design Iteration')">
-  </div>
-
-  <!-- BOTTOM-RIGHT: BIG IMAGE 2 (Principal Diagonal #2) -->
-  <div class="md:col-span-2 md:row-span-2 project-card bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-2 border-[var(--accent-cyan)] rounded-xl overflow-hidden">
-    <h3 class="orbitron text-lg font-bold p-4 text-success-green bg-gradient-to-b from-transparent to-black/20">
-      FINAL DESIGN TABLE
-    </h3>
-    <img 
-      src="./graphics/tablefinal.svg" 
-      alt="Final Design Table" 
-      class="w-full h-full min-h-96 object-contain p-4 bg-white/5 cursor-pointer transition-all hover:scale-[1.02] shadow-2xl"
-      onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table')">
-    <p class="text-xs text-center italic text-gray-300 px-4 pb-3">
-      1400 × 2100 pt – Complete results summary
-    </p>
-  </div>
-
-  <!-- BOTTOM-LEFT FILLER: SMALL TEXT + IMAGE (Completes grid) -->
-  <div class="project-card bg-amber-900/20 p-4 rounded-lg flex flex-col justify-between">
-    <h4 class="text-sm font-bold text-warning-amber">VALIDATION & OUTPUT</h4>
-    <p class="text-xs mt-2">Safety compliance, performance validation, regulatory alignment.</p>
-    <img src="./assets/hydroart/Motor_Mount v1.png" alt="Output" class="w-full h-20 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-         onclick="openModal('./assets/hydroart/Motor_Mount v1.png', 'Validation Output')">
-  </div>
-
 </div>
-
-
 
     
     
@@ -4582,6 +4605,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
