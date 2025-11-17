@@ -3150,6 +3150,38 @@ document.addEventListener('DOMContentLoaded', () => {
           <button onclick="slideCarousel('work-carousel', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">‹</button>
           <button onclick="slideCarousel('work-carousel', 1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">›</button>
         </div>
+
+
+
+
+   <div class="bg-purple-900 bg-opacity-10 p-5 rounded-lg border border-purple-600">
+        <h4 class="text-sm font-bold text-purple-400 mb-3">WORK COMPLETED </h4>
+        
+        <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
+          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="explanation-carousel" style="transform: translateX(0%);">
+            <div class="carousel-item flex-shrink-0 w-full h-full">
+              <img src="./assets/hydroart/detailed_explanation.svg" alt="Detailed Explanation 1" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'System Architecture & Flow')">
+            </div>
+            <div class="carousel-item flex-shrink-0 w-full h-full">
+              <img src="./graphics/fig5.png" alt="Detailed Explanation 2" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Regional Request to Task Mapping')">
+            </div>
+            <div class="carousel-item flex-shrink-0 w-full h-full">
+              <img src="./assets/hydroart/detailed_explanation.svg" alt="Detailed Explanation 3" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Compute-to-Power Conversion')">
+            </div>
+          </div>
+          <button onclick="slideCarousel('explanation-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+          <button onclick="slideCarousel('explanation-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
         
         <p class="text-xs text-center text-gray-300 mb-3">Final Prototype Assembly</p>
        
@@ -3159,26 +3191,32 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="flex items-start"><span class="text-success-green mr-2">•</span> Used a single global aggregate traffic waveform for tractability, reflecting clustered AI data centers serving large regions.</p>
         </div>
       </div>
+  
+
+
+
+
       
-      <!-- DETAILED EXPLANATION with Carousel -->
+           <!-- DETAILED EXPLANATION with Carousel -->
       <div class="bg-purple-900 bg-opacity-10 p-5 rounded-lg border border-purple-600">
         <h4 class="text-sm font-bold text-purple-400 mb-3">DETAILED EXPLANATION</h4>
         
         <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
-          <div class="carousel-container" id="explanation-carousel">
-            <div class="carousel-item">
-              <img src="./assets/hydroart/detailed_explanation.svg" alt="Detailed Explanation 1" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'System Architecture & Flow')">
+          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="explanation-carousel" style="transform: translateX(0%);">
+            <div class="carousel-item flex-shrink-0 w-full h-full">
+              <img src="./graphics/fig5.png" alt="Detailed Explanation 1" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'System Architecture & Flow')">
             </div>
-            <div class="carousel-item">
-              <img src="./assets/hydroart/detailed_explanation2.svg" alt="Detailed Explanation 2" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation2.svg', 'Regional Request to Task Mapping')">
+            <div class="carousel-item flex-shrink-0 w-full h-full">
+              <img src="./assets/hydroart/detailed_explanation.svg" alt="Detailed Explanation 2" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Regional Request to Task Mapping')">
             </div>
-            <div class="carousel-item">
-              <img src="./assets/hydroart/detailed_explanation3.svg" alt="Detailed Explanation 3" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation3.svg', 'Compute-to-Power Conversion')">
+            <div class="carousel-item flex-shrink-0 w-full h-full">
+              <img src="./graphics/fig5.png" alt="Detailed Explanation 3" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Compute-to-Power Conversion')">
             </div>
           </div>
-          <button onclick="slideCarousel('explanation-carousel', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">‹</button>
-          <button onclick="slideCarousel('explanation-carousel', 1)" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">›</button>
+          <button onclick="slideCarousel('explanation-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+          <button onclick="slideCarousel('explanation-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
         </div>
+        
         
         <p class="text-xs text-center text-gray-300 mb-3">System Architecture & Flow</p>
        
@@ -5410,6 +5448,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 </html>
 ```
+
 
 
 
