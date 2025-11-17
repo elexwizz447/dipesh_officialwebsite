@@ -1,0 +1,462 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1551pt" height="1417pt" viewBox="0.00 0.00 1551.00 1417.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1412.9)">
+<title>AI_Inference_Power_Modeling_Workflow</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1412.9 1547.37,-1412.9 1547.37,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_priors</title>
+<polygon fill="none" stroke="red" stroke-dasharray="5,2" points="273,-864.36 273,-1400.9 677,-1400.9 677,-864.36 273,-864.36"/>
+<text xml:space="preserve" text-anchor="middle" x="475" y="-1387" font-family="Comic Sans MS" font-size="11.00">Prior Modeling Flaws (Static/Uniform Assumptions )</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_phase1</title>
+<polygon fill="none" stroke="green" stroke-dasharray="5,2" points="816,-853.86 816,-1400.9 1287,-1400.9 1287,-853.86 816,-853.86"/>
+<text xml:space="preserve" text-anchor="middle" x="1051.5" y="-1387" font-family="Comic Sans MS" font-size="11.00">.          Completed Work: Phase 1 -Modeling of Global AI inference demand curves ( R_global(t)).       .</text>
+</g>
+<g id="clust9" class="cluster">
+<title>cluster_phase2</title>
+<polygon fill="none" stroke="steelblue" stroke-dasharray="5,2" points="471,-245.77 471,-825.06 919,-825.06 919,-245.77 471,-245.77"/>
+<text xml:space="preserve" text-anchor="middle" x="695" y="-811.16" font-family="Comic Sans MS" font-size="11.00">.        My Current  Research :Phase 2 - Request → Compute → Power Model          .</text>
+</g>
+<g id="clust11" class="cluster">
+<title>cluster_outcomes</title>
+<polygon fill="none" stroke="yellow" stroke-dasharray="5,2" points="8,-29.72 8,-226.77 1480,-226.77 1480,-29.72 8,-29.72"/>
+<text xml:space="preserve" text-anchor="middle" x="744" y="-210.17" font-family="Comic Sans MS" font-size="14.00">Research Outcomes: Optimized AI Data Center Planning  &amp; Grid Integration</text>
+</g>
+<!-- Flaw1 -->
+<g id="node1" class="node">
+<title>Flaw1</title>
+<ellipse fill="lightcoral" stroke="black" cx="502" cy="-1349.08" rx="157.21" ry="22.63"/>
+<text xml:space="preserve" text-anchor="middle" x="502" y="-1352.08" font-family="Comic Sans MS" font-size="10.00">Constant Diurnal Load</text>
+<text xml:space="preserve" text-anchor="middle" x="502" y="-1340.08" font-family="Comic Sans MS" font-size="10.00">(Ignores varying AI usage pattern throught the day)</text>
+</g>
+<!-- Flaw2 -->
+<g id="node2" class="node">
+<title>Flaw2</title>
+<polygon fill="lightcoral" stroke="black" points="669.21,-1268.85 280.79,-1268.85 280.79,-1232.85 669.21,-1232.85 669.21,-1268.85"/>
+<text xml:space="preserve" text-anchor="middle" x="475" y="-1253.85" font-family="Comic Sans MS" font-size="10.00">Aggregate FLOPs Only</text>
+<text xml:space="preserve" text-anchor="middle" x="475" y="-1241.85" font-family="Comic Sans MS" font-size="10.00">.        (Every task assumed to have same computation intensity-power consumed ratio)          .</text>
+</g>
+<!-- Flaw1&#45;&gt;Flaw2 -->
+<g id="edge1" class="edge">
+<title>Flaw1-&gt;Flaw2</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M495.87,-1326.24C491.85,-1311.91 486.57,-1293.1 482.33,-1277.98"/>
+<polygon fill="black" stroke="black" points="485.11,-1277.52 480.25,-1270.57 479.72,-1279.03 485.11,-1277.52"/>
+</g>
+<!-- Canonical -->
+<g id="node8" class="node">
+<title>Canonical</title>
+<polygon fill="lightgreen" stroke="black" points="1175.97,-1268.85 838.03,-1268.85 838.03,-1232.85 1175.97,-1232.85 1175.97,-1268.85"/>
+<text xml:space="preserve" text-anchor="middle" x="1007" y="-1253.85" font-family="Comic Sans MS" font-size="10.00">Diurnal Mathematical  Modeling</text>
+<text xml:space="preserve" text-anchor="middle" x="1007" y="-1241.85" font-family="Comic Sans MS" font-size="10.00">.        baseline + 3 Gaussian peaks; enforce 24h periodicity; normalize → r(t)      .</text>
+</g>
+<!-- Flaw1&#45;&gt;Canonical -->
+<g id="edge17" class="edge">
+<title>Flaw1-&gt;Canonical</title>
+<path fill="none" stroke="blue" stroke-width="2" d="M594.62,-1330.43C682.41,-1313.7 813.99,-1288.63 904.8,-1271.32"/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="905.08,-1274.12 912.41,-1269.87 904.03,-1268.62 905.08,-1274.12"/>
+<text xml:space="preserve" text-anchor="middle" x="856.32" y="-1300.35" font-family="Comic Sans MS" font-size="9.00">Diurnal Gaussians</text>
+<text xml:space="preserve" text-anchor="middle" x="856.32" y="-1289.55" font-family="Comic Sans MS" font-size="9.00">(Captures Real Cycles)</text>
+</g>
+<!-- Flaw3 -->
+<g id="node3" class="node">
+<title>Flaw3</title>
+<polygon fill="lightcoral" stroke="black" points="587.6,-1182.05 404.4,-1182.05 404.4,-1146.05 587.6,-1146.05 587.6,-1182.05"/>
+<text xml:space="preserve" text-anchor="middle" x="496" y="-1167.05" font-family="Comic Sans MS" font-size="10.00">.     Ignored  Batching/MFU Dynamics    .</text>
+<text xml:space="preserve" text-anchor="middle" x="496" y="-1155.05" font-family="Comic Sans MS" font-size="10.00">(Diversity Factor not  Modeled)</text>
+</g>
+<!-- Flaw2&#45;&gt;Flaw3 -->
+<g id="edge2" class="edge">
+<title>Flaw2-&gt;Flaw3</title>
+<path fill="none" stroke="black" d="M479.25,-1232.69C482.16,-1220.93 486.08,-1205.09 489.4,-1191.7"/>
+<polygon fill="black" stroke="black" points="492.12,-1192.38 491.32,-1183.94 486.68,-1191.04 492.12,-1192.38"/>
+</g>
+<!-- Traffic -->
+<g id="node13" class="node">
+<title>Traffic</title>
+<polygon fill="orange" stroke="black" stroke-width="2" points="657.24,-795.86 478.76,-795.86 478.76,-751.86 657.24,-751.86 657.24,-795.86"/>
+<text xml:space="preserve" text-anchor="middle" x="568" y="-782.86" font-family="Comic Sans MS" font-size="10.00">Traffic Input</text>
+<text xml:space="preserve" text-anchor="middle" x="568" y="-770.86" font-family="Comic Sans MS" font-size="10.00"> r_k(t) from R_global(t)</text>
+<text xml:space="preserve" text-anchor="middle" x="568" y="-758.86" font-family="Comic Sans MS" font-size="10.00">.        Region-Weighted Request Mix     .</text>
+</g>
+<!-- Flaw2&#45;&gt;Traffic -->
+<g id="edge18" class="edge">
+<title>Flaw2-&gt;Traffic</title>
+<path fill="none" stroke="blue" stroke-width="2" d="M398.45,-1232.35C365.76,-1219.91 335,-1199.15 335,-1165.05 335,-1165.05 335,-1165.05 335,-941.25 335,-901.5 326.2,-882.27 354,-853.86 392.37,-814.67 422.73,-844.54 474,-825.06 490.46,-818.81 507.67,-810.27 522.8,-802.01"/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="524.14,-804.46 529.77,-798.12 521.42,-799.57 524.14,-804.46"/>
+<text xml:space="preserve" text-anchor="middle" x="363.36" y="-1033.15" font-family="Comic Sans MS" font-size="9.00">Task-Level λ_k</text>
+<text xml:space="preserve" text-anchor="middle" x="363.36" y="-1022.35" font-family="Comic Sans MS" font-size="9.00">(Correct Mix)</text>
+</g>
+<!-- Flaw4 -->
+<g id="node4" class="node">
+<title>Flaw4</title>
+<polygon fill="lightcoral" stroke="black" points="622.17,-1095.25 369.83,-1095.25 369.83,-1059.25 622.17,-1059.25 622.17,-1095.25"/>
+<text xml:space="preserve" text-anchor="middle" x="496" y="-1080.25" font-family="Comic Sans MS" font-size="10.00">Decoupled Overhead/ Constant PUE</text>
+<text xml:space="preserve" text-anchor="middle" x="496" y="-1068.25" font-family="Comic Sans MS" font-size="10.00">.   ( Non Dyanamic Cooling Load/Facility Overheads).      .</text>
+</g>
+<!-- Flaw3&#45;&gt;Flaw4 -->
+<g id="edge3" class="edge">
+<title>Flaw3-&gt;Flaw4</title>
+<path fill="none" stroke="black" d="M496,-1145.89C496,-1134.13 496,-1118.29 496,-1104.9"/>
+<polygon fill="black" stroke="black" points="498.8,-1105.19 496,-1097.19 493.2,-1105.19 498.8,-1105.19"/>
+</g>
+<!-- Stage1 -->
+<g id="node15" class="node">
+<title>Stage1</title>
+<polygon fill="orange" stroke="black" stroke-width="2" points="899.47,-622.26 618.53,-622.26 618.53,-578.26 899.47,-578.26 899.47,-622.26"/>
+<text xml:space="preserve" text-anchor="middle" x="759" y="-609.26" font-family="Comic Sans MS" font-size="10.00">.      Stage 1: Dynamic Batching and User Latency allowded         .</text>
+<text xml:space="preserve" text-anchor="middle" x="759" y="-597.26" font-family="Comic Sans MS" font-size="10.00">.        b_k(t) from Request Density        .</text>
+<text xml:space="preserve" text-anchor="middle" x="759" y="-585.26" font-family="Comic Sans MS" font-size="10.00">MFU(b): Saturating Curve</text>
+</g>
+<!-- Flaw3&#45;&gt;Stage1 -->
+<g id="edge19" class="edge">
+<title>Flaw3-&gt;Stage1</title>
+<path fill="none" stroke="blue" stroke-width="2" d="M587.84,-1145.74C650.06,-1131.3 721,-1108.25 721,-1078.25 721,-1078.25 721,-1078.25 721,-941.25 721,-902.36 698.34,-881.91 725.27,-853.86 742.54,-835.88 819.91,-862.02 837,-843.86 890.26,-787.28 874.1,-739.37 841,-669.06 833.64,-653.44 820.72,-640.18 807.28,-629.64"/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="808.96,-627.41 800.86,-624.91 805.64,-631.91 808.96,-627.41"/>
+<text xml:space="preserve" text-anchor="middle" x="768.63" y="-893.06" font-family="Comic Sans MS" font-size="9.00">Dynamic MFU</text>
+<text xml:space="preserve" text-anchor="middle" x="768.63" y="-882.26" font-family="Comic Sans MS" font-size="9.00">(Fixes Underutilization)</text>
+</g>
+<!-- Flaw5 -->
+<g id="node5" class="node">
+<title>Flaw5</title>
+<polygon fill="lightcoral" stroke="black" points="627.55,-1001.65 402.45,-1001.65 402.45,-965.65 627.55,-965.65 627.55,-1001.65"/>
+<text xml:space="preserve" text-anchor="middle" x="515" y="-986.65" font-family="Comic Sans MS" font-size="10.00">No Global Asynchrony</text>
+<text xml:space="preserve" text-anchor="middle" x="515" y="-974.65" font-family="Comic Sans MS" font-size="10.00">.      (Time varying Global Inference Curves )          .</text>
+</g>
+<!-- Flaw4&#45;&gt;Flaw5 -->
+<g id="edge4" class="edge">
+<title>Flaw4-&gt;Flaw5</title>
+<path fill="none" stroke="black" d="M499.57,-1059.02C502.37,-1045.54 506.3,-1026.57 509.5,-1011.16"/>
+<polygon fill="black" stroke="black" points="512.19,-1012 511.07,-1003.59 506.7,-1010.86 512.19,-1012"/>
+</g>
+<!-- Stage4 -->
+<g id="node18" class="node">
+<title>Stage4</title>
+<polygon fill="orange" stroke="black" stroke-width="2" points="907.27,-288.26 907.27,-331.38 782.92,-361.86 607.08,-361.86 482.73,-331.38 482.73,-288.26 607.08,-257.77 782.92,-257.77 907.27,-288.26"/>
+<polygon fill="none" stroke="black" stroke-width="2" points="911.27,-285.12 911.27,-334.52 783.41,-365.86 606.59,-365.86 478.73,-334.52 478.73,-285.12 606.59,-253.77 783.41,-253.77 911.27,-285.12"/>
+<text xml:space="preserve" text-anchor="middle" x="695" y="-330.82" font-family="Comic Sans MS" font-size="10.00">GPU Cluster/Pods Power demand based on hardware utilization  </text>
+<text xml:space="preserve" text-anchor="middle" x="695" y="-318.82" font-family="Comic Sans MS" font-size="10.00">  ↓ </text>
+<text xml:space="preserve" text-anchor="middle" x="695" y="-306.82" font-family="Comic Sans MS" font-size="10.00">  Added Ancillary and Facility  Loads  </text>
+<text xml:space="preserve" text-anchor="middle" x="695" y="-294.82" font-family="Comic Sans MS" font-size="10.00">  ↓ </text>
+<text xml:space="preserve" text-anchor="middle" x="695" y="-282.82" font-family="Comic Sans MS" font-size="10.00">  Final Time-Varying AI Data Center Power Demand </text>
+</g>
+<!-- Flaw4&#45;&gt;Stage4 -->
+<g id="edge20" class="edge">
+<title>Flaw4-&gt;Stage4</title>
+<path fill="none" stroke="blue" stroke-width="2" d="M465.34,-1058.85C409.52,-1024.63 297,-942.83 297,-839.46 297,-839.46 297,-839.46 297,-429.66 297,-386.61 383.58,-357.87 475.97,-339.45"/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="476.39,-342.22 483.7,-337.94 475.32,-336.73 476.39,-342.22"/>
+<text xml:space="preserve" text-anchor="middle" x="330.12" y="-689.76" font-family="Comic Sans MS" font-size="9.00">Thermal Coupling</text>
+<text xml:space="preserve" text-anchor="middle" x="330.12" y="-678.96" font-family="Comic Sans MS" font-size="9.00">(PUE Dynamics)</text>
+</g>
+<!-- Flaw6 -->
+<g id="node6" class="node">
+<title>Flaw6</title>
+<polygon fill="lightcoral" stroke="black" points="666.85,-908.36 363.15,-908.36 363.15,-872.36 666.85,-872.36 666.85,-908.36"/>
+<text xml:space="preserve" text-anchor="middle" x="515" y="-893.36" font-family="Comic Sans MS" font-size="10.00">Static Parameters</text>
+<text xml:space="preserve" text-anchor="middle" x="515" y="-881.36" font-family="Comic Sans MS" font-size="10.00">.          (No Tunability,Overprovisoning of hardware,Forecast erors)      .</text>
+</g>
+<!-- Flaw5&#45;&gt;Flaw6 -->
+<g id="edge5" class="edge">
+<title>Flaw5-&gt;Flaw6</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M515,-965.48C515,-952.17 515,-933.5 515,-918.22"/>
+<polygon fill="black" stroke="black" points="517.8,-918.27 515,-910.27 512.2,-918.27 517.8,-918.27"/>
+</g>
+<!-- GlobalAgg -->
+<g id="node12" class="node">
+<title>GlobalAgg</title>
+<polygon fill="lightgreen" stroke="black" stroke-width="2" points="1212.62,-880.21 1212.62,-900.5 1100.37,-914.85 941.63,-914.85 829.38,-900.5 829.38,-880.21 941.63,-865.86 1100.37,-865.86 1212.62,-880.21"/>
+<polygon fill="none" stroke="black" stroke-width="2" points="1216.62,-876.69 1216.62,-904.02 1100.63,-918.85 941.37,-918.85 825.38,-904.02 825.38,-876.69 941.37,-861.86 1100.63,-861.86 1216.62,-876.69"/>
+<text xml:space="preserve" text-anchor="middle" x="1021" y="-893.36" font-family="Comic Sans MS" font-size="10.00">Final Tunable Global AI Demand Curve .</text>
+<text xml:space="preserve" text-anchor="middle" x="1021" y="-881.36" font-family="Comic Sans MS" font-size="10.00"> Provides Routed inference load to AI  data center vs time </text>
+</g>
+<!-- Flaw5&#45;&gt;GlobalAgg -->
+<g id="edge21" class="edge">
+<title>Flaw5-&gt;GlobalAgg</title>
+<path fill="none" stroke="blue" stroke-width="2" d="M611.96,-965.15C689.37,-951.19 798.75,-931.45 884.93,-915.91"/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="885.23,-918.7 892.61,-914.52 884.24,-913.19 885.23,-918.7"/>
+<text xml:space="preserve" text-anchor="middle" x="806.25" y="-939.55" font-family="Comic Sans MS" font-size="9.00">Async Regional Sum</text>
+</g>
+<!-- Stage0 -->
+<g id="node14" class="node">
+<title>Stage0</title>
+<polygon fill="orange" stroke="black" points="831.88,-705.06 538.12,-705.06 538.12,-669.06 831.88,-669.06 831.88,-705.06"/>
+<text xml:space="preserve" text-anchor="middle" x="685" y="-690.06" font-family="Comic Sans MS" font-size="10.00">.        Stage 0: FLOPs ( Computation Intensity) per Request F_k        .</text>
+<text xml:space="preserve" text-anchor="middle" x="685" y="-678.06" font-family="Comic Sans MS" font-size="10.00">Per-Task FLOP Budget</text>
+</g>
+<!-- Flaw6&#45;&gt;Stage0 -->
+<g id="edge22" class="edge">
+<title>Flaw6-&gt;Stage0</title>
+<path fill="none" stroke="blue" stroke-width="2" d="M436.5,-871.92C411.82,-862.34 387.24,-847.61 372.68,-825.06 355.04,-797.73 352.11,-777.07 372.68,-751.86 393.2,-726.74 460.41,-711.24 527.26,-701.83"/>
+<polygon fill="blue" stroke="blue" stroke-width="2" points="527.43,-704.63 534.98,-700.78 526.67,-699.08 527.43,-704.63"/>
+<text xml:space="preserve" text-anchor="middle" x="421.34" y="-771.16" font-family="Comic Sans MS" font-size="9.00">FLOPs Anchors = Tunable</text>
+</g>
+<!-- Start -->
+<g id="node7" class="node">
+<title>Start</title>
+<ellipse fill="lightgreen" stroke="black" cx="1007" cy="-1349.08" rx="106.35" ry="22.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1007" y="-1352.08" font-family="Comic Sans MS" font-size="10.00">Start:Existing literature of </text>
+<text xml:space="preserve" text-anchor="middle" x="1007" y="-1340.08" font-family="Comic Sans MS" font-size="10.00">(Global 24h AI infernce Patterns)</text>
+</g>
+<!-- Start&#45;&gt;Canonical -->
+<g id="edge6" class="edge">
+<title>Start-&gt;Canonical</title>
+<path fill="none" stroke="green" d="M1007,-1326.24C1007,-1312.05 1007,-1293.46 1007,-1278.41"/>
+<polygon fill="green" stroke="green" points="1009.8,-1278.63 1007,-1270.63 1004.2,-1278.63 1009.8,-1278.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1081.47" y="-1294.95" font-family="Comic Sans MS" font-size="9.00">Extract features; fit Gaussians; normalize</text>
+</g>
+<!-- Periodic -->
+<g id="node9" class="node">
+<title>Periodic</title>
+<polygon fill="lightgreen" stroke="black" points="1152.25,-1186.05 875.75,-1186.05 875.75,-1142.05 1152.25,-1142.05 1152.25,-1186.05"/>
+<text xml:space="preserve" text-anchor="middle" x="1014" y="-1173.05" font-family="Comic Sans MS" font-size="10.00">Regional Parametrization</text>
+<text xml:space="preserve" text-anchor="middle" x="1014" y="-1161.05" font-family="Comic Sans MS" font-size="10.00">.         Define K regions with sₖ (shares), Δₖ (UTC offsets)        .</text>
+<text xml:space="preserve" text-anchor="middle" x="1014" y="-1149.05" font-family="Comic Sans MS" font-size="10.00"> Defined 10 Regions (e.g., NA, EU, CN ) </text>
+</g>
+<!-- Canonical&#45;&gt;Periodic -->
+<g id="edge7" class="edge">
+<title>Canonical-&gt;Periodic</title>
+<path fill="none" stroke="green" d="M1008.42,-1232.69C1009.3,-1222.04 1010.45,-1208.06 1011.48,-1195.58"/>
+<polygon fill="green" stroke="green" points="1014.25,-1196.11 1012.11,-1187.91 1008.66,-1195.65 1014.25,-1196.11"/>
+<text xml:space="preserve" text-anchor="middle" x="1052.95" y="-1206.75" font-family="Comic Sans MS" font-size="9.00">Apply regional weights</text>
+</g>
+<!-- Normalize -->
+<g id="node10" class="node">
+<title>Normalize</title>
+<polygon fill="lightgreen" stroke="black" points="1096.74,-1095.25 937.26,-1095.25 937.26,-1059.25 1096.74,-1059.25 1096.74,-1095.25"/>
+<text xml:space="preserve" text-anchor="middle" x="1017" y="-1080.25" font-family="Comic Sans MS" font-size="10.00"> Regional Contribution </text>
+<text xml:space="preserve" text-anchor="middle" x="1017" y="-1068.25" font-family="Comic Sans MS" font-size="10.00">.     Rₖ(t)=sₖ·r((t+Δₖ) mod 24)    .</text>
+</g>
+<!-- Periodic&#45;&gt;Normalize -->
+<g id="edge8" class="edge">
+<title>Periodic-&gt;Normalize</title>
+<path fill="none" stroke="green" d="M1014.76,-1141.65C1015.15,-1130.53 1015.63,-1116.84 1016.05,-1105.03"/>
+<polygon fill="green" stroke="green" points="1018.85,-1105.25 1016.33,-1097.16 1013.25,-1105.05 1018.85,-1105.25"/>
+<text xml:space="preserve" text-anchor="middle" x="1049.68" y="-1115.95" font-family="Comic Sans MS" font-size="9.00">Shift curves by Δₖ</text>
+</g>
+<!-- Regional -->
+<g id="node11" class="node">
+<title>Regional</title>
+<polygon fill="lightgreen" stroke="black" points="1085.87,-1001.65 952.13,-1001.65 952.13,-965.65 1085.87,-965.65 1085.87,-1001.65"/>
+<text xml:space="preserve" text-anchor="middle" x="1019" y="-986.65" font-family="Comic Sans MS" font-size="10.00"> Global Aggregated Demand </text>
+<text xml:space="preserve" text-anchor="middle" x="1019" y="-974.65" font-family="Comic Sans MS" font-size="10.00">  R_global(t)=Σₖ Rₖ(t))</text>
+</g>
+<!-- Normalize&#45;&gt;Regional -->
+<g id="edge9" class="edge">
+<title>Normalize-&gt;Regional</title>
+<path fill="none" stroke="green" d="M1017.38,-1059.02C1017.67,-1045.67 1018.08,-1026.93 1018.41,-1011.6"/>
+<polygon fill="green" stroke="green" points="1021.21,-1011.68 1018.59,-1003.62 1015.61,-1011.56 1021.21,-1011.68"/>
+<text xml:space="preserve" text-anchor="middle" x="1077.67" y="-1027.75" font-family="Comic Sans MS" font-size="9.00">Superpose regional contributions</text>
+</g>
+<!-- Regional&#45;&gt;GlobalAgg -->
+<g id="edge10" class="edge">
+<title>Regional-&gt;GlobalAgg</title>
+<path fill="none" stroke="green" d="M1019.38,-965.48C1019.6,-955.19 1019.9,-941.68 1020.17,-929.02"/>
+<polygon fill="green" stroke="green" points="1022.97,-929.15 1020.35,-921.09 1017.37,-929.03 1022.97,-929.15"/>
+<text xml:space="preserve" text-anchor="middle" x="1055.24" y="-939.55" font-family="Comic Sans MS" font-size="9.00">Produce final curve</text>
+</g>
+<!-- GlobalAgg&#45;&gt;Traffic -->
+<g id="edge16" class="edge">
+<title>GlobalAgg-&gt;Traffic</title>
+<path fill="none" stroke="steelblue" d="M895.13,-866.84C861.33,-860.13 824.9,-852.3 791.53,-843.86 740.88,-831.06 684.69,-813.7 641.32,-799.6"/>
+<polygon fill="steelblue" stroke="steelblue" points="642.46,-797.03 633.98,-797.2 640.72,-802.35 642.46,-797.03"/>
+<text xml:space="preserve" text-anchor="middle" x="837.77" y="-835.76" font-family="Comic Sans MS" font-size="9.00">Diurnal Backbone (req/h)</text>
+</g>
+<!-- GlobalAgg&#45;&gt;Stage1 -->
+<g id="edge28" class="edge">
+<title>GlobalAgg-&gt;Stage1</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M1006.17,-861.27C974.98,-803.09 902.25,-672.15 863,-640.26 857.03,-635.42 850.39,-631.13 843.45,-627.35"/>
+<polygon fill="purple" stroke="purple" points="844.92,-624.96 836.52,-623.83 842.38,-629.95 844.92,-624.96"/>
+<text xml:space="preserve" text-anchor="middle" x="985.38" y="-725.76" font-family="Comic Sans MS" font-size="9.00">Affects Batching (r(t) → b_k)</text>
+</g>
+<!-- Traffic&#45;&gt;Stage0 -->
+<g id="edge11" class="edge">
+<title>Traffic-&gt;Stage0</title>
+<path fill="none" stroke="steelblue" d="M586.69,-750.96C595.31,-741.66 606.06,-731.12 617,-723.06 623.38,-718.37 630.48,-713.96 637.62,-709.96"/>
+<polygon fill="steelblue" stroke="steelblue" points="638.92,-712.44 644.64,-706.18 636.27,-707.51 638.92,-712.44"/>
+<text xml:space="preserve" text-anchor="middle" x="644" y="-725.76" font-family="Comic Sans MS" font-size="9.00">Stratify by λ_k</text>
+</g>
+<!-- Stage0&#45;&gt;Stage1 -->
+<g id="edge12" class="edge">
+<title>Stage0-&gt;Stage1</title>
+<path fill="none" stroke="steelblue" d="M699.98,-668.9C709.67,-657.8 722.53,-643.06 733.77,-630.17"/>
+<polygon fill="steelblue" stroke="steelblue" points="735.68,-632.25 738.83,-624.38 731.46,-628.57 735.68,-632.25"/>
+<text xml:space="preserve" text-anchor="middle" x="753.33" y="-642.96" font-family="Comic Sans MS" font-size="9.00">Arrival → Batch</text>
+</g>
+<!-- Stage2 -->
+<g id="node16" class="node">
+<title>Stage2</title>
+<polygon fill="orange" stroke="black" points="911.06,-531.46 640.94,-531.46 640.94,-495.46 911.06,-495.46 911.06,-531.46"/>
+<text xml:space="preserve" text-anchor="middle" x="776" y="-516.46" font-family="Comic Sans MS" font-size="10.00">.            Stage 2: GPU-Seconds needed for each task (s_k)       . </text>
+<text xml:space="preserve" text-anchor="middle" x="776" y="-504.46" font-family="Comic Sans MS" font-size="10.00">S_total(t) = Σ r_k·s_k</text>
+</g>
+<!-- Stage1&#45;&gt;Stage2 -->
+<g id="edge13" class="edge">
+<title>Stage1-&gt;Stage2</title>
+<path fill="none" stroke="steelblue" d="M763.38,-577.43C765.59,-566.39 768.3,-552.89 770.63,-541.23"/>
+<polygon fill="steelblue" stroke="steelblue" points="773.37,-541.84 772.2,-533.44 767.88,-540.74 773.37,-541.84"/>
+<text xml:space="preserve" text-anchor="middle" x="790.39" y="-552.16" font-family="Comic Sans MS" font-size="9.00">MFU Effect</text>
+</g>
+<!-- Stage3 -->
+<g id="node17" class="node">
+<title>Stage3</title>
+<polygon fill="orange" stroke="black" points="804.72,-448.66 491.28,-448.66 491.28,-412.66 804.72,-412.66 804.72,-448.66"/>
+<text xml:space="preserve" text-anchor="middle" x="648" y="-433.66" font-family="Comic Sans MS" font-size="10.00">.          Stage 3: Hardware Utlization and Dynamic Power Consumption    .</text>
+<text xml:space="preserve" text-anchor="middle" x="648" y="-421.66" font-family="Comic Sans MS" font-size="10.00">U_avg(t) from Load Distribution</text>
+</g>
+<!-- Stage2&#45;&gt;Stage3 -->
+<g id="edge14" class="edge">
+<title>Stage2-&gt;Stage3</title>
+<path fill="none" stroke="steelblue" d="M748.54,-495.13C729.47,-483.1 703.9,-466.95 683.32,-453.96"/>
+<polygon fill="steelblue" stroke="steelblue" points="684.95,-451.68 676.69,-449.78 681.96,-456.42 684.95,-451.68"/>
+<text xml:space="preserve" text-anchor="middle" x="755.78" y="-469.36" font-family="Comic Sans MS" font-size="9.00">Aggregate GPU-sec</text>
+</g>
+<!-- Storage -->
+<g id="node22" class="node">
+<title>Storage</title>
+<polygon fill="khaki" stroke="black" points="1471.5,-193.97 1202.5,-193.97 1202.5,-157.97 1471.5,-157.97 1471.5,-193.97"/>
+<text xml:space="preserve" text-anchor="middle" x="1337" y="-178.97" font-family="Comic Sans MS" font-size="10.00"> Harmonic Distortion &amp; PQ Risk Evaluation </text>
+<text xml:space="preserve" text-anchor="middle" x="1337" y="-166.97" font-family="Comic Sans MS" font-size="10.00">.     (GPU harmonics → proper filter and mitigation design)     . </text>
+</g>
+<!-- Stage2&#45;&gt;Storage -->
+<g id="edge29" class="edge">
+<title>Stage2-&gt;Storage</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M814.08,-495.09C862.01,-472.93 946.61,-432.89 1017,-394.66 1129.79,-333.41 1252.42,-242.37 1307.41,-200.09"/>
+<polygon fill="purple" stroke="purple" points="1308.89,-202.49 1313.52,-195.39 1305.47,-198.05 1308.89,-202.49"/>
+<text xml:space="preserve" text-anchor="middle" x="1120.24" y="-386.56" font-family="Comic Sans MS" font-size="9.00">Compute Load Fluctuation → Harmonic Impact</text>
+</g>
+<!-- Stage3&#45;&gt;Stage4 -->
+<g id="edge15" class="edge">
+<title>Stage3-&gt;Stage4</title>
+<path fill="none" stroke="steelblue" d="M654.83,-412.38C658.8,-402.36 664.06,-389.04 669.48,-375.36"/>
+<polygon fill="steelblue" stroke="steelblue" points="671.96,-376.7 672.3,-368.23 666.75,-374.64 671.96,-376.7"/>
+<text xml:space="preserve" text-anchor="middle" x="702.28" y="-386.56" font-family="Comic Sans MS" font-size="9.00">Utilization → Power</text>
+</g>
+<!-- Semi -->
+<g id="node20" class="node">
+<title>Semi</title>
+<polygon fill="khaki" stroke="black" points="1184.38,-193.97 887.62,-193.97 887.62,-157.97 1184.38,-157.97 1184.38,-193.97"/>
+<text xml:space="preserve" text-anchor="middle" x="1036" y="-178.97" font-family="Comic Sans MS" font-size="10.00"> Enhanced Utility &amp; Grid Operator Planning </text>
+<text xml:space="preserve" text-anchor="middle" x="1036" y="-166.97" font-family="Comic Sans MS" font-size="10.00">.        (predictable P(t)/Q(t) → better dispatch, congestion mgmt)        . </text>
+</g>
+<!-- Stage3&#45;&gt;Semi -->
+<g id="edge31" class="edge">
+<title>Stage3-&gt;Semi</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M804.99,-424.71C900.68,-417.96 1010.14,-402.24 1040,-365.86 1078.05,-319.51 1059.71,-243.01 1046.12,-203.08"/>
+<polygon fill="purple" stroke="purple" points="1048.79,-202.24 1043.48,-195.64 1043.51,-204.12 1048.79,-202.24"/>
+</g>
+<!-- CoOpt -->
+<g id="node23" class="node">
+<title>CoOpt</title>
+<polygon fill="khaki" stroke="black" points="613.49,-193.97 304.51,-193.97 304.51,-157.97 613.49,-157.97 613.49,-193.97"/>
+<text xml:space="preserve" text-anchor="middle" x="459" y="-178.97" font-family="Comic Sans MS" font-size="10.00">UPS–Battery–Generator Dynamic Scheduling </text>
+<text xml:space="preserve" text-anchor="middle" x="459" y="-166.97" font-family="Comic Sans MS" font-size="10.00">.          (smoother dispatch, peak shaving, reduced cycling stress)           .  </text>
+</g>
+<!-- Stage3&#45;&gt;CoOpt -->
+<g id="edge30" class="edge">
+<title>Stage3-&gt;CoOpt</title>
+<path fill="none" stroke="purple" stroke-dasharray="5,2" d="M792.24,-412.22C848.23,-402.22 903.02,-387.29 920,-365.86 953.15,-324.04 956.52,-284.7 920,-245.77 897.38,-221.66 655.54,-232.67 623,-226.77 586.2,-220.1 546.01,-207.98 514.62,-197.36"/>
+<polygon fill="purple" stroke="purple" points="515.92,-194.85 507.44,-194.91 514.1,-200.15 515.92,-194.85"/>
+<text xml:space="preserve" text-anchor="middle" x="991" y="-307.12" font-family="Comic Sans MS" font-size="9.00">Fleet Size → Infra Sizing</text>
+</g>
+<!-- HVDC -->
+<g id="node19" class="node">
+<title>HVDC</title>
+<polygon fill="khaki" stroke="black" points="286.23,-193.97 15.77,-193.97 15.77,-157.97 286.23,-157.97 286.23,-193.97"/>
+<text xml:space="preserve" text-anchor="middle" x="151" y="-178.97" font-family="Comic Sans MS" font-size="10.00">PS Architecture Hardware Provisoning  </text>
+<text xml:space="preserve" text-anchor="middle" x="151" y="-166.97" font-family="Comic Sans MS" font-size="10.00">.      (true thermal + current profiles → no over/undersizing)      .</text>
+</g>
+<!-- Stage4&#45;&gt;HVDC -->
+<g id="edge25" class="edge">
+<title>Stage4-&gt;HVDC</title>
+<path fill="none" stroke="purple" stroke-width="2" d="M511.59,-276.22C443.44,-262.76 365.75,-245.84 296,-226.77 266.31,-218.66 233.85,-207.71 207.19,-198.15"/>
+<polygon fill="purple" stroke="purple" stroke-width="2" points="208.22,-195.54 199.74,-195.45 206.31,-200.81 208.22,-195.54"/>
+</g>
+<!-- Stage4&#45;&gt;Semi -->
+<g id="edge24" class="edge">
+<title>Stage4-&gt;Semi</title>
+<path fill="none" stroke="purple" stroke-width="2" d="M817.63,-261.41C873.49,-239.81 936.8,-215.33 980.82,-198.31"/>
+<polygon fill="purple" stroke="purple" stroke-width="2" points="981.75,-200.95 988.2,-195.46 979.73,-195.73 981.75,-200.95"/>
+</g>
+<!-- GPU -->
+<g id="node21" class="node">
+<title>GPU</title>
+<polygon fill="khaki" stroke="black" stroke-width="2" points="870.1,-193.97 631.9,-193.97 631.9,-157.97 870.1,-157.97 870.1,-193.97"/>
+<text xml:space="preserve" text-anchor="middle" x="751" y="-178.97" font-family="Comic Sans MS" font-size="10.00">.          Accurate Grid Stability &amp; Ramp Assessment     .</text>
+<text xml:space="preserve" text-anchor="middle" x="751" y="-166.97" font-family="Comic Sans MS" font-size="10.00"> (captures rapid GPU-driven power swings) </text>
+</g>
+<!-- Stage4&#45;&gt;GPU -->
+<g id="edge23" class="edge">
+<title>Stage4-&gt;GPU</title>
+<path fill="none" stroke="purple" stroke-width="2" d="M718.75,-252.91C725.83,-236.24 733.28,-218.7 739.23,-204.68"/>
+<polygon fill="purple" stroke="purple" stroke-width="2" points="741.73,-205.96 742.28,-197.51 736.57,-203.77 741.73,-205.96"/>
+</g>
+<!-- Stage4&#45;&gt;Storage -->
+<g id="edge26" class="edge">
+<title>Stage4-&gt;Storage</title>
+<path fill="none" stroke="purple" stroke-width="2" d="M835.42,-265.63C864.78,-257.93 895.72,-250.78 925,-245.77 1042.71,-225.67 1076.01,-250.72 1193,-226.77 1224.6,-220.31 1258.76,-208.71 1285.88,-198.33"/>
+<polygon fill="purple" stroke="purple" stroke-width="2" points="1286.65,-201.03 1293.09,-195.52 1284.62,-195.81 1286.65,-201.03"/>
+</g>
+<!-- Stage4&#45;&gt;CoOpt -->
+<g id="edge27" class="edge">
+<title>Stage4-&gt;CoOpt</title>
+<path fill="none" stroke="purple" stroke-width="2" d="M598.33,-254.81C563.86,-235.56 526.89,-214.9 499.69,-199.71"/>
+<polygon fill="purple" stroke="purple" stroke-width="2" points="501.13,-197.31 492.78,-195.85 498.4,-202.19 501.13,-197.31"/>
+</g>
+<!-- Impacts -->
+<g id="node24" class="node">
+<title>Impacts</title>
+<ellipse fill="lightyellow" stroke="black" stroke-width="2" cx="751" cy="-60.35" rx="175.07" ry="22.63"/>
+<text xml:space="preserve" text-anchor="middle" x="751" y="-63.35" font-family="Comic Sans MS" font-size="10.00">Final Electrical Output:</text>
+<text xml:space="preserve" text-anchor="middle" x="751" y="-51.35" font-family="Comic Sans MS" font-size="10.00">Predictive, time-resolved AI data center Power Modeling </text>
+</g>
+<!-- HVDC&#45;&gt;Impacts -->
+<g id="edge32" class="edge">
+<title>HVDC-&gt;Impacts</title>
+<path fill="none" stroke="black" d="M243.11,-157.53C351.05,-137.09 529.64,-103.27 643.74,-81.66"/>
+<polygon fill="black" stroke="black" points="644.03,-84.45 651.37,-80.21 642.99,-78.95 644.03,-84.45"/>
+</g>
+<!-- YellowRightA -->
+<!-- HVDC&#45;&gt;YellowRightA -->
+<!-- Semi&#45;&gt;Impacts -->
+<g id="edge33" class="edge">
+<title>Semi-&gt;Impacts</title>
+<path fill="none" stroke="green" stroke-dasharray="1,5" d="M941.86,-157.54C923.04,-152.8 903.64,-146.99 886,-139.97 852.08,-126.49 816.51,-105.46 790.41,-88.53"/>
+<polygon fill="green" stroke="green" points="792.11,-86.3 783.89,-84.26 789.04,-90.99 792.11,-86.3"/>
+</g>
+<!-- Semi&#45;&gt;YellowRightA -->
+<!-- GPU&#45;&gt;Impacts -->
+<g id="edge34" class="edge">
+<title>GPU-&gt;Impacts</title>
+<path fill="none" stroke="black" d="M751,-157.22C751,-140.09 751,-113.76 751,-93.03"/>
+<polygon fill="black" stroke="black" points="753.8,-93.17 751,-85.17 748.2,-93.17 753.8,-93.17"/>
+</g>
+<!-- YellowRightB -->
+<!-- GPU&#45;&gt;YellowRightB -->
+<!-- Storage&#45;&gt;Impacts -->
+<g id="edge35" class="edge">
+<title>Storage-&gt;Impacts</title>
+<path fill="none" stroke="black" d="M1237.32,-157.5C1156.93,-143.2 1041.03,-122.12 940,-101.97 910.02,-96 877.45,-89.13 847.93,-82.77"/>
+<polygon fill="black" stroke="black" points="848.76,-80.08 840.35,-81.13 847.58,-85.55 848.76,-80.08"/>
+</g>
+<!-- Storage&#45;&gt;YellowRightB -->
+<!-- CoOpt&#45;&gt;Impacts -->
+<g id="edge36" class="edge">
+<title>CoOpt-&gt;Impacts</title>
+<path fill="none" stroke="black" d="M503.67,-157.59C552.72,-138.5 631.9,-107.69 687.43,-86.09"/>
+<polygon fill="black" stroke="black" points="688.28,-88.76 694.72,-83.25 686.25,-83.54 688.28,-88.76"/>
+</g>
+<!-- YellowRightC -->
+<!-- CoOpt&#45;&gt;YellowRightC -->
+<!-- Impacts&#45;&gt;YellowRightC -->
+<!-- OrangeLeftA -->
+<!-- OrangeLeftA&#45;&gt;Traffic -->
+<!-- OrangeLeftA&#45;&gt;Stage0 -->
+<!-- OrangeLeftB -->
+<!-- OrangeLeftB&#45;&gt;Stage1 -->
+<!-- OrangeLeftB&#45;&gt;Stage2 -->
+<!-- OrangeLeftC -->
+<!-- OrangeLeftC&#45;&gt;Stage3 -->
+<!-- OrangeLeftC&#45;&gt;Stage4 -->
+<!-- YellowRightA&#45;&gt;YellowRightB -->
+<!-- YellowRightB&#45;&gt;YellowRightC -->
+</g>
+</svg>
