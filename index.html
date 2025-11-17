@@ -1888,7 +1888,19 @@ normalization</p>
 </script>
 
 
- <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+
+
+
+
+
+
+
+<!-- IMAGE HALEKO WALA -->
+    
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+  <!-- ==================== WHAT CARD (UNCHANGED) ==================== -->
   <div class="project-card">
     <div class="hud-corner tl"></div>
     <div class="hud-corner tr"></div>
@@ -1904,6 +1916,7 @@ normalization</p>
     </div>
   </div>
 
+  <!-- ==================== HOW CARD (UNCHANGED) ==================== -->
   <div class="project-card hologram">
     <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: OAD and Airframe Design Process</h3>
     <div class="space-y-3">
@@ -1916,7 +1929,7 @@ normalization</p>
         <span class="text-sm">Conducted structural airframe sizing to meet load and hydrogen-safety requirements.</span>
       </div>
       <div class="flex items-center">
-         
+        <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
         <span class="text-sm">Built detailed CAD models (CATIA/Fusion 360) for aircraft assemblies.</span>
       </div>
     </div>
@@ -1926,153 +1939,27 @@ normalization</p>
     </div>
   </div>
 
+  <!-- ==================== RESULTS CARD (MODIFIED) ==================== -->
   <div class="project-card">
-    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Insights on Hydrogen aircraft design, safety, and regulations</h3>
-    <div class="space-y-4">
-      <div class="bg-green-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Airframe Files</div>
-        <div class="text-xs">Delivered the design and calculations of assigned airframe components.</div>
-      </div>
-      <div class="bg-blue-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Structural & System Feasibility</div>
-        <div class="text-xs">Ensured structural feasibility and integration with hydrogen systems.</div>
-      </div>
-      <div class="bg-purple-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Design Documentation</div>
-        <div class="text-xs">Design iteration and documentation supporting prototype assembly.</div>
-      </div>
-    </div> 
+    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">
+      RESULTS: Insights on Hydrogen aircraft design, safety, and regulations
+    </h3>
 
-    <div class="relative overflow-hidden mt-4 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
-      <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="hydroart-results-carousel" style="transform: translateX(0%);">
-        <div class="carousel-item flex-shrink-0 w-full h-full relative">
-          <img src="./assets/hydroart/Wing v22.png" alt="Wing" class="w-full h-full object-contain rounded cursor-pointer" onclick="openModal('./assets/hydroart/Wing v22.png', 'Wing')">
-          <p class="text-xs text-center mt-2 absolute bottom-0 w-full text-white">Wing</p>
-        </div>
-        <div class="carousel-item flex-shrink-0 w-full h-full relative">
-          <img src="./assets/hydroart/Motor_Mount v1.png" alt="Motor Mount" class="w-full h-full object-contain rounded cursor-pointer" onclick="openModal('./assets/hydroart/Motor_Mount v1.png', 'Motor Mount')">
-          <p class="text-xs text-center mt-2 absolute bottom-0 w-full text-white">Motor Mount</p>
-        </div>
-      </div>
-      <button onclick="slideCarousel('hydroart-results-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
-      <button onclick="slideCarousel('hydroart-results-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+    <!-- Large SVG Preview (same height as other cards) -->
+    <div class="mb-4">
+      <img 
+        src="./graphics/flowchart.svg" 
+        alt="Mathematical Modeling and Parametric Computation Chain" 
+        class="project-image w-full h-48 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer shadow-lg"
+        onclick="openModal('./graphics/flowchart.svg', 'Mathematical Modeling and Parametric Computation Chain')">
     </div>
+
+    <!-- Small comment at bottom -->
+    <p class="text-xs text-center italic text-gray-400 mt-2">
+      RESULTS: Insights on Hydrogen aircraft design, safety, and regulations
+    </p>
   </div>
 </div>
-   
-
-    
-  
-
-<style>
-  .carousel-container {
-    display: flex;
-    width: 100%;
-    height: 240px;
-  }
-  .carousel-item {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-  }
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-  }
-  .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90%;
-  }
-  .modal-caption {
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    margin-top: 10px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-  }
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-  }
-</style>
-
-<script>
-  function slideCarousel(id, direction) {
-    const carousel = document.getElementById(id);
-    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
-    const numItems = carousel.children.length;
-    currentTransform += direction * 100;
-    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
-    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
-    carousel.style.transition = 'transform 0.5s ease-in-out';
-    carousel.style.transform = `translateX(${currentTransform}%)`;
-  }
-
-  function autoSlide(id) {
-    let index = 0;
-    const carousel = document.getElementById(id);
-    const numItems = carousel.children.length;
-    if (numItems <= 1) return;
-    setInterval(() => {
-      index = (index + 1) % numItems;
-      carousel.style.transition = 'transform 0.5s ease-in-out';
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 5000);
-  }
-
-  function openModal(src, caption) {
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    let description = '';
-    switch (caption) {
-      case 'Airframe Assembly':
-        description = 'This shows the assembled airframe design worked on by the team.';
-        break;
-      case 'Tail Assembly':
-        description = 'This displays the tail assembly design developed for the model.';
-        break;
-      case 'Wing':
-        description = 'This is the wing design created as part of the airframe effort.';
-        break;
-      case 'Motor Mount':
-        description = 'This shows the motor mount design prepared for the aircraft.';
-        break;
-    }
-    modal.innerHTML = `
-      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img src="${src}" alt="${caption}" class="modal-content">
-      <div class="modal-caption">${caption}<br>${description}</div>
-    `;
-    document.body.appendChild(modal);
-    modal.style.display = 'block';
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    autoSlide('hydroart-results-carousel');
-  });
-</script>
-
-
 
     
 
@@ -4529,6 +4416,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
