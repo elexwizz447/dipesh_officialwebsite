@@ -3083,8 +3083,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
 <!-- ============================================= -->
-<!-- FINAL PERFECT VERSION - ALL CAROUSELS WORKING -->
+<!-- FINAL PERFECT VERSION WITH WORKING CAROUSELS -->
 <!-- ============================================= -->
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
   <!-- LEFT: BIG SVG + TEXT BELOW (2-column span) -->
@@ -3120,17 +3123,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <h4 class="text-sm font-bold text-success-green mb-3">WORK COMPLETED</h4>
         
         <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
-          <div class="carousel-wrapper" style="width: 100%; height: 100%; position: relative;">
-            <div class="carousel-track" id="work-carousel" style="display: flex; transition: transform 0.5s ease-in-out; transform: translateX(0%); height: 100%;">
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0;">
-                <img src="./graphics/fig5.png" alt="Work Completed 1" style="width: 100%; height: 100%; object-fit: contain;" class="cursor-pointer" onclick="openModal('./graphics/fig5.png', 'Final Prototype Assembly')">
-              </div>
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0;">
-                <img src="./graphics/fig6.png" alt="Work Completed 2" style="width: 100%; height: 100%; object-fit: contain;" class="cursor-pointer" onclick="openModal('./graphics/fig6.png', '24-Hour Canonical Inference Curve')">
-              </div>
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0;">
-                <img src="./graphics/fig7.png" alt="Work Completed 3" style="width: 100%; height: 100%; object-fit: contain;" class="cursor-pointer" onclick="openModal('./graphics/fig7.png', 'Global Demand Profile')">
-              </div>
+          <div class="carousel-container" id="work-carousel">
+            <div class="carousel-item">
+              <img src="./graphics/fig5.png" alt="Work Completed 1" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/fig5.png', 'Final Prototype Assembly')">
+            </div>
+            <div class="carousel-item">
+              <img src="./graphics/fig6.png" alt="Work Completed 2" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/fig6.png', '24-Hour Canonical Inference Curve')">
+            </div>
+            <div class="carousel-item">
+              <img src="./graphics/fig7.png" alt="Work Completed 3" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/fig7.png', 'Global Demand Profile')">
             </div>
           </div>
           <button onclick="slideCarousel('work-carousel', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">‹</button>
@@ -3151,17 +3152,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <h4 class="text-sm font-bold text-purple-400 mb-3">DETAILED EXPLANATION</h4>
         
         <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
-          <div class="carousel-wrapper" style="width: 100%; height: 100%; position: relative;">
-            <div class="carousel-track" id="explanation-carousel" style="display: flex; transition: transform 0.5s ease-in-out; transform: translateX(0%); height: 100%;">
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0;">
-                <img src="./assets/hydroart/detailed_explanation.svg" alt="Detailed Explanation 1" style="width: 100%; height: 100%; object-fit: contain;" class="cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'System Architecture & Flow')">
-              </div>
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0;">
-                <img src="./assets/hydroart/detailed_explanation2.svg" alt="Detailed Explanation 2" style="width: 100%; height: 100%; object-fit: contain;" class="cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation2.svg', 'Regional Request to Task Mapping')">
-              </div>
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0;">
-                <img src="./assets/hydroart/detailed_explanation3.svg" alt="Detailed Explanation 3" style="width: 100%; height: 100%; object-fit: contain;" class="cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation3.svg', 'Compute-to-Power Conversion')">
-              </div>
+          <div class="carousel-container" id="explanation-carousel">
+            <div class="carousel-item">
+              <img src="./assets/hydroart/detailed_explanation.svg" alt="Detailed Explanation 1" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'System Architecture & Flow')">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/hydroart/detailed_explanation2.svg" alt="Detailed Explanation 2" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation2.svg', 'Regional Request to Task Mapping')">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/hydroart/detailed_explanation3.svg" alt="Detailed Explanation 3" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation3.svg', 'Compute-to-Power Conversion')">
             </div>
           </div>
           <button onclick="slideCarousel('explanation-carousel', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">‹</button>
@@ -3198,19 +3197,17 @@ document.addEventListener('DOMContentLoaded', () => {
         FINAL DESIGN TABLE
       </h3>
       
-      <div class="flex-1 p-3 bg-white/5 relative group" style="min-height: 400px;">
+      <div class="flex-1 p-3 bg-white/5 flex items-center justify-center relative group" style="min-height: 400px;">
         <div class="relative overflow-hidden w-full h-full rounded">
-          <div class="carousel-wrapper" style="width: 100%; height: 100%; position: relative;">
-            <div class="carousel-track" id="table-carousel" style="display: flex; transition: transform 0.5s ease-in-out; transform: translateX(0%); height: 100%;">
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                <img src="./graphics/tablefinal.svg" alt="Final Design Table 1" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="cursor-pointer hover:scale-[1.02] transition-transform" onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table - Complete Results')">
-              </div>
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                <img src="./graphics/tablefinal2.svg" alt="Final Design Table 2" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="cursor-pointer hover:scale-[1.02] transition-transform" onclick="openModal('./graphics/tablefinal2.svg', 'Final Design Table - Detailed Breakdown')">
-              </div>
-              <div class="carousel-slide" style="min-width: 100%; height: 100%; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                <img src="./graphics/tablefinal3.svg" alt="Final Design Table 3" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="cursor-pointer hover:scale-[1.02] transition-transform" onclick="openModal('./graphics/tablefinal3.svg', 'Final Design Table - Summary')">
-              </div>
+          <div class="carousel-container" id="table-carousel">
+            <div class="carousel-item">
+              <img src="./graphics/tablefinal.svg" alt="Final Design Table 1" class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform m-auto" onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table - Complete Results')">
+            </div>
+            <div class="carousel-item">
+              <img src="./graphics/tablefinal2.svg" alt="Final Design Table 2" class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform m-auto" onclick="openModal('./graphics/tablefinal2.svg', 'Final Design Table - Detailed Breakdown')">
+            </div>
+            <div class="carousel-item">
+              <img src="./graphics/tablefinal3.svg" alt="Final Design Table 3" class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform m-auto" onclick="openModal('./graphics/tablefinal3.svg', 'Final Design Table - Summary')">
             </div>
           </div>
           <button onclick="slideCarousel('table-carousel', -1)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity z-10 font-bold">‹</button>
@@ -3244,6 +3241,22 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <style>
+  .carousel-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0%);
+  }
+  .carousel-item {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .modal {
     display: none;
     position: fixed;
@@ -3283,16 +3296,11 @@ document.addEventListener('DOMContentLoaded', () => {
 <script>
   function slideCarousel(id, direction) {
     const carousel = document.getElementById(id);
-    if (!carousel) {
-      console.log('Carousel not found:', id);
-      return;
-    }
+    if (!carousel) return;
     
     const currentTransform = carousel.style.transform || 'translateX(0%)';
     let currentPosition = parseInt(currentTransform.replace('translateX(', '').replace('%)', '')) || 0;
-    const numItems = carousel.querySelectorAll('.carousel-slide').length;
-    
-    console.log('Current position:', currentPosition, 'Items:', numItems);
+    const numItems = carousel.children.length;
     
     currentPosition += direction * -100;
     
@@ -3303,18 +3311,14 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPosition = 0;
     }
     
-    console.log('New position:', currentPosition);
     carousel.style.transform = `translateX(${currentPosition}%)`;
   }
 
   function autoSlide(id, interval = 5000) {
     const carousel = document.getElementById(id);
-    if (!carousel) {
-      console.log('Carousel not found for auto-slide:', id);
-      return;
-    }
+    if (!carousel) return;
     
-    const numItems = carousel.querySelectorAll('.carousel-slide').length;
+    const numItems = carousel.children.length;
     if (numItems <= 1) return;
     
     let currentIndex = 0;
@@ -3322,7 +3326,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
       currentIndex = (currentIndex + 1) % numItems;
       carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-      console.log('Auto-sliding', id, 'to index:', currentIndex);
     }, interval);
   }
 
@@ -3344,23 +3347,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
 
-  // Initialize auto-slide for all carousels
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCarousels);
-  } else {
-    initCarousels();
-  }
-
-  function initCarousels() {
-    console.log('Initializing carousels...');
-    setTimeout(() => {
-      autoSlide('work-carousel', 5000);
-      autoSlide('explanation-carousel', 5000);
-      autoSlide('table-carousel', 5000);
-      console.log('All carousels initialized!');
-    }, 100);
-  }
+  // Initialize auto-slide for all carousels immediately
+  setTimeout(function() {
+    autoSlide('work-carousel', 5000);
+    autoSlide('explanation-carousel', 5000);
+    autoSlide('table-carousel', 5000);
+  }, 100);
+  
+  // Also initialize on DOMContentLoaded as backup
+  document.addEventListener('DOMContentLoaded', function() {
+    autoSlide('work-carousel', 5000);
+    autoSlide('explanation-carousel', 5000);
+    autoSlide('table-carousel', 5000);
+  });
 </script>
+
+
+
+
+
+
+
+
+    
 
     
 
@@ -5394,6 +5403,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 </html>
 ```
+
 
 
 
