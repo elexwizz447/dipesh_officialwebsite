@@ -2090,100 +2090,148 @@ normalization</p>
 
 
 
-<!-- ============================================= -->
-<!-- PERFECTLY BALANCED PRINCIPAL DIAGONAL GRID   -->
-<!-- ============================================= -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-  <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(280px,auto)]">
 
-    <!-- BIG IMAGE 1: TOP-LEFT (Principal Diagonal) -->
-    <div class="project-card hologram rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
-      <h3 class="orbitron text-lg font-bold p-3 text-warning-amber bg-gradient-to-b from-transparent to-black/10">
-        FLOWCHART OVERVIEW
-      </h3>
-      <div class="flex-1 p-3 bg-white/5 flex items-center justify-center">
-        <img 
-          src="./graphics/flowchart.svg" 
-          alt="System Flowchart" 
-          class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform"
-          onclick="openModal('./graphics/flowchart.svg', 'System Flowchart')">
-      </div>
-      <p class="text-xs text-center italic text-gray-300 px-3 pb-3">
-        Parametric computation chain
+
+
+<!-- ============================================= -->
+<!-- FINAL VERSION – CAPTIONS + AUTO-SLIDING CAROUSELS -->
+<!-- ============================================= -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+  <!-- LEFT: BIG SVG (NO carousel – single image with caption) -->
+  <div class="lg:col-span-2 project-card hologram rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg">
+    <h3 class="orbitron text-xl font-bold p-4 text-warning-amber bg-gradient-to-b from-transparent to-black/20">
+      PROPOSED RESEARCH OVERVIEW
+    </h3>
+
+    <!-- Single large flowchart (no carousel) -->
+    <div class="mb-4 px-4">
+      <img
+        src="./graphics/flowchart.svg"
+        alt="Proposed Research Overview"
+        class="w-full h-96 object-contain rounded-lg border-2 border-[var(--accent-cyan)] cursor-pointer shadow-xl transition-transform hover:scale-[1.01]"
+        onclick="openModal('./graphics/flowchart.svg', 'Proposed Research Overview')">
+      <p class="text-xs text-center italic text-gray-400 mt-3">
+        End-to-end AI inference to data-center power modeling workflow
       </p>
     </div>
 
-    <!-- SMALL: INPUTS (Top-middle) -->
-    <div class="project-card bg-blue-900/10 rounded-xl p-4 flex flex-col justify-between border border-blue-600/30">
-      <div>
-        <h4 class="text-sm font-bold text-accent-cyan">INPUT PARAMETERS</h4>
-        <p class="text-xs mt-2 leading-relaxed">
-          Geometry, mission, hydrogen tank, safety margins.
-        </p>
-      </div>
-      <img src="./assets/hydroart/hydroart_airframe_assembly.png" alt="Inputs" 
-           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-           onclick="openModal('./assets/hydroart/hydroart_airframe_assembly.png', 'Input Parameters')">
+    <!-- Text bullets -->
+    <div class="px-6 pb-6 text-sm space-y-3 text-gray-300">
+      <p class="flex items-start"><span class="text-accent-cyan mr-2">•</span> Developed an end-to-end workflow linking AI inference demand, compute workload, batching behavior, and data-center power.</p>
+      <p class="flex items-start"><span class="text-accent-cyan mr-2">•</span> Corrected legacy static assumptions by incorporating regional diurnal curves, task-level FLOP intensities, dynamic batching, MFU behavior, and utilization-driven facility loads.</p>
+      <p class="flex items-start"><span class="text-accent-cyan mr-2">•</span> Integrated all modeling stages into one coherent request-to-power analytical framework.</p>
     </div>
 
-    <!-- SMALL: MODELS (Top-right) -->
-    <div class="project-card bg-purple-900/10 rounded-xl p-4 flex flex-col justify-between border border-purple-600/30">
-      <div>
-        <h4 class="text-sm font-bold text-purple-400">INTERMEDIATE MODELS</h4>
-        <p class="text-xs mt-2 leading-relaxed">
-          Aero, weight, FEM, propulsion scaling.
-        </p>
+    <!-- WORK COMPLETED + DETAILED EXPLANATION → NOW WITH AUTO-SLIDING CAROUSELS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 pb-6">
+
+      <!-- WORK COMPLETED – 2 sliding images -->
+      <div class="bg-success-green bg-opacity-10 p-5 rounded-lg border border-success-green">
+        <h4 class="text-sm font-bold text-success-green mb-3">WORK COMPLETED</h4>
+        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]">
+          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="work-carousel" style="transform: translateX(0%)">
+            <div class="carousel-item flex-shrink-0 w-full">
+              <img src="./graphics/fig5.png" alt="Work 1" class="w-full h-48 object-contain cursor-pointer" onclick="openModal('./graphics/fig5.png', 'Work Completed')">
+              <p class="text-xs text-center bg-black/50 text-white py-1">Canonical 24h inference curve</p>
+            </div>
+            <div class="carousel-item flex-shrink-0 w-full">
+              <img src="./graphics/global_profile.png" alt="Work 2" class="w-full h-48 object-contain cursor-pointer" onclick="openModal('./graphics/global_profile.png', 'Global Demand Profile')">
+              <p class="text-xs text-center bg-black/50 text-white py-1">Global aggregated demand R_global(t)</p>
+            </div>
+          </div>
+          <button onclick="slideCarousel('work-carousel', -1)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-[var(--primary-blue)] text-white px-2 py-1 rounded opacity-80 hover:opacity-100">‹</button>
+          <button onclick="slideCarousel('work-carousel', 1)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-[var(--primary-blue)] text-white px-2 py-1 rounded opacity-80 hover:opacity-100">›</button>
+        </div>
+        <div class="text-xs space-y-2 text-gray-300 mt-3">
+          <p class="flex items-start"><span class="text-success-green mr-2">•</span> Created a 24-hour canonical inference curve using baseline + Gaussian peaks with periodic normalization.</p>
+          <p class="flex items-start"><span class="text-success-green mr-2">•</span> Applied regional weights and time-zone shifts to construct the global demand profile R_global(t).</p>
+          <p class="flex items-start"><span class="text-success-green mr-2">•</span> Used a single global aggregate traffic waveform for tractability.</p>
+        </div>
       </div>
-      <img src="./assets/hydroart/Tail_Assembly v33.png" alt="Models" 
-           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-           onclick="openModal('./assets/hydroart/Tail_Assembly v33.png', 'Intermediate Models')">
+
+      <!-- DETAILED EXPLANATION – 2 sliding images -->
+      <div class="bg-purple-900 bg-opacity-10 p-5 rounded-lg border border-purple-600">
+        <h4 class="text-sm font-bold text-purple-400 mb-3">DETAILED EXPLANATION</h4>
+        <div class="relative overflow-hidden rounded-lg border border-[var(--accent-cyan)]">
+          <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="detail-carousel" style="transform: translateX(0%)">
+            <div class="carousel-item flex-shrink-0 w-full">
+              <img src="./assets/hydroart/detailed_explanation.svg" alt="Detail 1" class="w-full h-48 object-contain cursor-pointer" onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Compute Mapping')">
+              <p class="text-xs text-center bg-black/50 text-white py-1">Request → FLOPs → GPU-seconds</p>
+            </div>
+            <div class="carousel-item flex-shrink-0 w-full">
+              <img src="./graphics/power_breakdown.svg" alt="Detail 2" class="w-full h-48 object-contain cursor-pointer" onclick="openModal('./graphics/power_breakdown.svg', 'Power Breakdown')">
+              <p class="text-xs text-center bg-black/50 text-white py-1">Dynamic GPU + facility power</p>
+            </div>
+          </div>
+          <button onclick="slideCarousel('detail-carousel', -1)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-[var(--primary-blue)] text-white px-2 py-1 rounded opacity-80 hover:opacity-100">‹</button>
+          <button onclick="slideCarousel('detail-carousel', 1)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-[var(--primary-blue)] text-white px-2 py-1 rounded opacity-80 hover:opacity-100">›</button>
+        </div>
+        <div class="text-xs space-y-2 text-gray-300 mt-3">
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Mapped regional request rates to per-task FLOPs, batch formation, and MFU-driven GPU-second requirements.</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Derived hardware utilization and associated dynamic GPU cluster power including thermal and facility overheads.</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Developing a fully time-resolved compute-to-power conversion model.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="grid grid-cols-1 gap-6 auto-rows-min">
+    
+    <!-- Simplified Assumption -->
+    <div class="project-card hologram rounded-xl p-5 border border-[var(--accent-cyan)]">
+      <h3 class="orbitron text-lg font-bold mb-4 text-warning-amber">
+        Simplified Global Aggregate Inference Modeling Assumption
+      </h3>
+      <p class="text-sm leading-relaxed text-gray-300">
+        For simplification, this model uses a global aggregate traffic curve by assuming a summed worldwide inference load routed to a single AI data center—an approximation that remains acceptable because AI data centers are few, geographically clustered, and the curve serves only as input to the downstream power-intensity layer, with room for future refinement and tunability.
+      </p>
     </div>
 
-    <!-- SMALL: ITERATION (Bottom-left) -->
-    <div class="project-card bg-green-900/10 rounded-xl p-4 flex flex-col justify-between border border-success-green/30">
-      <div>
-        <h4 class="text-sm font-bold text-success-green">DESIGN ITERATION</h4>
-        <p class="text-xs mt-2 leading-relaxed">
-          Parametric loops, convergence, trade studies.
-        </p>
-      </div>
-      <img src="./assets/hydroart/Wing v22.png" alt="Iteration" 
-           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-           onclick="openModal('./assets/hydroart/Wing v22.png', 'Design Iteration')">
-    </div>
-
-    <!-- BIG IMAGE 2: BOTTOM-RIGHT (Principal Diagonal) -->
-    <div class="project-card bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
+    <!-- FINAL DESIGN TABLE – now with auto-sliding 2 images + caption -->
+    <div class="project-card bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg">
       <h3 class="orbitron text-lg font-bold p-3 text-success-green bg-gradient-to-b from-transparent to-black/10">
         FINAL DESIGN TABLE
       </h3>
-      <div class="flex-1 p-3 bg-white/5 flex items-center justify-center">
-        <img 
-          src="./graphics/tablefinal.svg" 
-          alt="Final Design Table" 
-          class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform"
-          onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table')">
+      <div class="relative overflow-hidden">
+        <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="final-carousel" style="transform: translateX(0%)">
+          <div class="carousel-item flex-shrink-0 w-full">
+            <img src="./graphics/tablefinal.svg" alt="Table 1" class="w-full h-80 object-contain cursor-pointer" onclick="openModal('./graphics/tablefinal.svg', 'Final Results Table')">
+            <p class="text-xs text-center bg-black/60 text-white py-2">Complete parameter summary</p>
+          </div>
+          <div class="carousel-item flex-shrink-0 w-full">
+            <img src="./graphics/power_waveform.svg" alt="Table 2" class="w-full h-80 object-contain cursor-pointer" onclick="openModal('./graphics/power_waveform.svg', 'Time-varying Power Demand')">
+            <p class="text-xs text-center bg-black/60 text-white py-2">24-hour AI data-center power profile</p>
+          </div>
+        </div>
+        <button onclick="slideCarousel('final-carousel', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-[var(--primary-blue)] text-white px-3 py-2 rounded opacity-80 hover:opacity-100 text-xl">‹</button>
+        <button onclick="slideCarousel('final-carousel', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-[var(--primary-blue)] text-white px-3 py-2 rounded opacity-80 hover:opacity-100 text-xl">›</button>
       </div>
-      <p class="text-xs text-center italic text-gray-300 px-3 pb-3">
+
+      <div class="px-4 pb-4 text-xs space-y-2 text-gray-300 mt-3">
+        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Generated accurate time-varying inference-driven AI data-center power demand for planning and integration.</p>
+        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Improved hardware provisioning, grid-stability assessment, harmonic evaluation, and PQ risk modeling.</p>
+      </div>
+      <p class="text-xs text-center italic text-gray-300 pb-3">
         1400 × 2100 pt – Complete results
       </p>
     </div>
 
-    <!-- SMALL: VALIDATION (Bottom-middle) -->
-    <div class="project-card bg-amber-900/10 rounded-xl p-4 flex flex-col justify-between border border-amber-600/30">
-      <div>
-        <h4 class="text-sm font-bold text-warning-amber">VALIDATION & OUTPUT</h4>
-        <p class="text-xs mt-2 leading-relaxed">
-          Safety, performance, regulatory compliance.
-        </p>
-      </div>
-      <img src="./assets/hydroart/Motor_Mount v1.png" alt="Output" 
-           class="w-full h-24 object-contain mt-3 rounded border border-accent-cyan/50 cursor-pointer"
-           onclick="openModal('./assets/hydroart/Motor_Mount v1.png', 'Validation Output')">
-    </div>
-
   </div>
 </div>
+
+<!-- AUTO-START ALL CAROUSELS (add once at bottom of page or in your existing script) -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  autoSlide('work-carousel');
+  autoSlide('detail-carousel');
+  autoSlide('final-carousel');
+});
+</script>
+
+
+    
 
     
     
@@ -4638,6 +4686,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
