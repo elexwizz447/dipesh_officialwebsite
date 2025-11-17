@@ -1979,42 +1979,39 @@ normalization</p>
 
 
 <!-- ============================================= -->
-<!-- PROPOSED RESEARCH OVERVIEW (2-COLUMN SPAN)   -->
+<!-- PROPOSED RESEARCH OVERVIEW + DIAGONAL FLOW  -->
+<!-- FULLY CLOSED, NO CRASH, PERFECT LAYOUT      -->
 <!-- ============================================= -->
-  <!-- ORIGINAL "HOW" CARD (now in 3rd column) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
 
-
-    
-    
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-  <!-- BIG SVG PREVIEW (spans 2 columns) -->
-  <div class="lg:col-span-2 project-card hologram">
-    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">
+  <!-- LEFT: BIG SVG (2-column span) -->
+  <div class="lg:col-span-2 project-card hologram rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg">
+    <h3 class="orbitron text-xl font-bold p-4 text-warning-amber bg-gradient-to-b from-transparent to-black/20">
       PROPOSED RESEARCH OVERVIEW
     </h3>
 
-    <!-- Large SVG Preview (click → full 1551×1417pt) -->
-    <div class="mb-4">
-      <img 
-        src="./graphics/flowchart.svg" 
-        alt="Proposed Research Overview" 
+    <!-- Large SVG Preview -->
+    <div class="mb-4 px-4">
+      <img
+        src="./graphics/flowchart.svg"
+        alt="Proposed Research Overview"
         class="w-full h-96 object-contain rounded-lg border-2 border-[var(--accent-cyan)] cursor-pointer shadow-xl transition-transform hover:scale-[1.01]"
-        onclick="openModal('./graphics/flowchart.svg, 'Proposed Research Overview')">
+        onclick="openModal('./graphics/flowchart.svg', 'Proposed Research Overview')">
     </div>
 
-    <!-- Comment below image -->
-    <p class="text-xs text-center italic text-gray-400 mt-2 mb-6">
+    <!-- Comment -->
+    <p class="text-xs text-center italic text-gray-400 px-4 mb-6">
       Mathematical Modeling and Parametric Computation Chain
     </p>
 
-    <!-- WORK COMPLETED (small image) + DETAILED EXPLANATION (SVG) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Two Small Boxes Below -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 pb-4">
       <!-- WORK COMPLETED -->
       <div class="bg-success-green bg-opacity-10 p-4 rounded-lg border border-success-green">
         <h4 class="text-sm font-bold text-success-green mb-2">WORK COMPLETED</h4>
-        <img 
-          src="./graphics/fig5.png" 
-          alt="Work Completed" 
+        <img
+          src="./graphics/fig5.png"
+          alt="Work Completed"
           class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer"
           onclick="openModal('./graphics/fig5.png', 'Work Completed')">
         <p class="text-xs text-center mt-2">Final Prototype Assembly</p>
@@ -2023,32 +2020,38 @@ normalization</p>
       <!-- DETAILED EXPLANATION -->
       <div class="bg-purple-900 bg-opacity-10 p-4 rounded-lg border border-purple-600">
         <h4 class="text-sm font-bold text-purple-400 mb-2">DETAILED EXPLANATION</h4>
-        <img 
-          src="./assets/hydroart/detailed_explanation.svg" 
-          alt="Detailed Explanation" 
+        <img
+          src="./assets/hydroart/detailed_explanation.svg"
+          alt="Detailed Explanation"
           class="w-full h-40 object-contain rounded border border-[var(--accent-cyan)] cursor-pointer"
-          onclick="openModal('./graphics/fig5.png', 'Detailed Explanation')">
+          onclick="openModal('./assets/hydroart/detailed_explanation.svg', 'Detailed Explanation')">
         <p class="text-xs text-center mt-2">System Architecture & Flow</p>
       </div>
     </div>
   </div>
 
-        <div class="project-card hologram">
-    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: OAD and Airframe Design Process</h3>
-    <div class="space-y-3 text-sm">
-      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span>Performed overall aircraft design hand calculations for weight, performance, and component sizing.</span></div>
-      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span>Conducted structural airframe sizing to meet load and hydrogen-safety requirements.</span></div>
-      <div class="flex items-center"><div class="w-4 h-4 border border-accent-cyan mr-3"></div><span>Built detailed CAD models (CATIA/Fusion 360) for aircraft assemblies.</span></div>
+  <!-- RIGHT: HOW + BIG IMAGE 2 (Principal Diagonal) -->
+  <div class="grid grid-cols-1 gap-6 auto-rows-min">
+    
+    <!-- HOW CARD (Top) -->
+    <div class="project-card hologram rounded-xl p-4 border border-[var(--accent-cyan)]">
+      <h3 class="orbitron text-lg font-bold mb-3 text-warning-amber">HOW: OAD and Airframe Design Process</h3>
+      <div class="space-y-2 text-xs">
+        <div class="flex items-center"><div class="w-3 h-3 border border-accent-cyan mr-2"></div><span>Performed overall aircraft design hand calculations for weight, performance, and component sizing.</span></div>
+        <div class="flex items-center"><div class="w-3 h-3 border border-accent-cyan mr-2"></div><span>Conducted structural airframe sizing to meet load and hydrogen-safety requirements.</span></div>
+        <div class="flex items-center"><div class="w-3 h-3 border border-accent-cyan mr-2"></div><span>Built detailed CAD models (CATIA/Fusion 360) for aircraft assemblies.</span></div>
+      </div>
     </div>
-       <!-- BIG IMAGE 2: BOTTOM-RIGHT (Principal Diagonal) -->
+
+    <!-- BIG IMAGE 2: FINAL DESIGN TABLE (Bottom - Principal Diagonal) -->
     <div class="project-card bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
       <h3 class="orbitron text-lg font-bold p-3 text-success-green bg-gradient-to-b from-transparent to-black/10">
         FINAL DESIGN TABLE
       </h3>
       <div class="flex-1 p-3 bg-white/5 flex items-center justify-center">
-        <img 
-          src="./graphics/tablefinal.svg" 
-          alt="Final Design Table" 
+        <img
+          src="./graphics/tablefinal.svg"
+          alt="Final Design Table"
           class="max-w-full max-h-full object-contain cursor-pointer hover:scale-[1.02] transition-transform"
           onclick="openModal('./graphics/tablefinal.svg', 'Final Design Table')">
       </div>
@@ -2057,6 +2060,8 @@ normalization</p>
       </p>
     </div>
 
+  </div>
+</div>
 
 
 
@@ -4615,6 +4620,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
