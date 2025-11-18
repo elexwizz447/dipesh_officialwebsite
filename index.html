@@ -2614,46 +2614,45 @@ normalization</p>
     <div class="hud-corner bl"></div>
     <div class="hud-corner br"></div>
     <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">WHAT: Unified ANFIS-Based AVR–LFC Control for Modern Power Systems</h3>
-    <p class="text-sm mb-4">Developed an integrated MATLAB/Simulink framework to compare ANFIS and PID controllers for unified Automatic Voltage Regulation (AVR) and Load Frequency Control (LFC) in interconnected power systems. This work investigates how intelligent adaptive control responds to cross-coupled voltage–frequency dynamics under renewable-driven load fluctuations. The simulation environment models generator swing dynamics, excitation and governor loops, tie-line power exchange, and per-unit (PU) load disturbances. Along the way, I gained insights into the nonlinear interactions between voltage and frequency control, the influence of inertia and damping on system stability, and the feasibility of ANFIS as a unified controller replacing traditional PID-only strategies. Working on this strengthened my understanding of intelligent control architectures and their practical application in modern smart grids.</p>
+    <p class="text-sm mb-4">Developed an integrated MATLAB/Simulink framework to compare ANFIS and PID controllers for unified Automatic Voltage Regulation (AVR) and Load Frequency Control (LFC) in interconnected power systems. This work investigates how intelligent adaptive control responds to cross-coupled voltage–frequency dynamics under load fluctuations. The Malab simulation environment models generator swing dynamics, excitation and governor loops interconnection  and per-unit (PU) load disturbances. Research outcomes involved nonlinear interactions between voltage and frequency control, the influence of inertia and damping on system stability, and the feasibility of ANFIS as a unified controller replacing traditional PID-only strategies.</p>
+    
+    <img src="./graphics/fig1.png" img src=" alt="Cross-Coupled AVR–LFC in a Modern Grid Concept" class="project-image w-full h-48 object-contain mt-2 rounded cursor-pointer" onclick="openModal('./graphics/anfis1.png', 'Typical Power System Disturbance Profile')">
 
-    <img src="graphics/anfis1.png" alt="Cross-Coupled AVR–LFC in a Modern Grid Concept" class="project-image w-full h-48 object-contain mt-2 rounded cursor-pointer" onclick="openModal('graphics/anfis1.png', 'Cross-Coupled AVR–LFC in a Modern Grid Concept')">
-    <p class="text-xs text-center mt-1">Conceptual block representation of integrated voltage–frequency regulation under varying load and renewable penetration.</p>
-
-    <img src="graphics/anfis2.png" alt="Typical Power System Disturbance Profile" class="project-image w-full h-32 object-contain mt-2 rounded cursor-pointer" onclick="openModal('graphics/anfis2.png', 'Typical Power System Disturbance Profile')">
+    <img src="./graphics/fig2.png" alt="Typical Power System Disturbance Profile" class="project-image w-full h-32 object-contain mt-2 rounded cursor-pointer" onclick="openModal('./graphics/anfis2.png', 'Typical Power System Disturbance Profile')">
     <p class="text-xs text-center mt-1">Standard disturbance events used for testing controller robustness, including step loads, stochastic PU fluctuations, and simultaneous voltage+frequency deviations.</p>
   </div>
 
   <!-- HOW Section -->
   <div class="project-card hologram">
-    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Modular MATLAB/Simulink Framework for Controller Comparison</h3>
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Modular MATLAB Simulink Framework for Control Simulation</h3>
     <div class="space-y-3">
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Implemented unified AVR–LFC system dynamics including synchronous generator swing equations, governor–turbine models, exciter–AVR loops, and tie-line power flow. Adaptive solvers handle sudden PU load changes and renewable-like fluctuations.</span>
+        <span class="text-sm">Implemented unified AVR–LFC system dynamics including synchronous generator swing equations, governor–turbine models, exciter–AVR loops and defintion of system constants.</span>
       </div>
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Developed two controller layers: <br>• Baseline PID control, tuned for nominal conditions, representing traditional grid control.<br>• Unified ANFIS controller, trained using hybrid learning to adapt membership functions and rules based on system disturbances.</span>
+         <span class="text-sm">Developed two  seperate control scenario: <br>• Baseline  tuned PID control.<br>• Unified ANFIS controller, trained using hybrid learning to adapt membership functions and rules based on system disturbances.</span>
       </div>
       <div class="flex items-center">
         <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
-        <span class="text-sm">Designed a modular architecture to analyze the effect of core physical parameters (inertia H, damping D) across small, medium, and large system scales, enabling sensitivity studies on settling time, overshoot, and frequency–voltage stability.</span>
+        <span class="text-sm">Observed  effect on system voltage and frequency and control dyanmics  during Load fluctuations scenarios, variable  inertial and damping intensites  enabling sensitivity studies on settling time, overshoot, and frequency–voltage stability.</span>
       </div>
     </div>
 
     <div class="mt-4">
-      <img src="graphics/anfis3.png" alt="Global AVR–LFC Architecture Diagram" class="project-image w-full h-32 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis3.png', 'Global AVR–LFC Architecture Diagram')">
+      <img src="./graphics/fig4.png" alt="Global AVR–LFC Architecture Diagram" class="project-image w-full h-32 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis3.png', 'Global AVR–LFC Architecture Diagram')">
       <p class="text-xs text-center mt-1">Unified control structure showing governor, turbine, exciter, generator, and ANFIS/PID controllers interacting under PU load variations.</p>
     </div>
 
     <div class="relative overflow-hidden mt-2 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
       <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="models-carousel" style="transform: translateX(0%);">
         <div class="carousel-item flex-shrink-0 w-full text-center">
-          <img src="graphics/anfis4.png" alt="Dynamics Model Flowchart" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis4.png', 'Dynamics Model Flowchart')">
+          <img src="./graphics/fig5.png" alt="Dynamics Model Flowchart" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis4.png', 'Dynamics Model Flowchart')">
           <p class="text-xs mt-1">Flowchart illustrating frequency deviation, voltage error computation, and cross-coupling pathways under disturbances.</p>
         </div>
         <div class="carousel-item flex-shrink-0 w-full text-center">
-          <img src="graphics/anfis5.png" alt="ANFIS Controller Flowchart" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis5.png', 'ANFIS Controller Flowchart')">
+          <img src="./graphics/fig4.png" alt="ANFIS Controller Flowchart" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis5.png', 'ANFIS Controller Flowchart')">
           <p class="text-xs mt-1">ANFIS layers showing fuzzification, membership tuning, rule adaptation, and control signal generation for excitation and governor input.</p>
         </div>
         <div class="carousel-item flex-shrink-0 w-full text-center">
@@ -2665,7 +2664,7 @@ normalization</p>
           <p class="text-xs mt-1">Iterative simulation loop showing solver progression, event triggers, and performance metric extraction.</p>
         </div>
         <div class="carousel-item flex-shrink-0 w-full text-center">
-          <img src="graphics/anfis8.png" alt="Load & System Parameters Flowchart" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis8.png', 'Load & System Parameters Flowchart')">
+          <img src="./graphics/fig1.png" alt="Load & System Parameters Flowchart" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis8.png', 'Load & System Parameters Flowchart')">
           <p class="text-xs mt-1">Parameter scaling for inertia, damping, and PU load profiles used for testing small, medium, and large system scenarios.</p>
         </div>
       </div>
@@ -2680,7 +2679,7 @@ normalization</p>
     <div class="space-y-4">
       <div class="bg-green-900 bg-opacity-20 p-3 rounded">
         <div class="text-sm font-bold">Cross-Coupling Validation</div>
-        <div class="text-xs">Observed how frequency deviations affect terminal voltage and how voltage disturbances propagate into frequency response. ANFIS managed nonlinear cross-coupling more effectively, maintaining tighter control margins compared to PID.</div>
+        <div class="text-xs"> Mathematically modeled and Observed how frequency deviations affect terminal voltage and how voltage disturbances propagate into frequency response.</div>
       </div>
       <div class="bg-blue-900 bg-opacity-20 p-3 rounded">
         <div class="text-sm font-bold">Settling Time and Overshoot</div>
@@ -2688,25 +2687,21 @@ normalization</p>
       </div>
       <div class="bg-purple-900 bg-opacity-20 p-3 rounded">
         <div class="text-sm font-bold">Inertia & Damping Sensitivity</div>
-        <div class="text-xs">Higher inertia increased stability but slowed dynamics; ANFIS adapted automatically, while PID required retuning. Damping variations showed similar trends, with ANFIS maintaining robustness.</div>
-      </div>
-      <div class="bg-yellow-900 bg-opacity-20 p-3 rounded">
-        <div class="text-sm font-bold">Load Fluctuation Analysis</div>
-        <div class="text-xs">Simulated step changes, ramp disturbances, and stochastic PU load variations (solar/wind-like). ANFIS maintained stable voltage-frequency control under rapidly changing loads; PID showed higher deviations and longer recovery times.</div>
+        <div class="text-xs">Higher inertia increased stability but slowed dynamics; ANFIS adapted automatically, while PID required retuning. </div>
       </div>
       <div class="bg-red-900 bg-opacity-20 p-3 rounded">
         <div class="text-sm font-bold">Unified Controller Feasibility</div>
-        <div class="text-xs">Results demonstrate that a single ANFIS controller can effectively regulate both AVR and LFC simultaneously while managing cross-coupled effects—addressing a critical research gap in modern grids.</div>
+        <div class="text-xs">Results demonstrate that a single ANFIS controller, complemented by P and I feedback used to feed the change in speed into the LFC loop, can effectively regulate both AVR and LFC simultaneously. Although the cross-coupled effect is relatively small, it still exists, and modeling it highlights the novelty of this work.</div>
       </div>
     </div>
     <div class="relative overflow-hidden mt-4 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
       <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="results-carousel" style="transform: translateX(0%);">
         <div class="carousel-item flex-shrink-0 w-full text-center">
-          <img src="graphics/anfis9.png" alt="Performance Plots Example 1" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis9.png', 'Performance Plots Example 1')">
+          <img src="./graphics/fig1.png" alt="Performance Plots Example 1" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis9.png', 'Performance Plots Example 1')">
           <p class="text-xs mt-1">Example of frequency-voltage response comparison under step load disturbance.</p>
         </div>
         <div class="carousel-item flex-shrink-0 w-full text-center">
-          <img src="graphics/anfis10.png" alt="Performance Plots Example 2" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis10.png', 'Performance Plots Example 2')">
+          <img src="./graphics/fig2.png" alt="Performance Plots Example 2" class="w-full h-40 object-contain rounded cursor-pointer" onclick="openModal('graphics/anfis10.png', 'Performance Plots Example 2')">
           <p class="text-xs mt-1">Example of ANFIS vs PID settling time and overshoot under PU fluctuations.</p>
         </div>
       </div>
@@ -4820,6 +4815,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
