@@ -2986,7 +2986,222 @@ normalization</p>
 
 
 
-
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+  <!-- WHAT Section -->
+  <div class="project-card">
+    <div class="hud-corner tl"></div>
+    <div class="hud-corner tr"></div>
+    <div class="hud-corner bl"></div>
+    <div class="hud-corner br"></div>
+    <h3 class="orbitron text-xl font-bold mb-4 text-accent-cyan">WHAT: Unified ANFIS-Based AVR–LFC Control for Modern Power Systems</h3>
+    <p class="text-sm mb-4">Developed an integrated MATLAB/Simulink framework to compare ANFIS and PID controllers for unified Automatic Voltage Regulation (AVR) and Load Frequency Control (LFC) in interconnected power systems. This work investigates how intelligent adaptive control responds to cross-coupled voltage–frequency dynamics under load fluctuations. <br> The Matlab simulation environment models the generator swing dynamics, excitation and governor loops interconnection and per-unit (PU) load disturbances. Research outcomes involved nonlinear interactions between voltage and frequency control, the influence of inertia and damping on system stability, and the feasibility of ANFIS as a unified controller replacing traditional PID-only strategies.</p>
+    <!-- Upper Sliding Carousel (2 images) -->
+    <div class="relative overflow-hidden mt-4 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
+      <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="anfis-what-carousel" style="transform: translateX(0%);">
+        <div class="carousel-item flex-shrink-0 w-full h-full relative">
+          <img src="./graphics/anfis2.png" alt="Cross-Coupled AVR-LFC System Model(PID)" class="w-full h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/anfis2.png', 'Cross-Coupled AVR-LFC System Model(PID)')">
+          <p class="text-xs text-center mt-2 absolute bottom-0 w-full text-white">Matlab PID based control architecture design </p>
+        </div>
+        <div class="carousel-item flex-shrink-0 w-full h-full relative">
+          <img src="./graphics/anfis3.png" alt="Cross-Coupled AVR-LFC system Model(ANFIS)" class="w-full h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/anfis3.png', 'Cross-Coupled AVR-LFC System Model(ANFIS)')">
+          <p class="text-xs text-center mt-2 absolute bottom-0 w-full text-white">Matlab ANFIS based control architecture design</p>
+        </div>
+      </div>
+      <button onclick="slideCarousel('anfis-what-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+      <button onclick="slideCarousel('anfis-what-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+    </div>
+    <!-- Lower Single Image -->
+    <div class="mb-4 mt-6">
+      <img src="./graphics/anfis6.jpg" alt="PID Controller Tuning" class="project-image w-full object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./graphics/anfis6.jpg', 'PID Controller Tuning')">
+      <p class="text-xs text-center mt-2">PID Controller Tuning </p>
+    </div>
+  </div>
+  <!-- HOW Section -->
+  <div class="project-card hologram">
+    <h3 class="orbitron text-xl font-bold mb-4 text-warning-amber">HOW: Modular MATLAB Simulink Framework for Control Simulation</h3>
+    <div class="space-y-3">
+      <div class="flex items-center">
+        <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
+        <span class="text-sm">Implemented unified AVR–LFC system dynamics including synchronous generator swing equations, governor–turbine models, exciter–AVR loops and defintion of system constants.</span>
+      </div>
+      <div class="flex items-center">
+        <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
+         <span class="text-sm">Developed two seperate control scenario: <br>• Baseline tuned PID control.<br>• Unified ANFIS controller, trained using hybrid learning to adapt membership functions and rules based on system disturbances.</span>
+      </div>
+      <div class="flex items-center">
+        <div class="w-4 h-4 border border-accent-cyan mr-3"></div>
+        <span class="text-sm">Observed effect on system voltage and frequency and control dyanmics during Load fluctuations scenarios, variable inertial and damping intensites enabling sensitivity studies on settling time, overshoot, and frequency–voltage stability.</span>
+      </div>
+    </div>
+    <!-- Upper Single Image -->
+    <div class="mb-4 mt-6">
+      <img src="./graphics/anfis1.png" alt="ANFIS Architecture" class="project-image w-full object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./graphics/anfis1.png', 'ANFIS Architecture')">
+      <p class="text-xs text-center mt-2">ANFIS Controller Neural Network Layering</p>
+    </div>
+    <!-- Lower Single Image -->
+    <div class="mb-4">
+      <img src="./graphics/anfis7.jpg" alt="PID Values Tuned" class="project-image w-full object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./graphics/anfis7.jpg', 'PID values ')">
+      <p class="text-xs text-center mt-2">Kp Ki Kd Tuned Values</p>
+    </div>
+  </div>
+  <!-- RESULTS Section -->
+  <div class="project-card">
+    <h3 class="orbitron text-xl font-bold mb-4 text-success-green">RESULTS: Performance Comparison & Sensitivity Analysis</h3>
+    <div class="space-y-4">
+      <div class="bg-green-900 bg-opacity-20 p-3 rounded">
+        <div class="text-sm font-bold">Cross-Coupling Validation</div>
+        <div class="text-xs"> Mathematically modeled and Observed how frequency deviations affect terminal voltage and how voltage disturbances propagate into frequency response.</div>
+      </div>
+      <div class="bg-blue-900 bg-opacity-20 p-3 rounded">
+        <div class="text-sm font-bold">Controller Performance in Transient Dynamics and Low-Inertia Systems</div>
+          <div class="text-xs">ANFIS consistently delivers faster settling times and lower overshoot with smoother damping (critical for low-inertia systems). It maintains high stability through automatic adaptation to varying inertia/damping, eliminating the manual retuning required by PID.</div>
+      </div>
+      <div class="bg-red-900 bg-opacity-20 p-3 rounded">
+        <div class="text-sm font-bold">Unified Controller Feasibility</div>
+        <div class="text-xs">Results demonstrate that a single ANFIS controller, complemented by P and I feedback (used to feed the change in speed into the LFC loop), can effectively regulate both AVR and LFC simultaneously. Although the cross-coupled effect is relatively small, it still exists, and modeling it highlights the novelty of this work.</div>
+      </div>
+    </div>
+    <!-- Upper Single Image -->
+    <div class="mb-4 mt-6">
+      <img src="./graphics/anfis5.png" alt="Graphical Output" class="project-image w-full object-contain rounded border border-[var(--accent-cyan)] cursor-pointer" onclick="openModal('./graphics/anfis5.png', 'Graphical Output')">
+      <p class="text-xs text-center mt-2">(Voltage/Frequency) vs Time Responses of Different Controllers.</p>
+    </div>
+    <!-- Lower Sliding Carousel (2 images) -->
+    <div class="relative overflow-hidden mt-4 rounded-lg border border-[var(--accent-cyan)]" style="height: 240px;">
+      <div class="carousel-container flex transition-transform duration-500 ease-in-out" id="anfis-results-carousel" style="transform: translateX(0%);">
+        <div class="carousel-item flex-shrink-0 w-full h-full relative">
+          <img src="./graphics/anfis4.png" alt="Voltage Response" class="w-full h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/anfis4.png', 'Voltage Response')">
+          <p class="text-xs text-center mt-2 absolute bottom-0 w-full text-white">System Voltage.</p>
+        </div>
+        <div class="carousel-item flex-shrink-0 w-full h-full relative">
+          <img src="./graphics/anfis8.jpg" alt="Frequency Response" class="w-full h-full object-contain rounded cursor-pointer" onclick="openModal('./graphics/anfis8.jpg', 'Frequency Response')">
+          <p class="text-xs text-center mt-2 absolute bottom-0 w-full text-white">System Frequency.</p>
+        </div>
+      </div>
+      <button onclick="slideCarousel('anfis-results-carousel', -1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">‹</button>
+      <button onclick="slideCarousel('anfis-results-carousel', 1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[var(--primary-blue)] text-black px-3 py-2 rounded opacity-75 hover:opacity-100 transition-opacity">›</button>
+    </div>
+  </div>
+</div>
+<style>
+  .carousel-container {
+    display: flex;
+    width: 100%;
+    height: 240px;
+  }
+  .carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+  }
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .modal-caption {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  function slideCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const numItems = carousel.children.length;
+    currentTransform += direction * 100;
+    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
+    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTransform}%)`;
+  }
+  function autoSlide(id) {
+    let index = 0;
+    const carousel = document.getElementById(id);
+    const numItems = carousel.children.length;
+    if (numItems <= 1) return;
+    setInterval(() => {
+      index = (index + 1) % numItems;
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 5000);
+  }
+  function openModal(src, caption) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    let description = '';
+    switch (caption) {
+      case 'Cross-Coupled AVR-LFC System Model(PID)':
+        description = 'Diagram illustrating the cross-coupled AVR and LFC system in a modern power grid.';
+        break;
+      case 'Cross-Coupled AVR-LFC system Model(ANFIS)':
+        description = 'Profiles of typical disturbances used for testing, including step and stochastic loads.';
+        break;
+      case 'PID Controller Tuning':
+        description = 'One-line diagram showing interconnected AVR and LFC control loops.';
+        break;
+      case 'ANFIS Architecture':
+        description = 'High-level Simulink model architecture for the unified control simulation.';
+        break;
+      case 'PID Values Tuned':
+        description = 'Workflow for training the ANFIS controller using hybrid learning.';
+        break;
+      case 'Graphical Output':
+        description = 'Internal structure of the ANFIS layers, including fuzzification and rule base.';
+        break;
+      case 'Voltage Response':
+        description = 'Comparison plots of frequency and voltage responses for ANFIS vs PID.';
+        break;
+      case 'Frequency Response':
+        description = 'Metrics showing settling time and overshoot under varying inertia conditions.';
+        break;
+      default:
+        description = caption;
+    }
+    modal.innerHTML = `
+      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+      <img src="${src}" alt="${caption}" class="modal-content">
+      <div class="modal-caption">${caption}<br>${description}</div>
+    `;
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    autoSlide('anfis-what-carousel');
+    autoSlide('anfis-results-carousel');
+  });
+</script>
 
 
     
@@ -5024,6 +5239,7 @@ normalization</p>
 </body>
 </html>
 ```
+
 
 
 
