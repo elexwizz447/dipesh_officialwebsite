@@ -2900,8 +2900,8 @@
         class="w-full h-96 object-contain rounded-lg border-2 border-[var(--accent-cyan)] cursor-pointer shadow-xl transition-transform hover:scale-[1.01]"
         onclick="openModal('./graphics/project_ai_automation.png', 'AI Home Automation Flowchart')">
       
-      <a href="https://drive.google.com/drive/folders/REPLACE_WITH_YOUR_FOLDER" target="_blank"
-         class="absolute top-6 right-6 bg-white/20 backdrop-blur-md hover:bg-white/40 text-white px-5 py-3 rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-2 shadow-xl">
+      <a href="https://github.com/elexwizz447/dipesh_officialwebsite/blob/main/graphics/project_ai_automation.png" target="_blank"
+         class="absolute top-6 right-6 bg-white/20 backdrop-blur-md hover:bg-white/40 text-purple px-5 py-3 rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-2 shadow-xl">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.67 3.64L12 8.55l3.33-4.91L22 13.64l-9.67 6.45L2.67 13.64 8.67 3.64z"/></svg>
         View Flowchart (Drive)
       </a>
@@ -2922,10 +2922,10 @@
         <h4 class="text-sm font-bold text-success-green mb-3">HARDWARE PROTOTYPE AND DATA COLLECTION</h4>
         
         <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
-          <img src="./graphics/Picture2.png" alt="ESP32 + Relay Module" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/Picture2.png', 'ESP32 + Relay Module')">
+          <img src="./graphics/Picture3.png" alt="ESP32 + Relay Module" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/Picture3.png', 'ESP32 + Relay Module')">
         </div>
         
-        <p class="text-xs text-center text-gray-300 mb-3">Internal Components/Electronics </p>
+        <p class="text-xs text-center text-gray-300 mb-3">Market ready Device-Internal Components/Electronics </p>
        
         <div class="text-xs space-y-2 text-gray-300">
           <p class="flex items-start"><span class="text-success-green mr-2">•</span> ESP32 reads sensors (occupancy, temperature, light) and publishes telemetry via MQTT to the AI server for logging and inference.</p>
@@ -2936,13 +2936,13 @@
       
       <!-- DETAILED EXPLANATION (static image replaced, no carousel) -->
       <div class="bg-purple-900 bg-opacity-10 p-5 rounded-lg border border-purple-600">
-        <h4 class="text-sm font-bold text-purple-400 mb-3">REAL-TIME CONTROL LOOP & AI (Inference → Decision → Actuation)</h4>
+        <h4 class="text-sm font-bold text-purple-400 mb-3">REAL-TIME CONTROL LOOP & AI (Data → Decision → Actuation)</h4>
         
         <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
-          <img src="./graphics/Picture3.png" alt="AI Inference Flow" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/Picture3.png', 'AI Inference Flow')">
+          <img src="./graphics/power2.jpg" alt="Hackathon Win" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/power2.jpg', 'Hackathon Win')">
         </div>
         
-        <p class="text-xs text-center text-gray-300 mb-3"> Market Ready- Device Control Hardaware </p>
+        <p class="text-xs text-center text-gray-300 mb-3">National Hackathon Win on Project</p>
        
         <div class="text-xs space-y-2 text-gray-300">
           <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> ESP32 publishes telemetry to  telemetry/{device_id}   AI server ingests, preprocesses, and runs logistic regression to compute probability p.</p>
@@ -2964,11 +2964,11 @@
       <p class="text-sm leading-relaxed text-gray-300">
        
 For demonstration and evaluation, we used a hybrid control architecture.The CADIO cloud / Google Home–based direct-control pipeline
-(User App / CADIO Cloud → MQTT Command → ESP32 → Safety / Override Check → Relay → Output)
+<code>(User App / CADIO Cloud → MQTT Command → ESP32 → Safety / Override Check → Relay → Output) </code>
 was tested successfully on real hardware and provided reliable manual and voice-driven operation.
 
 The next phase introduced the AI-driven autonomous loop
-(Sensors → ESP32 → MQTT Telemetry → AI Server → Logistic Regression → Decision Logic → MQTT Command → ESP32 → Relay → Output),
+<code>(Sensors → ESP32 → MQTT Telemetry → AI Server → Logistic Regression → Decision Logic → MQTT Command → ESP32 → Relay → Output)</code>
 which added a full automation layer on top of the traditional control system.
       </p>
     </div>
@@ -2984,13 +2984,7 @@ which added a full automation layer on top of the traditional control system.
           <img src="./graphics/Picture4.png" alt="System Diagram & Messages" class="max-w-full max-h-full object-contain cursor-pointer m-auto" onclick="openModal('./graphics/Picture4.png', 'System Diagram & Messages')">
         </div>
         
-        <a href="https://drive.google.com/drive/folders/REPLACE_WITH_YOUR_FOLDER" target="_blank"
-           class="absolute top-6 right-6 bg-white/20 backdrop-blur-md hover:bg-white/40 text-white px-5 py-3 rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-2 shadow-xl z-20">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.67 3.64L12 8.55l3.33-4.91L22 13.64l-9.67 6.45L2.67 13.64 8.67 3.64z"/></svg>
-          View System Images (Drive)
-        </a>
-      </div>
-     
+      
       <!-- TEXT BELOW THE TABLE IMAGE -->
       <div class="px-4 pb-4 text-xs space-y-2 text-gray-300">
         <p class="flex items-start"><span class="text-success-green mr-2">•</span> Sample telemetry: <code>{"device":"room1_esp32","ts":"2025-11-21T12:00:00Z","occupancy":1,"temp":24.6}</code></p>
@@ -5150,6 +5144,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
