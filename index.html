@@ -2889,7 +2889,7 @@
   <!-- LEFT: BIG SVG + TEXT BELOW (2-column span) -->
   <div class="lg:col-span-2 project-card hologram rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg">
     <h3 class="orbitron text-xl font-bold p-4 text-warning-amber bg-gradient-to-b from-transparent to-black/20">
-      CONTROL SCHEME OVERVIEW (MUST SEE)
+      COMPLETE WORKING STRUCTURE (AI-INTEGRATED HOME AUTOMATION SYSTEM)
     </h3>
 
     <!-- Large Flowchart SVG with Drive Button (original filename preserved) -->
@@ -2919,13 +2919,13 @@
      
       <!-- WORK COMPLETED (static image replaced, no carousel) -->
       <div class="bg-success-green bg-opacity-10 p-5 rounded-lg border border-success-green">
-        <h4 class="text-sm font-bold text-success-green mb-3">HARDWARE & DATA COLLECTION — COMPLETED</h4>
+        <h4 class="text-sm font-bold text-success-green mb-3">HARDWARE PROTOTYPE AND DATA COLLECTION</h4>
         
         <div class="relative overflow-hidden mb-3 rounded border border-[var(--accent-cyan)]" style="height: 160px;">
           <img src="./graphics/Picture2.png" alt="ESP32 + Relay Module" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/Picture2.png', 'ESP32 + Relay Module')">
         </div>
         
-        <p class="text-xs text-center text-gray-300 mb-3">Hardware & Data Collection</p>
+        <p class="text-xs text-center text-gray-300 mb-3">Internal Components/Electronics </p>
        
         <div class="text-xs space-y-2 text-gray-300">
           <p class="flex items-start"><span class="text-success-green mr-2">•</span> ESP32 reads sensors (occupancy, temperature, light) and publishes telemetry via MQTT to the AI server for logging and inference.</p>
@@ -2942,12 +2942,12 @@
           <img src="./graphics/Picture3.png" alt="AI Inference Flow" class="w-full h-full object-contain cursor-pointer" onclick="openModal('./graphics/Picture3.png', 'AI Inference Flow')">
         </div>
         
-        <p class="text-xs text-center text-gray-300 mb-3">Realtime loop (telemetry → infer → command)</p>
+        <p class="text-xs text-center text-gray-300 mb-3"> Market Ready- Device Control Hardaware </p>
        
         <div class="text-xs space-y-2 text-gray-300">
-          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> ESP32 publishes telemetry to <code>telemetry/{device_id}</code>; AI server ingests, preprocesses, and runs logistic regression to compute probability p.</p>
-          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Decision logic applies hysteresis and checks manual overrides; final commands published to <code>cmd/{device_id}</code>.</p>
-          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> OTA model updates (coefficients) are published to <code>ml/update/{device_id}</code> so ESP32 can run local inference without firmware reflash.</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> ESP32 publishes telemetry to  telemetry/{device_id}   AI server ingests, preprocesses, and runs logistic regression to compute probability p.</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span> Decision logic applies hysteresis and checks manual overrides; final commands published to cmd/{device_id} .</p>
+          <p class="flex items-start"><span class="text-purple-400 mr-2">•</span>Final ON/OFF decision is published back to the ESP32 and  Relay then End device Actuation is achieved.</p>
         </div>
       </div>
     </div>
@@ -2959,17 +2959,24 @@
     <!-- Renamed card -->
     <div class="project-card hologram rounded-xl p-5 border border-[var(--accent-cyan)]">
       <h3 class="orbitron text-lg font-bold mb-4 text-warning-amber">
-        SIMPLIFIED OPERATIONAL ASSUMPTION
+        PHASES OF DEVELOPMENT
       </h3>
       <p class="text-sm leading-relaxed text-gray-300">
-        For demonstration and evaluation we use a hybrid architecture: the AI server performs heavy preprocessing and retraining while the ESP32 performs lightweight local inference using OTA-pushed model coefficients. CADIO cloud is used for user setup and optional state sync; manual local overrides always take precedence to guarantee user control.
+       
+For demonstration and evaluation, we used a hybrid control architecture.The CADIO cloud / Google Home–based direct-control pipeline
+(User App / CADIO Cloud → MQTT Command → ESP32 → Safety / Override Check → Relay → Output)
+was tested successfully on real hardware and provided reliable manual and voice-driven operation.
+
+The next phase introduced the AI-driven autonomous loop
+(Sensors → ESP32 → MQTT Telemetry → AI Server → Logistic Regression → Decision Logic → MQTT Command → ESP32 → Relay → Output),
+which added a full automation layer on top of the traditional control system.
       </p>
     </div>
 
     <!-- FINAL DESIGN TABLE with single static image (no carousel) -->
     <div class="project-card bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl overflow-hidden border border-[var(--accent-cyan)] shadow-lg flex flex-col">
       <h3 class="orbitron text-lg font-bold p-3 text-success-green bg-gradient-to-b from-transparent to-black/10">
-        More Info — 1. System Diagram  2. Sample Messages
+       Control Architecture
       </h3>
       
       <div class="flex-1 p-3 bg-white/5 flex items-center justify-center relative group" style="min-height: 400px;">
@@ -2986,14 +2993,10 @@
      
       <!-- TEXT BELOW THE TABLE IMAGE -->
       <div class="px-4 pb-4 text-xs space-y-2 text-gray-300">
-        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Example telemetry: <code>{"device":"room1_esp32","ts":"2025-11-21T12:00:00Z","occupancy":1,"temp":24.6}</code></p>
+        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Sample telemetry: <code>{"device":"room1_esp32","ts":"2025-11-21T12:00:00Z","occupancy":1,"temp":24.6}</code></p>
         <p class="flex items-start"><span class="text-success-green mr-2">•</span> Command format: <code>{"cmd":"SET","device":"room1_esp32","action":"ON","confidence":0.87}</code></p>
-        <p class="flex items-start"><span class="text-success-green mr-2">•</span> OTA Model Update (simple payload): <code>{"model_version":"v1.2","theta":[0.92,-0.45,1.22],"bias":-0.87}</code></p>
+        <p class="flex items-start"><span class="text-success-green mr-2">•</span> Limatation :although the AI layer enabled free automation, some AI actions still conflicted with manual overrides, even with a safety layer prioritizing user commands. This can be improved by adopting stronger preference-learning and context-aware models so the system better adapts to user behavior and minimizes such clashes</p>
       </div>
-     
-      <p class="text-xs text-center italic text-gray-300 px-3 pb-3">
-        Note: Refer to the flowchart for routing between telemetry, ML, and OTA update flows.
-      </p>
     </div>
 
     <!-- REQUEST BUTTON -->
@@ -5147,6 +5150,7 @@
 </body>
 </html>
 ```
+
 
 
 
