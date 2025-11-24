@@ -476,6 +476,403 @@
     </div>
   </nav>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HTML SECTION -->
+<section id="hero" class="hero-section-wrapper">
+  <div class="hero-background-container">
+    <div class="hero-background-overlay"></div>
+    <div class="hero-content-grid">
+      <!-- Left Content Area -->
+      <div class="hero-left-content">
+        <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
+        <h2 class="hero-subtitle-enhanced">
+          As an enthusiastic Electrical Engineering researcher with a strong academic foundation, I am parallelly pursuing industry level work while advancing innovative research initiatives.
+        </h2>
+        <p class="hero-quote">"I like engineering because I love imagining."</p>
+        
+        <!-- Three Info Boxes -->
+        <div class="hero-info-boxes">
+          <div class="hud-element">
+            <div class="hud-corner tl"></div>
+            <div class="hud-corner tr"></div>
+            <div class="hud-corner bl"></div>
+            <div class="hud-corner br"></div>
+            <div class="hud-title orbitron">ACADEMIA</div>
+            <div class="hud-item">• Power Systems</div>
+            <div class="hud-item">• Control Systems</div>
+            <div class="hud-item">• AI and ML</div>
+            <div class="hud-item">• Power Electronics</div>
+          </div>
+          
+          <div class="hud-element">
+            <div class="hud-corner tl"></div>
+            <div class="hud-corner tr"></div>
+            <div class="hud-corner bl"></div>
+            <div class="hud-corner br"></div>
+            <div class="hud-title orbitron">INDUSTRY WORK</div>
+            <div class="hud-item">• Electrical AutoCAD Designs</div>
+            <div class="hud-item">• Energy Audits</div>
+            <div class="hud-item">• PLC, SCADA Control</div>
+            <div class="hud-item">• AI Home Automation Hardware</div>
+          </div>
+          
+          <div class="hud-element">
+            <div class="hud-corner tl"></div>
+            <div class="hud-corner tr"></div>
+            <div class="hud-corner bl"></div>
+            <div class="hud-corner br"></div>
+            <div class="hud-title orbitron">RESEARCH</div>
+            <div class="hud-item">• AI Data Center Dynamic<br>Power Consumption Modeling</div>
+            <div class="hud-item">• Low-Inertia Power Systems</div>
+            <div class="hud-item">• RES-Dominant Grid Stability</div>
+            <div class="hud-item">• Neural Network Based Intelligent Ctrl</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Profile Image Area -->
+      <div class="hero-right-content">
+        <div class="profile-image-container">
+          <img src=".graphics/profile.jpg" alt="Dipesh Poudel" class="profile-image">
+          <div class="profile-frame"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS STYLES -->
+<style>
+/* Hero Section Container - Isolated to prevent affecting other sections */
+.hero-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate; /* Creates new stacking context */
+}
+
+.hero-background-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('.graphics/power2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.hero-content-grid {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left Content Styling */
+.hero-left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #00f3ff;
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+  letter-spacing: 0.1em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero-subtitle-enhanced {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-weight: 400;
+  margin: 0;
+  text-align: justify;
+  max-width: 900px;
+  letter-spacing: 0.02em;
+}
+
+.hero-quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #00f3ff;
+  margin: 10px 0;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+}
+
+/* Info Boxes Grid */
+.hero-info-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.hud-element {
+  position: relative;
+  background: rgba(0, 20, 40, 0.85);
+  border: 2px solid #00f3ff;
+  padding: 24px 20px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.hud-element:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3);
+  border-color: #00ffff;
+}
+
+.hud-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #00f3ff;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+}
+
+.hud-item {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* HUD Corner Decorations */
+.hud-corner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #00f3ff;
+}
+
+.hud-corner.tl {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.hud-corner.tr {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.hud-corner.bl {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+}
+
+.hud-corner.br {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Right Profile Image Section */
+.hero-right-content {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.profile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid #00f3ff;
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.profile-frame {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #00f3ff;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle-enhanced {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .hero-right-content {
+    position: relative;
+    top: 0;
+    order: -1;
+  }
+  
+  .profile-image-container {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-info-boxes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-background-container {
+    padding: 40px 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle-enhanced {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  
+  .hero-quote {
+    font-size: 1.1rem;
+  }
+  
+  .hud-element {
+    padding: 20px 15px;
+  }
+  
+  .hud-title {
+    font-size: 1rem;
+  }
+  
+  .hud-item {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle-enhanced {
+    font-size: 1rem;
+  }
+  
+  .profile-image-container {
+    max-width: 250px;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
   <section id="hero" class="section">
     <div class="hero-content">
       <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
@@ -4222,6 +4619,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
