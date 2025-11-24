@@ -500,6 +500,225 @@
 
 
 
+
+  
+  <section id="hero" class="section">
+    <div class="hero-content">
+      <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
+      <h2 class="hero-subtitle">
+As an enthusiastic Electrical Engineering researcher with a strong academic foundation, I am parallelly pursuing industry level work while advancing innovative research initiatives.
+ </h2>
+      <p class="text-xl italic mt-4">"I like engineering because I love imagining."</p>
+      <div class="flex justify-center space-x-8 mt-8">
+        <div class="hud-element p-6 text-center">
+          <div class="hud-corner tl"></div>
+          <div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div>
+          <div class="hud-corner br"></div>
+          <div class="orbitron text-2xl font-bold text-accent-cyan">ACADEMIA</div>
+          <div class="text-sm mt-2">• Power Systems</div>
+           <div class="text-sm mt-2">• Control Systems</div>
+           <div class="text-sm mt-2">• AI and ML </div>
+           <div class="text-sm mt-2">• Power Electronics</div>
+        </div>
+        <div class="hud-element p-6 text-center">
+          <div class="hud-corner tl"></div>
+          <div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div>
+          <div class="hud-corner br"></div>
+          <div class="orbitron text-2xl font-bold text-accent-cyan">INDUSTRY WORK</div>
+          <div class="text-sm mt-2">• Electrical AutoCAD Designs </div>
+          <div class="text-sm mt-2">• Energy Audits  </div>
+          <div class="text-sm mt-2">• PLC, SCADA Control  </div>
+          <div class="text-sm mt-2">• AI Home Automation Hardware</div>
+        </div>
+        <div class="hud-element p-6 text-center">
+          <div class="hud-corner tl"></div>
+          <div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div>
+          <div class="hud-corner br"></div>
+          <div class="orbitron text-2xl font-bold text-accent-cyan">RESEARCH </div>
+          <div class="text-sm mt-2">• AI Data Center Dynamic <br> Power Consumption  Modeling </div>
+          <div class="text-sm mt-2">• Low-Inertia Power Systems </div>
+          <div class="text-sm mt-2"> • RES-Dominant Grid Stability </div>
+          <div class="text-sm mt-2">• Neural Network Based Intelligent Ctrl</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  
+
+<style>
+  .carousel-container {
+    display: flex;
+    width: 100%;
+    height: 240px;
+  }
+  .carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+  }
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .modal-caption {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  /* Shake animation for hover effect */
+  .shake-on-hover {
+    transition: transform 0.5s ease-in-out;
+  }
+  .shake-on-hover:hover {
+    animation: shake 5s infinite;
+  }
+  @keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(2px, 2px) rotate(0.5deg); }
+    50% { transform: translate(-2px, -2px) rotate(-0.5deg); }
+    75% { transform: translate(2px, -2px) rotate(0.5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+</style>
+
+<script>
+  function slideCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const numItems = carousel.children.length;
+    currentTransform += direction * 100;
+    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
+    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTransform}%)`;
+  }
+
+  function autoSlide(id) {
+    let index = 0;
+    const carousel = document.getElementById(id);
+    const numItems = carousel.children.length;
+    if (numItems <= 1) return;
+    setInterval(() => {
+      index = (index + 1) % numItems;
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 6000);
+  }
+
+
+
+
+
+  
+  function openModal(src, caption) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    let description = '';
+    switch (caption) {
+      case 'Zero Over Zero Front Cover':
+        description = 'Front cover of the book exploring indeterminacy in the modern world.';
+        break;
+      case 'Zero Over Zero Back Cover':
+        description = 'Back cover providing an overview and author insights.';
+        break;
+
+
+        
+        // NEW FOR AWARDS (add here)
+    case 'Power Hackathon Win':
+      description = 'Certificate and team photo from the Power Hackathon victory at Pulchowk Campus, showcasing the grid stability prototype.';
+      break;
+    case 'Energy Hackathon Win':
+      description = 'Award recognition and team photo from the Energy Hackathon, highlighting the solar-integrated energy management system.';
+      break;
+    case 'Research Grant':
+      description = 'Official research grant approval document, funding the EV charging infrastructure project.';
+      break;
+
+    default:
+      description = caption;
+
+    
+    }
+    modal.innerHTML = `
+      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+      <img src="${src}" alt="${caption}" class="modal-content">
+      <div class="modal-caption">${caption}<br>${description}</div>
+    `;
+    document.body.appendChild(modal);
+    modal.style.display = 'block';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // No carousels to auto-slide in this section
+    
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- HTML SECTION -->
 <section id="hero" class="hero-section-wrapper">
   <div class="hero-background-box">
@@ -923,225 +1142,6 @@
 }
 </style>
   
-
-
-
-
-
-
-
-
-
-  
-  <section id="hero" class="section">
-    <div class="hero-content">
-      <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
-      <h2 class="hero-subtitle">
-As an enthusiastic Electrical Engineering researcher with a strong academic foundation, I am parallelly pursuing industry level work while advancing innovative research initiatives.
- </h2>
-      <p class="text-xl italic mt-4">"I like engineering because I love imagining."</p>
-      <div class="flex justify-center space-x-8 mt-8">
-        <div class="hud-element p-6 text-center">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="orbitron text-2xl font-bold text-accent-cyan">ACADEMIA</div>
-          <div class="text-sm mt-2">• Power Systems</div>
-           <div class="text-sm mt-2">• Control Systems</div>
-           <div class="text-sm mt-2">• AI and ML </div>
-           <div class="text-sm mt-2">• Power Electronics</div>
-        </div>
-        <div class="hud-element p-6 text-center">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="orbitron text-2xl font-bold text-accent-cyan">INDUSTRY WORK</div>
-          <div class="text-sm mt-2">• Electrical AutoCAD Designs </div>
-          <div class="text-sm mt-2">• Energy Audits  </div>
-          <div class="text-sm mt-2">• PLC, SCADA Control  </div>
-          <div class="text-sm mt-2">• AI Home Automation Hardware</div>
-        </div>
-        <div class="hud-element p-6 text-center">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="orbitron text-2xl font-bold text-accent-cyan">RESEARCH </div>
-          <div class="text-sm mt-2">• AI Data Center Dynamic <br> Power Consumption  Modeling </div>
-          <div class="text-sm mt-2">• Low-Inertia Power Systems </div>
-          <div class="text-sm mt-2"> • RES-Dominant Grid Stability </div>
-          <div class="text-sm mt-2">• Neural Network Based Intelligent Ctrl</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-  
-
-<style>
-  .carousel-container {
-    display: flex;
-    width: 100%;
-    height: 240px;
-  }
-  .carousel-item {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  .project-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-  }
-  .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90%;
-  }
-  .modal-caption {
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    margin-top: 10px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-  }
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-  /* Shake animation for hover effect */
-  .shake-on-hover {
-    transition: transform 0.5s ease-in-out;
-  }
-  .shake-on-hover:hover {
-    animation: shake 5s infinite;
-  }
-  @keyframes shake {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(2px, 2px) rotate(0.5deg); }
-    50% { transform: translate(-2px, -2px) rotate(-0.5deg); }
-    75% { transform: translate(2px, -2px) rotate(0.5deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
-  }
-</style>
-
-<script>
-  function slideCarousel(id, direction) {
-    const carousel = document.getElementById(id);
-    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
-    const numItems = carousel.children.length;
-    currentTransform += direction * 100;
-    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
-    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
-    carousel.style.transition = 'transform 0.5s ease-in-out';
-    carousel.style.transform = `translateX(${currentTransform}%)`;
-  }
-
-  function autoSlide(id) {
-    let index = 0;
-    const carousel = document.getElementById(id);
-    const numItems = carousel.children.length;
-    if (numItems <= 1) return;
-    setInterval(() => {
-      index = (index + 1) % numItems;
-      carousel.style.transition = 'transform 0.5s ease-in-out';
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 6000);
-  }
-
-
-
-
-
-  
-  function openModal(src, caption) {
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    let description = '';
-    switch (caption) {
-      case 'Zero Over Zero Front Cover':
-        description = 'Front cover of the book exploring indeterminacy in the modern world.';
-        break;
-      case 'Zero Over Zero Back Cover':
-        description = 'Back cover providing an overview and author insights.';
-        break;
-
-
-        
-        // NEW FOR AWARDS (add here)
-    case 'Power Hackathon Win':
-      description = 'Certificate and team photo from the Power Hackathon victory at Pulchowk Campus, showcasing the grid stability prototype.';
-      break;
-    case 'Energy Hackathon Win':
-      description = 'Award recognition and team photo from the Energy Hackathon, highlighting the solar-integrated energy management system.';
-      break;
-    case 'Research Grant':
-      description = 'Official research grant approval document, funding the EV charging infrastructure project.';
-      break;
-
-    default:
-      description = caption;
-
-    
-    }
-    modal.innerHTML = `
-      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img src="${src}" alt="${caption}" class="modal-content">
-      <div class="modal-caption">${caption}<br>${description}</div>
-    `;
-    document.body.appendChild(modal);
-    modal.style.display = 'block';
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // No carousels to auto-slide in this section
-    
-  });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4679,6 +4679,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
