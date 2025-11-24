@@ -474,8 +474,473 @@
 
 
 
+<!-- HTML SECTION -->
+<section id="hero" class="hero-section-wrapper">
+  <div class="hero-content">
+    <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
+    <h2 class="hero-subtitle">An enthusiastic Electrical Engineering researcher with a strong academic foundation, parallelly pursuing industry level work while advancing innovative research initiatives.</h2>
+  </div>
+ 
+  <div class="hero-background-box">
+    <div class="hero-background-overlay"></div>
+    <div class="hero-content-container">
+      <!-- Left Content Area -->
+      <div class="hero-left-content">
+        <p class="hero-quote">.</p>
+       
+        <!-- Three Info Boxes -->
+        <div class="hero-info-boxes">
+          <!-- Academia Box - Wrapped in link to #education -->
+          <a href="#education" class="hud-link block">
+            <div class="hud-element">
+              <div class="hud-corner tl"></div>
+              <div class="hud-corner tr"></div>
+              <div class="hud-corner bl"></div>
+              <div class="hud-corner br"></div>
+              <div class="hud-title orbitron">ACADEMIA</div>
+              <div class="hud-item">• Power Systems</div>
+              <div class="hud-item">• Control Systems</div>
+              <div class="hud-item">• AI and ML</div>
+              <div class="hud-item">• Power Electronics</div>
+            </div>
+          </a>
+         
+          <!-- Industry Work Box - Wrapped in link to #internship -->
+          <a href="#internship" class="hud-link block">
+            <div class="hud-element">
+              <div class="hud-corner tl"></div>
+              <div class="hud-corner tr"></div>
+              <div class="hud-corner bl"></div>
+              <div class="hud-corner br"></div>
+              <div class="hud-title orbitron">INDUSTRY WORK</div>
+              <div class="hud-item">• Electrical AutoCAD Designs</div>
+              <div class="hud-item">• Energy Audits</div>
+              <div class="hud-item">• PLC, SCADA Control</div>
+              <div class="hud-item">• AI Home Automation Hardware</div>
+            </div>
+          </a>
+         
+          <!-- Research Box - Wrapped in link to #aerospace -->
+          <a href="#aerospace" class="hud-link block">
+            <div class="hud-element">
+              <div class="hud-corner tl"></div>
+              <div class="hud-corner tr"></div>
+              <div class="hud-corner bl"></div>
+              <div class="hud-corner br"></div>
+              <div class="hud-title orbitron">RESEARCH</div>
+              <div class="hud-item">• AI Data Center Dynamic Power Consumption Modeling</div>
+              <div class="hud-item">• Low-Inertia Power Systems</div>
+              <div class="hud-item">• RES-Dominant Grid Stability</div>
+              <div class="hud-item">• Neural Network Based Intelligent Ctrl</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS STYLES -->
+<style>
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin: 0 auto 20px auto;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  display: block;
+  line-height: 1.4;
+}
+ 
+/* Hero Section Container - Completely isolated */
+.hero-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0 60px 0;
+  overflow: visible;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+ 
+/* Main Box Container with visible border */
+.hero-background-box {
+  position: relative;
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: url('graphics/cover3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 4px solid #00f3ff;
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
+  padding: 50px 40px;
+  box-sizing: border-box;
+  min-height: 90vh;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+ 
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+ 
+.hero-content-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+ 
+/* Left Content Styling */
+.hero-left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #00f3ff;
+  text-shadow: 0 0 30px rgba(0, 243, 255, 0.8);
+  letter-spacing: 0.15em;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  display: block;
+  padding: 30px 50px;
+  border: 4px solid #00f3ff;
+  background: rgba(0, 10, 20, 0.9);
+  box-shadow: 0 0 50px rgba(0, 243, 255, 0.6), inset 0 0 30px rgba(0, 243, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  max-width: fit-content;
+  margin: 0 auto 10px auto;
+}
+ 
+.hero-quote {
+  font-size: 2.2rem;
+  font-style: italic;
+  color: #00f3ff;
+  margin: 0 0 20px 0;
+  text-align: center;
+  text-shadow: 0 0 25px rgba(0, 243, 255, 0.9), 0 0 10px rgba(0, 243, 255, 1);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+ 
+/* Info Boxes Grid - Adjusted for centering and smaller size */
+.hero-info-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+  justify-content: center;
+}
+ 
+.hud-element {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #00f3ff;
+  padding: 15px 12px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  cursor: pointer;
+  overflow: hidden;
+}
+ 
+.hud-element:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 243, 255, 0.5), 0 0 30px rgba(0, 243, 255, 0.3);
+  border-color: #00ffff;
+  background: rgba(0, 0, 0, 0.2);
+}
+ 
+.hud-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #00f3ff;
+  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.8), 0 0 5px rgba(0, 243, 255, 1);
+  flex-shrink: 0;
+}
+ 
+.hud-item {
+  font-size: 0.85rem;
+  color: #ffffff;
+  margin-top: 8px;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  flex-shrink: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+ 
+/* Styles for the link wrappers to ensure seamless integration */
+.hud-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.hud-link:hover {
+  transform: translateY(-8px);
+  text-decoration: none;
+}
+
+/* HUD Corner Decorations - Scaled down for smaller boxes */
+.hud-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #00f3ff;
+  box-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}
+ 
+.hud-corner.tl {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+ 
+.hud-corner.tr {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+ 
+.hud-corner.bl {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+}
+ 
+.hud-corner.br {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+ 
+/* Right Profile Image Section */
+.hero-right-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 3;
+}
+ 
+.profile-image-container {
+  position: relative;
+  width: 280px;
+  max-width: 280px;
+}
+ 
+.profile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 4px solid #00f3ff;
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.6);
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 20, 40, 0.5);
+}
+ 
+.profile-frame {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border: 3px solid #00f3ff;
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+ 
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+}
+ 
+@media (max-width: 1200px) {
+  .hero-background-box {
+    width: 95%;
+    padding: 40px 30px;
+  }
+ 
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+ 
+  .hero-title {
+    font-size: 3.5rem;
+    padding: 25px 40px;
+  }
+ 
+  .hero-info-boxes {
+    width: 90%;
+  }
+}
+ 
+@media (max-width: 992px) {
+  .hero-section-wrapper {
+    padding: 20px 0 60px 0;
+  }
+ 
+  .hero-title {
+    font-size: 3rem;
+    padding: 20px 30px;
+  }
+ 
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+ 
+  .hero-quote {
+    font-size: 1.8rem;
+  }
+ 
+  .hero-info-boxes {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+ 
+  .hud-element {
+    height: auto;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .hero-background-box {
+    width: 95%;
+    padding: 30px 20px;
+    border: 3px solid #00f3ff;
+  }
+ 
+  .hero-title {
+    font-size: 2.5rem;
+    padding: 20px 25px;
+  }
+ 
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+ 
+  .hero-quote {
+    font-size: 1.5rem;
+  }
+ 
+  .hud-element {
+    padding: 12px 10px;
+    height: 120px;
+  }
+ 
+  .hud-title {
+    font-size: 0.9rem;
+  }
+ 
+  .hud-item {
+    font-size: 0.8rem;
+  }
+ 
+  .hero-info-boxes {
+    gap: 12px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .hero-section-wrapper {
+    padding: 20px 0 40px 0;
+  }
+ 
+  .hero-background-box {
+    width: 95%;
+    padding: 25px 15px;
+  }
+ 
+  .hero-title {
+    font-size: 2rem;
+    padding: 15px 20px;
+    letter-spacing: 0.1em;
+  }
+ 
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+ 
+  .hero-quote {
+    font-size: 1.2rem;
+  }
+ 
+  .hud-element {
+    height: 110px;
+  }
+}
+</style>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
@@ -5854,6 +6319,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
