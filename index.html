@@ -1075,18 +1075,17 @@
 
 
 
-
 <section id="education" class="section">
   <div class="max-w-7xl">
-    <h2 class="orbitron section-title">
-      <span class="status-indicator status-active"></span>
+    <h2 class="orbitron section-title-edu">
+      <span class="status-indicator-edu status-active-edu"></span>
       DEGREES RECEIVED
     </h2>
     
     <!-- Education Container Box -->
     <div class="education-container-box">
       <!-- Bachelor's Degree -->
-      <div class="project-card">
+      <div class="project-card-edu">
         <div class="degree-left">
           <img src="./graphics/ioelogo.png" alt="WRC" class="degree-logo">
           <p class="degree-period">2022 - Present</p>
@@ -1099,7 +1098,7 @@
       </div>
       
       <!-- Higher Secondary -->
-      <div class="project-card">
+      <div class="project-card-edu">
         <div class="degree-left">
           <img src="./graphics/soslogo.jpg" alt="SOS Hermann Gmeiner" class="degree-logo">
           <p class="degree-period">2020 - 2022</p>
@@ -1126,10 +1125,10 @@
   margin-top: 30px;
 }
 
-/* Make individual project cards non-transparent */
-.project-card {
+/* Make individual project cards non-transparent - using unique class name */
+.project-card-edu {
   position: relative;
-  background: rgba(0, 20, 40, 0.95) !important;
+  background: rgba(0, 20, 40, 0.95);
   border: 2px solid #00f3ff;
   padding: 30px;
   margin-bottom: 25px;
@@ -1141,15 +1140,15 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-.project-card:last-child {
+.project-card-edu:last-child {
   margin-bottom: 0;
 }
 
-.project-card:hover {
+.project-card-edu:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 40px rgba(0, 243, 255, 0.4), 0 0 30px rgba(0, 243, 255, 0.2);
   border-color: #00ffff;
-  background: rgba(0, 30, 50, 0.95) !important;
+  background: rgba(0, 30, 50, 0.95);
 }
 
 /* Degree Left Section */
@@ -1214,8 +1213,8 @@
   letter-spacing: 0.03em;
 }
 
-/* Section Title Styling */
-.section-title {
+/* Section Title Styling - using unique class name */
+.section-title-edu {
   font-size: 2.5rem;
   color: #00f3ff;
   text-align: center;
@@ -1228,20 +1227,20 @@
   gap: 15px;
 }
 
-.status-indicator {
+.status-indicator-edu {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   display: inline-block;
 }
 
-.status-active {
+.status-active-edu {
   background: #00ff00;
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
-  animation: pulse 2s infinite;
+  animation: pulse-edu 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulse-edu {
   0%, 100% {
     opacity: 1;
   }
@@ -1256,7 +1255,7 @@
     padding: 30px;
   }
   
-  .project-card {
+  .project-card-edu {
     flex-direction: column;
     text-align: center;
     padding: 25px;
@@ -1277,7 +1276,7 @@
     border: 3px solid #00f3ff;
   }
   
-  .project-card {
+  .project-card-edu {
     padding: 20px;
     gap: 20px;
   }
@@ -1299,7 +1298,7 @@
     font-size: 1.1rem;
   }
   
-  .section-title {
+  .section-title-edu {
     font-size: 2rem;
   }
 }
@@ -1309,7 +1308,7 @@
     padding: 20px 15px;
   }
   
-  .project-card {
+  .project-card-edu {
     padding: 15px;
   }
   
@@ -1326,22 +1325,11 @@
     font-size: 1rem;
   }
   
-  .section-title {
+  .section-title-edu {
     font-size: 1.6rem;
   }
 }
 </style>
-
-
-
-  
-
-
-
-
-
-
-
 
   
 
@@ -4839,6 +4827,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
