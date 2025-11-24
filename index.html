@@ -498,44 +498,9 @@
     <div class="hero-content">
       <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
       <h2 class="hero-subtitle">
-As an enthusiastic Electrical Engineering researcher with a strong academic foundation, I am parallelly pursuing industry level work while advancing innovative research initiatives.
+Electrical Engineer
  </h2>
-      <p class="text-xl italic mt-4">"I like engineering because I love imagining."</p>
-      <div class="flex justify-center space-x-8 mt-8">
-        <div class="hud-element p-6 text-center">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="orbitron text-2xl font-bold text-accent-cyan">ACADEMIA</div>
-          <div class="text-sm mt-2">• Power Systems</div>
-           <div class="text-sm mt-2">• Control Systems</div>
-           <div class="text-sm mt-2">• AI and ML </div>
-           <div class="text-sm mt-2">• Power Electronics</div>
-        </div>
-        <div class="hud-element p-6 text-center">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="orbitron text-2xl font-bold text-accent-cyan">INDUSTRY WORK</div>
-          <div class="text-sm mt-2">• Electrical AutoCAD Designs </div>
-          <div class="text-sm mt-2">• Energy Audits  </div>
-          <div class="text-sm mt-2">• PLC, SCADA Control  </div>
-          <div class="text-sm mt-2">• AI Home Automation Hardware</div>
-        </div>
-        <div class="hud-element p-6 text-center">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="orbitron text-2xl font-bold text-accent-cyan">RESEARCH </div>
-          <div class="text-sm mt-2">• AI Data Center Dynamic <br> Power Consumption  Modeling </div>
-          <div class="text-sm mt-2">• Low-Inertia Power Systems </div>
-          <div class="text-sm mt-2"> • RES-Dominant Grid Stability </div>
-          <div class="text-sm mt-2">• Neural Network Based Intelligent Ctrl</div>
-        </div>
-      </div>
+      
     </div>
   </section>
 
@@ -702,10 +667,7 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
 
 
 
-
-
-
-
+  
 
 
 
@@ -718,7 +680,6 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
     <div class="hero-content-container">
       <!-- Left Content Area -->
       <div class="hero-left-content">
-        <h1 class="hero-title orbitron">DIPESH POUDEL</h1>
         <h2 class="hero-subtitle-enhanced">
           As an enthusiastic Electrical Engineering researcher with a strong academic foundation, I am parallelly pursuing industry level work while advancing innovative research initiatives.
         </h2>
@@ -761,14 +722,6 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
             <div class="hud-item">• RES-Dominant Grid Stability</div>
             <div class="hud-item">• Neural Network Based Intelligent Ctrl</div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Right Profile Image Area -->
-      <div class="hero-right-content">
-        <div class="profile-image-container">
-          <img src="graphics/profile.jpg" alt="Dipesh Poudel" class="profile-image" onerror="this.style.border='3px solid #ff0000'; this.alt='Image not found: graphics/profile.jpg'">
-          <div class="profile-frame"></div>
         </div>
       </div>
     </div>
@@ -847,26 +800,28 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
   margin: 0;
   line-height: 1.2;
   text-align: center;
+  display: none;
 }
 
 .hero-subtitle-enhanced {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   line-height: 2;
   color: #ffffff;
   font-weight: 400;
   margin: 20px 0;
   text-align: center;
   letter-spacing: 0.03em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 243, 255, 0.3);
 }
 
 .hero-quote {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-style: italic;
   color: #00f3ff;
-  margin: 15px 0;
+  margin: 15px 0 30px 0;
   text-align: center;
-  text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.8), 0 0 5px rgba(0, 243, 255, 1);
+  font-weight: 300;
 }
 
 /* Info Boxes Grid */
@@ -880,11 +835,11 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
 
 .hud-element {
   position: relative;
-  background: rgba(0, 20, 40, 0.9);
+  background: rgba(0, 20, 40, 0.15);
   border: 2px solid #00f3ff;
   padding: 28px 18px;
   text-align: center;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(3px);
   transition: all 0.3s ease;
   min-height: 200px;
   display: flex;
@@ -894,9 +849,9 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
 
 .hud-element:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 243, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 243, 255, 0.5), 0 0 30px rgba(0, 243, 255, 0.3);
   border-color: #00ffff;
-  background: rgba(0, 30, 50, 0.95);
+  background: rgba(0, 30, 50, 0.25);
 }
 
 .hud-title {
@@ -905,15 +860,17 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
   color: #00f3ff;
   margin-bottom: 18px;
   letter-spacing: 0.08em;
-  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.8), 0 0 5px rgba(0, 243, 255, 1);
 }
 
 .hud-item {
   font-size: 1rem;
-  color: #d0d0d0;
+  color: #ffffff;
   margin-top: 10px;
   line-height: 1.6;
   text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
 }
 
 /* HUD Corner Decorations */
@@ -922,6 +879,7 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
   width: 18px;
   height: 18px;
   border: 3px solid #00f3ff;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
 }
 
 .hud-corner.tl {
@@ -995,21 +953,8 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
 
 /* Responsive Design */
 @media (max-width: 1400px) {
-  .hero-title {
-    font-size: 4rem;
-  }
-  
   .hero-subtitle-enhanced {
-    font-size: 1.6rem;
-  }
-  
-  .profile-image-container {
-    width: 260px;
-    max-width: 260px;
-  }
-  
-  .hero-right-content {
-    right: 40px;
+    font-size: 1.7rem;
   }
 }
 
@@ -1019,22 +964,8 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
     padding: 40px 30px;
   }
   
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
   .hero-subtitle-enhanced {
-    font-size: 1.5rem;
-  }
-  
-  .profile-image-container {
-    width: 240px;
-    max-width: 240px;
-  }
-  
-  .hero-right-content {
-    right: 30px;
-    top: 40px;
+    font-size: 1.6rem;
   }
 }
 
@@ -1043,16 +974,12 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
     padding: 20px 0 60px 0;
   }
   
-  .hero-right-content {
-    position: static;
-    justify-content: center;
-    margin-bottom: 30px;
+  .hero-subtitle-enhanced {
+    font-size: 1.5rem;
   }
   
-  .profile-image-container {
-    width: 280px;
-    max-width: 280px;
-    margin: 0 auto;
+  .hero-quote {
+    font-size: 1.3rem;
   }
   
   .hero-info-boxes {
@@ -1072,12 +999,8 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
     border: 3px solid #00f3ff;
   }
   
-  .hero-title {
-    font-size: 2.8rem;
-  }
-  
   .hero-subtitle-enhanced {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.8;
   }
   
@@ -1096,11 +1019,6 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
   .hud-item {
     font-size: 0.95rem;
   }
-  
-  .profile-image-container {
-    width: 250px;
-    max-width: 250px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1113,34 +1031,26 @@ As an enthusiastic Electrical Engineering researcher with a strong academic foun
     padding: 25px 15px;
   }
   
-  .hero-title {
-    font-size: 2.2rem;
-    letter-spacing: 0.1em;
-  }
-  
   .hero-subtitle-enhanced {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.7;
   }
   
   .hero-quote {
     font-size: 1rem;
   }
-  
-  .profile-image-container {
-    width: 220px;
-    max-width: 220px;
-  }
 }
 </style>
+
+
+
+
+
+
+
+
+
   
-
-
-
-
-  
-
-
 
 
 
@@ -4671,6 +4581,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
