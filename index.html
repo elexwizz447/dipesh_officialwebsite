@@ -498,7 +498,7 @@
       <div class="hero-left-content">
         <p class="hero-quote">"I like engineering because I love imagining."</p>
         <h2 class="hero-subtitle-enhanced">
-          As an enthusiastic Electrical Engineering researcher with a strong academic foundation, I am parallelly pursuing industry level work while advancing innovative research initiatives.
+          An enthusiastic Electrical Engineering researcher with a strong academic foundation, parallelly pursuing industry level work while advancing innovative research initiatives.
         </h2>
         
         <!-- Three Info Boxes -->
@@ -1076,37 +1076,15 @@
 
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
 <section id="education" class="section">
   <div class="max-w-7xl">
     <h2 class="orbitron section-title">
       <span class="status-indicator status-active"></span>
-      ACADEMICS
+      DEGREES RECEIVED
     </h2>
-
-    <!-- Degrees Section -->
-    <h3 class="subsection-title orbitron">Degrees Received</h3>
-    <div class="degrees-container">
+    
+    <!-- Education Container Box -->
+    <div class="education-container-box">
       <!-- Bachelor's Degree -->
       <div class="project-card">
         <div class="degree-left">
@@ -1119,7 +1097,7 @@
           <p class="institution-text orbitron">Institute of Engineering-Pashchimanchal Campus</p>
         </div>
       </div>
-
+      
       <!-- Higher Secondary -->
       <div class="project-card">
         <div class="degree-left">
@@ -1133,6 +1111,247 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<style>
+/* Education Container Box */
+.education-container-box {
+  position: relative;
+  border: 4px solid #00f3ff;
+  padding: 40px;
+  background: rgba(0, 10, 20, 0.6);
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
+  backdrop-filter: blur(5px);
+  margin-top: 30px;
+}
+
+/* Make individual project cards non-transparent */
+.project-card {
+  position: relative;
+  background: rgba(0, 20, 40, 0.95) !important;
+  border: 2px solid #00f3ff;
+  padding: 30px;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 243, 255, 0.4), 0 0 30px rgba(0, 243, 255, 0.2);
+  border-color: #00ffff;
+  background: rgba(0, 30, 50, 0.95) !important;
+}
+
+/* Degree Left Section */
+.degree-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 180px;
+}
+
+.degree-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border: 3px solid #00f3ff;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+.degree-period {
+  font-size: 1.1rem;
+  color: #00f3ff;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+}
+
+/* Degree Right Section */
+.degree-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.degree-title {
+  font-size: 1.8rem;
+  color: #00f3ff;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+}
+
+.scholarship-text {
+  font-size: 1.1rem;
+  color: #ffdd00;
+  margin: 0;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 221, 0, 0.5);
+}
+
+.institution-text {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* Section Title Styling */
+.section-title {
+  font-size: 2.5rem;
+  color: #00f3ff;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-active {
+  background: #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .education-container-box {
+    padding: 30px;
+  }
+  
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+  
+  .degree-left {
+    min-width: auto;
+  }
+  
+  .degree-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-container-box {
+    padding: 25px 20px;
+    border: 3px solid #00f3ff;
+  }
+  
+  .project-card {
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .degree-logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .degree-title {
+    font-size: 1.4rem;
+  }
+  
+  .scholarship-text {
+    font-size: 1rem;
+  }
+  
+  .institution-text {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-container-box {
+    padding: 20px 15px;
+  }
+  
+  .project-card {
+    padding: 15px;
+  }
+  
+  .degree-logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .degree-title {
+    font-size: 1.2rem;
+  }
+  
+  .degree-period {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+</style>
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
 
     <!-- Certifications Section -->
     <div class="certifications-section">
@@ -4620,6 +4839,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
