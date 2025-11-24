@@ -500,8 +500,6 @@
 
 
 
-
-
 <!-- HTML SECTION -->
 <section id="hero" class="hero-section-wrapper">
   <div class="hero-background-box">
@@ -573,7 +571,7 @@
   position: relative;
   width: 100%;
   margin: 0;
-  padding: 80px 0 60px 0; /* Top padding for fixed header */
+  padding: 20px 0 60px 0; /* Reduced top padding for fixed header */
   overflow: visible;
   isolation: isolate;
   display: flex;
@@ -605,7 +603,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -614,11 +612,10 @@
   z-index: 2;
   max-width: 1400px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 450px;
-  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   align-items: center;
-  justify-items: center;
 }
 
 /* Left Content Styling */
@@ -747,15 +744,19 @@
 /* Right Profile Image Section */
 .hero-right-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
   width: 100%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 3;
 }
 
 .profile-image-container {
   position: relative;
-  width: 100%;
-  max-width: 420px;
+  width: 280px;
+  max-width: 280px;
 }
 
 .profile-image {
@@ -783,11 +784,6 @@
 
 /* Responsive Design */
 @media (max-width: 1400px) {
-  .hero-content-container {
-    grid-template-columns: 1fr 400px;
-    gap: 40px;
-  }
-  
   .hero-title {
     font-size: 4rem;
   }
@@ -795,17 +791,21 @@
   .hero-subtitle-enhanced {
     font-size: 1.6rem;
   }
+  
+  .profile-image-container {
+    width: 260px;
+    max-width: 260px;
+  }
+  
+  .hero-right-content {
+    right: 40px;
+  }
 }
 
 @media (max-width: 1200px) {
   .hero-background-box {
     width: 95%;
     padding: 40px 30px;
-  }
-  
-  .hero-content-container {
-    grid-template-columns: 1fr 350px;
-    gap: 35px;
   }
   
   .hero-title {
@@ -817,26 +817,30 @@
   }
   
   .profile-image-container {
-    max-width: 350px;
+    width: 240px;
+    max-width: 240px;
+  }
+  
+  .hero-right-content {
+    right: 30px;
+    top: 40px;
   }
 }
 
 @media (max-width: 992px) {
   .hero-section-wrapper {
-    padding: 100px 0 60px 0;
-  }
-  
-  .hero-content-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    padding: 20px 0 60px 0;
   }
   
   .hero-right-content {
-    order: -1;
+    position: static;
+    justify-content: center;
+    margin-bottom: 30px;
   }
   
   .profile-image-container {
-    max-width: 350px;
+    width: 280px;
+    max-width: 280px;
     margin: 0 auto;
   }
   
@@ -883,13 +887,14 @@
   }
   
   .profile-image-container {
-    max-width: 300px;
+    width: 250px;
+    max-width: 250px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-section-wrapper {
-    padding: 80px 0 40px 0;
+    padding: 20px 0 40px 0;
   }
   
   .hero-background-box {
@@ -912,27 +917,11 @@
   }
   
   .profile-image-container {
-    max-width: 250px;
+    width: 220px;
+    max-width: 220px;
   }
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
 
 
@@ -4690,6 +4679,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
