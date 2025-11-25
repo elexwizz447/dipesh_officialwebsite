@@ -1470,12 +1470,60 @@
 
 
 
+<!-- Add this RIGHT AFTER this line: <h2 class="orbitron text-4xl font-bold text-center mb-12"> -->
+<div class="max-w-4xl mx-auto text-center mb-16">
+  <!-- Glowing Box Container -->
+  <div class="glow-box inline-block p-8 rounded-xl border-2 border-[var(--accent-cyan)] bg-[rgba(0,0,0,0.3)] backdrop-blur-md shadow-2xl mx-auto max-w-2xl">
+    <h3 class="orbitron text-3xl font-bold mb-4 text-[var(--accent-cyan)] tracking-wide leading-tight">
+      The Next Frontier in Electrical Engineering: AI Data Center Power Systems
+    </h3>
+    <p class="text-base text-gray-300 italic font-light tracking-wider">
+      My Current AI Data Center Power System Research
+    </p>
+  </div>
+</div>
 
+    <style>
+
+    .glow-box {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3), 
+    inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+.glow-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+  animation: scan 3s infinite;
+  z-index: 0;
+}
+.glow-box:hover {
+  box-shadow: 
+    0 0 30px rgba(0, 255, 255, 0.5), 
+    0 0 40px rgba(0, 255, 255, 0.3),
+    inset 0 0 30px rgba(0, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+.glow-box > * {
+  position: relative;
+  z-index: 1;
+}
+@keyframes scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
 
 
 
     
-
+</style>
 
 
 
@@ -4535,6 +4583,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
