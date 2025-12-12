@@ -3918,6 +3918,387 @@ which added a full automation layer on top of the traditional control system.
 
 
 
+
+
+
+
+
+
+  
+  <title>Secretary - EGEN Club</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-blue: #00d9ff;
+      --accent-cyan: #00ffff;
+      --bg-dark: #0a0e27;
+      --bg-card: #0f1429;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+      margin-bottom: 3rem;
+    }
+
+    .hologram {
+      position: relative;
+      border: 2px solid var(--accent-cyan);
+    }
+
+    .hologram::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(0, 255, 255, 0.1) 50%, transparent 60%);
+      pointer-events: none;
+      animation: scan 4s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    .hud-corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--primary-blue);
+    }
+
+    .hud-corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+    .hud-corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+    .hud-corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+    .hud-corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+    .shake-on-hover {
+      transition: transform 0.3s ease;
+    }
+
+    .shake-on-hover:hover {
+      animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .flex-1 {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .my-3 { margin-top: 0.75rem; margin-bottom: 0.75rem; }
+    .mr-4 { margin-right: 1rem; }
+
+    .w-16 { width: 4rem; }
+    .h-16 { height: 4rem; }
+    .w-full { width: 100%; }
+
+    .text-2xl { font-size: 1.5rem; }
+    .text-sm { font-size: 0.875rem; }
+    .text-xs { font-size: 0.75rem; }
+
+    .font-bold { font-weight: bold; }
+
+    .text-accent-cyan { color: var(--accent-cyan); }
+    .text-center { text-align: center; }
+
+    .object-contain { object-fit: contain; }
+
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded { border-radius: 0.25rem; }
+
+    .border { border-width: 1px; }
+    .border-cyan { border-color: var(--accent-cyan); }
+
+    .overflow-hidden { overflow: hidden; }
+
+    .list-disc {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    .leading-relaxed { line-height: 1.625; }
+
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .pl-4 { padding-left: 1rem; }
+
+    .block { display: block; }
+
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+
+    .cursor-pointer { cursor: pointer; }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(0, 255, 255, 0.3);
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .bg-primary-blue {
+      background-color: var(--primary-blue);
+      color: #000;
+    }
+
+    .bg-primary-blue:hover {
+      background-color: var(--accent-cyan);
+    }
+
+    /* Carousel Styles */
+    .carousel-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      font-size: 1.5rem;
+      z-index: 10;
+    }
+
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .top-1-2 { top: 50%; }
+    .transform { transform: translateY(-50%); }
+
+    .opacity-75 { opacity: 0.75; }
+    .opacity-75:hover { opacity: 1; }
+
+    /* Image grid for left column */
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .grid-image {
+      height: 110px;
+      border-radius: 0.5rem;
+      border: 1px solid var(--accent-cyan);
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .md\\:flex-row {
+        flex-direction: column;
+      }
+
+      .grid-image {
+        height: 100px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .md\\:flex-row {
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MAIN SECRETARY - EGEN CLUB BOX -->
+<div class="project-card hologram mb-12">
+  <div class="hud-corner tl"></div>
+  <div class="hud-corner tr"></div>
+  <div class="hud-corner bl"></div>
+  <div class="hud-corner br"></div>
+  
+  <div class="flex flex-col md:flex-row items-start gap-6">
+    <!-- LEFT: LOGO + TITLE + TEXT + 2 FIXED IMAGES -->
+    <div class="flex-1">
+      <!-- LOGO + TITLE -->
+      <div class="flex items-center mb-4">
+        <img src="./graphics/club15.jpg" alt="EGEN Club logo" class="w-16 h-16 mr-4 object-contain">
+        <h3 class="orbitron text-2xl font-bold text-accent-cyan">SECRETARY - EGEN CLUB</h3>
+      </div>
+      
+      <!-- TEXT BELOW -->
+      <p class="text-sm mb-2"><strong>Role:</strong> Secretary & Core Member</p>
+      <p class="text-sm mb-2"><strong>Duration:</strong> March 2024 - Present</p>
+      <hr class="my-3">
+      <ul class="text-sm leading-relaxed list-disc pl-4 mb-2">
+        <li>Led organizational operations and coordinated technical workshops and events</li>
+        <li>Managed club communications, documentation, and member engagement initiatives</li>
+        <li>Collaborated with team to organize Arduino, PCB design, and electronics workshops</li>
+      </ul>
+
+      <!-- 2 FIXED IMAGES IN GRID -->
+      <div class="image-grid mt-2">
+        <div class="grid-image">
+          <img src="./graphics/egen1.jpg" alt="EGEN Activity 1" class="w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/egen1.jpg', 'EGEN Club Activity 1')">
+        </div>
+        <div class="grid-image">
+          <img src="./graphics/egen2.jpg" alt="EGEN Activity 2" class="w-full h-full object-contain cursor-pointer shake-on-hover" onclick="openModal('./graphics/egen2.jpg', 'EGEN Club Activity 2')">
+        </div>
+      </div>
+      <p class="text-xs text-center mt-2">Club Activities & Events</p>
+    </div>
+    
+    <!-- RIGHT: TWO SLIDING CAROUSEL IMAGES -->
+    <div class="flex-1 w-full">
+      <div class="relative overflow-hidden rounded-lg border border-cyan" style="height: 280px;">
+        <div class="carousel-container" id="egen-carousel" style="transform: translateX(0%);">
+          <div class="carousel-item">
+            <img src="./graphics/egen3.jpg" alt="Workshop Session 1" class="cursor-pointer shake-on-hover" onclick="openModal('./graphics/egen3.jpg', 'Workshop Session 1')">
+          </div>
+          <div class="carousel-item">
+            <img src="./graphics/egen4.jpg" alt="Workshop Session 2" class="cursor-pointer shake-on-hover" onclick="openModal('./graphics/egen4.jpg', 'Workshop Session 2')">
+          </div>
+        </div>
+        <button onclick="slideCarousel('egen-carousel', -1)" class="absolute left-0 top-1-2 transform bg-primary-blue px-3 py-2 rounded opacity-75">‹</button>
+        <button onclick="slideCarousel('egen-carousel', 1)" class="absolute right-0 top-1-2 transform bg-primary-blue px-3 py-2 rounded opacity-75">›</button>
+      </div>
+      <p class="text-xs text-center mt-2" id="egen-carousel-caption">Workshop & Training Sessions</p>
+    </div>
+  </div>
+
+  <!-- BUTTON -->
+  <a href="https://www.facebook.com/your-egen-club-link" target="_blank" class="block mt-6 bg-primary-blue px-4 py-2 rounded font-bold text-center orbitron">Click for More Details</a>
+</div>
+
+<script>
+  // Manual slide for carousel
+  function slideCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    let currentTransform = parseInt(carousel.style.transform.replace('translateX(', '').replace('%)', '') || 0);
+    const numItems = carousel.children.length;
+    currentTransform += direction * 100;
+    if (currentTransform < -100 * (numItems - 1)) currentTransform = 0;
+    if (currentTransform > 0) currentTransform = -100 * (numItems - 1);
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${currentTransform}%)`;
+    
+    // Update caption
+    const captions = ['Workshop & Training Sessions', 'Team Collaboration & Events'];
+    const captionIndex = Math.abs(currentTransform / 100);
+    const captionEl = document.getElementById('egen-carousel-caption');
+    if (captionEl) {
+      captionEl.textContent = captions[captionIndex] || captions[0];
+    }
+  }
+
+  // Auto-slide function
+  function autoSlide(id) {
+    let index = 0;
+    const carousel = document.getElementById(id);
+    const numItems = carousel.children.length;
+    if (numItems <= 1) return;
+    
+    setInterval(() => {
+      index = (index + 1) % numItems;
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      
+      // Update caption
+      const captions = ['Workshop & Training Sessions', 'Team Collaboration & Events'];
+      const captionEl = document.getElementById('egen-carousel-caption');
+      if (captionEl) {
+        captionEl.textContent = captions[index];
+      }
+    }, 5000);
+  }
+
+  // Modal function (placeholder - implement as needed)
+  function openModal(imgSrc, caption) {
+    alert(`Opening modal for: ${caption}\nImage: ${imgSrc}`);
+    // Implement your modal logic here
+  }
+
+  // Initialize auto-slide
+  document.addEventListener('DOMContentLoaded', () => {
+    autoSlide('egen-carousel');
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
   
 
 
@@ -4859,6 +5240,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
