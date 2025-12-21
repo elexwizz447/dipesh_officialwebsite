@@ -4266,23 +4266,19 @@ which added a full automation layer on top of the traditional control system.
       <span class="status-indicator status-active"></span>ESTABLISH CONTACT
     </h2>
     
-    <div class="hud-element p-4 md:p-8 rounded-lg overflow-hidden">
-      <div class="hud-corner tl"></div>
-      <div class="hud-corner tr"></div>
-      <div class="hud-corner bl"></div>
-      <div class="hud-corner br"></div>
-      
+    <div class="space-y-6 md:space-y-8">
+      <!-- Top Section: Image + Contact Boxes -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         <!-- Left Side - Image -->
-        <div class="flex justify-center items-start p-4">
-          <img src="./graphics/profile.jpg" alt="Contact" class="w-full max-w-sm aspect-[3/4] object-cover rounded-lg border-2 border-primary-blue shadow-lg">
+        <div class="flex justify-center items-start">
+          <img src="./assets/contact-image.jpg" alt="Contact" class="w-full max-w-sm aspect-[3/4] object-cover rounded-lg border-2 border-primary-blue shadow-lg">
         </div>
         
         <!-- Right Side - Contact Boxes -->
-        <div class="space-y-4 md:space-y-6 p-4">
-          <div class="grid grid-cols-1 gap-4 md:gap-6">
+        <div class="space-y-4 md:space-y-6">
+          <div class="grid grid-cols-1 gap-4">
             <!-- Email Box -->
-            <a href="mailto:poudeldipesh1001@gmail.com" class="hud-element p-4 md:p-6 hover:bg-primary-blue hover:text-black transition-all rounded block">
+            <a href="mailto:poudeldipesh1001@gmail.com" class="hud-element p-4 hover:bg-primary-blue hover:text-black transition-all rounded block">
               <div class="hud-corner tl"></div>
               <div class="hud-corner tr"></div>
               <div class="hud-corner bl"></div>
@@ -4293,7 +4289,7 @@ which added a full automation layer on top of the traditional control system.
             </a>
             
             <!-- LinkedIn Box -->
-            <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" class="hud-element p-4 md:p-6 hover:bg-primary-blue hover:text-black transition-all rounded block">
+            <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" class="hud-element p-4 hover:bg-primary-blue hover:text-black transition-all rounded block">
               <div class="hud-corner tl"></div>
               <div class="hud-corner tr"></div>
               <div class="hud-corner bl"></div>
@@ -4304,7 +4300,7 @@ which added a full automation layer on top of the traditional control system.
             </a>
             
             <!-- Resume Box -->
-            <a href="./assets/resume1.pdf" download class="hud-element p-4 md:p-6 hover:bg-primary-blue hover:text-black transition-all rounded block">
+            <a href="./assets/resume1.pdf" download class="hud-element p-4 hover:bg-primary-blue hover:text-black transition-all rounded block">
               <div class="hud-corner tl"></div>
               <div class="hud-corner tr"></div>
               <div class="hud-corner bl"></div>
@@ -4314,32 +4310,31 @@ which added a full automation layer on top of the traditional control system.
               <p class="text-xs md:text-sm">Complete Resume</p>
             </a>
           </div>
-          
-          <!-- Mission Collaboration Box -->
-          <div class="hud-element p-4 md:p-6 rounded">
-            <div class="hud-corner tl"></div>
-            <div class="hud-corner tr"></div>
-            <div class="hud-corner bl"></div>
-            <div class="hud-corner br"></div>
-            <h3 class="orbitron text-lg md:text-xl font-bold mb-3 md:mb-4">MISSION COLLABORATION</h3>
-            <p class="text-sm md:text-base mb-4 md:mb-6">
-              Whether it's innovation in energy, exploring new perspectives, or finding the best trail for a weekend hike — I'm always curious to collaborate and learn along the way.
-            </p>
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4">
-              <a href="mailto:poudeldipesh1001@gmail.com" class="border border-primary-blue px-4 md:px-6 py-2 md:py-3 rounded text-sm md:text-base font-bold hover:bg-primary-blue hover:text-black transition-all transform hover:scale-105">
-                INITIATE CONTACT
-              </a>
-              <a href="#aerospace" class="border border-primary-blue px-4 md:px-6 py-2 md:py-3 rounded text-sm md:text-base font-bold hover:bg-primary-blue hover:text-black transition-all">
-                VIEW PROJECTS
-              </a>
-            </div>
-          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Section: Mission Collaboration (Full Width) -->
+      <div class="hud-element p-6 md:p-8 rounded">
+        <div class="hud-corner tl"></div>
+        <div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div>
+        <div class="hud-corner br"></div>
+        <h3 class="orbitron text-lg md:text-xl font-bold mb-3 md:mb-4">MISSION COLLABORATION</h3>
+        <p class="text-sm md:text-base mb-4 md:mb-6">
+          Whether it's innovation in energy, exploring new perspectives, or finding the best trail for a weekend hike — I'm always curious to collaborate and learn along the way.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+          <a href="mailto:poudeldipesh1001@gmail.com" class="border border-primary-blue px-4 md:px-6 py-2 md:py-3 rounded text-sm md:text-base font-bold hover:bg-primary-blue hover:text-black transition-all transform hover:scale-105">
+            INITIATE CONTACT
+          </a>
+          <a href="#aerospace" class="border border-primary-blue px-4 md:px-6 py-2 md:py-3 rounded text-sm md:text-base font-bold hover:bg-primary-blue hover:text-black transition-all">
+            VIEW PROJECTS
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
   <!-- Floating HUD Elements -->
 
   <!--
@@ -5036,6 +5031,7 @@ which added a full automation layer on top of the traditional control system.
 </body>
 </html>
 ```
+
 
 
 
