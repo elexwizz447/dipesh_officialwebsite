@@ -1283,79 +1283,153 @@
     </div>
   </section>
 
-  <!-- ===================== AWARDS & GRANTS ===================== -->
-  <section id="awards" class="section mountain-bg">
-    <div class="max-w-7xl" style="width:100%">
-      <h2 class="section-heading">
-        <span class="status-indicator status-active"></span>AWARDS & GRANTS
-      </h2>
 
-      <div class="grid gap-6 mb-8" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-        <!-- Energy Hackathon -->
-        <div class="project-card">
-          <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <div style="display:flex;align-items:center;margin-bottom:1rem">
-            <img src="./graphics/logo1.png" alt="LOCUS 2024" style="width:44px;height:44px;object-fit:cover;margin-right:0.75rem;border-radius:4px">
-            <h3 class="orbitron font-bold" style="color:var(--success-green);font-size:clamp(0.8rem,2.5vw,1.1rem);flex:1">1st Place – LOCUS 2024 National Tech Festival</h3>
-          </div>
-          <img src="./graphics/power2.jpg" alt="Hackathon Win" class="w-full rounded mb-2 cursor-pointer" style="height:clamp(120px,30vw,200px);object-fit:contain;border:1px solid var(--accent-cyan)" onclick="openModal('./graphics/power2.jpg','Energy Hackathon Win')">
-          <p class="text-xs text-center mb-3">Group Photo After Winning Event</p>
-          <p class="text-sm mb-4">Led team <strong>WEAUTOMATE</strong> to first place, honored by dignitaries of the Nepal Electricity Authority. The winning project — the <strong>AI-Integrated Home Automation System</strong> — demonstrated autonomous appliance control using ESP32, real-time data logging, and behavioral ML.</p>
-          <div class="carousel-wrapper mb-2" style="height:clamp(140px,35vw,240px)">
-            <div class="carousel-container" id="energy-carousel">
-              <div class="carousel-item" style="flex-direction:column">
-                <img src="./graphics/energy1.jpg" alt="Demo 1" class="cursor-pointer" style="max-height:80%;object-fit:contain" onclick="openModal('./graphics/energy1.jpg','Energy Hackathon Photo 1')">
-                <p class="text-xs mt-1">Project demo during presentation.</p>
-              </div>
-              <div class="carousel-item" style="flex-direction:column">
-                <img src="./graphics/energy2.jpg" alt="Team Discussion" class="cursor-pointer" style="max-height:80%;object-fit:contain" onclick="openModal('./graphics/energy2.jpg','Energy Hackathon Photo 2')">
-                <p class="text-xs mt-1">Team brainstorming session.</p>
-              </div>
-              <div class="carousel-item" style="flex-direction:column">
-                <img src="./graphics/energy3.jpg" alt="Award Ceremony" class="cursor-pointer" style="max-height:80%;object-fit:contain" onclick="openModal('./graphics/energy3.jpg','Energy Hackathon Photo 3')">
-                <p class="text-xs mt-1">Award ceremony moment.</p>
-              </div>
-            </div>
-            <button class="carousel-btn prev" onclick="slideCarousel('energy-carousel',-1)">‹</button>
-            <button class="carousel-btn next" onclick="slideCarousel('energy-carousel',1)">›</button>
-          </div>
-        </div>
 
-        <!-- Power Hackathon -->
-        <div class="project-card hologram">
-          <div style="display:flex;align-items:center;margin-bottom:1rem">
-            <img src="./graphics/logo2.png" alt="Electromela 2.0" style="width:44px;height:44px;object-fit:cover;margin-right:0.75rem;border-radius:4px">
-            <h3 class="orbitron font-bold" style="color:var(--success-green);font-size:clamp(0.8rem,2.5vw,1.1rem);flex:1">Power Hackathon Champion – Electromela 2.0</h3>
-          </div>
-          <img src="./graphics/power1.jpg" alt="Hardware Model" class="w-full rounded mb-2 cursor-pointer" style="height:clamp(120px,30vw,200px);object-fit:contain;border:1px solid var(--accent-cyan)" onclick="openModal('./graphics/power1.jpg','Hardware Model')">
-          <p class="text-xs text-center mb-3">Developed Hardware Model.</p>
-          <p class="text-sm mb-4">Second major victory at <em>Electromela 2.0</em>. Project refined into a market-available product with higher-rated actuators, polished enclosure, superior predictive accuracy, and <em>Google Home</em> integration.</p>
-          <div class="carousel-wrapper mb-4" style="height:clamp(140px,35vw,240px)">
-            <div class="carousel-container" id="power-carousel">
-              <div class="carousel-item" style="flex-direction:column">
-                <img src="./graphics/power3.jpg" alt="Prototype Build" class="cursor-pointer" style="max-height:80%;object-fit:contain" onclick="openModal('./graphics/power3.jpg','Power Hackathon Photo 1')">
-                <p class="text-xs mt-1">Prototype assembly process.</p>
-              </div>
-              <div class="carousel-item" style="flex-direction:column">
-                <img src="./graphics/power4.jpg" alt="Testing Phase" class="cursor-pointer" style="max-height:80%;object-fit:contain" onclick="openModal('./graphics/power4.jpg','Power Hackathon Photo 2')">
-                <p class="text-xs mt-1">Hardware testing with actuators.</p>
-              </div>
-              <div class="carousel-item" style="flex-direction:column">
-                <img src="./graphics/power5.jpg" alt="Commercial Demo" class="cursor-pointer" style="max-height:80%;object-fit:contain" onclick="openModal('./graphics/power5.jpg','Power Hackathon Photo 3')">
-                <p class="text-xs mt-1">Commercialized product with Google Home.</p>
-              </div>
-            </div>
-            <button class="carousel-btn prev" onclick="slideCarousel('power-carousel',-1)">‹</button>
-            <button class="carousel-btn next" onclick="slideCarousel('power-carousel',1)">›</button>
-          </div>
-          <a href="mailto:poudeldipesh1001@gmail.com?subject=Power Hackathon Details" class="btn-primary w-full block text-center">Request Certificate/Details</a>
-        </div>
+
+  
+ <!-- ===================== AWARDS & GRANTS ===================== -->
+<section id="awards" class="section mountain-bg">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="section-heading">
+      <span class="status-indicator status-active"></span>AWARDS & GRANTS
+    </h2>
+
+    <!-- GRID: 2 per row -->
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- ================= TOP AWARDS WITH IMAGES ================= -->
+
+      <!-- UNDP GRANT -->
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          UNDP GCRU Funding – NPR 25 Million Grant
+        </h3>
+        <img src="./graphics/undp.jpg" alt="UNDP Award"
+          class="w-full rounded mb-3"
+          style="height:200px;object-fit:cover;border:1px solid var(--accent-cyan)">
+        <p class="text-sm mb-2">
+          Awarded funding to establish a <strong>Battery Innovation Lab</strong> focused on second-life EV battery research and sustainable energy systems.
+        </p>
+        <p class="text-xs text-gray-400">2025</p>
+      </div>
+
+      <!-- US-NEPAL STARTUP -->
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          US–Nepal Startup Weekend Challenge Winner
+        </h3>
+        <img src="./graphics/startup.jpg" alt="Startup Award"
+          class="w-full rounded mb-3"
+          style="height:200px;object-fit:cover;border:1px solid var(--accent-cyan)">
+        <p class="text-sm mb-2">
+          Secured <strong>NPR 200,000 prize</strong> at a US Embassy-backed startup competition for innovation-driven solution development.
+        </p>
+        <p class="text-xs text-gray-400">2026</p>
+      </div>
+
+      <!-- LOCUS -->
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          National Energy Hackathon Champion – LOCUS
+        </h3>
+        <img src="./graphics/power2.jpg" alt="LOCUS Award"
+          class="w-full rounded mb-3"
+          style="height:200px;object-fit:cover;border:1px solid var(--accent-cyan)">
+        <p class="text-sm mb-2">
+          Led team <strong>WEAUTOMATE</strong> to victory with an <strong>AI-integrated Home Automation System</strong> for sustainable edge energy innovation.
+        </p>
+        <p class="text-xs text-gray-400">2024</p>
+      </div>
+
+      <!-- ELECTROMELA -->
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          Power Hackathon Winner – Electromela 2.0
+        </h3>
+        <img src="./graphics/power1.jpg" alt="Electromela Award"
+          class="w-full rounded mb-3"
+          style="height:200px;object-fit:cover;border:1px solid var(--accent-cyan)">
+        <p class="text-sm mb-2">
+          Built a <strong>market-ready AI home automation system</strong> with advanced control layering and smart integration features.
+        </p>
+        <p class="text-xs text-gray-400">2024</p>
+      </div>
+
+      <!-- ================= OTHER AWARDS ================= -->
+
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          Ideathon – Most Sustainable Idea Award (Vector 2.0)
+        </h3>
+        <p class="text-sm mb-2">
+          Recognized for sustainability-focused innovation in energy systems and environmental impact design.
+        </p>
+        <p class="text-xs text-gray-400">2025</p>
+      </div>
+
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          Youth Innovation & STEM Equity Award
+        </h3>
+        <p class="text-sm mb-2">
+          Awarded by <strong>Leo Club of Pokhara Silver Mountains</strong> for leadership in promoting community tech accessibility.
+        </p>
+        <p class="text-xs text-gray-400">2022</p>
+      </div>
+
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          IOE Merit Entrance Scholarship
+        </h3>
+        <p class="text-sm mb-2">
+          Ranked in <strong>Top 10%</strong> nationwide in competitive entrance examination at Institute of Engineering.
+        </p>
+        <p class="text-xs text-gray-400">2022 – 2026</p>
+      </div>
+
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          SOS Academic Excellence Award
+        </h3>
+        <p class="text-sm mb-2">
+          Consistent academic excellence throughout higher secondary education.
+        </p>
+        <p class="text-xs text-gray-400">2019 – 2022</p>
+      </div>
+
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          High School Athletic Gold Medals
+        </h3>
+        <p class="text-sm mb-2">
+          Gold medals in <strong>Tug-of-War</strong> and <strong>Volleyball</strong> competitions.
+        </p>
+        <p class="text-xs text-gray-400">2019 – 2020</p>
+      </div>
+
+      <div class="project-card">
+        <h3 class="orbitron font-bold text-green-400 mb-2">
+          English Creative Writing Winner
+        </h3>
+        <p class="text-sm mb-2">
+          Recognized for excellence in creative writing at school-level competitions.
+        </p>
+        <p class="text-xs text-gray-400">2016, 2018</p>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
+  
+
+
+
+
+
+
+
+  
   <!-- ===================== CONTACT ===================== -->
   <section id="contact" class="section">
     <div style="width:100%;max-width:900px;margin:0 auto;text-align:center;padding:0 0.75rem">
