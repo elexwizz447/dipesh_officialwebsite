@@ -614,6 +614,112 @@
       .subwork-img-single img { height: 150px; }
     }
 
+    /* ===================== CONTACT + FOOTER ===================== */
+    .contact-lead {
+      max-width: 620px;
+      margin: 0 auto 40px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #9fb6c6;
+    }
+
+    .site-footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(0, 212, 255, 0.28);
+      background: linear-gradient(180deg, rgba(2, 10, 18, 0.75), rgba(0, 0, 0, 0.95));
+      backdrop-filter: blur(8px);
+      padding: 48px 24px 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding-bottom: 34px;
+    }
+
+    .footer-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #dff6ff;
+      margin: 0 0 8px;
+    }
+
+    .footer-tag {
+      font-size: 0.82rem;
+      color: #7b909e;
+      margin: 0;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+    .footer-nav a {
+      font-size: 0.85rem;
+      color: #9fb6c6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-nav a:hover { color: var(--accent-cyan); }
+
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer-chip {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #cfefff;
+      text-decoration: none;
+      border: 1px solid rgba(0, 212, 255, 0.45);
+      border-radius: 4px;
+      padding: 9px 16px;
+      transition: all 0.3s ease;
+    }
+    .footer-chip:hover {
+      background: rgba(0, 212, 255, 0.15);
+      border-color: var(--accent-cyan);
+      color: #ffffff;
+    }
+
+    .footer-bar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 0 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.76rem;
+      color: #6d818e;
+    }
+
+    .footer-top {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: #7fdcf5;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-top:hover { color: var(--accent-cyan); }
+
+    @media (max-width: 768px) {
+      .site-footer { padding: 34px 16px 0; text-align: center; }
+      .footer-inner { flex-direction: column; align-items: center; gap: 22px; padding-bottom: 26px; }
+      .footer-nav { justify-content: center; gap: 16px; }
+      .footer-bar { flex-direction: column; text-align: center; font-size: 0.7rem; }
+      .contact-lead { font-size: 0.88rem; margin-bottom: 28px; }
+    }
+
     /* ===================== AWARDS TIMELINE ===================== */
     .timeline-wrap {
       margin-top: 64px;
@@ -870,8 +976,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse at 50% 35%, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.78) 70%),
-        linear-gradient(180deg, rgba(1, 8, 14, 0.72), rgba(1, 8, 14, 0.88));
+        radial-gradient(ellipse at 50% 38%, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.42) 78%),
+        linear-gradient(180deg, rgba(1, 8, 14, 0.42) 0%, rgba(1, 8, 14, 0.22) 45%, rgba(1, 8, 14, 0.55) 100%);
       z-index: 1;
     }
 
@@ -900,6 +1006,7 @@
       color: #6fd6f5;
       margin: 0 0 clamp(14px, 2vw, 22px);
       text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
     }
 
     .hero-title {
@@ -913,7 +1020,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 60px rgba(0, 212, 255, 0.35);
+      filter: drop-shadow(0 3px 18px rgba(0, 0, 0, 0.85));
       padding-left: 0.16em; /* balances the trailing letter-spacing */
     }
 
@@ -932,6 +1039,7 @@
       letter-spacing: 0.01em;
       max-width: 720px;
       margin: 0 auto;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
     }
 
     .hero-cta {
@@ -980,7 +1088,7 @@
 
     .hero-info-boxes .hud-element {
       position: relative;
-      background: rgba(2, 12, 20, 0.55);
+      background: rgba(2, 12, 20, 0.62);
       border: 1px solid rgba(0, 212, 255, 0.35);
       border-radius: 10px;
       padding: 20px 16px 18px;
@@ -1402,6 +1510,10 @@
   <!-- ====================== EXPERIENCE : TANAHU HYDROPOWER ====================== -->
   <section id="internship" class="section aerospace-bg">
     <div class="max-w-7xl mx-auto" style="width:100%">
+      <h2 class="orbitron text-4xl font-bold text-center mb-12">
+        <span class="status-indicator status-active"></span>PROFESSIONAL EXPERIENCE
+      </h2>
+
       <div class="research-block exp-block">
         <div class="research-header">
           <span class="research-index orbitron">01</span>
@@ -1575,15 +1687,20 @@
             <li>Electrical installation of the tunnel and powerhouse ventilation system.</li>
             <li>Fan drives, starters, control wiring and interlocks with commissioning and airflow checks.</li>
           </ul>
-          <div class="internship-img-row">
-            <div class="internship-img-wrapper">
-              <img src="./graphics/tanahu11.jpg" alt="Ventilation fan drive panel" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu11.jpg', 'Ventilation fan drive panel')">
-              <p class="text-xs text-center">Ventilation fan drive panel</p>
+          <div class="subwork-img-single">
+            <div class="relative overflow-hidden rounded" style="height:230px;border:1px solid var(--accent-cyan)">
+              <div class="carousel-container" id="tanahu-vent-carousel" style="transform: translateX(0%);">
+                <div class="carousel-item">
+                  <img src="./graphics/tanahu11.jpg" alt="Ventilation fan drive panel" class="cursor-pointer" onclick="openModal('./graphics/tanahu11.jpg', 'Ventilation fan drive panel')">
+                </div>
+                <div class="carousel-item">
+                  <img src="./graphics/tanahu12.jpg" alt="Ventilation system installation" class="cursor-pointer" onclick="openModal('./graphics/tanahu12.jpg', 'Ventilation system installation')">
+                </div>
+              </div>
+              <button onclick="slideCarousel('tanahu-vent-carousel', -1)" class="carousel-btn prev">&lsaquo;</button>
+              <button onclick="slideCarousel('tanahu-vent-carousel', 1)" class="carousel-btn next">&rsaquo;</button>
             </div>
-            <div class="internship-img-wrapper">
-              <img src="./graphics/tanahu12.jpg" alt="Ventilation system installation" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu12.jpg', 'Ventilation system installation')">
-              <p class="text-xs text-center">Ventilation system installation</p>
-            </div>
+            <p class="text-xs text-center">Ventilation system installation and fan drive panel</p>
           </div>
         </div>
 
@@ -2036,54 +2153,6 @@
             <div class="elex-img-wrapper">
               <img src="./graphics/audit12.png" alt="Earthing level data" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit12.png', 'Earthing check')">
               <p class="text-xs text-center">Earthing level measurement/recommendations</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- BOX 3 -->
-        <div class="project-card">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <h3 class="orbitron text-xl font-bold" style="color:var(--accent-cyan)">THERMAL AND MECHANICAL SYSTEM REVIEW</h3>
-          <ul class="text-sm list-disc pl-4">
-            <li>Energy consumption analysis of thermal and heat pump system.</li>
-            <li>AC, Motor, Kitchen and exhaust system comparative performance study.</li>
-            <li>Proposed retrofits and equipment upgrades.</li>
-          </ul>
-          <div class="elex-img-row">
-            <div class="elex-img-wrapper">
-              <img src="./graphics/audit14.png" alt="Motor Efficiency Test" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit14.png', 'Motor Efficiency Test')">
-              <p class="text-xs text-center">Motor Efficiency Test</p>
-            </div>
-            <div class="elex-img-wrapper">
-              <img src="./graphics/audit17.png" alt="HVAC system Optimizations" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit17.png', 'Optimization of HVAC')">
-              <p class="text-xs text-center">HVAC system optimization recommendations</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- BOX 4 -->
-        <div class="project-card">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <h3 class="orbitron text-xl font-bold" style="color:var(--accent-cyan)">📊 DATA VALIDATION &amp; REPORTS</h3>
-          <ul class="text-sm list-disc pl-4">
-            <li>Energy savings validation and benchmarking.</li>
-            <li>Cost-benefit analysis and lifecycle assessments.</li>
-            <li>Final audit documentation and recommendation report presentation.</li>
-          </ul>
-          <div class="elex-img-row">
-            <div class="elex-img-wrapper">
-              <img src="./graphics/audit32.png" alt="Audit Report" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit32.png', 'Data Analysis')">
-              <p class="text-xs text-center">Data Analysis</p>
-            </div>
-            <div class="elex-img-wrapper">
-              <img src="./graphics/audit33.png" alt="Confidentiality" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit33.png', 'Confidentiality')">
-              <p class="text-xs text-center">Information Regarding confidentiality</p>
             </div>
           </div>
         </div>
@@ -3247,9 +3316,13 @@
   <!-- ====================== CONTACT ====================== -->
   <section id="contact" class="section">
     <div class="max-w-4xl mx-auto text-center" style="width:100%">
-      <h2 class="orbitron text-4xl font-bold mb-12">
+      <h2 class="orbitron text-4xl font-bold mb-6">
         <span class="status-indicator status-active"></span>ESTABLISH CONTACT
       </h2>
+      <p class="contact-lead">
+        Open to collaboration on energy systems research, power system studies and electrical
+        infrastructure projects — reach out any time.
+      </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <a href="mailto:official.dipesh.poudel@gmail.com" class="hud-element p-8" style="text-decoration:none;color:inherit;display:block">
@@ -3283,28 +3356,38 @@
         </a>
       </div>
 
-      <div class="mt-12">
-        <div class="hud-element p-8 max-w-2xl mx-auto">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <h3 class="orbitron text-xl font-bold mb-4">MISSION COLLABORATION</h3>
-          <p class="text-lg mb-6">
-            Whether it's innovation in energy, exploring new perspectives, or finding the best trail for a weekend hike — I'm always curious to collaborate and learn along the way.
-          </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="mailto:official.dipesh.poudel@gmail.com" class="px-6 py-3 rounded font-bold transition-all orbitron" style="border:1px solid var(--primary-blue);color:#fff;text-decoration:none">
-              INITIATE CONTACT
-            </a>
-            <a href="#aerospace" class="px-6 py-3 rounded font-bold transition-all orbitron" style="border:1px solid var(--primary-blue);color:#fff;text-decoration:none">
-              VIEW PROJECTS
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 class="footer-name orbitron">DIPESH POUDEL</h3>
+        <p class="footer-tag">Electrical Engineer · Power Systems &amp; Applied AI Research</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#education">Education</a>
+        <a href="#internship">Experience</a>
+        <a href="#aerospace">Research</a>
+        <a href="#teaching">Workshops</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-links">
+        <a href="mailto:official.dipesh.poudel@gmail.com" class="footer-chip orbitron">EMAIL</a>
+        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="footer-chip orbitron">LINKEDIN</a>
+        <a href="./assets/resume1.pdf" download class="footer-chip orbitron">RESUME</a>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span>&copy; <span id="footerYear">2026</span> Dipesh Poudel · Pokhara, Nepal</span>
+      <a href="#hero" class="footer-top orbitron">BACK TO TOP &uarr;</a>
+    </div>
+  </footer>
 
   <!-- ====================== SHARED MODAL ====================== -->
   <div id="globalModal" class="modal" onclick="closeModal(event)">
@@ -3588,6 +3671,12 @@
       });
     }, { passive: true });
 
+    /* ---------- Footer year ---------- */
+    (function () {
+      const y = document.getElementById('footerYear');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+
     /* ---------- Init ---------- */
     window.addEventListener('load', () => {
       setupImages();
@@ -3599,7 +3688,7 @@
         'anfis-what-carousel', 'anfis-results-carousel',
         'vsm-what-carousel', 'vsm-how-carousel', 'vsm-results-carousel',
         'volunteer-carousel-1', 'domestic-carousel', 'arduino-carousel',
-        'egen-carousel-1', 'egen-carousel-2'
+        'egen-carousel-1', 'egen-carousel-2', 'tanahu-vent-carousel'
       ].forEach((id, i) => autoSlide(id, 5000 + i * 300));
     });
   </script>
