@@ -20,13 +20,17 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Rajdhani', sans-serif;
       background: #000;
       color: #fff;
       overflow-x: hidden;
-      /* cursor: none removed — bad on touch devices */
     }
+
+    /* Anchor targets clear the fixed nav on both desktop and mobile */
+    section[id] { scroll-margin-top: 90px; }
 
     /* Hide custom cursor on touch devices */
     @media (pointer: coarse) {
@@ -89,6 +93,12 @@
 
     .canvas-container { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
 
+    /* Respect reduced-motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+
     /* ===================== NAVIGATION ===================== */
     .nav-container {
       position: fixed; top:0; left:0; right:0; z-index:1000;
@@ -116,6 +126,9 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
+      max-width: 1400px;
+      margin: 0 auto;
       padding: 0 1rem;
       gap: 0;
     }
@@ -127,6 +140,7 @@
       white-space: nowrap;
     }
     .nav-item:hover { background: rgba(0,212,255,0.2); }
+    .nav-item:focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: -2px; }
 
     /* Mobile nav */
     @media (max-width: 768px) {
@@ -134,6 +148,7 @@
       .nav-links {
         display: none; flex-direction: column; align-items: stretch;
         width: 100%; padding: 0;
+        max-height: 75vh; overflow-y: auto;
       }
       .nav-links.open { display: flex; }
       .nav-item {
@@ -183,17 +198,19 @@
       letter-spacing: 0.05em; margin: 0 auto 20px;
       text-shadow: 0 0 15px rgba(255,255,255,0.5);
       display: block; line-height: 1.5;
+      max-width: 70ch;
       padding: 0 0.5rem;
     }
 
     .hero-background-box {
       position: relative; width: 100%; max-width: 1400px; margin: 0 auto;
-      background-image: url('graphics/cover4.png');
+      background-image: url('./graphics/cover4.png');
       background-size: cover; background-position: center; background-repeat: no-repeat;
       border: 3px solid #00f3ff;
       box-shadow: 0 0 40px rgba(0,243,255,0.4);
       padding: clamp(20px,4vw,50px) clamp(12px,3vw,40px);
       box-sizing: border-box; min-height: 60vh;
+      display: flex; align-items: center;
     }
 
     .hero-background-overlay {
@@ -202,7 +219,7 @@
     }
 
     .hero-content-container {
-      position: relative; z-index:2; max-width:1400px; margin:0 auto;
+      position: relative; z-index:2; max-width:1400px; margin:0 auto; width:100%;
       display: flex; flex-direction: column; gap:20px; align-items: center;
     }
 
@@ -262,6 +279,7 @@
       animation: dataStream 4s infinite linear;
       pointer-events: none; z-index: 0;
     }
+    @media (max-width: 640px) { .data-stream { display: none; } }
 
     /* Project Cards */
     .project-card {
@@ -306,7 +324,7 @@
 
     /* max-w containers need padding on mobile */
     .max-w-7xl, .max-w-6xl, .max-w-4xl {
-      width: 100%; padding-left: 0; padding-right: 0;
+      width: 100%; margin-left: auto; margin-right: auto;
       position: relative; z-index:1;
     }
 
@@ -348,8 +366,39 @@
     .degree-period { font-size: 1rem; color: #00f3ff; font-weight:600; text-align:center; }
     .degree-right { flex:1; display:flex; flex-direction:column; gap:10px; min-width: 200px; }
     .degree-title { font-size: clamp(1rem,3vw,1.8rem); color:#00f3ff; margin:0; font-weight:700; }
-    .scholarship-text { font-size: clamp(0.85rem,2vw,1.1rem); color:#ffdd00; margin:0; font-weight:600; }
     .institution-text { font-size: clamp(0.9rem,2vw,1.2rem); color:#fff; margin:0; }
+
+    /* --- Scholarship presentation --- */
+    .scholarship-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      align-self: flex-start;
+      font-size: clamp(0.8rem,1.8vw,1rem); font-weight:700;
+      color: #ffdd00; background: rgba(255,221,0,0.08);
+      border: 1px solid rgba(255,221,0,0.55); border-radius: 999px;
+      padding: 6px 14px; letter-spacing: 0.02em;
+      box-shadow: 0 0 18px rgba(255,221,0,0.18);
+    }
+    .scholarship-note { font-size: clamp(0.78rem,1.6vw,0.95rem); color:#cfd8dc; margin:0; }
+
+    .scholarship-strip {
+      margin-top: 25px;
+      border: 2px solid rgba(255,221,0,0.45);
+      background: rgba(20,16,0,0.55);
+      padding: clamp(14px,2.5vw,26px);
+      border-radius: 10px;
+    }
+    .scholarship-strip h3 {
+      font-family:'Orbitron',monospace; color:#ffdd00;
+      font-size: clamp(0.9rem,2.4vw,1.25rem); margin-bottom: 14px; text-align:center;
+      letter-spacing: 0.08em;
+    }
+    .scholarship-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+    .scholarship-item {
+      border-left: 3px solid #ffdd00; padding: 10px 14px;
+      background: rgba(0,0,0,0.4); border-radius: 0 8px 8px 0;
+    }
+    .scholarship-item strong { color:#fff; font-size: clamp(0.85rem,1.9vw,1rem); display:block; margin-bottom:4px; }
+    .scholarship-item span { color:#b0bec5; font-size: clamp(0.75rem,1.6vw,0.88rem); }
 
     .section-title-edu {
       font-size: clamp(1.4rem,4vw,2.5rem); color:#00f3ff;
@@ -443,16 +492,6 @@
     @keyframes hologram { 0%{opacity:0.9;transform:rotateY(0deg)} 50%{opacity:1;transform:rotateY(14deg)} 100%{opacity:0.9;transform:rotateY(0deg)} }
     .hologram { animation: hologram 15s infinite ease-in-out; perspective:1000px; }
 
-    /* Book background */
-    .book-background {
-      position:fixed; bottom:20px; right:12px; z-index:0;
-      opacity:0.5; pointer-events:none; text-align:center;
-    }
-    .book-background a { pointer-events:auto; display:block; }
-    .book-background-image { width:clamp(80px,15vw,200px); height:auto; animation: book-hologram 15s infinite ease-in-out; }
-    .book-author { display:block; margin-top:6px; font-family:'Orbitron',sans-serif; font-size:clamp(0.6rem,1.5vw,0.9rem); color:var(--accent-cyan); text-shadow:0 0 5px var(--accent-cyan); }
-    .book-cta { display:block; margin-top:4px; font-family:'Orbitron',sans-serif; font-size:clamp(0.55rem,1.2vw,0.8rem); color:var(--primary-blue); background:rgba(0,255,255,0.1); padding:3px 6px; border:1px solid var(--accent-cyan); border-radius:4px; }
-
     /* ===================== BUTTONS ===================== */
     .btn-primary {
       display:inline-block; background:var(--primary-blue); color:#000;
@@ -461,6 +500,7 @@
       font-family:'Orbitron',monospace; font-size:0.8rem; text-align:center;
     }
     .btn-primary:hover { background:var(--accent-cyan); transform:scale(1.05); }
+    .btn-primary:focus-visible { outline:2px solid #fff; outline-offset:2px; }
 
     /* Button groups wrap on mobile */
     .btn-group { display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem; margin-top:2rem; }
@@ -469,6 +509,15 @@
     .section-heading {
       font-size: clamp(1.4rem,4vw,2.25rem);
       font-family:'Orbitron',monospace; font-weight:bold; text-align:center; margin-bottom:2rem;
+    }
+
+    /* Placeholder for images not yet uploaded */
+    .img-placeholder {
+      display:flex; align-items:center; justify-content:center;
+      background: repeating-linear-gradient(45deg, rgba(0,255,255,0.05) 0 10px, rgba(0,0,0,0.4) 10px 20px);
+      border:1px dashed var(--accent-cyan); border-radius:6px;
+      color: var(--accent-cyan); font-family:'Orbitron',monospace;
+      font-size:0.65rem; text-align:center; padding:10px; min-height:100px;
     }
 
     /* Responsive text overrides */
@@ -492,6 +541,24 @@
 
     /* Contact section links */
     #contact .hud-element { text-decoration:none; color:inherit; display:block; }
+
+    /* Awards images */
+    .award-img-box {
+      height: 260px;
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at center, rgba(0,255,255,0.08), rgba(0,0,0,0.6));
+      border: 1px solid var(--accent-cyan);
+      border-radius: 8px; overflow: hidden; padding: 12px;
+    }
+    .award-img-box img {
+      max-width: 100%; max-height: 100%; object-fit: contain;
+      transform: scale(1.18); transition: transform 0.3s ease;
+    }
+    .project-card:hover .award-img-box img { transform: scale(1.25); }
+    @media (max-width: 768px) {
+      .award-img-box { height: 200px; padding: 8px; }
+      .award-img-box img { transform: scale(1.1); }
+    }
   </style>
 </head>
 
@@ -519,6 +586,7 @@
       </button>
     </div>
     <div class="nav-links" id="navLinks" role="list">
+      <a href="#education" class="nav-item orbitron" onclick="closeNav()">EDUCATION</a>
       <a href="#aerospace" class="nav-item orbitron" onclick="closeNav()">EE PROJECTS</a>
       <a href="#internship" class="nav-item orbitron" onclick="closeNav()">EXPERIENCE</a>
       <a href="#teaching" class="nav-item orbitron" onclick="closeNav()">WORKSHOPS/TEACHING</a>
@@ -556,10 +624,10 @@
                 <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
                 <div class="hud-corner bl"></div><div class="hud-corner br"></div>
                 <div class="hud-title orbitron">INDUSTRY WORK</div>
+                <div class="hud-item">• Hydropower Plant Systems</div>
                 <div class="hud-item">• Electrical AutoCAD Designs</div>
                 <div class="hud-item">• Energy Audits</div>
                 <div class="hud-item">• PLC, SCADA Control</div>
-                <div class="hud-item">• AI Home Automation</div>
               </div>
             </a>
             <a href="#aerospace" class="hud-link">
@@ -568,8 +636,8 @@
                 <div class="hud-corner bl"></div><div class="hud-corner br"></div>
                 <div class="hud-title orbitron">RESEARCH</div>
                 <div class="hud-item">• AI Data Center Power Modeling</div>
+                <div class="hud-item">• Second-Life EV Batteries</div>
                 <div class="hud-item">• Low-Inertia Power Systems</div>
-                <div class="hud-item">• RES-Dominant Grid Stability</div>
                 <div class="hud-item">• Neural Network Control</div>
               </div>
             </a>
@@ -583,7 +651,7 @@
   <section id="education" class="section">
     <div class="max-w-7xl" style="width:100%">
       <h2 class="section-title-edu orbitron">
-        <span class="status-indicator-edu status-active-edu"></span>DEGREES RECEIVED
+        <span class="status-indicator-edu status-active-edu"></span>DEGREES &amp; SCHOLARSHIPS
       </h2>
       <div class="education-container-box">
         <div class="project-card-edu">
@@ -593,8 +661,9 @@
           </div>
           <div class="degree-right">
             <h4 class="degree-title orbitron">Bachelors in Electrical Engineering</h4>
-            <p class="scholarship-text orbitron">🏆 IOE Merit-Based Scholarship Recipient</p>
-            <p class="institution-text orbitron">Institute of Engineering - Pashchimanchal Campus</p>
+            <span class="scholarship-badge orbitron">🏆 IOE Merit-Based Scholarship</span>
+            <p class="scholarship-note">Awarded for placing in the top 10% nationwide in the IOE entrance examination — held for the full four-year programme.</p>
+            <p class="institution-text orbitron">Institute of Engineering — Pashchimanchal Campus</p>
           </div>
         </div>
         <div class="project-card-edu">
@@ -604,22 +673,127 @@
           </div>
           <div class="degree-right">
             <h4 class="degree-title orbitron">Higher Secondary Education (Science)</h4>
-            <p class="scholarship-text orbitron">🏆 Academic Excellence Scholarship Recipient</p>
+            <span class="scholarship-badge orbitron">🏆 Academic Excellence Scholarship</span>
+            <p class="scholarship-note">Awarded for sustained academic standing across the higher secondary programme.</p>
             <p class="institution-text orbitron">SOS Hermann Gmeiner Higher Secondary School</p>
+          </div>
+        </div>
+
+        <!-- Scholarship summary -->
+        <div class="scholarship-strip">
+          <h3>SCHOLARSHIPS &amp; FUNDING RECEIVED</h3>
+          <div class="scholarship-grid">
+            <div class="scholarship-item">
+              <strong>IOE Merit Entrance Scholarship</strong>
+              <span>Top 10% nationwide, IOE entrance examination · 2022–2026</span>
+            </div>
+            <div class="scholarship-item">
+              <strong>SOS Academic Excellence Scholarship</strong>
+              <span>Higher secondary academic merit · 2020–2022</span>
+            </div>
+            <div class="scholarship-item">
+              <strong>UNDP GCRU Research Grant — NPR 25 Lakh</strong>
+              <span>Battery Innovation Lab, second-life EV battery research · 2025</span>
+            </div>
+            <div class="scholarship-item">
+              <strong>US–Nepal Startup Weekend Prize — NPR 200,000</strong>
+              <span>US Embassy-backed competition, second-life EV batteries · 2026</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-
-
-  <!-- ===================== INTERNSHIP 1 - MANIPAL ===================== -->
+  <!-- ===================== EXPERIENCE 1 - TANAHU HYDROPOWER ===================== -->
   <section id="internship" class="section aerospace-bg">
     <div class="max-w-7xl" style="width:100%">
       <h2 class="section-heading">
         <span class="status-indicator status-active"></span> EXPERIENCE
+      </h2>
+
+      <div class="project-card hologram mb-8">
+        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start">
+          <div style="flex:1;min-width:260px">
+            <div style="display:flex;align-items:center;margin-bottom:1rem">
+              <img src="./graphics/tanahulogo.png" alt="Tanahu Hydropower" style="width:56px;height:56px;margin-right:1rem;object-fit:contain">
+              <h3 class="orbitron font-bold" style="color:var(--accent-cyan);font-size:clamp(0.9rem,3vw,1.4rem)">Tanahu Hydropower Limited, Tanahu</h3>
+            </div>
+            <p class="text-sm mb-1"><strong>Role:</strong> Electrical Engineer</p>
+            <p class="text-sm mb-1"><strong>Project:</strong> Tanahu Hydropower Project (Seti River, Tanahu)</p>
+            <p class="text-sm mb-1"><strong>Duration:</strong> 2026 – Present</p>
+            <hr style="border-color:rgba(0,255,255,0.3);margin:0.75rem 0">
+            <p class="text-sm leading-relaxed">Working on the electrical systems of a large-scale storage hydropower plant — generation, switchyard, and plant auxiliary supply. Involved in generator and excitation system review, protection and relay coordination, transformer and switchyard equipment inspection, cable routing and termination supervision, and SCADA-based monitoring of plant parameters during testing and commissioning activities.</p>
+          </div>
+          <div style="flex:1;min-width:240px">
+            <img src="./graphics/tanahu1.jpg" alt="Tanahu Hydropower Project" class="w-full rounded-lg cursor-pointer" style="border:1px solid var(--accent-cyan);max-height:220px;object-fit:cover" onclick="openModal('./graphics/tanahu1.jpg','Tanahu Hydropower Project')">
+            <p class="text-xs text-center mt-1">Tanahu Hydropower Project Site</p>
+          </div>
+        </div>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Tanahu Hydropower Experience Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
+      </div>
+
+      <div class="grid gap-6 mb-8" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+        <!-- BOX 1 -->
+        <div class="project-card">
+          <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">⚡ GENERATION &amp; EXCITATION SYSTEMS</h3>
+          <ul class="text-sm list-disc pl-4 mb-3"><li>Reviewed synchronous generator, AVR and excitation system arrangements.</li><li>Studied unit start-up, synchronizing and loading sequences.</li></ul>
+          <div class="internship-img-row">
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu2.jpg" alt="Generator hall" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu2.jpg','Generator hall')"><p>Generator hall</p></div>
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu3.jpg" alt="Excitation panel" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu3.jpg','Excitation panel')"><p>Excitation panel</p></div>
+          </div>
+        </div>
+        <!-- BOX 2 -->
+        <div class="project-card">
+          <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">🔌 SWITCHYARD &amp; TRANSFORMERS</h3>
+          <ul class="text-sm list-disc pl-4 mb-3"><li>Inspection of power transformers, CTs, PTs, isolators and breakers.</li><li>Verification of switchyard layout and clearances against design drawings.</li></ul>
+          <div class="internship-img-row">
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu4.jpg" alt="Switchyard" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu4.jpg','Switchyard')"><p>Switchyard</p></div>
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu5.jpg" alt="Power transformer" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu5.jpg','Power transformer')"><p>Power transformer</p></div>
+          </div>
+        </div>
+        <!-- BOX 3 -->
+        <div class="project-card">
+          <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">🛡️ PROTECTION &amp; RELAY COORDINATION</h3>
+          <ul class="text-sm list-disc pl-4 mb-3"><li>Reviewed generator, transformer and feeder protection schemes.</li><li>Checked relay settings, trip logic and interlocking philosophy.</li></ul>
+          <div class="internship-img-row">
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu6.jpg" alt="Protection relay panel" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu6.jpg','Protection relay panel')"><p>Relay panel</p></div>
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu7.jpg" alt="Relay testing" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu7.jpg','Relay testing')"><p>Relay testing</p></div>
+          </div>
+        </div>
+        <!-- BOX 4 -->
+        <div class="project-card">
+          <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+          <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">🖥️ SCADA &amp; PLANT MONITORING</h3>
+          <ul class="text-sm list-disc pl-4 mb-3"><li>Monitored plant parameters through the SCADA/HMI control interface.</li><li>Logged unit and auxiliary supply data during testing activities.</li></ul>
+          <div class="internship-img-row">
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu8.jpg" alt="Control room" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu8.jpg','Control room')"><p>Control room</p></div>
+            <div class="internship-img-wrapper"><img src="./graphics/tanahu9.jpg" alt="SCADA interface" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/tanahu9.jpg','SCADA interface')"><p>SCADA interface</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="btn-primary">LinkedIn</a>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Tanahu Hydropower Work Details" class="btn-primary">Request Work Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INTERNSHIP - MANIPAL ===================== -->
+  <section id="manipal" class="section aerospace-bg">
+    <div class="max-w-7xl" style="width:100%">
+      <h2 class="section-heading">
+        <span class="status-indicator status-active"></span> HOSPITAL POWER SYSTEMS INTERNSHIP
       </h2>
 
       <div class="project-card hologram mb-8">
@@ -641,7 +815,7 @@
             <p class="text-xs text-center mt-1">Manipal Teaching Hospital Internship Reference</p>
           </div>
         </div>
-        <a href="mailto:poudeldipesh1001@gmail.com?subject=Manipal Internship Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Manipal Internship Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
       </div>
 
       <div class="grid gap-6 mb-8" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
@@ -693,7 +867,7 @@
         <div class="project-card">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">🧰 MAINTENANCE & FIELD WORK</h3>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">🧰 MAINTENANCE &amp; FIELD WORK</h3>
           <ul class="text-sm list-disc pl-4 mb-3"><li>Tap Changing Mechanism review and adjustment.</li><li>Star Delta wiring adjustments on ETP, Incinerator Plants.</li></ul>
           <div class="internship-img-row">
             <div class="internship-img-wrapper"><img src="./graphics/manipal20.jpg" alt="Star delta check" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal20.jpg','Star delta starting check')"><p>Star delta starting check</p></div>
@@ -704,7 +878,7 @@
         <div class="project-card">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">📊 DATA & REPORTING</h3>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">📊 DATA &amp; REPORTING</h3>
           <ul class="text-sm list-disc pl-4 mb-3"><li>Python-based load profiling and energy analytics.</li><li>Prepared and presented performance reports and upgrade suggestions.</li></ul>
           <div class="internship-img-row">
             <div class="internship-img-wrapper"><img src="./graphics/manipal22.png" alt="Load clustering" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/manipal22.png','Load clustering analysis')"><p>Load clustering analysis</p></div>
@@ -714,9 +888,9 @@
       </div>
 
       <div class="btn-group">
-        <a href="./files/internship_report.pdf" target="_blank" class="btn-primary">Download Report PDF</a>
-        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" class="btn-primary">LinkedIn</a>
-        <a href="./files/internship_certificate.pdf" target="_blank" class="btn-primary">View Certificate</a>
+        <a href="./files/internship_report.pdf" target="_blank" rel="noopener" class="btn-primary">Download Report PDF</a>
+        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="btn-primary">LinkedIn</a>
+        <a href="./files/internship_certificate.pdf" target="_blank" rel="noopener" class="btn-primary">View Certificate</a>
       </div>
     </div>
   </section>
@@ -747,7 +921,7 @@
             <p class="text-xs text-center mt-1">Solatee Hotel Reference Images</p>
           </div>
         </div>
-        <a href="mailto:poudeldipesh1001@gmail.com?subject=Prime Engineering Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Prime Engineering Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
       </div>
 
       <div class="grid gap-6" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
@@ -784,18 +958,18 @@
         <div class="project-card">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">Generator Testing & Commissioning (2×250KVA)</h3>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">Generator Testing &amp; Commissioning (2×250KVA)</h3>
           <ul class="text-sm list-disc pl-4 mb-3"><li>Configured two generator units with PLC for automatic switching and priority management.</li><li>Comprehensive load tests and failover reliability verification.</li></ul>
           <div class="internship-img-row">
             <div class="internship-img-wrapper"><img src="./graphics/solti8.jpeg" alt="Generator connection" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/solti8.jpeg','Generator connection')"><p>Generator connection</p></div>
-            <div class="internship-img-wrapper"><img src="./graphics/solti9.jpeg" alt="Panel verification" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/solti9.jpeg','Panel verification')"><p>Testing & verification</p></div>
+            <div class="internship-img-wrapper"><img src="./graphics/solti9.jpeg" alt="Panel verification" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/solti9.jpeg','Panel verification')"><p>Testing &amp; verification</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== INTERNSHIP 2 - ELEX ===================== -->
+  <!-- ===================== ENERGY AUDIT - ELEX ===================== -->
   <section id="elex-internship" class="section aerospace-bg">
     <div class="max-w-7xl" style="width:100%">
       <h2 class="section-heading">
@@ -811,7 +985,7 @@
               <img src="./graphics/audit0.png" alt="Elex Engineering" style="width:56px;height:56px;margin-right:1rem;object-fit:contain">
               <h3 class="orbitron font-bold" style="color:var(--accent-cyan);font-size:clamp(0.9rem,3vw,1.4rem)">Elex Engineering Pvt. Ltd., Pokhara</h3>
             </div>
-            <p class="text-sm mb-1"><strong>Role:</strong> Team Lead </p>
+            <p class="text-sm mb-1"><strong>Role:</strong> Team Lead</p>
             <p class="text-sm mb-1"><strong>Project:</strong> Energy Audit of Fishtail Lodge, Pokhara</p>
             <p class="text-sm mb-1"><strong>Duration:</strong> September – October 2025</p>
             <hr style="border-color:rgba(0,255,255,0.3);margin:0.75rem 0">
@@ -822,7 +996,7 @@
             <p class="text-xs text-center mt-1">Intern-Audit Team</p>
           </div>
         </div>
-        <a href="mailto:poudeldipesh1001@gmail.com?subject=Elex Internship Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Elex Energy Audit Details" class="btn-primary w-full block text-center mt-4">Request Details</a>
       </div>
 
       <div class="grid gap-6 mb-8" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
@@ -839,7 +1013,7 @@
         <div class="project-card">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">TRANSFORMER & EARTHING ASSESSMENT</h3>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">TRANSFORMER &amp; EARTHING ASSESSMENT</h3>
           <ul class="text-sm list-disc pl-4 mb-3"><li>On-site load measurement and TOD meter data review from NEA.</li><li>Earthing system measurement and recommendations.</li></ul>
           <div class="elex-img-row">
             <div class="elex-img-wrapper"><img src="./graphics/audit21.jpg" alt="Transformer analysis" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit21.jpg','Transformer analysis')"><p class="text-xs text-center mt-1">Transformer analysis</p></div>
@@ -849,7 +1023,7 @@
         <div class="project-card">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">THERMAL & MECHANICAL SYSTEM REVIEW</h3>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">THERMAL &amp; MECHANICAL SYSTEM REVIEW</h3>
           <ul class="text-sm list-disc pl-4 mb-3"><li>Energy consumption analysis of thermal and heat pump systems.</li><li>AC, Motor, Kitchen and exhaust system performance study.</li></ul>
           <div class="elex-img-row">
             <div class="elex-img-wrapper"><img src="./graphics/audit14.png" alt="Motor Efficiency" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit14.png','Motor Efficiency Test')"><p class="text-xs text-center mt-1">Motor Efficiency Test</p></div>
@@ -859,7 +1033,7 @@
         <div class="project-card">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">📊 DATA VALIDATION & REPORTS</h3>
+          <h3 class="orbitron font-bold mb-2" style="color:var(--accent-cyan);font-size:clamp(0.8rem,2vw,1.1rem)">📊 DATA VALIDATION &amp; REPORTS</h3>
           <ul class="text-sm list-disc pl-4 mb-3"><li>Energy savings validation and benchmarking.</li><li>Final audit documentation and recommendation report.</li></ul>
           <div class="elex-img-row">
             <div class="elex-img-wrapper"><img src="./graphics/audit32.png" alt="Data Analysis" class="rounded cursor-pointer shake-on-hover" onclick="openModal('./graphics/audit32.png','Data Analysis')"><p class="text-xs text-center mt-1">Data Analysis</p></div>
@@ -869,16 +1043,12 @@
       </div>
 
       <div class="btn-group">
-        <a href="./files/elex_audit_report.pdf" target="_blank" class="btn-primary">Download Audit Report PDF</a>
-        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" class="btn-primary">LinkedIn</a>
-        <a href="./files/elex_certificate.pdf" target="_blank" class="btn-primary">View Certificate</a>
+        <a href="./files/elex_audit_report.pdf" target="_blank" rel="noopener" class="btn-primary">Download Audit Report PDF</a>
+        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="btn-primary">LinkedIn</a>
+        <a href="./files/elex_certificate.pdf" target="_blank" rel="noopener" class="btn-primary">View Certificate</a>
       </div>
     </div>
   </section>
-
-
-
-  
 
   <!-- ===================== RESEARCH / PUBLICATIONS ===================== -->
   <section id="aerospace" class="section aerospace-bg">
@@ -939,7 +1109,65 @@
               </div>
             </div>
           </div>
-          <a href="mailto:poudeldipesh1001@gmail.com?subject=Request AI Data Center Research Report" class="btn-primary w-full block mt-4 text-center">Request Research Report</a>
+          <a href="mailto:official.dipesh.poudel@gmail.com?subject=Request AI Data Center Research Report" class="btn-primary w-full block mt-4 text-center">Request Research Report</a>
+        </div>
+      </div>
+
+      <!-- ===== UNDP BATTERY INNOVATION LAB ===== -->
+      <div class="max-w-7xl mx-auto text-center mb-8" style="padding:0 0.5rem">
+        <div class="glow-box inline-block p-6 rounded-xl border-2 w-full" style="border-color:var(--success-green);background:rgba(0,0,0,0.3)">
+          <h3 class="orbitron font-bold mb-3" style="font-size:clamp(1rem,3vw,1.75rem);color:var(--success-green)">
+            UNDP Battery Innovation Lab — Second-Life EV Batteries
+          </h3>
+          <p class="text-sm text-gray-300 italic">Research Lead · NPR 25 Lakh UNDP GCRU Grant</p>
+        </div>
+      </div>
+
+      <div class="grid gap-6 mb-12" style="grid-template-columns:1fr">
+        <div class="project-card hologram" style="border-color:var(--success-green)">
+          <h3 class="orbitron font-bold mb-4" style="color:var(--warning-amber);font-size:clamp(0.9rem,2.5vw,1.1rem)">RESEARCH LEAD — BATTERY INNOVATION LAB</h3>
+          <p class="text-sm mb-1"><strong>Role:</strong> Research Lead</p>
+          <p class="text-sm mb-1"><strong>Funding:</strong> Green Job Creation Through Recycling and Upcycling in Pokhara (GCRU), UNDP — NPR 25 Lakh</p>
+          <p class="text-sm mb-4"><strong>Duration:</strong> 2025 – Present</p>
+          <img src="./graphics/battery_lab_overview.png" alt="Battery Innovation Lab Overview" class="w-full rounded-lg mb-4 cursor-pointer" style="border:2px solid var(--success-green);max-height:320px;object-fit:contain" onclick="openModal('./graphics/battery_lab_overview.png','Battery Innovation Lab Overview')">
+          <div class="text-sm space-y-2 text-gray-300">
+            <p>• Established a dedicated Battery Innovation Lab to study the reuse of retired EV battery packs for stationary storage applications.</p>
+            <p>• Building a characterization workflow covering capacity fade, internal resistance, and state-of-health estimation of second-life cells and modules.</p>
+            <p>• Designing repurposed pack architectures with BMS integration for backup and renewable-energy storage use cases in Nepal.</p>
+          </div>
+          <div class="grid grid-cols-1 gap-4 mt-4" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+            <div class="p-4 rounded-lg" style="background:rgba(0,255,136,0.1);border:1px solid var(--success-green)">
+              <h4 class="text-sm font-bold mb-2" style="color:var(--success-green)">PHASE 1: CELL &amp; MODULE CHARACTERIZATION</h4>
+              <div class="carousel-wrapper mb-3" style="height:clamp(120px,25vw,160px)">
+                <div class="carousel-container" id="battery-carousel-1">
+                  <div class="carousel-item"><img src="./graphics/battery1.png" alt="Cell testing setup" class="cursor-pointer" onclick="openModal('./graphics/battery1.png','Cell testing setup')"></div>
+                  <div class="carousel-item"><img src="./graphics/battery2.png" alt="Capacity fade curves" class="cursor-pointer" onclick="openModal('./graphics/battery2.png','Capacity fade curves')"></div>
+                </div>
+                <button class="carousel-btn prev" onclick="slideCarousel('battery-carousel-1',-1)">‹</button>
+                <button class="carousel-btn next" onclick="slideCarousel('battery-carousel-1',1)">›</button>
+              </div>
+              <div class="text-xs space-y-1 text-gray-300">
+                <p>• Charge–discharge cycling to measure usable capacity of retired cells.</p>
+                <p>• Internal resistance and state-of-health screening before reuse grading.</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg" style="background:rgba(128,0,128,0.1);border:1px solid #9333ea">
+              <h4 class="text-sm font-bold mb-2" style="color:#c084fc">PHASE 2: PACK REBUILD &amp; BMS INTEGRATION</h4>
+              <div class="carousel-wrapper mb-3" style="height:clamp(120px,25vw,160px)">
+                <div class="carousel-container" id="battery-carousel-2">
+                  <div class="carousel-item"><img src="./graphics/battery3.png" alt="Pack assembly" class="cursor-pointer" onclick="openModal('./graphics/battery3.png','Pack assembly')"></div>
+                  <div class="carousel-item"><img src="./graphics/battery4.png" alt="BMS integration" class="cursor-pointer" onclick="openModal('./graphics/battery4.png','BMS integration')"></div>
+                </div>
+                <button class="carousel-btn prev" onclick="slideCarousel('battery-carousel-2',-1)">‹</button>
+                <button class="carousel-btn next" onclick="slideCarousel('battery-carousel-2',1)">›</button>
+              </div>
+              <div class="text-xs space-y-1 text-gray-300">
+                <p>• Regrouping graded modules into balanced second-life storage packs.</p>
+                <p>• BMS configuration, protection logic, and thermal safety validation.</p>
+              </div>
+            </div>
+          </div>
+          <a href="mailto:official.dipesh.poudel@gmail.com?subject=Request Battery Innovation Lab Research Report" class="btn-primary w-full block mt-4 text-center">Request Research Report</a>
         </div>
       </div>
 
@@ -1014,7 +1242,7 @@
         </div>
 
         <div class="project-card hologram">
-          <h3 class="orbitron font-bold mb-3" style="color:var(--warning-amber);font-size:clamp(0.85rem,2.5vw,1.1rem)">HOW: Simulation & Modeling (Ongoing Thesis)</h3>
+          <h3 class="orbitron font-bold mb-3" style="color:var(--warning-amber);font-size:clamp(0.85rem,2.5vw,1.1rem)">HOW: Simulation &amp; Modeling (Ongoing Thesis)</h3>
           <div class="space-y-2 text-sm mb-4">
             <p>• Developing dynamic model of PV–Hydro microgrid including swing equation for virtual inertia interaction.</p>
             <p>• Building simulation where GFM inverter forms voltage and frequency while hydro generator synchronizes to it.</p>
@@ -1049,7 +1277,7 @@
             <button class="carousel-btn prev" onclick="slideCarousel('vsm-results-carousel',-1)">‹</button>
             <button class="carousel-btn next" onclick="slideCarousel('vsm-results-carousel',1)">›</button>
           </div>
-          <a href="mailto:poudeldipesh1001@gmail.com?subject=Request GFM-VSM Thesis Report" class="btn-primary w-full block text-center">Request Thesis Progress</a>
+          <a href="mailto:official.dipesh.poudel@gmail.com?subject=Request GFM-VSM Thesis Report" class="btn-primary w-full block text-center">Request Thesis Progress</a>
         </div>
       </div>
 
@@ -1079,28 +1307,17 @@
           <p>• Built working AI-enabled home automation using ESP32, relay module, and sensors — capable of remote control and AI-driven local automation.</p>
           <p>• CADIO/cloud used for voice integration (Google Home / Alexa). Manual physical override always has local priority and is logged for retraining.</p>
         </div>
-        <a href="mailto:poudeldipesh1001@gmail.com?subject=Request AI Home Automation Report" class="btn-primary w-full block text-center">Request Full Project Report</a>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Request AI Home Automation Report" class="btn-primary w-full block text-center">Request Full Project Report</a>
       </div>
 
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
-  
-
   <!-- ===================== TEACHING & MENTORING ===================== -->
   <section id="teaching" class="section interests-bg">
     <div class="max-w-7xl" style="width:100%">
       <h2 class="section-heading">
-        <span class="status-indicator status-active"></span>TEACHING & MENTORING EXPERIENCE
+        <span class="status-indicator status-active"></span>TEACHING &amp; MENTORING EXPERIENCE
       </h2>
 
       <!-- Research Assistant -->
@@ -1115,7 +1332,7 @@
       <div class="project-card hologram mb-6">
         <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
         <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-        <h3 class="orbitron font-bold mb-3" style="color:var(--accent-cyan);font-size:clamp(0.85rem,2.5vw,1.1rem)">Bridging the Divide: STEM & Robotics Education for Community School Students</h3>
+        <h3 class="orbitron font-bold mb-3" style="color:var(--accent-cyan);font-size:clamp(0.85rem,2.5vw,1.1rem)">Bridging the Divide: STEM &amp; Robotics Education for Community School Students</h3>
         <p class="text-sm mb-4">Led a series of Robotics and 3D Printing workshops for students across various community schools in the Pokhara Valley. Partnered with <strong>Pokhara Metropolitan Ward No. 5</strong>, <strong>Engineers Without Borders Nepal (EWBN)</strong>, and <strong>Karyashala</strong> to ensure high-quality, impactful STEM education.</p>
         <div style="display:flex;flex-wrap:wrap;gap:1rem">
           <div style="flex:1;min-width:220px">
@@ -1136,7 +1353,7 @@
             <p class="text-xs text-center mt-1 text-gray-400">Students presenting final robotics projects.</p>
           </div>
         </div>
-        <a href="mailto:poudeldipesh1001@gmail.com?subject=Volunteer Workshop Details" class="btn-primary w-full block text-center mt-4">Request Workshop Details</a>
+        <a href="mailto:official.dipesh.poudel@gmail.com?subject=Volunteer Workshop Details" class="btn-primary w-full block text-center mt-4">Request Workshop Details</a>
       </div>
 
       <!-- Domestic Electrification Workshop -->
@@ -1180,7 +1397,7 @@
             </div>
           </div>
         </div>
-        <a href="https://www.facebook.com/photo.php?fbid=1091697569084181" target="_blank" class="btn-primary w-full block text-center mt-4">Click for More Details</a>
+        <a href="https://www.facebook.com/photo.php?fbid=1091697569084181" target="_blank" rel="noopener" class="btn-primary w-full block text-center mt-4">Click for More Details</a>
       </div>
 
       <!-- Arduino Proteus Workshop -->
@@ -1191,7 +1408,7 @@
           <div style="flex:1;min-width:260px">
             <div style="display:flex;align-items:center;margin-bottom:1rem">
               <img src="./graphics/club15.jpg" alt="Club logo" style="width:56px;height:56px;margin-right:1rem;object-fit:contain">
-              <h3 class="orbitron font-bold" style="color:var(--accent-cyan);font-size:clamp(0.9rem,3vw,1.25rem)">ARDUINO, PROTEUS & PCB DESIGN WORKSHOP</h3>
+              <h3 class="orbitron font-bold" style="color:var(--accent-cyan);font-size:clamp(0.9rem,3vw,1.25rem)">ARDUINO, PROTEUS &amp; PCB DESIGN WORKSHOP</h3>
             </div>
             <p class="text-sm mb-1"><strong>Role:</strong> Mentor/Organizer</p>
             <p class="text-sm mb-2"><strong>Duration:</strong> 2–8 February 2024</p>
@@ -1222,7 +1439,7 @@
             </div>
           </div>
         </div>
-        <a href="https://www.facebook.com/your-arduino-workshop-link" target="_blank" class="btn-primary w-full block text-center mt-4">Click for More Details</a>
+        <a href="https://www.facebook.com/your-arduino-workshop-link" target="_blank" rel="noopener" class="btn-primary w-full block text-center mt-4">Click for More Details</a>
       </div>
 
     </div>
@@ -1232,10 +1449,9 @@
   <section id="service" class="section philosophy-bg">
     <div class="max-w-7xl" style="width:100%">
       <h2 class="section-heading">
-        <span class="status-indicator status-active"></span>SERVICE & LEADERSHIP
+        <span class="status-indicator status-active"></span>SERVICE &amp; LEADERSHIP
       </h2>
 
-      <!-- EGEN Club Secretary -->
       <div class="project-card hologram mb-6">
         <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
         <div class="hud-corner bl"></div><div class="hud-corner br"></div>
@@ -1245,7 +1461,7 @@
               <img src="./graphics/club15.jpg" alt="EGEN Club logo" style="width:56px;height:56px;margin-right:1rem;object-fit:contain">
               <h3 class="orbitron font-bold" style="color:var(--accent-cyan);font-size:clamp(0.9rem,3vw,1.25rem)">SECRETARY – EGEN CLUB</h3>
             </div>
-            <p class="text-sm mb-1"><strong>Role:</strong> Secretary & Core Member</p>
+            <p class="text-sm mb-1"><strong>Role:</strong> Secretary &amp; Core Member</p>
             <p class="text-sm mb-2"><strong>Duration:</strong> March 2024 – Present</p>
             <ul class="text-sm list-disc pl-4">
               <li>Led organizational operations and coordinated technical workshops and events.</li>
@@ -1274,208 +1490,131 @@
                 <button class="carousel-btn next" onclick="slideCarousel('egen-carousel-2',1)">›</button>
               </div>
             </div>
-            <p class="text-xs text-center mt-1">Club Activities & Events</p>
+            <p class="text-xs text-center mt-1">Club Activities &amp; Events</p>
           </div>
         </div>
-        <a href="https://www.facebook.com/your-egen-club-link" target="_blank" class="btn-primary w-full block text-center mt-4">Click for More Details</a>
+        <a href="https://www.facebook.com/your-egen-club-link" target="_blank" rel="noopener" class="btn-primary w-full block text-center mt-4">Click for More Details</a>
       </div>
 
     </div>
   </section>
 
+  <!-- ===================== AWARDS & GRANTS ===================== -->
+  <section id="awards" class="section mountain-bg">
+    <div class="max-w-7xl mx-auto px-4">
 
+      <h2 class="section-heading">
+        <span class="status-indicator status-active"></span>AWARDS &amp; GRANTS
+      </h2>
 
+      <div class="grid gap-6 md:grid-cols-2">
 
-
-
-
-
-
-
-
-
-
-<!-- ===================== AWARDS & GRANTS ===================== -->
-<section id="awards" class="section mountain-bg">
-  <div class="max-w-7xl mx-auto px-4">
-    
-    <h2 class="section-heading">
-      <span class="status-indicator status-active"></span>AWARDS & GRANTS
-    </h2>
-
-    <div class="grid gap-6 md:grid-cols-2">
-
-      <!-- ===== TOP 6 (WITH IMAGES) ===== -->
-
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          UNDP GCRU Funding – NPR 25 Million Grant
-        </h3>
-        <div class="award-img-box">
-          <img src="./graphics/undp.jpg" alt="UNDP Award">
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">
+            UNDP GCRU Funding – NPR 25 Lakh Grant
+          </h3>
+          <div class="award-img-box">
+            <img src="./graphics/undp.jpg" alt="UNDP Award">
+          </div>
+          <p class="text-sm mt-3">
+            Received funding equivalent of 25 lakhs from the Green Job Creation Through Recycling and Upcycling in Pokhara (GCRU) project to establish a <strong>Battery Innovation Lab</strong> focused on second-life EV battery research.
+          </p>
+          <p class="text-xs text-gray-400 mt-1">2025</p>
         </div>
-        <p class="text-sm mt-3">
-          Recieved funding equivalent of 25 lakhs from Green Job Creation Through Recycling and Upcycling in Pokhara Project-(GCRU)  to establish a <strong>Battery Innovation Lab</strong> focused on second-life EV battery research. 
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2025</p>
-      </div>
 
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          US–Nepal Startup Weekend Challenge Winner
-        </h3>
-        <div class="award-img-box">
-          <img src="./graphics/startup.jpg" alt="Startup Award">
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">
+            US–Nepal Startup Weekend Challenge Winner
+          </h3>
+          <div class="award-img-box">
+            <img src="./graphics/startup.jpg" alt="Startup Award">
+          </div>
+          <p class="text-sm mt-3">
+            Secured <strong>NPR 200,000 prize</strong> in a US Embassy-backed startup competition; second life of EV batteries was the research domain.
+          </p>
+          <p class="text-xs text-gray-400 mt-1">2026</p>
         </div>
-        <p class="text-sm mt-3">
-          Secured <strong>NPR 200,000 prize</strong> in a US Embassy-backed startup competition, Second Life of EV Battery was research domain.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2026</p>
-      </div>
 
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          National Energy Hackathon Champion – LOCUS
-        </h3>
-        <div class="award-img-box">
-          <img src="./graphics/power2.jpg" alt="LOCUS Award">
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">
+            National Energy Hackathon Champion – LOCUS
+          </h3>
+          <div class="award-img-box">
+            <img src="./graphics/power2.jpg" alt="LOCUS Award">
+          </div>
+          <p class="text-sm mt-3">
+            AI-integrated Home Automation System for sustainable energy innovation.
+          </p>
+          <p class="text-xs text-gray-400 mt-1">2024</p>
         </div>
-        <p class="text-sm mt-3">
-          AI-integrated Home Automation System for sustainable energy innovation.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2024</p>
-      </div>
 
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          Power Hackathon Winner – Electromela 2.0
-        </h3>
-        <div class="award-img-box">
-          <img src="./graphics/power1.jpg" alt="Electromela Award">
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">
+            Power Hackathon Winner – Electromela 2.0
+          </h3>
+          <div class="award-img-box">
+            <img src="./graphics/power1.jpg" alt="Electromela Award">
+          </div>
+          <p class="text-sm mt-3">
+            Market-ready AI home automation system with advanced control layering.
+          </p>
+          <p class="text-xs text-gray-400 mt-1">2024</p>
         </div>
-        <p class="text-sm mt-3">
-          Market-ready AI home automation system with advanced control layering.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2024</p>
-      </div>
 
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          Ideathon – Most Sustainable Idea (Vector 2.0)
-        </h3>
-        <div class="award-img-box">
-          <img src="./graphics/ideathon.jpg" alt="Ideathon Award">
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">
+            Ideathon – Most Sustainable Idea (Vector 2.0)
+          </h3>
+          <div class="award-img-box">
+            <img src="./graphics/ideathon.jpg" alt="Ideathon Award">
+          </div>
+          <p class="text-sm mt-3">
+            Recognized for sustainability-focused innovation in energy systems.
+          </p>
+          <p class="text-xs text-gray-400 mt-1">2025</p>
         </div>
-        <p class="text-sm mt-3">
-          Recognized for sustainability-focused innovation in energy systems.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2025</p>
-      </div>
 
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          Youth Innovation & STEM Equity Award
-        </h3>
-        <div class="award-img-box">
-          <img src="./graphics/leo.jpg" alt="STEM Award">
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">
+            Youth Innovation &amp; STEM Equity Award
+          </h3>
+          <div class="award-img-box">
+            <img src="./graphics/leo.jpg" alt="STEM Award">
+          </div>
+          <p class="text-sm mt-3">
+            Leadership in community tech access (Leo Club of Pokhara).
+          </p>
+          <p class="text-xs text-gray-400 mt-1">2022</p>
         </div>
-        <p class="text-sm mt-3">
-          Leadership in community tech access (Leo Club of Pokhara).
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2022</p>
+
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">IOE Merit Entrance Scholarship</h3>
+          <p class="text-sm">Top 10% nationwide in IOE entrance examination.</p>
+          <p class="text-xs text-gray-400 mt-1">2022 – 2026</p>
+        </div>
+
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">SOS Academic Excellence Award</h3>
+          <p class="text-sm">Consistent academic excellence throughout higher secondary education.</p>
+          <p class="text-xs text-gray-400 mt-1">2019 – 2022</p>
+        </div>
+
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">High School Athletic Gold Medals</h3>
+          <p class="text-sm">Tug-of-War &amp; Volleyball achievements.</p>
+          <p class="text-xs text-gray-400 mt-1">2019 – 2020</p>
+        </div>
+
+        <div class="project-card">
+          <h3 class="orbitron font-bold text-green-400 mb-2">English Creative Writing Winner</h3>
+          <p class="text-sm">Recognized in school-level competitions.</p>
+          <p class="text-xs text-gray-400 mt-1">2016, 2018</p>
+        </div>
+
       </div>
-
-      <!-- ===== TEXT ONLY ===== -->
-
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          IOE Merit Entrance Scholarship
-        </h3>
-        <p class="text-sm">
-          Top 10% nationwide in IOE entrance examination.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2022 – 2026</p>
-      </div>
-
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          SOS Academic Excellence Award
-        </h3>
-        <p class="text-sm">
-          Consistent academic excellence throughout higher secondary education.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2019 – 2022</p>
-      </div>
-
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          High School Athletic Gold Medals
-        </h3>
-        <p class="text-sm">
-          Tug-of-War & Volleyball achievements.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2019 – 2020</p>
-      </div>
-
-      <div class="project-card">
-        <h3 class="orbitron font-bold text-green-400 mb-2">
-          English Creative Writing Winner
-        </h3>
-        <p class="text-sm">
-          Recognized in school-level competitions.
-        </p>
-        <p class="text-xs text-gray-400 mt-1">2016, 2018</p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===================== STYLES ===================== -->
-<style>
-.award-img-box {
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at center, rgba(0,255,255,0.08), rgba(0,0,0,0.6));
-  border: 1px solid var(--accent-cyan);
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 12px;
-}
-
-.award-img-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transform: scale(1.18);
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .award-img-box img {
-  transform: scale(1.25);
-}
-
-/* 📱 MOBILE OPTIMIZATION */
-@media (max-width: 768px) {
-  .award-img-box {
-    height: 200px; /* smaller for mobile */
-    padding: 8px;
-  }
-
-  .award-img-box img {
-    transform: scale(1.1);
-  }
-}
-</style>
-
-
-  
-
-
-
-  
   <!-- ===================== CONTACT ===================== -->
   <section id="contact" class="section">
     <div style="width:100%;max-width:900px;margin:0 auto;text-align:center;padding:0 0.75rem">
@@ -1484,14 +1623,14 @@
       </h2>
 
       <div class="grid gap-6 mb-8" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
-        <a href="mailto:poudeldipesh1001@gmail.com" class="hud-element p-6" style="text-decoration:none;color:inherit;display:block;transition:all 0.3s ease">
+        <a href="mailto:official.dipesh.poudel@gmail.com" class="hud-element p-6" style="text-decoration:none;color:inherit;display:block;transition:all 0.3s ease">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
           <div style="font-size:2rem;margin-bottom:0.75rem">📧</div>
           <h3 class="orbitron font-bold mb-2" style="font-size:0.9rem">TRANSMISSION</h3>
-          <p class="text-sm">poudeldipesh1001@gmail.com</p>
+          <p class="text-sm" style="word-break:break-all">official.dipesh.poudel@gmail.com</p>
         </a>
-        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" class="hud-element p-6" style="text-decoration:none;color:inherit;display:block;transition:all 0.3s ease">
+        <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="hud-element p-6" style="text-decoration:none;color:inherit;display:block;transition:all 0.3s ease">
           <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
           <div class="hud-corner bl"></div><div class="hud-corner br"></div>
           <div style="font-size:2rem;margin-bottom:0.75rem">🔗</div>
@@ -1513,7 +1652,7 @@
         <h3 class="orbitron font-bold mb-4" style="font-size:clamp(0.9rem,2.5vw,1.25rem)">MISSION COLLABORATION</h3>
         <p class="mb-6" style="font-size:clamp(0.85rem,2vw,1.1rem)">Whether it's innovation in energy, exploring new perspectives, or finding the best trail for a weekend hike — I'm always curious to collaborate and learn along the way.</p>
         <div class="btn-group">
-          <a href="mailto:poudeldipesh1001@gmail.com" class="btn-primary">INITIATE CONTACT</a>
+          <a href="mailto:official.dipesh.poudel@gmail.com" class="btn-primary">INITIATE CONTACT</a>
           <a href="#aerospace" class="btn-primary">VIEW PROJECTS</a>
         </div>
       </div>
@@ -1543,7 +1682,6 @@
       navToggle.classList.remove('open');
       navToggle.setAttribute('aria-expanded','false');
     }
-    // Close nav on outside click
     document.addEventListener('click', e => {
       if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) closeNav();
     });
@@ -1644,10 +1782,32 @@
       });
     }
 
+    // ===================== IMAGE FALLBACK + LAZY LOAD =====================
+    function markMissing(img) {
+      if (img.dataset.failed || img.id === 'globalModalImg') return;
+      img.dataset.failed = '1';
+      const h = img.getBoundingClientRect().height;
+      const ph = document.createElement('div');
+      ph.className = 'img-placeholder';
+      ph.style.height = (h > 40 ? h : 120) + 'px';
+      ph.textContent = (img.alt || 'PHOTO') + ' — coming soon';
+      if (img.parentNode) img.parentNode.replaceChild(ph, img);
+    }
+    function setupImages() {
+      document.querySelectorAll('img').forEach(img => {
+        if (img.id === 'globalModalImg') return;
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+        img.addEventListener('error', () => markMissing(img));
+        if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) markMissing(img);
+      });
+    }
+
     // ===================== THREE.JS =====================
-    let scene, camera, renderer, aircraft, particleSystem, quotes = [];
+    let scene, camera, renderer, aircraft, particleSystem;
 
     function initThreeJS() {
+      if (typeof THREE === 'undefined') return false;
       scene = new THREE.Scene();
       scene.fog = new THREE.Fog(0x000000, 10, 1000);
       camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
@@ -1661,13 +1821,11 @@
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0x000000, 0);
 
-      const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
-      scene.add(ambientLight);
+      scene.add(new THREE.AmbientLight(0x404040, 0.4));
       const dirLight = new THREE.DirectionalLight(0x00d4ff, 1);
       dirLight.position.set(10, 10, 5);
       scene.add(dirLight);
 
-      // Aircraft
       const group = new THREE.Group();
       const fuselage = new THREE.Mesh(
         new THREE.CylinderGeometry(0.3, 0.1, 4, 8),
@@ -1694,7 +1852,6 @@
       aircraft.position.y = 2;
       scene.add(aircraft);
 
-      // Particles
       const geo = new THREE.BufferGeometry();
       const count = window.innerWidth < 768 ? 300 : 1000;
       const pos = new Float32Array(count * 3);
@@ -1708,9 +1865,11 @@
       scene.add(grid);
 
       camera.lookAt(0,0,0);
+      return true;
     }
 
     function animate() {
+      if (!renderer) return;
       requestAnimationFrame(animate);
       if (aircraft) {
         aircraft.rotation.y += 0.005;
@@ -1741,12 +1900,11 @@
 
     // ===================== INIT =====================
     window.addEventListener('load', () => {
-      initThreeJS();
-      animate();
-      // Auto-slide all carousels
-      ['work-carousel','explanation-carousel','anfis-what-carousel','anfis-results-carousel',
-       'vsm-what-carousel','vsm-how-carousel','vsm-results-carousel','volunteer-carousel-1',
-       'domestic-carousel','arduino-carousel','energy-carousel','power-carousel',
+      setupImages();
+      if (initThreeJS()) animate();
+      ['work-carousel','explanation-carousel','battery-carousel-1','battery-carousel-2',
+       'anfis-what-carousel','anfis-results-carousel','vsm-what-carousel','vsm-how-carousel',
+       'vsm-results-carousel','volunteer-carousel-1','domestic-carousel','arduino-carousel',
        'egen-carousel-1','egen-carousel-2'
       ].forEach((id, i) => autoSlide(id, 5000 + i*300));
     });
