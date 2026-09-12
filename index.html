@@ -447,7 +447,7 @@
 
     /* Awards image frame */
     .award-img-box {
-      height: 260px;
+      height: 240px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -578,8 +578,22 @@
     .award-title { font-size: 1rem; line-height: 1.3; color: var(--success-green); flex: 1; }
     .award-logo-box .img-placeholder { min-height: 0; height: 100% !important; width: 100%; font-size: 0.4rem; padding: 2px; border: none; }
 
+    /* Experience blocks reuse the research block frame with a warmer index */
+    .exp-block .research-index { color: var(--warning-amber); opacity: 0.55; }
+    .exp-block .research-header {
+      background: linear-gradient(90deg, rgba(255, 107, 0, 0.16), rgba(0, 212, 255, 0.05) 55%, transparent);
+    }
+
     /* ===================== AWARDS TIMELINE ===================== */
-    .timeline-wrap { margin-top: 64px; }
+    .timeline-wrap {
+      margin-top: 64px;
+      padding: 34px 32px 30px;
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(4, 16, 26, 0.93), rgba(2, 8, 14, 0.96));
+      box-shadow: 0 0 44px rgba(0, 212, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+    }
 
     .timeline-head { display: flex; align-items: center; gap: 16px; margin-bottom: 34px; }
     .timeline-rule { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.6), transparent); }
@@ -629,18 +643,18 @@
       box-shadow: 0 0 12px var(--accent-cyan);
       flex-shrink: 0;
     }
-    .tl-item:nth-child(even) .tl-dot { background: var(--success-green); box-shadow: 0 0 12px var(--success-green); }
+    .tl-item:nth-child(even) .tl-dot { background: #12b886; box-shadow: 0 0 12px rgba(18, 184, 134, 0.9); }
 
     .tl-card {
       margin-left: 16px;
       padding: 12px 18px;
-      background: rgba(0, 0, 0, 0.65);
-      border: 1px solid rgba(0, 212, 255, 0.35);
-      border-left: 3px solid var(--accent-cyan);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-left: 3px solid #00a8cc;
       border-radius: 0 10px 10px 0;
       transition: all 0.3s ease;
     }
-    .tl-item:nth-child(even) .tl-card { border-left-color: var(--success-green); }
+    .tl-item:nth-child(even) .tl-card { border-left-color: #12b886; }
     @media (pointer: fine) {
       .tl-card:hover {
         transform: translateX(6px);
@@ -669,6 +683,7 @@
       .research-sub { font-size: 0.8rem; }
       .research-status { font-size: 0.55rem; padding: 4px 10px; }
       .timeline-heading { font-size: 0.78rem; letter-spacing: 0.2em; white-space: normal; text-align: center; }
+      .timeline-wrap { padding: 22px 14px 18px; margin-top: 40px; }
       .award-title { font-size: 0.85rem; }
       .section { padding: 5rem 1rem 1.5rem; }
       .nav-item { padding: 0.6rem 0.6rem; font-size: 0.68rem; }
@@ -1293,9 +1308,16 @@
   <!-- ====================== EXPERIENCE : TANAHU HYDROPOWER ====================== -->
   <section id="internship" class="section aerospace-bg">
     <div class="max-w-7xl mx-auto" style="width:100%">
-      <h2 class="orbitron text-4xl font-bold text-center mb-12">
-        <span class="status-indicator status-active"></span>ELECTRICAL ENGINEER — TANAHU HYDROPOWER
-      </h2>
+      <div class="research-block exp-block">
+        <div class="research-header">
+          <span class="research-index orbitron">01</span>
+          <div class="research-heading">
+            <h3 class="research-title orbitron">Tanahu Hydropower Limited</h3>
+            <p class="research-sub">Electrical Engineer — generation, switchyard, protection and SCADA on a storage hydropower plant.</p>
+          </div>
+          <span class="research-status orbitron">CURRENT</span>
+        </div>
+
 
       <!-- MAIN TANAHU BOX -->
       <div class="project-card hologram mb-12">
@@ -1436,15 +1458,23 @@
         <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">LinkedIn</a>
         <a href="mailto:official.dipesh.poudel@gmail.com?subject=Tanahu Hydropower Work Details" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">Request Work Details</a>
       </div>
+      </div><!-- /experience 01 -->
     </div>
   </section>
 
   <!-- ====================== INTERNSHIP-1 : MANIPAL ====================== -->
   <section id="manipal-internship" class="section aerospace-bg">
     <div class="max-w-7xl mx-auto" style="width:100%">
-      <h2 class="orbitron text-4xl font-bold text-center mb-12">
-        <span class="status-indicator status-active"></span>INTERNSHIP-1
-      </h2>
+      <div class="research-block exp-block">
+        <div class="research-header">
+          <span class="research-index orbitron">02</span>
+          <div class="research-heading">
+            <h3 class="research-title orbitron">Manipal Teaching Hospital, Pokhara</h3>
+            <p class="research-sub">Electrical Engineering Intern — hospital power distribution, PLC/SCADA automation and AutoCAD design.</p>
+          </div>
+          <span class="research-status orbitron">INTERNSHIP</span>
+        </div>
+
 
       <!-- MAIN HOSPITAL BOX -->
       <div class="project-card hologram mb-12">
@@ -1628,15 +1658,23 @@
         <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">LinkedIn</a>
         <a href="./files/internship_certificate.pdf" target="_blank" rel="noopener" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">View Certificate</a>
       </div>
+      </div><!-- /experience 02 -->
     </div>
   </section>
 
   <!-- ====================== SITE ENGINEER : PRIME ENGINEERING ====================== -->
   <section id="site-engineer" class="section aerospace-bg">
     <div class="max-w-7xl mx-auto" style="width:100%">
-      <h2 class="orbitron text-4xl font-bold text-center mb-12">
-        <span class="status-indicator status-active"></span>SITE ENGINEER
-      </h2>
+      <div class="research-block exp-block">
+        <div class="research-header">
+          <span class="research-index orbitron">03</span>
+          <div class="research-heading">
+            <h3 class="research-title orbitron">Prime Engineering, Pokhara</h3>
+            <p class="research-sub">Site Engineer / Consultant — panels, capacitor banks and generator commissioning for a 5-star hotel.</p>
+          </div>
+          <span class="research-status orbitron">CONSULTANT</span>
+        </div>
+
 
       <div class="project-card hologram mb-12">
         <div class="hud-corner tl"></div>
@@ -1765,15 +1803,23 @@
         </div>
 
       </div>
+      </div><!-- /experience 03 -->
     </div>
   </section>
 
   <!-- ====================== INTERNSHIP-2 : ELEX ENERGY AUDIT ====================== -->
   <section id="elex-internship" class="section aerospace-bg">
     <div class="max-w-7xl mx-auto" style="width:100%">
-      <h2 class="orbitron text-4xl font-bold text-center mb-12">
-        <span class="status-indicator status-active"></span>INTERNSHIP-2 (ENERGY AUDIT)
-      </h2>
+      <div class="research-block exp-block">
+        <div class="research-header">
+          <span class="research-index orbitron">04</span>
+          <div class="research-heading">
+            <h3 class="research-title orbitron">Elex Engineering Pvt. Ltd., Pokhara</h3>
+            <p class="research-sub">Team Lead — full electrical, thermal and mechanical energy audit of Fishtail Lodge.</p>
+          </div>
+          <span class="research-status orbitron">TEAM LEAD</span>
+        </div>
+
 
       <div class="project-card hologram mb-12">
         <div class="hud-corner tl"></div>
@@ -1914,6 +1960,7 @@
         <a href="https://www.linkedin.com/in/dipeshpoudel11/" target="_blank" rel="noopener" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">LinkedIn</a>
         <a href="./files/elex_certificate.pdf" target="_blank" rel="noopener" class="bg-[var(--primary-blue)] text-black px-6 py-3 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all transform hover:scale-105 orbitron">View Certificate</a>
       </div>
+      </div><!-- /experience 04 -->
     </div>
   </section>
 
@@ -2819,59 +2866,6 @@
         <span class="status-indicator status-active"></span>AWARDS &amp; GRANTS
       </h2>
 
-      <!-- FEATURED HACKATHON AWARDS -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-        <!-- LOCUS 2024 -->
-        <div class="project-card">
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-          <div class="flex items-center mb-4">
-            <img src="./graphics/logo1.png" alt="LOCUS 2024 Logo" class="w-12 h-12 object-cover mr-3 rounded">
-            <h3 class="orbitron text-xl font-bold flex-1" style="color:var(--success-green)">1st Place, 20th National Technological Festival, <em>LOCUS 2024</em></h3>
-          </div>
-          <img src="./graphics/power2.jpg" alt="Energy Hackathon Winning Picture" class="project-image mt-2 rounded cursor-pointer" style="height:200px;border:1px solid var(--accent-cyan)" onclick="openModal('./graphics/power2.jpg', 'Power Hackathon Win')">
-          <p class="text-xs text-center mt-1">Group Photo After Winning Event</p>
-          <p class="text-sm mb-4 mt-3">
-            While I was leading our team <strong>WEAUTOMATE</strong>, the team secured first place and was honored by the <strong>Honourable Dignitaries of the Nepal Electricity Authority (NEA)</strong>. The winning project, the <strong>AI-Integrated Home Automation System</strong>, demonstrated a solution for retrofitting traditional appliances using an <em>ESP32 controller</em>, transducer, data logging, communication system, and relays.
-          </p>
-          <div class="relative overflow-hidden mt-4 rounded-lg" style="height:240px;border:1px solid var(--accent-cyan)">
-            <div class="carousel-container" id="energy-carousel" style="transform: translateX(0%);">
-              <div class="carousel-item"><img src="./graphics/energy1.jpg" alt="Project Demo" class="cursor-pointer" onclick="openModal('./graphics/energy1.jpg', 'Project demo during presentation')"></div>
-              <div class="carousel-item"><img src="./graphics/energy2.jpg" alt="Team Discussion" class="cursor-pointer" onclick="openModal('./graphics/energy2.jpg', 'Team brainstorming session')"></div>
-              <div class="carousel-item"><img src="./graphics/energy3.jpg" alt="Award Ceremony" class="cursor-pointer" onclick="openModal('./graphics/energy3.jpg', 'Award ceremony moment')"></div>
-            </div>
-            <button onclick="slideCarousel('energy-carousel', -1)" class="carousel-btn prev">‹</button>
-            <button onclick="slideCarousel('energy-carousel', 1)" class="carousel-btn next">›</button>
-          </div>
-        </div>
-
-        <!-- ELECTROMELA 2.0 -->
-        <div class="project-card hologram">
-          <div class="flex items-center mb-4">
-            <img src="./graphics/logo2.png" alt="Electromela 2.0 Logo" class="w-12 h-12 object-cover mr-3 rounded">
-            <h3 class="orbitron text-xl font-bold flex-1" style="color:var(--success-green)">Power Hackathon Champion, <em>Commercialized AI Home Automation</em></h3>
-          </div>
-          <img src="./graphics/power1.jpg" alt="Physical Model Created" class="project-image mt-2 rounded cursor-pointer" style="height:200px;border:1px solid var(--accent-cyan)" onclick="openModal('./graphics/power1.jpg', 'Developed Hardware Model')">
-          <p class="text-xs text-center mt-1">Developed Hardware Model</p>
-          <p class="text-sm mb-4 mt-3">
-            We achieved our second major victory by winning the Power Hackathon at <em>Electromela 2.0</em>. Our project was extensively modified into a market-available product. We refined the hardware with higher-rated actuators and a polished enclosure, achieved superior predictive accuracy through an extensive training dataset, and integrated <em>Google Home control</em> for easier accessibility.
-          </p>
-          <div class="relative overflow-hidden mt-4 rounded-lg" style="height:240px;border:1px solid var(--accent-cyan)">
-            <div class="carousel-container" id="power-carousel" style="transform: translateX(0%);">
-              <div class="carousel-item"><img src="./graphics/power3.jpg" alt="Prototype Build" class="cursor-pointer" onclick="openModal('./graphics/power3.jpg', 'Prototype assembly process')"></div>
-              <div class="carousel-item"><img src="./graphics/power4.jpg" alt="Testing Phase" class="cursor-pointer" onclick="openModal('./graphics/power4.jpg', 'Hardware testing with actuators')"></div>
-              <div class="carousel-item"><img src="./graphics/power5.jpg" alt="Commercial Demo" class="cursor-pointer" onclick="openModal('./graphics/power5.jpg', 'Commercialized product demo')"></div>
-            </div>
-            <button onclick="slideCarousel('power-carousel', -1)" class="carousel-btn prev">‹</button>
-            <button onclick="slideCarousel('power-carousel', 1)" class="carousel-btn next">›</button>
-          </div>
-          <a href="mailto:official.dipesh.poudel@gmail.com?subject=Power Hackathon Details" class="block mt-4 bg-[var(--primary-blue)] text-black px-4 py-2 rounded font-bold hover:bg-[var(--accent-cyan)] transition-all w-full text-center orbitron">Request Certificate/Details</a>
-        </div>
-      </div>
-
-      <!-- OTHER AWARDS & GRANTS -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <div class="project-card">
@@ -2880,12 +2874,11 @@
             <h3 class="orbitron font-bold award-title">UNDP GCRU Funding – NPR 25 Lakh Grant</h3>
           </div>
           <div class="award-img-box">
-            <img src="./graphics/undp.jpg" alt="UNDP Award">
+            <img src="./graphics/undp.jpg" alt="UNDP Award" class="cursor-pointer" onclick="openModal('./graphics/undp.jpg', 'UNDP GCRU Funding')">
           </div>
-          <p class="text-sm mt-3">
-            Received funding equivalent of 25 lakhs from the Green Job Creation Through Recycling and Upcycling in Pokhara (GCRU) project to establish a <strong>Battery Innovation Lab</strong> focused on second-life EV battery research.
-          </p>
-          <p class="text-xs text-gray-400 mt-1">2025</p>
+          <p class="text-xs text-center mt-1 text-gray-400">Grant handover</p>
+          <p class="text-sm mt-2">Received funding equivalent of 25 lakhs from the Green Job Creation Through Recycling and Upcycling in Pokhara (GCRU) project to establish a <strong>Battery Innovation Lab</strong> focused on second-life EV battery research.</p>
+          <p class="text-xs text-gray-400 mt-2">2025</p>
         </div>
 
         <div class="project-card">
@@ -2894,12 +2887,37 @@
             <h3 class="orbitron font-bold award-title">US–Nepal Startup Weekend Challenge Winner</h3>
           </div>
           <div class="award-img-box">
-            <img src="./graphics/startup.jpg" alt="Startup Award">
+            <img src="./graphics/startup.jpg" alt="Startup Award" class="cursor-pointer" onclick="openModal('./graphics/startup.jpg', 'US–Nepal Startup Weekend Challenge')">
           </div>
-          <p class="text-sm mt-3">
-            Secured <strong>NPR 200,000 prize</strong> in a US Embassy-backed startup competition; second life of EV batteries was the research domain.
-          </p>
-          <p class="text-xs text-gray-400 mt-1">2026</p>
+          <p class="text-xs text-center mt-1 text-gray-400">Prize ceremony</p>
+          <p class="text-sm mt-2">Secured an <strong>NPR 200,000 prize</strong> in a US Embassy-backed startup competition; the second life of EV batteries was the research domain.</p>
+          <p class="text-xs text-gray-400 mt-2">2026</p>
+        </div>
+
+        <div class="project-card">
+          <div class="award-head">
+            <div class="award-logo-box"><img src="./graphics/logo1.png" alt="LOCUS 2024 logo" class="award-logo"></div>
+            <h3 class="orbitron font-bold award-title">1st Place — National Energy Hackathon, LOCUS 2024</h3>
+          </div>
+          <div class="award-img-box">
+            <img src="./graphics/power2.jpg" alt="LOCUS Award" class="cursor-pointer" onclick="openModal('./graphics/power2.jpg', '1st Place, LOCUS 2024')">
+          </div>
+          <p class="text-xs text-center mt-1 text-gray-400">Group photo after winning the event</p>
+          <p class="text-sm mt-2">Leading team <strong>WEAUTOMATE</strong> to first place at the 20th National Technological Festival, honoured by dignitaries of the Nepal Electricity Authority. The winning project was the AI-Integrated Home Automation System built on an ESP32 controller.</p>
+          <p class="text-xs text-gray-400 mt-2">2024</p>
+        </div>
+
+        <div class="project-card">
+          <div class="award-head">
+            <div class="award-logo-box"><img src="./graphics/logo2.png" alt="Electromela 2.0 logo" class="award-logo"></div>
+            <h3 class="orbitron font-bold award-title">Power Hackathon Winner – Electromela 2.0</h3>
+          </div>
+          <div class="award-img-box">
+            <img src="./graphics/power1.jpg" alt="Electromela Award" class="cursor-pointer" onclick="openModal('./graphics/power1.jpg', 'Power Hackathon Winner, Electromela 2.0')">
+          </div>
+          <p class="text-xs text-center mt-1 text-gray-400">Developed hardware model</p>
+          <p class="text-sm mt-2">Market-ready AI home automation system with advanced control layering, higher-rated actuators, a polished enclosure and Google Home integration.</p>
+          <p class="text-xs text-gray-400 mt-2">2024</p>
         </div>
 
         <div class="project-card">
@@ -2908,10 +2926,11 @@
             <h3 class="orbitron font-bold award-title">Ideathon – Most Sustainable Idea (Vector 2.0)</h3>
           </div>
           <div class="award-img-box">
-            <img src="./graphics/ideathon.jpg" alt="Ideathon Award">
+            <img src="./graphics/ideathon.jpg" alt="Ideathon Award" class="cursor-pointer" onclick="openModal('./graphics/ideathon.jpg', 'Ideathon – Most Sustainable Idea')">
           </div>
-          <p class="text-sm mt-3">Recognized for sustainability-focused innovation in energy systems.</p>
-          <p class="text-xs text-gray-400 mt-1">2025</p>
+          <p class="text-xs text-center mt-1 text-gray-400">Award presentation</p>
+          <p class="text-sm mt-2">Recognized for sustainability-focused innovation in energy systems.</p>
+          <p class="text-xs text-gray-400 mt-2">2025</p>
         </div>
 
         <div class="project-card">
@@ -2920,11 +2939,13 @@
             <h3 class="orbitron font-bold award-title">Youth Innovation &amp; STEM Equity Award</h3>
           </div>
           <div class="award-img-box">
-            <img src="./graphics/leo.jpg" alt="STEM Award">
+            <img src="./graphics/leo.jpg" alt="STEM Award" class="cursor-pointer" onclick="openModal('./graphics/leo.jpg', 'Youth Innovation and STEM Equity Award')">
           </div>
-          <p class="text-sm mt-3">Leadership in community tech access (Leo Club of Pokhara).</p>
-          <p class="text-xs text-gray-400 mt-1">2022</p>
+          <p class="text-xs text-center mt-1 text-gray-400">Leo Club of Pokhara Silver Mountains</p>
+          <p class="text-sm mt-2">Leadership in community tech access through school robotics and STEM outreach.</p>
+          <p class="text-xs text-gray-400 mt-2">2022</p>
         </div>
+
       </div>
 
       <!-- ===== COMPLETE AWARDS & GRANTS TIMELINE ===== -->
@@ -3387,8 +3408,7 @@
         'anfis-what-carousel', 'anfis-results-carousel',
         'vsm-what-carousel', 'vsm-how-carousel', 'vsm-results-carousel',
         'volunteer-carousel-1', 'domestic-carousel', 'arduino-carousel',
-        'egen-carousel-1', 'egen-carousel-2',
-        'energy-carousel', 'power-carousel'
+        'egen-carousel-1', 'egen-carousel-2'
       ].forEach((id, i) => autoSlide(id, 5000 + i * 300));
     });
   </script>
