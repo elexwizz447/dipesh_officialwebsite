@@ -976,12 +976,12 @@
     <div class="max-w-7xl mx-auto" style="width:100%">
       <h2 class="orbitron section-title-edu">
         <span class="status-indicator-edu status-active-edu"></span>
-        DEGREES, SCHOLARSHIPS &amp; FUNDING
+        EDUCATION &amp; FUNDING
       </h2>
 
       <div class="education-container-box">
 
-        <!-- ROW 1 & 2 : ACADEMIC DEGREES -->
+        <!-- ---------- GROUP 1 : DEGREES ---------- -->
         <div class="edu-group-head">
           <span class="edu-group-rule"></span>
           <h3 class="edu-group-title orbitron">ACADEMIC DEGREES</h3>
@@ -991,30 +991,42 @@
         <div class="edu-grid">
 
           <div class="edu-card">
-            <img src="./graphics/ioelogo.png" alt="IOE Pashchimanchal Campus" class="edu-logo">
+            <div class="edu-logo-box">
+              <img src="./graphics/ioelogo.png" alt="Institute of Engineering" class="edu-logo">
+            </div>
             <div class="edu-body">
-              <p class="edu-period orbitron">2022 – 2026 · Completed</p>
+              <div class="edu-meta">
+                <span class="edu-tag orbitron">Degree</span>
+                <span class="edu-period orbitron">2022 – 2026 · Completed</span>
+              </div>
               <h4 class="edu-title orbitron">B.E. Electrical Engineering</h4>
               <p class="edu-institution">Institute of Engineering — Pashchimanchal Campus</p>
-              <span class="edu-badge orbitron">🏆 IOE Merit Entrance Scholarship</span>
-              <p class="edu-note">Top 10% nationwide in the IOE entrance examination · held for the full four-year programme</p>
+              <div class="edu-divider"></div>
+              <p class="edu-award orbitron">IOE Merit Entrance Scholarship</p>
+              <p class="edu-note">Top 10% nationwide in the IOE entrance examination, held for the full four-year programme.</p>
             </div>
           </div>
 
           <div class="edu-card">
-            <img src="./graphics/soslogo.jpg" alt="SOS Hermann Gmeiner" class="edu-logo">
+            <div class="edu-logo-box">
+              <img src="./graphics/soslogo.jpg" alt="SOS Hermann Gmeiner" class="edu-logo">
+            </div>
             <div class="edu-body">
-              <p class="edu-period orbitron">2020 – 2022</p>
+              <div class="edu-meta">
+                <span class="edu-tag orbitron">Higher Secondary</span>
+                <span class="edu-period orbitron">2020 – 2022</span>
+              </div>
               <h4 class="edu-title orbitron">Higher Secondary Education (Science)</h4>
               <p class="edu-institution">SOS Hermann Gmeiner Higher Secondary School</p>
-              <span class="edu-badge orbitron">🏆 Academic Excellence Scholarship</span>
-              <p class="edu-note">Awarded for sustained academic standing throughout the programme</p>
+              <div class="edu-divider"></div>
+              <p class="edu-award orbitron">Academic Excellence Scholarship</p>
+              <p class="edu-note">Awarded for sustained academic standing across the programme.</p>
             </div>
           </div>
 
         </div>
 
-        <!-- ROW 3 & 4 : RESEARCH FUNDING -->
+        <!-- ---------- GROUP 2 : FUNDING ---------- -->
         <div class="edu-group-head edu-group-head-fund">
           <span class="edu-group-rule"></span>
           <h3 class="edu-group-title orbitron">RESEARCH FUNDING &amp; PRIZES</h3>
@@ -1024,24 +1036,36 @@
         <div class="edu-grid">
 
           <div class="edu-card edu-card-fund">
-            <img src="./graphics/undp.jpg" alt="UNDP GCRU" class="edu-logo edu-logo-fund">
+            <div class="edu-logo-box">
+              <img src="./graphics/undplogo.png" alt="UNDP GCRU" class="edu-logo">
+            </div>
             <div class="edu-body">
-              <p class="edu-period orbitron">2025</p>
-              <h4 class="edu-title edu-title-fund orbitron">UNDP GCRU Research Grant — NPR 25 Lakh</h4>
-              <p class="edu-institution">Green Job Creation Through Recycling &amp; Upcycling in Pokhara (GCRU)</p>
-              <span class="edu-badge orbitron">Research Lead — Battery Innovation Lab</span>
-              <p class="edu-note">Funding to establish a laboratory for second-life EV battery research</p>
+              <div class="edu-meta">
+                <span class="edu-tag orbitron">Research Grant</span>
+                <span class="edu-period orbitron">2025</span>
+              </div>
+              <h4 class="edu-title orbitron">UNDP GCRU Research Grant</h4>
+              <p class="edu-institution">Green Job Creation Through Recycling &amp; Upcycling in Pokhara</p>
+              <div class="edu-divider"></div>
+              <p class="edu-amount orbitron">NPR 25,00,000</p>
+              <p class="edu-note">Awarded as Research Lead to establish a Battery Innovation Lab for second-life EV battery research.</p>
             </div>
           </div>
 
           <div class="edu-card edu-card-fund">
-            <img src="./graphics/startup.jpg" alt="US–Nepal Startup Weekend" class="edu-logo edu-logo-fund">
+            <div class="edu-logo-box">
+              <img src="./graphics/startuplogo.png" alt="US–Nepal Startup Weekend" class="edu-logo">
+            </div>
             <div class="edu-body">
-              <p class="edu-period orbitron">2026</p>
-              <h4 class="edu-title edu-title-fund orbitron">US–Nepal Startup Weekend Prize — NPR 200,000</h4>
-              <p class="edu-institution">US Embassy-backed startup competition</p>
-              <span class="edu-badge orbitron">Winner — Second Life of EV Batteries</span>
-              <p class="edu-note">Awarded for the commercialization pathway of retired EV battery packs</p>
+              <div class="edu-meta">
+                <span class="edu-tag orbitron">Competition Prize</span>
+                <span class="edu-period orbitron">2026</span>
+              </div>
+              <h4 class="edu-title orbitron">US–Nepal Startup Weekend Challenge</h4>
+              <p class="edu-institution">US Embassy-backed national startup competition</p>
+              <div class="edu-divider"></div>
+              <p class="edu-amount orbitron">NPR 2,00,000</p>
+              <p class="edu-note">Won for the commercialization pathway of retired EV battery packs.</p>
             </div>
           </div>
 
@@ -1051,172 +1075,221 @@
   </section>
 
   <style>
+    /* ===== Section heading ===== */
+    .section-title-edu {
+      font-size: 2.3rem;
+      color: #dff6ff;
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: 0.16em;
+      text-shadow: 0 0 22px rgba(0, 212, 255, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .status-indicator-edu {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background: #00ff88;
+      box-shadow: 0 0 14px rgba(0, 255, 136, 0.85);
+      animation: pulse-edu 2s infinite;
+    }
+    .status-active-edu { background: #00ff88; }
+
+    @keyframes pulse-edu { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+    /* ===== Outer frame ===== */
     .education-container-box {
       position: relative;
-      border: 4px solid #00f3ff;
-      padding: 32px;
-      background: rgba(0, 10, 20, 0.6);
-      box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
-      backdrop-filter: blur(5px);
-      margin-top: 30px;
+      border: 1px solid rgba(0, 212, 255, 0.45);
+      border-radius: 14px;
+      padding: 38px 34px 34px;
+      background: linear-gradient(180deg, rgba(4, 16, 26, 0.88), rgba(2, 8, 14, 0.92));
+      box-shadow: 0 0 44px rgba(0, 212, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+      margin-top: 34px;
     }
 
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-bottom: 6px;
-    }
-
+    /* ===== Group labels ===== */
     .edu-group-head {
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin: 10px 0 18px;
+      gap: 18px;
+      margin: 0 0 22px;
     }
-    .edu-group-head:not(:first-child) { margin-top: 34px; }
+    .edu-group-head-fund { margin-top: 40px; }
+
     .edu-group-rule {
       flex: 1;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.45), transparent);
     }
+
     .edu-group-title {
-      font-size: 1rem;
-      letter-spacing: 0.32em;
-      color: #00f3ff;
-      text-shadow: 0 0 14px rgba(0, 243, 255, 0.6);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      color: #6fd6f5;
       white-space: nowrap;
     }
+
     .edu-group-head-fund .edu-group-rule {
-      background: linear-gradient(90deg, transparent, rgba(255, 221, 0, 0.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(196, 154, 78, 0.45), transparent);
     }
-    .edu-group-head-fund .edu-group-title {
-      color: #ffdd00;
-      text-shadow: 0 0 14px rgba(255, 221, 0, 0.5);
+    .edu-group-head-fund .edu-group-title { color: #c9a227; }
+
+    /* ===== Cards ===== */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     .edu-card {
-      background: rgba(0, 20, 40, 0.95);
-      border: 2px solid #00f3ff;
-      padding: 18px;
       display: flex;
-      gap: 16px;
-      align-items: center;
-      transition: all 0.3s ease;
-      border-radius: 6px;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 22px;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-left: 3px solid #00a8cc;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.025);
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
 
-    .edu-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 40px rgba(0, 243, 255, 0.4);
-      border-color: #00ffff;
+    @media (pointer: fine) {
+      .edu-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 212, 255, 0.5);
+        background: rgba(0, 212, 255, 0.045);
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.55);
+      }
+      .edu-card-fund:hover {
+        border-color: rgba(201, 162, 39, 0.55);
+        background: rgba(201, 162, 39, 0.05);
+      }
     }
 
-    .edu-card-fund { border-color: rgba(255, 221, 0, 0.7); background: rgba(25, 20, 0, 0.9); }
-    .edu-card-fund:hover { box-shadow: 0 10px 40px rgba(255, 221, 0, 0.25); border-color: #ffdd00; }
+    .edu-card-fund { border-left-color: #c9a227; }
 
-    .edu-logo {
-      width: 84px;
-      height: 84px;
-      flex-shrink: 0;
-      object-fit: contain;
-      border: 2px solid #00f3ff;
-      padding: 6px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 8px;
-    }
-
-    .edu-fund-icon {
-      width: 84px;
-      height: 84px;
+    /* ===== Logo ===== */
+    .edu-logo-box {
+      width: 76px;
+      height: 76px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      color: #ffdd00;
-      border: 2px solid rgba(255, 221, 0, 0.7);
-      border-radius: 8px;
-      background: rgba(255, 221, 0, 0.06);
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.94);
+      overflow: hidden;
+    }
+    .edu-logo { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .edu-logo-box .img-placeholder { min-height: 0; height: 100% !important; width: 100%; border: none; font-size: 0.4rem; padding: 2px; }
+
+    /* ===== Text ===== */
+    .edu-body { flex: 1; min-width: 0; }
+
+    .edu-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 9px;
     }
 
-    .edu-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+    .edu-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7fdcf5;
+      border: 1px solid rgba(0, 212, 255, 0.4);
+      border-radius: 3px;
+      padding: 3px 8px;
+      line-height: 1;
+    }
+    .edu-card-fund .edu-tag { color: #d9b757; border-color: rgba(201, 162, 39, 0.45); }
+
+    .edu-period {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #7b909e;
+    }
 
     .edu-title {
-      font-size: 1.2rem;
-      color: #00f3ff;
-      margin: 0;
+      font-size: 1.22rem;
       font-weight: 700;
+      color: #ffffff;
       line-height: 1.25;
-      letter-spacing: 0.02em;
-      text-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
+      letter-spacing: 0.015em;
+      margin: 0 0 5px;
     }
-    .edu-title-fund { color: #ffdd00; text-shadow: 0 0 12px rgba(255, 221, 0, 0.3); }
+
     .edu-institution {
       font-size: 0.9rem;
-      color: #e0f7ff;
+      color: #9fb6c6;
+      line-height: 1.4;
       margin: 0;
       font-weight: 500;
-      line-height: 1.35;
     }
-    .edu-logo-fund { border-color: rgba(255, 221, 0, 0.7); }
 
-    .edu-badge {
-      align-self: flex-start;
-      font-size: 0.78rem;
+    .edu-divider {
+      height: 1px;
+      width: 44px;
+      background: rgba(255, 255, 255, 0.16);
+      margin: 14px 0 12px;
+    }
+
+    .edu-award {
+      font-size: 0.84rem;
       font-weight: 700;
-      color: #ffdd00;
-      background: rgba(255, 221, 0, 0.08);
-      border: 1px solid rgba(255, 221, 0, 0.55);
-      border-radius: 999px;
-      padding: 4px 12px;
+      color: #7fdcf5;
+      letter-spacing: 0.04em;
+      margin: 0 0 5px;
     }
+    .edu-award::before { content: '◆ '; font-size: 0.66rem; opacity: 0.75; }
 
-    .edu-note { font-size: 0.8rem; color: #b0bec5; margin: 0; line-height: 1.4; }
-    .edu-period {
-      font-size: 0.7rem;
-      color: #7fdfff;
+    .edu-amount {
+      font-size: 1.05rem;
       font-weight: 700;
-      margin: 0 0 2px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-    .edu-card-fund .edu-period { color: #ffe680; }
-
-    .section-title-edu {
-      font-size: 2.5rem;
-      color: #00f3ff;
-      text-align: center;
-      margin-bottom: 20px;
-      letter-spacing: 0.1em;
-      text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
+      color: #d9b757;
+      letter-spacing: 0.06em;
+      margin: 0 0 5px;
     }
 
-    .status-indicator-edu { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-    .status-active-edu { background: #00ff00; box-shadow: 0 0 15px rgba(0, 255, 0, 0.8); animation: pulse-edu 2s infinite; }
+    .edu-note {
+      font-size: 0.82rem;
+      color: #8397a5;
+      line-height: 1.5;
+      margin: 0;
+    }
 
-    @keyframes pulse-edu { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
+    /* ===== Responsive ===== */
     @media (max-width: 1024px) {
       .edu-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .education-container-box { padding: 18px 14px; border: 3px solid #00f3ff; }
-      .edu-grid { grid-template-columns: 1fr; gap: 14px; }
-      .edu-group-title { font-size: 0.78rem; letter-spacing: 0.2em; white-space: normal; text-align: center; }
-      .edu-card { padding: 14px; gap: 12px; }
-      .edu-logo, .edu-fund-icon { width: 60px; height: 60px; }
-      .edu-title { font-size: 1rem; }
-      .edu-institution { font-size: 0.85rem; }
-      .section-title-edu { font-size: 1.7rem; }
+      .section-title-edu { font-size: 1.5rem; letter-spacing: 0.1em; }
+      .education-container-box { padding: 22px 16px; margin-top: 22px; }
+      .edu-group-title { font-size: 0.68rem; letter-spacing: 0.22em; white-space: normal; text-align: center; }
+      .edu-group-head-fund { margin-top: 30px; }
+      .edu-card { padding: 16px; gap: 14px; }
+      .edu-logo-box { width: 58px; height: 58px; padding: 6px; }
+      .edu-title { font-size: 1.02rem; }
+      .edu-institution { font-size: 0.84rem; }
+      .edu-amount { font-size: 0.95rem; }
     }
   </style>
-
   <!-- ====================== EXPERIENCE : TANAHU HYDROPOWER ====================== -->
   <section id="internship" class="section aerospace-bg">
     <div class="max-w-7xl mx-auto" style="width:100%">
