@@ -970,7 +970,7 @@
       min-height: 84vh;
     }
 
-    /* Readability layer over the cover photo */
+    /* Readability layer over the cover photo 
     .hero-background-overlay {
       position: absolute;
       inset: 0;
@@ -979,6 +979,17 @@
         linear-gradient(180deg, rgba(1, 8, 14, 0.42) 0%, rgba(1, 8, 14, 0.22) 45%, rgba(1, 8, 14, 0.55) 100%);
       z-index: 1;
     }
+*/
+    .hero-background-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.42) 78%),
+    linear-gradient(180deg, rgba(1, 8, 14, 0.42) 0%, rgba(1, 8, 14, 0.22) 45%, rgba(1, 8, 14, 0.55) 100%);
+  opacity: 0.4;   /* 1 = current darkness, 0 = no dimming. Try 0.2 to 0.6 */
+  z-index: 1;
+}
+    
 
     .hero-content-container {
       position: relative;
