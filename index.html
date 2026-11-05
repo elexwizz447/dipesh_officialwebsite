@@ -1087,6 +1087,12 @@
     .hero-btn-primary:hover { background: var(--accent-cyan); border-color: var(--accent-cyan); color: #001018; }
 
     /* ---------- HUD cards ---------- */
+
+
+
+    /*
+
+    
     .hero-info-boxes {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1152,6 +1158,93 @@
 
     .hud-link { text-decoration: none; color: inherit; display: block; }
 
+    */
+
+
+
+
+
+
+
+/* ---------- HUD cards ---------- */
+.hero-info-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.hero-info-boxes .hud-element {
+  position: relative;
+  background: rgba(2, 12, 20, 0.35);
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 8px;
+  padding: 12px 12px 10px;
+  text-align: left;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (pointer: fine) {
+  .hero-info-boxes .hud-element:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 212, 255, 0.75);
+    background: rgba(0, 212, 255, 0.07);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.hud-title {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #6fd6f5;
+  margin-bottom: 8px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.22);
+}
+
+.hud-item {
+  font-size: 0.76rem;
+  color: #d3e3ec;
+  line-height: 1.3;
+  margin-top: 5px;
+  font-weight: 500;
+  padding-left: 14px;
+  position: relative;
+}
+.hud-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.85);
+}
+
+.hud-link { text-decoration: none; color: inherit; display: block; }
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
     /* ---------- Scroll cue ---------- */
     .hero-scroll {
       margin-top: clamp(26px, 4vw, 42px);
